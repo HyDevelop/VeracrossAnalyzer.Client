@@ -5,4 +5,6 @@ import {Component, Vue} from 'vue-property-decorator';
 })
 export default class Login extends Vue
 {
+    public username: any = '';
+    public password: any = '';
 }
