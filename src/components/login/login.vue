@@ -1,7 +1,7 @@
 <template>
     <div id="login">
-        <el-input v-model="input" placeholder="School Username"></el-input>
-        <el-input placeholder="Veracross Password" v-model="input" show-password=""></el-input>
+        <el-input v-model="username" placeholder="School Username"></el-input>
+        <el-input v-model="password" placeholder="Veracross Password" show-password=""></el-input>
     </div>
 </template>
 
