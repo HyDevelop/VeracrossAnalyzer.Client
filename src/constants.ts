@@ -3,4 +3,8 @@
  */
 export default class Constants
 {
+    /**
+     * Base url for api access
+     */
+    public static API_URL: string = "https://va.hydev.org/api";
 }
