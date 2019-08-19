@@ -2,7 +2,7 @@
     <div id="login">
         <el-input v-model="username" placeholder="School Username"></el-input>
         <el-input v-model="password" placeholder="Veracross Password" show-password=""></el-input>
-        <el-button plain type="primary">Login</el-button>
+        <el-button plain type="primary" @click="onLoginClick">Login</el-button>
     </div>
 </template>
 

@@ -7,4 +7,12 @@ export default class Login extends Vue
 {
     public username: any = '';
     public password: any = '';
+
+    /**
+     * On click
+     */
+    public onLoginClick()
+    {
+
+    }
 }
