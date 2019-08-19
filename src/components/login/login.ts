@@ -1,5 +1,8 @@
 import {Component, Vue} from 'vue-property-decorator';
 
+/**
+ * This component handles user login, and obtains data from the server.
+ */
 @Component({
     components: {},
 })
