@@ -6,4 +6,5 @@ import Login from '@/components/login/login';
 })
 export default class App extends Vue
 {
+
 }
