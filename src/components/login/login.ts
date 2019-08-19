@@ -26,6 +26,8 @@ export default class Login extends Vue
             // Get response body text
             res.text().then(text =>
             {
+                // Call custom text event
+                this.$emit('login:courses', JSON.parse(text));
             })
         })
         .catch(alert);
