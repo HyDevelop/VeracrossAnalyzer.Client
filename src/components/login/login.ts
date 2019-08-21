@@ -12,6 +12,8 @@ export default class Login extends Vue
     public username: any = '';
     public password: any = '';
 
+    public loading: boolean = false;
+
     /**
      * On click, sends username and password to the server.
      */
