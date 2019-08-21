@@ -9,7 +9,7 @@ import Constants from '@/constants';
 })
 export default class Navigation extends Vue
 {
-    public activeIndex: string = "0";
+    public activeIndex: string = '0';
 
     @Prop() courses: any;
 
