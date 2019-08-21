@@ -9,15 +9,20 @@ import Constants from '@/constants';
 })
 export default class Navigation extends Vue
 {
-    public activeIndex: string = '0';
+    public activeIndex: string = 'overall';
 
     @Prop() courses: any;
 
     /**
      * This function is called when the selection changes.
+     *
+     * @param index The index selected
+     * @param indexPath The path of the index
      */
-    public onSelect()
+    public onSelect(index: string, indexPath: string)
     {
+        // Update active index
+        this.activeIndex = index;
 
     }
 }
