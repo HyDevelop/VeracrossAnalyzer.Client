@@ -11,6 +11,8 @@ export default class App extends Vue
 
     public courses = null;
 
+    public selectedTab: string = "";
+
     /**
      * This is called when the user logs in.
      *
