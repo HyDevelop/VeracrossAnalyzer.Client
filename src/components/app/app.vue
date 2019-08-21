@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="../../assets/logo.png">
-    <login></login>
-  </div>
+    <div id="app">
+        <login v-if="showLogin" v-on:login:courses="onLogin"></login>
+    </div>
 </template>
 
 <script src="./app.ts" lang="ts"></script>
