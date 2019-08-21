@@ -28,6 +28,16 @@
 
     // Disable horizontal scroll
     overflow-x: hidden;
+
+    // Make it a table for vertical centering
+    display: table;
+}
+
+.login-vertical-center
+{
+    // Vertically center
+    display: table-cell;
+    vertical-align: middle;
 }
 
 // The user interacting panel
@@ -45,9 +55,6 @@
     border-radius: 10px;
     box-shadow: 0 0 20px 0 white;
     border: 1px solid #DCDFE6;
-
-    // Vertical center
-    transform: translateY(50%);
 
     // Make it white
     background-color: white;
