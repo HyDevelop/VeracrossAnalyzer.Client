@@ -8,6 +8,8 @@ export default class App extends Vue
 {
     public showLogin: boolean = true;
 
+    public courses = null;
+
     /**
      * This is called when the user logs in.
      *
