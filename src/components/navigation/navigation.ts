@@ -18,6 +18,7 @@ export default class Navigation extends Vue
      */
     public onSelect()
     {
-
+        // Call custom event
+        this.$emit('navigation:select', this.activeIndex);
     }
 }
