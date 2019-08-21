@@ -19,5 +19,11 @@ export default class App extends Vue
     {
         // Hide login bar
         this.showLogin = false;
+
+        // Assign courses
+        this.courses = courses;
+
+        // Debug output TODO: Remove this
+        console.log(courses);
     }
 }
