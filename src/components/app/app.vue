@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <login v-if="showLogin" v-on:login:courses="onLogin"></login>
+
     </div>
 </template>
 
