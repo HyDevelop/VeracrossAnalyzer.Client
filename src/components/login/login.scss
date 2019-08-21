@@ -45,6 +45,9 @@
     border-radius: 10px;
     box-shadow: 0 0 4px black;
 
+    // Vertical center
+    transform: translateY(50%);
+
     // Input bars
     .el-input
     {
