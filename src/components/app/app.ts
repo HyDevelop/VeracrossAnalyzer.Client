@@ -35,6 +35,7 @@ export default class App extends Vue
      */
     public onNavigate(tab: string)
     {
-
+        // Debug output TODO: Remove this
+        console.log(tab);
     }
 }
