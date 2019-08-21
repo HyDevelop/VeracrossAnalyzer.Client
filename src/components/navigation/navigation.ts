@@ -11,6 +11,8 @@ export default class Navigation extends Vue
 {
     public activeIndex: string = "0";
 
+    @Prop() courses: any;
+
     /**
      * This function is called when the selection changes.
      */
