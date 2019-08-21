@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <login v-if="showLogin" v-on:login:courses="onLogin"></login>
-        <navigation :courses="courses"></navigation>
+        <navigation :courses="courses" v-on:navigation:select="onNavigate"></navigation>
     </div>
 </template>
 

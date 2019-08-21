@@ -27,4 +27,14 @@ export default class App extends Vue
         // Debug output TODO: Remove this
         console.log(courses);
     }
+
+    /**
+     * This is called when a navigation tab is clicked
+     *
+     * @param tab Tab name
+     */
+    public onNavigate(tab: string)
+    {
+
+    }
 }
