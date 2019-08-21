@@ -7,7 +7,7 @@
             <el-submenu index="courses">
                 <template slot="title">Courses</template>
                 <el-menu-item v-for="course in courses"
-                              :index="`courses-${course}`"
+                              :index="`course-${course.name}`"
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
