@@ -2,6 +2,37 @@
 // Parent div for login
 #login
 {
+
+}
+
+// Parent overlay
+.login-overlay
+{
+    // Credit to w3schools.com:
+    // https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp
+
+    // Fill entire screen
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    // Stay in place
+    position: fixed;
+
+    // Sit on top layer
+    z-index: 1;
+
+    // Overlay color
+    background-color: rgba(0,0,0, 0.65);
+
+    // Disable horizontal scroll
+    overflow-x: hidden;
+}
+
+// The user interacting panel
+.login-panel
+{
     // Make it smaller
     width: 300px;
 
