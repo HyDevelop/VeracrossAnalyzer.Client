@@ -32,6 +32,12 @@ export default class Login extends Vue
                 this.$emit('login:courses', JSON.parse(text));
             })
         })
-        .catch(alert);
+        .catch(err =>
+        {
+            alert(err);
+
+            // Allow the user to retry
+            this.loading = false;
+        });
     }
 }
