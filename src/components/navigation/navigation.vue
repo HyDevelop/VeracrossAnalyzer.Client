@@ -1,6 +1,6 @@
 <template>
     <div id="navigation">
-        <el-menu :default-active="activeIndex" mode="horizontal" @select="onSelect">
+        <el-menu class="centered" :default-active="activeIndex" mode="horizontal" @select="onSelect">
 
             <el-menu-item index="overall">Overall</el-menu-item>
 
