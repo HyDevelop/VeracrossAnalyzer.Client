@@ -1,6 +1,6 @@
 <template>
     <div id="graph-overall">
-
+        <ve-line :data="chartData"></ve-line>
     </div>
 </template>
 
