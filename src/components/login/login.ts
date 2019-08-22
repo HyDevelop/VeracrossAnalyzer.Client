@@ -19,9 +19,6 @@ export default class Login extends Vue
      */
     public onLoginClick()
     {
-        // Call custom event
-        this.$emit('login:click', this.username, this.password);
-
         // Make login button loading
         this.loading = true;
 
@@ -35,6 +32,12 @@ export default class Login extends Vue
                 this.$emit('login:courses', JSON.parse(text));
             })
         })
-        .catch(alert);
+        .catch(err =>
+        {
+            alert(err);
+
+            // Allow the user to retry
+            this.loading = false;
+        });
     }
 }
