@@ -12,7 +12,7 @@ export default class App extends Vue
 
     public courses = null;
 
-    public selectedTab: string = "";
+    public selectedTab: string = "overall";
 
     /**
      * This is called when the user logs in.
