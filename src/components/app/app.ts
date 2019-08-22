@@ -1,9 +1,10 @@
 import {Component, Vue} from 'vue-property-decorator';
 import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
+import Overall from '@/pages/overall/overall';
 
 @Component({
-    components: {Login, Navigation},
+    components: {Login, Navigation, Overall},
 })
 export default class App extends Vue
 {
