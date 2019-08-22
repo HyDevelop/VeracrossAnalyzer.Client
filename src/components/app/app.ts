@@ -40,5 +40,8 @@ export default class App extends Vue
     {
         // Debug output TODO: Remove this
         console.log(tab);
+
+        // Update selected tab
+        this.selectedTab = tab;
     }
 }
