@@ -19,9 +19,6 @@ export default class Login extends Vue
      */
     public onLoginClick()
     {
-        // Call custom event
-        this.$emit('login:click', this.username, this.password);
-
         // Make login button loading
         this.loading = true;
 
