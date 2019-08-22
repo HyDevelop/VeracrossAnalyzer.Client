@@ -1,6 +1,6 @@
 <template>
     <div id="graph-overall">
-        <ve-line :data="chartData"></ve-line>
+        <ve-line :data="chartData" :extend="{series: {smooth: false}}"></ve-line>
     </div>
 </template>
 

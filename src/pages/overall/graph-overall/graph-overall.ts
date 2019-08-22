@@ -4,7 +4,8 @@ import {Component, Vue} from 'vue-property-decorator';
 })
 export default class GraphOverall extends Vue
 {
-    public chartData = {
+    public chartData =
+    {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
         rows: [
             { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
