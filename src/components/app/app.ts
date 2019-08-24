@@ -49,7 +49,7 @@ export default class App extends Vue
      *
      * @param courses Courses Json
      */
-    public onLogin(courses: any)
+    public onLogin(courses: Course[])
     {
         // Hide login bar
         this.showLogin = false;
