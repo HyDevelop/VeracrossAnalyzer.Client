@@ -4,7 +4,7 @@
         <navigation :courses="courses" v-on:navigation:select="onNavigate"></navigation>
 
         <div id="app-content">
-            <overall v-if="selectedTab === 'overall'"></overall>
+            <overall v-if="selectedTab === 'overall' && assignmentsReady"></overall>
         </div>
     </div>
 </template>
