@@ -1,18 +1,4 @@
-/**
- * Objects of this interface represent assignment grades.
- */
-interface Grade
-{
-    type: string,
-    description: string,
-    date: string,
-    complete: string,
-    include: boolean,
-    display: boolean,
-
-    scoreMax: number,
-    score: number
-}
+import {Grade} from '@/components/app/app';
 
 export default class JsonUtils
 {

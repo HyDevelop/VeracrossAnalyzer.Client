@@ -3,6 +3,22 @@ import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
 import Overall from '@/pages/overall/overall';
 
+/**
+ * Objects of this interface represent assignment grades.
+ */
+export interface Grade
+{
+    type: string,
+    description: string,
+    date: string,
+    complete: string,
+    include: boolean,
+    display: boolean,
+
+    scoreMax: number,
+    score: number
+}
+
 @Component({
     components: {Login, Navigation, Overall},
 })
