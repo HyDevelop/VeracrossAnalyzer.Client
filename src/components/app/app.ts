@@ -3,6 +3,7 @@ import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
 import Overall from '@/pages/overall/overall';
 import Constants from '@/constants';
+import JsonUtils from '@/utils/json-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -59,6 +60,25 @@ export default class App extends Vue
 
         // Debug output TODO: Remove this
         console.log(courses);
+
+        // Get assignments for all the courses
+        this.courses.forEach(course =>
+        {
+            // Send request to get assignments
+            fetch(`${Constants.API_URL}/veracross/assignments?id=${course.assignmentsId}`).then(res =>
+            {
+                // Get response body text
+                res.text().then(text =>
+                {
+                    // Parse json and filter it
+                    course.assignments = JsonUtils.filterAssignments(JSON.parse(text));
+                })
+            })
+            .catch(err =>
+            {
+                alert(err);
+            });
+        });
     }
 
     /**
