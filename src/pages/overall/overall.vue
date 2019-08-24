@@ -1,7 +1,7 @@
 <template>
     <div id="overall">
         <p>这是 Overall</p>
-        <graph-overall></graph-overall>
+        <graph-overall :courses="courses"></graph-overall>
     </div>
 </template>
 

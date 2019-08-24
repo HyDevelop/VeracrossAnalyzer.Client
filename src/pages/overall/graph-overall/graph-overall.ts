@@ -1,9 +1,12 @@
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Course} from '@/components/app/app';
 
 @Component({
 })
 export default class GraphOverall extends Vue
 {
+    @Prop({required: true}) courses: any;
+
     public chartData =
     {
         columns: ['日期', '访问用户', '下单用户', '下单率'],
