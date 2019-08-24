@@ -4,6 +4,7 @@ import Navigation from '@/components/navigation/navigation';
 import Overall from '@/pages/overall/overall';
 import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
+import pWaitFor from 'p-wait-for';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -80,6 +81,13 @@ export default class App extends Vue
             {
                 alert(err);
             });
+        });
+
+        // Wait for assignments to be ready.
+        pWaitFor(() => this.isAssignmentsReady()).then(() =>
+        {
+            // When the assignments are ready
+            this.assignmentsReady = true;
         });
     }
 
