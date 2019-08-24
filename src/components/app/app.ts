@@ -84,6 +84,21 @@ export default class App extends Vue
     }
 
     /**
+     * Are assignments ready or not
+     *
+     * @returns boolean Ready or not
+     */
+    private isAssignmentsReady(): boolean
+    {
+        for (const course of this.courses)
+        {
+            if (course.assignments == null) return false;
+        }
+
+        return true;
+    }
+
+    /**
      * This is called when a navigation tab is clicked
      *
      * @param tab Tab name
