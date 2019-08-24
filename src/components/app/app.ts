@@ -2,6 +2,7 @@ import {Component, Vue} from 'vue-property-decorator';
 import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
 import Overall from '@/pages/overall/overall';
+import Constants from '@/constants';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -17,6 +18,19 @@ export interface Grade
 
     scoreMax: number,
     score: number
+}
+
+/**
+ * A course
+ */
+export interface Course
+{
+    assignmentsId: number,
+    id: number,
+    name: string,
+    teacherName: string,
+
+    assignments: Grade[]
 }
 
 @Component({
