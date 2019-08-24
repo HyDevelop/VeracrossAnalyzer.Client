@@ -40,7 +40,7 @@ export default class App extends Vue
 {
     public showLogin: boolean = true;
 
-    public courses = null;
+    public courses: Course[] = [];
 
     public selectedTab: string = "overall";
 
