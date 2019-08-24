@@ -45,6 +45,8 @@ export default class App extends Vue
 
     public selectedTab: string = "overall";
 
+    public assignmentsReady: boolean = false;
+
     /**
      * This is called when the user logs in.
      *
