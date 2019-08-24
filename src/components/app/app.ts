@@ -40,12 +40,16 @@ export interface Course
 })
 export default class App extends Vue
 {
+    // Is the login panel shown
     public showLogin: boolean = true;
 
+    // List of course that the student takes
     public courses: Course[] = [];
 
+    // Currently selected tab
     public selectedTab: string = "overall";
 
+    // Are the course assignments loaded from the server.
     public assignmentsReady: boolean = false;
 
     /**
