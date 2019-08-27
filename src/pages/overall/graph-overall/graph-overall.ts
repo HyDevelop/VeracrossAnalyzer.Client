@@ -5,7 +5,7 @@ import {Course} from '@/components/app/app';
 })
 export default class GraphOverall extends Vue
 {
-    @Prop({required: true}) courses: any;
+    @Prop({required: true}) chart: any;
 
     public chartData =
     {
