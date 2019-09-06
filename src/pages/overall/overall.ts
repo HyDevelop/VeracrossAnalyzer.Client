@@ -37,32 +37,51 @@ export default class Overall extends Vue
             dates.push(new Date(date));
         }
 
+        // Initialize course specific variables
+        let courseScores: {[index: string]: any} = {};
+        let courseMaxScores: {[index: string]: any} = {};
+        let courseIndexes: {[index: string]: any} = {};
+        this.courses.forEach((course: Course) =>
+        {
+            courseScores[course.name] = 0;
+            courseMaxScores[course.name] = 0;
+            courseIndexes[course.name] = course.assignments.length - 1;
+        });
+
         // Compute the rows data
         let rows: {[index: string]: any}[] = [];
-        let courseAverages = {};
         dates.forEach(date =>
         {
             // Define row object
-            let row: {[index: string]:any} = {'date': date};
+            let row: {[index: string]:any} = {'date': date.toLocaleDateString('en-US')};
 
             // Loop through courses
             this.courses.forEach((course: Course) =>
             {
-                course.assignments.forEach(assignment =>
+                // Reversed loop through the assignments
+                for (let r = courseIndexes[course.name]; r >= 0; r--)
                 {
+                    let assignment = course.assignments[r];
+                    let assignmentDate = new Date(assignment.date);
+
                     // Date is being looked at
-                    if (new Date(assignment.date) == date)
+                    if (assignmentDate.getTime() == date.getTime())
                     {
-                        row[course.name] = assignment.score;
+                        // Record scores
+                        courseScores[course.name] += assignment.score;
+                        courseMaxScores[course.name] += assignment.scoreMax;
                     }
 
-                    // Not now!
-                    if (new Date(assignment.date) > date)
+                    // Not now
+                    else if (assignmentDate > date)
                     {
-                        // Exit the course loop.
-                        return;
+                        courseIndexes[course.name] = r;
+                        break;
                     }
-                });
+                }
+
+                // Add average to the row
+                row[course.name] = courseScores[course.name] / courseMaxScores[course.name] * 100;
             });
 
             // Add it to the array
