@@ -18,4 +18,9 @@ export class GPAUtils
         [69.5, 'D' , 1.00],
         [0   , 'F' , 0.00]
     ];
+
+    // Keywords
+    public static MIN = 0;
+    public static LETTER = 1;
+    public static GPA = 2;
 }
