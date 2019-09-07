@@ -33,6 +33,9 @@ export interface Course
     name: string,
     teacherName: string,
 
+    letterGrade?: string,
+    numericGrade?: number,
+
     level: string,
     scaleUp: number,
 
