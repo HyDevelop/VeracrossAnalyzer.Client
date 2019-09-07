@@ -88,3 +88,12 @@
         background-color: white !important;
     }
 }
+
+// Fix error message
+.el-form-item__error.custom
+{
+    padding-top: 0;
+    position: relative;
+    top: auto;
+    float: left;
+}
