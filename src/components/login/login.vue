@@ -17,6 +17,8 @@
                           :class="{'input-error': error !== ''}">
                 </el-input>
 
+                <div class="el-form-item__error custom">{{error}}</div>
+
                 <el-button plain type="primary" @click="onLoginClick" :loading="loading">Login</el-button>
             </div>
         </div>
