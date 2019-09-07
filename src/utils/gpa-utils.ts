@@ -36,10 +36,17 @@ export class GPAUtils
         // Clone array
         let courses: Course[] = [];
 
+        // Accurate or not
+        let accurate: boolean = true;
+
         // Remove all courses that does not have a grade
         coursesOriginal.forEach(course =>
         {
-            if (course.numericGrade != null && course.level != 'none')
+            if (course.numericGrade == null)
+            {
+                accurate = false;
+            }
+            else if (course.level != 'none')
             {
                 courses.push(course);
             }
@@ -68,6 +75,6 @@ export class GPAUtils
         });
 
         // Get average GPA
-        return {gpa: totalGPA / courses.length, accurate: courses.length == coursesOriginal.length};
+        return {gpa: totalGPA / courses.length, accurate: accurate};
     }
 }
