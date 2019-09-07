@@ -39,7 +39,7 @@ export class GPAUtils
         // Remove all courses that does not have a grade
         coursesOriginal.forEach(course =>
         {
-            if (course.numericGrade != null)
+            if (course.numericGrade != null && course.level != 'none')
             {
                 courses.push(course);
             }
@@ -55,7 +55,7 @@ export class GPAUtils
         let totalGPA = 0;
         courses.forEach(course =>
         {
-            // Find the GPA for this course. TODO: Remove course that does not have level
+            // Find the GPA for this course.
             this.SCALE.forEach(scale =>
             {
                 // Letter grades are the same
