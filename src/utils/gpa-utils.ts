@@ -31,7 +31,7 @@ export class GPAUtils
      *
      * @param coursesOriginal List of courses
      */
-    public static gpa(coursesOriginal: Course[]): {gpa: number, accurate: boolean}
+    public static getGPA(coursesOriginal: Course[]): {gpa: number, accurate: boolean}
     {
         // Clone array
         let courses: Course[] = [];
@@ -83,5 +83,30 @@ export class GPAUtils
 
         // Get average GPA
         return {gpa: totalGPA / courses.length, accurate: accurate};
+    }
+
+    /**
+     * Calculate GPA for a course
+     *
+     * @param course Course
+     */
+    public static getGP(course: Course)
+    {
+        // Find the GPA for this course.
+        return this.SCALE.forEach(scale =>
+        {
+            // Letter grades are the same
+            if (scale[this.LETTER] == course.letterGrade)
+            {
+                // Get grade and add it
+                let grade = <number> scale[this.GPA];
+
+                // Add scaleUp if not failed.
+                if (grade != 0) grade += course.scaleUp;
+
+                // That's it
+                return grade;
+            }
+        })
     }
 }
