@@ -33,6 +33,9 @@ export interface Course
     name: string,
     teacherName: string,
 
+    level: string,
+    scaleUp: number,
+
     assignments: Grade[]
 }
 
