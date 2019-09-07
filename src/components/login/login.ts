@@ -1,5 +1,6 @@
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
+import {HttpUtils} from '@/utils/http-utils';
 
 /**
  * This component handles user login, and obtains data from the server.
@@ -14,6 +15,9 @@ export default class Login extends Vue
 
     public loading: boolean = false;
     public error: String = '';
+
+    @Prop()
+    public http?: HttpUtils;
 
     /**
      * This is called when the instance is created.
@@ -36,35 +40,27 @@ export default class Login extends Vue
         // Make login button loading
         this.loading = true;
 
-        // Fetch request TODO: Add username and password when the https server is ready.
-        fetch(`${Constants.API_URL}/login`,
-            {method: 'POST', body: JSON.stringify({username: this.username, password: this.password})})
-        .then(res =>
+        // Fetch request
+        (<HttpUtils> this.http).post('/login', {username: this.username, password: this.password})
+        .then(response =>
         {
-            // Get response body text
-            res.text().then(text =>
+            // Check success
+            if (response.success)
             {
-                // Parse response
-                let response = JSON.parse(text);
+                // Save token to cookies
+                this.$cookies.set('va.token', response.data, '7d');
 
-                // Check success
-                if (response.success)
-                {
-                    // Save token to cookies
-                    this.$cookies.set('va.token', response.data, '7d');
+                // Call custom event with token
+                this.$emit('login:token', response.data);
+            }
+            else
+            {
+                // Show error message
+                this.error = response.data;
 
-                    // Call custom event with token
-                    this.$emit('login:token', response.data);
-                }
-                else
-                {
-                    // Show error message
-                    this.error = response.data;
-
-                    // Allow the user to retry
-                    this.loading = false;
-                }
-            })
+                // Allow the user to retry
+                this.loading = false;
+            }
         })
         .catch(err =>
         {
