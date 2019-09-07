@@ -134,8 +134,21 @@ export default class App extends Vue
                 // Get response body text
                 res.text().then(text =>
                 {
-                    // Parse json and filter it
-                    course.assignments = JsonUtils.filterAssignments(JSON.parse(text));
+                    // Parse response
+                    let response = JSON.parse(text);
+
+                    // Check success
+                    if (response.success)
+                    {
+                        // Load assignments
+                        // Parse json and filter it
+                        course.assignments = JsonUtils.filterAssignments(response.data);
+                    }
+                    else
+                    {
+                        // Show error message TODO: Show it properly
+                        alert(response.data);
+                    }
                 })
             })
             .catch(err =>
