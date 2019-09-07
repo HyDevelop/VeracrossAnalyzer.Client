@@ -9,7 +9,10 @@ export default class Constants
      */
     public static API_URL: string = 'https://va.hydev.org/api';
 
-    public static SPLASH: string = '\\  /   /\\ ._  _.|  _  _ ._\n' +
-                                   ' \\/>< /--\\| |(_||\\//_(/_| \n' +
-                                   '    v0.1.1.0     /        '
+    public static SPLASH: string =
+        '.    ,        ,---.          |                        \n' +
+        '|    |.  ,    |---|,---.,---.|    ,   .,---,,---.,---.\n' +
+        ' \\  /  ><     |   ||   |,---||    |   | .-\' |---\'|    \n' +
+        '  `\'  \'  `    `   \'`   \'`---^`---\'`---|\'---\'`---\'`    \n' +
+        '      v1.1.0                      `---\'               '
 }
