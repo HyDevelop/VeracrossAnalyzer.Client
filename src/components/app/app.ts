@@ -53,6 +53,15 @@ export default class App extends Vue
     public assignmentsReady: boolean = false;
 
     /**
+     * This is called when the instance is created.
+     */
+    public created()
+    {
+        // Show splash
+        console.log(Constants.SPLASH);
+    }
+
+    /**
      * This is called when the user logs in.
      *
      * @param token Authorization token
