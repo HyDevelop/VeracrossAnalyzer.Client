@@ -78,23 +78,50 @@ export default class App extends Vue
         this.token = token;
 
         // Load data
-        this.loadAfterLogin();
+        this.loadCoursesAfterLogin();
     }
 
     /**
-     * Load data after login.
+     * Load courses data after login.
      */
-    public loadAfterLogin()
+    public loadCoursesAfterLogin()
     {
+        // Fetch request
+        fetch(`${Constants.API_URL}/courses`,
+            {method: 'POST', body: JSON.stringify({token: this.token})})
+        .then(res =>
+        {
+            // Get response body text
+            res.text().then(text =>
+            {
+                // Parse response
+                let response = JSON.parse(text);
 
+                // Check success
+                if (response.success)
+                {
+                    // Save courses
+                    this.courses = response.data;
+
+                    // Load assignments
+                    this.loadAssignments();
+                }
+                else
+                {
+                    // Show error message TODO: Show it properly
+                    alert(response.data);
+                }
+            })
+        })
+        .catch(alert)
     }
 
     /**
-     * This is called when the user logs in.
+     * Load the assignments of the courses
      *
      * @param courses Courses Json
      */
-    public saveCourses(courses: Course[])
+    public loadAssignments()
     {
         // Assign courses
         this.courses = courses;
