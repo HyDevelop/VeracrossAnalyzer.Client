@@ -31,7 +31,7 @@ export class GPAUtils
      *
      * @param coursesOriginal List of courses
      */
-    public static gpa(coursesOriginal: Course[]): number
+    public static gpa(coursesOriginal: Course[]): {gpa: number, accurate: boolean}
     {
         // Clone array
         let courses: Course[] = [];
@@ -48,7 +48,7 @@ export class GPAUtils
         // If no course have grade, return -1
         if (courses.length == 0)
         {
-            return -1;
+            return {gpa: -1, accurate: false};
         }
 
         // Count total GPA
@@ -68,6 +68,6 @@ export class GPAUtils
         });
 
         // Get average GPA
-        return totalGPA / courses.length;
+        return {gpa: totalGPA / courses.length, accurate: courses.length == coursesOriginal.length};
     }
 }
