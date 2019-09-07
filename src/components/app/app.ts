@@ -55,13 +55,24 @@ export default class App extends Vue
     /**
      * This is called when the user logs in.
      *
-     * @param courses Courses Json
+     * @param token Authorization token
      */
-    public onLogin(courses: Course[])
+    public onLogin(token: string)
     {
         // Hide login bar
         this.showLogin = false;
 
+        // Save token to cookies
+        this.$cookies.set('va.token', token, '7d');
+    }
+
+    /**
+     * This is called when the user logs in.
+     *
+     * @param courses Courses Json
+     */
+    public saveCourses(courses: Course[])
+    {
         // Assign courses
         this.courses = courses;
 
