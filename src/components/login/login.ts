@@ -24,7 +24,9 @@ export default class Login extends Vue
         this.loading = true;
 
         // Fetch request TODO: Add username and password when the https server is ready.
-        fetch(`${Constants.API_URL}/veracross/courses`).then(res =>
+        fetch(`${Constants.API_URL}/api/login`,
+            {body: JSON.stringify({username: this.username, password: this.password})})
+        .then(res =>
         {
             // Get response body text
             res.text().then(text =>
