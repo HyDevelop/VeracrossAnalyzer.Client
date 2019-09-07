@@ -52,6 +52,9 @@ export default class App extends Vue
     // Are the course assignments loaded from the server.
     public assignmentsReady: boolean = false;
 
+    // Token
+    public token: string = '';
+
     /**
      * This is called when the instance is created.
      */
@@ -71,8 +74,8 @@ export default class App extends Vue
         // Hide login bar
         this.showLogin = false;
 
-        // Save token to cookies
-        this.$cookies.set('va.token', token, '7d');
+        // Store token
+        this.token = token;
 
         // Load data
         this.loadAfterLogin();
