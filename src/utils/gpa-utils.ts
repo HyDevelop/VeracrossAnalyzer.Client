@@ -68,7 +68,14 @@ export class GPAUtils
                 // Letter grades are the same
                 if (scale[this.LETTER] == course.letterGrade)
                 {
-                    totalGPA += <number> scale[this.GPA] + course.scaleUp;
+                    // Get grade and add it
+                    let grade = <number> scale[this.GPA];
+                    totalGPA += grade;
+
+                    // Add scaleUp if not failed.
+                    if (grade != 0) totalGPA += course.scaleUp;
+
+                    // That's it
                     return;
                 }
             })
