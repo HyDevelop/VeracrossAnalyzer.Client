@@ -109,7 +109,8 @@ export default class App extends Vue
                 // Show error message TODO: Show it properly
                 alert(response.data);
             }
-        });
+        })
+        .catch(alert);
     }
 
     /**
@@ -123,34 +124,22 @@ export default class App extends Vue
         this.courses.forEach(course =>
         {
             // Send request to get assignments
-            fetch(`${Constants.API_URL}/assignments`,
-                {method: 'POST', body: JSON.stringify({token: this.token, id: course.assignmentsId})})
-            .then(res =>
+            this.http.post('/assignments', {id: course.assignmentsId}).then(response =>
             {
-                // Get response body text
-                res.text().then(text =>
+                // Check success
+                if (response.success)
                 {
-                    // Parse response
-                    let response = JSON.parse(text);
-
-                    // Check success
-                    if (response.success)
-                    {
-                        // Load assignments
-                        // Parse json and filter it
-                        course.assignments = JsonUtils.filterAssignments(response.data);
-                    }
-                    else
-                    {
-                        // Show error message TODO: Show it properly
-                        alert(response.data);
-                    }
-                })
+                    // Load assignments
+                    // Parse json and filter it
+                    course.assignments = JsonUtils.filterAssignments(response.data);
+                }
+                else
+                {
+                    // Show error message TODO: Show it properly
+                    alert(response.data);
+                }
             })
-            .catch(err =>
-            {
-                alert(err);
-            });
+            .catch(alert);
         });
 
         // Wait for assignments to be ready.
