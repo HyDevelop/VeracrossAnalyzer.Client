@@ -123,17 +123,13 @@ export default class App extends Vue
      */
     public loadAssignments()
     {
-        // Assign courses
-        this.courses = courses;
-
-        // Debug output TODO: Remove this
-        console.log(courses);
-
         // Get assignments for all the courses
         this.courses.forEach(course =>
         {
             // Send request to get assignments
-            fetch(`${Constants.API_URL}/veracross/assignments?id=${course.assignmentsId}`).then(res =>
+            fetch(`${Constants.API_URL}/assignments`,
+                {method: 'POST', body: JSON.stringify({token: this.token, id: course.assignmentsId})})
+            .then(res =>
             {
                 // Get response body text
                 res.text().then(text =>
