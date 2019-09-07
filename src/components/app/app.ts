@@ -73,6 +73,9 @@ export default class App extends Vue
 
         // Save token to cookies
         this.$cookies.set('va.token', token, '7d');
+
+        // Load data
+        this.loadAfterLogin();
     }
 
     /**
