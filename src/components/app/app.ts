@@ -5,6 +5,7 @@ import Overall from '@/pages/overall/overall';
 import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
+import {HttpUtils} from '@/utils/http-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -55,6 +56,9 @@ export default class App extends Vue
     // Token
     public token: string = '';
 
+    // Http Client
+    public http: HttpUtils = new HttpUtils('');
+
     /**
      * This is called when the instance is created.
      */
@@ -76,6 +80,9 @@ export default class App extends Vue
 
         // Store token
         this.token = token;
+
+        // Assign token to http client
+        this.http.token = token;
 
         // Load data
         this.loadCoursesAfterLogin();

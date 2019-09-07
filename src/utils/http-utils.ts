@@ -2,7 +2,7 @@ import Constants from '@/constants';
 
 export class HttpUtils
 {
-    private token: string = '';
+    public token: string = '';
 
     constructor (token: string)
     {
