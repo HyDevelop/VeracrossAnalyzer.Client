@@ -59,6 +59,16 @@ export default class App extends Vue
     {
         // Show splash
         console.log(Constants.SPLASH);
+
+        // Check login cookies
+        if (this.$cookies.isKey('va.token'))
+        {
+            // Hide login
+            this.showLogin = false;
+
+            // Load data
+            this.loadAfterLogin();
+        }
     }
 
     /**
