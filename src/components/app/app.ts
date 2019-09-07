@@ -93,34 +93,23 @@ export default class App extends Vue
      */
     public loadCoursesAfterLogin()
     {
-        // Fetch request
-        fetch(`${Constants.API_URL}/courses`,
-            {method: 'POST', body: JSON.stringify({token: this.token})})
-        .then(res =>
+        this.http.post('/courses', {}).then(response =>
         {
-            // Get response body text
-            res.text().then(text =>
+            // Check success
+            if (response.success)
             {
-                // Parse response
-                let response = JSON.parse(text);
+                // Save courses
+                this.courses = response.data;
 
-                // Check success
-                if (response.success)
-                {
-                    // Save courses
-                    this.courses = response.data;
-
-                    // Load assignments
-                    this.loadAssignments();
-                }
-                else
-                {
-                    // Show error message TODO: Show it properly
-                    alert(response.data);
-                }
-            })
-        })
-        .catch(alert)
+                // Load assignments
+                this.loadAssignments();
+            }
+            else
+            {
+                // Show error message TODO: Show it properly
+                alert(response.data);
+            }
+        });
     }
 
     /**
