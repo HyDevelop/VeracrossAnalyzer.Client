@@ -3,3 +3,14 @@
     display: inline-block !important;
     float: none !important;
 }
+
+// Borders
+#navigation
+{
+    box-shadow: 0 0 3px #00000082;
+
+    ul
+    {
+        border-bottom-width: 0;
+    }
+}
