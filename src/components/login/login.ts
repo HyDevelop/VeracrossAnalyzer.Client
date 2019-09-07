@@ -16,6 +16,19 @@ export default class Login extends Vue
     public error: String = '';
 
     /**
+     * This is called when the instance is created.
+     */
+    public created()
+    {
+        // Check login cookies
+        if (this.$cookies.isKey('va.token'))
+        {
+            // Already contains valid token / TODO: Validate
+            this.$emit('login:token', this.$cookies.get('va.token'));
+        }
+    }
+
+    /**
      * On click, sends username and password to the server.
      */
     public onLoginClick()
@@ -37,7 +50,10 @@ export default class Login extends Vue
                 // Check success
                 if (response.success)
                 {
-                    // Call custom event with courses info
+                    // Save token to cookies
+                    this.$cookies.set('va.token', response.data, '7d');
+
+                    // Call custom event with token
                     this.$emit('login:token', response.data);
                 }
                 else
