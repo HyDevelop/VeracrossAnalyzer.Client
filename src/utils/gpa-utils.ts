@@ -62,23 +62,7 @@ export class GPAUtils
         let totalGPA = 0;
         courses.forEach(course =>
         {
-            // Find the GPA for this course.
-            this.SCALE.forEach(scale =>
-            {
-                // Letter grades are the same
-                if (scale[this.LETTER] == course.letterGrade)
-                {
-                    // Get grade and add it
-                    let grade = <number> scale[this.GPA];
-                    totalGPA += grade;
-
-                    // Add scaleUp if not failed.
-                    if (grade != 0) totalGPA += course.scaleUp;
-
-                    // That's it
-                    return;
-                }
-            })
+            totalGPA += this.getGP(course);
         });
 
         // Get average GPA
