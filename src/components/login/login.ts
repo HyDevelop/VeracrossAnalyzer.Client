@@ -13,7 +13,7 @@ export default class Login extends Vue
     public password: any = '';
 
     public loading: boolean = false;
-    public error: String = 'asdf';
+    public error: String = '';
 
     /**
      * On click, sends username and password to the server.
