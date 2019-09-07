@@ -38,12 +38,12 @@ export default class Login extends Vue
                 if (response.success)
                 {
                     // Call custom event with courses info
-                    this.$emit('login:token', response.token);
+                    this.$emit('login:token', response.data);
                 }
                 else
                 {
                     // Show error message
-                    this.error = response.token;
+                    this.error = response.data;
 
                     // Allow the user to retry
                     this.loading = false;
