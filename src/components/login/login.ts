@@ -42,6 +42,9 @@ export default class Login extends Vue
                 }
                 else
                 {
+                    // Show error message
+                    this.error = response.token;
+
                     // Allow the user to retry
                     this.loading = false;
                 }
