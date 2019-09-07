@@ -76,6 +76,14 @@ export default class App extends Vue
     }
 
     /**
+     * Load data after login.
+     */
+    public loadAfterLogin()
+    {
+
+    }
+
+    /**
      * This is called when the user logs in.
      *
      * @param courses Courses Json
