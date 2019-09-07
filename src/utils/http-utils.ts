@@ -4,7 +4,7 @@ export class HttpUtils
 {
     private token: string = '';
 
-    public HttpUtils(token: string)
+    constructor (token: string)
     {
         this.token = token;
     }
