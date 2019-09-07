@@ -24,7 +24,7 @@ export default class Login extends Vue
         this.loading = true;
 
         // Fetch request TODO: Add username and password when the https server is ready.
-        fetch(`${Constants.API_URL}/api/login`,
+        fetch(`${Constants.API_URL}/login`,
             {method: 'POST', body: JSON.stringify({username: this.username, password: this.password})})
         .then(res =>
         {
