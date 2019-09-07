@@ -90,10 +90,10 @@ export class GPAUtils
      *
      * @param course Course
      */
-    public static getGP(course: Course)
+    public static getGP(course: Course): number
     {
         // Find the GPA for this course.
-        return this.SCALE.forEach(scale =>
+        for (let scale of this.SCALE)
         {
             // Letter grades are the same
             if (scale[this.LETTER] == course.letterGrade)
@@ -107,6 +107,8 @@ export class GPAUtils
                 // That's it
                 return grade;
             }
-        })
+        }
+
+        return -1;
     }
 }
