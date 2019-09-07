@@ -18,7 +18,7 @@ export class HttpUtils
         return new Promise<any>((resolve, reject) =>
         {
             // Fetch request
-            fetch(`${Constants.API_URL}${node}`, {method: 'POST', body: body}).then(res =>
+            fetch(`${Constants.API_URL}${node}`, {method: 'POST', body: JSON.stringify(body)}).then(res =>
             {
                 // Get response body text
                 res.text().then(text =>
