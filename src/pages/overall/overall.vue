@@ -4,7 +4,7 @@
             <el-col :span="4">
                 <el-card :body-style="{ padding: '0px' }">
                     <div style="padding: 14px;">
-                        <span>GPA: 4.56</span>
+                        <span>GPA: {{getGPA()}}</span>
                         <div class="bottom clearfix">
                             <time class="time">{{ new Date().toDateString() }}</time>
                             <el-button type="text" class="button">操作按钮</el-button>
