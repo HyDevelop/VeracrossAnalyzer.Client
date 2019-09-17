@@ -65,8 +65,11 @@ export class GPAUtils
             totalGPA += this.getGP(course);
         });
 
-        // Get average GPA
-        return {gpa: totalGPA / courses.length, accurate: accurate};
+        // Get average GPA, round to two decimal places
+        let gpa = Math.round(totalGPA / courses.length * 100) / 100;
+
+        // Return results
+        return {gpa: gpa, accurate: accurate};
     }
 
     /**
