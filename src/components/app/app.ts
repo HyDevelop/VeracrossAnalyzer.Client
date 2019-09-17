@@ -32,6 +32,7 @@ export interface Course
     id: number,
     name: string,
     teacherName: string,
+    status: string,
 
     letterGrade?: string,
     numericGrade?: number,
