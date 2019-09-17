@@ -6,6 +6,7 @@ import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
+import {GPAUtils} from '@/utils/gpa-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -107,6 +108,9 @@ export default class App extends Vue
             {
                 // Save courses
                 this.courses = response.data;
+
+                // TODO: Delete this
+                console.log(GPAUtils.getGPA(this.courses));
 
                 // Load assignments
                 this.loadAssignments();
