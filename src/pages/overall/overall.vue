@@ -2,18 +2,21 @@
     <div id="overall">
         <el-row>
             <el-col :span="4">
-                <el-card :body-style="{ padding: '0px' }">
+                <el-card style="margin-left: 20px">
                     <div style="padding: 14px;">
-                        <span>GPA: {{getGPA()}}</span>
-                        <div class="bottom clearfix">
+                        <span class="span-gpa-header">GPA:</span>
+                        <br>
+                        <span class="span-gpa">{{getGPA()}}</span>
+                        <div class="bottom clearfix gpa-time">
                             <time class="time">{{ new Date().toDateString() }}</time>
-                            <el-button type="text" class="button">操作按钮</el-button>
+                            <br>
+                            <el-button type="text" class="button">Button</el-button>
                         </div>
                     </div>
                 </el-card>
             </el-col>
             <el-col :span="20">
-                <el-card :body-style="{ padding: '0px' }">
+                <el-card style="margin-right: 20px">
                     <p>Your average score graph all time:</p>
                     <graph-overall :chart="convertCharts"></graph-overall>
                 </el-card>
