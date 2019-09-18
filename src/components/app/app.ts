@@ -5,6 +5,7 @@ import Overall from '@/pages/overall/overall';
 import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
+import {HttpUtils} from '@/utils/http-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -31,6 +32,13 @@ export interface Course
     id: number,
     name: string,
     teacherName: string,
+    status: string,
+
+    letterGrade?: string,
+    numericGrade?: number,
+
+    level: string,
+    scaleUp: number,
 
     assignments: Grade[]
 }
@@ -52,39 +60,93 @@ export default class App extends Vue
     // Are the course assignments loaded from the server.
     public assignmentsReady: boolean = false;
 
+    // Token
+    public token: string = '';
+
+    // Http Client
+    public http: HttpUtils = new HttpUtils('');
+
+    /**
+     * This is called when the instance is created.
+     */
+    public created()
+    {
+        // Show splash
+        console.log(Constants.SPLASH);
+    }
+
     /**
      * This is called when the user logs in.
      *
-     * @param courses Courses Json
+     * @param token Authorization token
      */
-    public onLogin(courses: Course[])
+    public onLogin(token: string)
     {
         // Hide login bar
         this.showLogin = false;
 
-        // Assign courses
-        this.courses = courses;
+        // Store token
+        this.token = token;
 
-        // Debug output TODO: Remove this
-        console.log(courses);
+        // Assign token to http client
+        this.http.token = token;
 
+        // Load data
+        this.loadCoursesAfterLogin();
+    }
+
+    /**
+     * Load courses data after login.
+     */
+    public loadCoursesAfterLogin()
+    {
+        this.http.post('/courses', {}).then(response =>
+        {
+            // Check success
+            if (response.success)
+            {
+                // Save courses
+                this.courses = response.data;
+
+                // Load assignments
+                this.loadAssignments();
+            }
+            else
+            {
+                // Show error message TODO: Show it properly
+                alert(response.data);
+            }
+        })
+        .catch(alert);
+    }
+
+    /**
+     * Load the assignments of the courses
+     *
+     * @param courses Courses Json
+     */
+    public loadAssignments()
+    {
         // Get assignments for all the courses
         this.courses.forEach(course =>
         {
             // Send request to get assignments
-            fetch(`${Constants.API_URL}/veracross/assignments?id=${course.assignmentsId}`).then(res =>
+            this.http.post('/assignments', {id: course.assignmentsId}).then(response =>
             {
-                // Get response body text
-                res.text().then(text =>
+                // Check success
+                if (response.success)
                 {
+                    // Load assignments
                     // Parse json and filter it
-                    course.assignments = JsonUtils.filterAssignments(JSON.parse(text));
-                })
+                    course.assignments = JsonUtils.filterAssignments(response.data);
+                }
+                else
+                {
+                    // Show error message TODO: Show it properly
+                    alert(response.data);
+                }
             })
-            .catch(err =>
-            {
-                alert(err);
-            });
+            .catch(alert);
         });
 
         // Wait for assignments to be ready.
