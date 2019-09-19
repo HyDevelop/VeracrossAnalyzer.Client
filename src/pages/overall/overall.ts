@@ -18,7 +18,7 @@ export default class Overall extends Vue
 
         // Compute the column names
         let columns = ['date'];
-        this.courses.forEach((course: Course) =>
+        this.courses.forEach(course =>
         {
             // Ignore non-important courses
             if (course.status != 'active') return;
@@ -28,7 +28,7 @@ export default class Overall extends Vue
 
         // Find the min date
         let minDate: Date = new Date();
-        this.courses.forEach((course: Course) =>
+        this.courses.forEach(course =>
         {
             // Ignore non-important courses
             if (course.status != 'active') return;
@@ -50,7 +50,7 @@ export default class Overall extends Vue
         let courseScores: {[index: string]: any} = {};
         let courseMaxScores: {[index: string]: any} = {};
         let courseIndexes: {[index: string]: any} = {};
-        this.courses.forEach((course: Course) =>
+        this.courses.forEach(course =>
         {
             // Ignore non-important courses
             if (course.status != 'active') return;
@@ -68,7 +68,7 @@ export default class Overall extends Vue
             let row: {[index: string]:any} = {'date': date.toLocaleDateString('en-US')};
 
             // Loop through courses
-            this.courses.forEach((course: Course) =>
+            this.courses.forEach(course =>
             {
                 // Ignore non-important courses
                 if (course.status != 'active') return;
