@@ -8,7 +8,8 @@ import {GPAUtils} from '@/utils/gpa-utils';
 })
 export default class Overall extends Vue
 {
-    @Prop({required: true}) courses: any;
+    // @ts-ignore
+    @Prop({required: true}) courses: Course[];
 
     get convertCharts()
     {
