@@ -32,6 +32,7 @@ export default class Overall extends Vue
             // Ignore non-important courses
             if (course.status != 'active') return;
 
+            if (course.assignments.length == 0) return;
             let date = new Date(course.assignments[course.assignments.length - 1].date);
             if (date < minDate) minDate = date;
         });
