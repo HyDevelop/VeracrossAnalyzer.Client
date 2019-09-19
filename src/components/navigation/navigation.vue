@@ -11,6 +11,9 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
+            <el-menu-item style="float: right !important;">
+                <el-button id="sign-out-button" type="text">Sign Out</el-button>
+            </el-menu-item>
         </el-menu>
         <div class="line"></div>
     </div>
