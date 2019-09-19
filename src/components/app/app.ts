@@ -55,7 +55,7 @@ export default class App extends Vue
     public courses: Course[] = [];
 
     // Currently selected tab
-    public selectedTab: string = "overall";
+    public selectedTab: string = 'overall';
 
     // Are the course assignments loaded from the server.
     public assignmentsReady: boolean = false;
