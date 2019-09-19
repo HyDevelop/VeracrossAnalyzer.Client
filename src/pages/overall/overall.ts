@@ -16,6 +16,9 @@ export default class Overall extends Vue
         // Null case
         if (this.courses == null) return [];
 
+        // Filter it
+        let courses: Course[] = this.filterCourses();
+
         // Compute the column names
         let columns = ['date'];
         this.courses.forEach(course =>
