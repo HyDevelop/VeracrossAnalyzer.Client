@@ -68,9 +68,12 @@ export default class Overall extends Vue
                 for (let r = courseIndexes[course.name]; r >= 0; r--)
                 {
                     let assignment = course.assignments[r];
-                    let assignmentDate = new Date(assignment.date);
+
+                    // If assignment should be displayed
+                    if (assignment.complete != 'Complete') continue;
 
                     // Date is being looked at
+                    let assignmentDate = new Date(assignment.date);
                     if (assignmentDate.getTime() == date.getTime())
                     {
                         // Record scores
