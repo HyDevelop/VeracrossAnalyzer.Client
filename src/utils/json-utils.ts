@@ -19,7 +19,7 @@ export default class JsonUtils
                 type: assignment.assignment_type,
                 description: assignment.assignment_description,
                 date: assignment._date,
-                complete: assignment.complete_status,
+                complete: assignment.completion_status,
                 include: assignment.include_in_calculated_grade == 1,
                 display: assignment.display_grade == 1,
 
