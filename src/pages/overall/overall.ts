@@ -132,5 +132,7 @@ export default class Overall extends Vue
      */
     public signOut()
     {
+        // Call custom event
+        this.$emit('sign-out');
     }
 }
