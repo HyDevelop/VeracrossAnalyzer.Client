@@ -110,6 +110,9 @@ export default class Overall extends Vue
         }
     }
 
+    /**
+     * This function is called to get gpa as a string.
+     */
     public getGPA()
     {
         let gpa = GPAUtils.getGPA(this.courses);
@@ -122,5 +125,12 @@ export default class Overall extends Vue
         }*/
 
         return result;
+    }
+
+    /**
+     * This function is called when the sign out button is clicked.
+     */
+    public signOut()
+    {
     }
 }
