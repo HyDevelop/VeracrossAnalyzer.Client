@@ -5,6 +5,11 @@
     margin: 10px;
     height: 494px;
     padding: 0;
+
+    // Vertical center
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .span-gpa-header
