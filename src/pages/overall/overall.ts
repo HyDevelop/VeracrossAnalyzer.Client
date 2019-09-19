@@ -125,6 +125,9 @@ export default class Overall extends Vue
             // Skip future or past courses
             if (course.status != 'active') return;
 
+            // Skip courses without levels
+            if (course.level == 'None') return;
+
             // Add it to the list
             result.push(course);
         });
