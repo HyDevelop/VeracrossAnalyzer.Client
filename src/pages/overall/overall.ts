@@ -19,6 +19,9 @@ export default class Overall extends Vue
         let columns = ['date'];
         this.courses.forEach((course: Course) =>
         {
+            // Ignore non-important courses
+            if (course.status != 'active') return;
+
             columns.push(course.name);
         });
 
@@ -26,6 +29,9 @@ export default class Overall extends Vue
         let minDate: Date = new Date();
         this.courses.forEach((course: Course) =>
         {
+            // Ignore non-important courses
+            if (course.status != 'active') return;
+
             let date = new Date(course.assignments[course.assignments.length - 1].date);
             if (date < minDate) minDate = date;
         });
@@ -44,6 +50,9 @@ export default class Overall extends Vue
         let courseIndexes: {[index: string]: any} = {};
         this.courses.forEach((course: Course) =>
         {
+            // Ignore non-important courses
+            if (course.status != 'active') return;
+
             courseScores[course.name] = 0;
             courseMaxScores[course.name] = 0;
             courseIndexes[course.name] = course.assignments.length - 1;
@@ -59,6 +68,9 @@ export default class Overall extends Vue
             // Loop through courses
             this.courses.forEach((course: Course) =>
             {
+                // Ignore non-important courses
+                if (course.status != 'active') return;
+
                 // Reversed loop through the assignments
                 for (let r = courseIndexes[course.name]; r >= 0; r--)
                 {
@@ -102,11 +114,11 @@ export default class Overall extends Vue
         let gpa = GPAUtils.getGPA(this.courses);
         let result = '' + gpa.gpa;
 
-        // Not accurate
+        /* Not accurate
         if (!gpa.accurate)
         {
             result = `(${result})`;
-        }
+        }*/
 
         return result;
     }
