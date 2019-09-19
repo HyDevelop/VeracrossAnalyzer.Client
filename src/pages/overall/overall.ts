@@ -112,6 +112,27 @@ export default class Overall extends Vue
     }
 
     /**
+     * Return a list of courses that are graphed
+     */
+    get filterCourse(): Course[]
+    {
+        // Define result
+        let result: Course[] = [];
+
+        // Filter through courses
+        this.courses.forEach(course =>
+        {
+            // Skip future or past courses
+            if (course.status != 'active') return;
+
+            // Add it to the list
+            result.push(course);
+        });
+
+        return result;
+    }
+
+    /**
      * This function is called to get gpa as a string.
      */
     public getGPA()
