@@ -114,7 +114,7 @@ export default class Overall extends Vue
     /**
      * Return a list of courses that are graphed
      */
-    get filterCourse(): Course[]
+    private filterCourses(): Course[]
     {
         // Define result
         let result: Course[] = [];
