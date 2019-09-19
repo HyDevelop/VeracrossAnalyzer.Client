@@ -21,21 +21,15 @@ export default class Overall extends Vue
 
         // Compute the column names
         let columns = ['date'];
-        this.courses.forEach(course =>
+        courses.forEach(course =>
         {
-            // Ignore non-important courses
-            if (course.status != 'active') return;
-
             columns.push(course.name);
         });
 
         // Find the min date
         let minDate: Date = new Date();
-        this.courses.forEach(course =>
+        courses.forEach(course =>
         {
-            // Ignore non-important courses
-            if (course.status != 'active') return;
-
             if (course.assignments.length == 0) return;
             let date = new Date(course.assignments[course.assignments.length - 1].date);
             if (date < minDate) minDate = date;
@@ -53,11 +47,8 @@ export default class Overall extends Vue
         let courseScores: {[index: string]: any} = {};
         let courseMaxScores: {[index: string]: any} = {};
         let courseIndexes: {[index: string]: any} = {};
-        this.courses.forEach(course =>
+        courses.forEach(course =>
         {
-            // Ignore non-important courses
-            if (course.status != 'active') return;
-
             courseScores[course.name] = 0;
             courseMaxScores[course.name] = 0;
             courseIndexes[course.name] = course.assignments.length - 1;
@@ -71,11 +62,8 @@ export default class Overall extends Vue
             let row: {[index: string]:any} = {'date': date.toLocaleDateString('en-US')};
 
             // Loop through courses
-            this.courses.forEach(course =>
+            courses.forEach(course =>
             {
-                // Ignore non-important courses
-                if (course.status != 'active') return;
-
                 // Reversed loop through the assignments
                 for (let r = courseIndexes[course.name]; r >= 0; r--)
                 {
