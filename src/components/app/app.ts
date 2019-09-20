@@ -185,4 +185,13 @@ export default class App extends Vue
         // Update selected tab
         this.selectedTab = tab;
     }
+
+    /**
+     * Sign out
+     */
+    public signOut()
+    {
+        // Clear all cookies
+        this.$cookies.keys().forEach(key => this.$cookies.remove(key));
+    }
 }
