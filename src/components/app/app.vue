@@ -1,7 +1,10 @@
 <template>
     <div id="app">
         <login v-if="showLogin" v-on:login:token="onLogin" :http="http"></login>
-        <navigation :courses="courses" v-on:navigation:select="onNavigate"></navigation>
+        <navigation :courses="courses"
+                    v-on:sign-out="signOut()"
+                    v-on:navigation:select="onNavigate">
+        </navigation>
 
         <div id="app-content">
             <overall :courses="courses" v-if="selectedTab === 'overall' && assignmentsReady"></overall>
