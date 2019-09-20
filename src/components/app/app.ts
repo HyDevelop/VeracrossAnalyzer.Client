@@ -193,5 +193,8 @@ export default class App extends Vue
     {
         // Clear all cookies
         this.$cookies.keys().forEach(key => this.$cookies.remove(key));
+
+        // Refresh
+        window.location.reload();
     }
 }
