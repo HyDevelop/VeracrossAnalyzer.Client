@@ -148,13 +148,4 @@ export default class Overall extends Vue
 
         return result;
     }
-
-    /**
-     * This function is called when the sign out button is clicked.
-     */
-    public signOut()
-    {
-        // Call custom event
-        this.$emit('sign-out');
-    }
 }
