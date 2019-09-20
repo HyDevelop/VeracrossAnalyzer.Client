@@ -6,4 +6,12 @@ import {Course} from '@/components/app/app';
 export default class GraphOverall extends Vue
 {
     @Prop({required: true}) chart: any;
+
+    private settings =
+    {
+        series:
+        {
+            smooth: false
+        }
+    }
 }
