@@ -12,6 +12,10 @@ export default class GraphOverall extends Vue
         series:
         {
             smooth: false
+        },
+        yAxis:
+        {
+            min: 70
         }
     }
 }
