@@ -42,7 +42,7 @@ export class GPAUtils
         // Remove all courses that does not have a grade
         coursesOriginal.forEach(course =>
         {
-            if (course.numericGrade == null)
+            if (course.numericGrade == null || course.numericGrade == 0)
             {
                 accurate = false;
             }
