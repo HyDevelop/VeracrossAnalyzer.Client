@@ -1,6 +1,7 @@
 <template>
     <div id="graph-overall">
-        <ve-line :data="chart" :extend="{series: {smooth: false}}"></ve-line>
+        <p>Your average score graph all time:</p>
+        <ve-line :data="chart" :extend="settings"></ve-line>
     </div>
 </template>
 

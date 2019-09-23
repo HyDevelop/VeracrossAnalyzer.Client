@@ -1,30 +1,36 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import GraphOverall from '@/pages/overall/graph-overall/graph-overall';
 import {Course} from '@/components/app/app';
+import {GPAUtils} from '@/utils/gpa-utils';
 
 @Component({
     components: {GraphOverall}
 })
 export default class Overall extends Vue
 {
-    @Prop({required: true}) courses: any;
+    // @ts-ignore
+    @Prop({required: true}) courses: Course[];
 
     get convertCharts()
     {
         // Null case
         if (this.courses == null) return [];
 
+        // Filter it
+        let courses: Course[] = this.filterCourses();
+
         // Compute the column names
         let columns = ['date'];
-        this.courses.forEach((course: Course) =>
+        courses.forEach(course =>
         {
             columns.push(course.name);
         });
 
         // Find the min date
         let minDate: Date = new Date();
-        this.courses.forEach((course: Course) =>
+        courses.forEach(course =>
         {
+            if (course.assignments.length == 0) return;
             let date = new Date(course.assignments[course.assignments.length - 1].date);
             if (date < minDate) minDate = date;
         });
@@ -41,7 +47,7 @@ export default class Overall extends Vue
         let courseScores: {[index: string]: any} = {};
         let courseMaxScores: {[index: string]: any} = {};
         let courseIndexes: {[index: string]: any} = {};
-        this.courses.forEach((course: Course) =>
+        courses.forEach(course =>
         {
             courseScores[course.name] = 0;
             courseMaxScores[course.name] = 0;
@@ -56,15 +62,18 @@ export default class Overall extends Vue
             let row: {[index: string]:any} = {'date': date.toLocaleDateString('en-US')};
 
             // Loop through courses
-            this.courses.forEach((course: Course) =>
+            courses.forEach(course =>
             {
                 // Reversed loop through the assignments
                 for (let r = courseIndexes[course.name]; r >= 0; r--)
                 {
                     let assignment = course.assignments[r];
-                    let assignmentDate = new Date(assignment.date);
+
+                    // If assignment should be displayed
+                    if (assignment.complete != 'Complete') continue;
 
                     // Date is being looked at
+                    let assignmentDate = new Date(assignment.date);
                     if (assignmentDate.getTime() == date.getTime())
                     {
                         // Record scores
@@ -94,5 +103,49 @@ export default class Overall extends Vue
             columns: columns,
             rows: rows
         }
+    }
+
+    /**
+     * Return a list of courses that are graphed
+     */
+    private filterCourses(): Course[]
+    {
+        // Define result
+        let result: Course[] = [];
+
+        // Filter through courses
+        this.courses.forEach(course =>
+        {
+            // Skip future or past courses
+            if (course.status != 'active') return;
+
+            // Skip courses without levels
+            if (course.level == 'None') return;
+
+            // Skip courses without assignments
+            if (course.assignments.length == 0) return;
+
+            // Add it to the list
+            result.push(course);
+        });
+
+        return result;
+    }
+
+    /**
+     * This function is called to get gpa as a string.
+     */
+    public getGPA()
+    {
+        let gpa = GPAUtils.getGPA(this.courses);
+        let result = '' + gpa.gpa;
+
+        /* Not accurate
+        if (!gpa.accurate)
+        {
+            result = `(${result})`;
+        }*/
+
+        return result;
     }
 }

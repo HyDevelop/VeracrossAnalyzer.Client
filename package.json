@@ -15,6 +15,7 @@
     "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
+    "vue-cookies": "^1.5.13",
     "vue-property-decorator": "^8.1.0"
   },
   "devDependencies": {

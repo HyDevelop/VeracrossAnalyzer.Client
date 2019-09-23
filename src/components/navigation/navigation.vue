@@ -11,6 +11,7 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
+            <el-button @click="signOut" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
         <div class="line"></div>
     </div>

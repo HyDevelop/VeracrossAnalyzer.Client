@@ -1,5 +1,17 @@
+
 .el-menu.centered li
 {
     display: inline-block !important;
     float: none !important;
+}
+
+// Borders
+#navigation
+{
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+
+    ul
+    {
+        border-bottom-width: 0;
+    }
 }

@@ -72,3 +72,28 @@
         width: 100%;
     }
 }
+
+// Error
+.input-error
+{
+    .el-input__inner
+    {
+        color: #ff3a3a6b !important;
+        border-color: #ff3a3a6b !important;
+        background-color: #ffdddd3b !important;
+    }
+
+    .el-input__inner:focus
+    {
+        background-color: white !important;
+    }
+}
+
+// Fix error message
+.el-form-item__error.custom
+{
+    padding-top: 0;
+    position: relative;
+    top: auto;
+    float: left;
+}

@@ -1,0 +1,29 @@
+
+// Add some margins
+.el-card
+{
+    margin: 10px;
+    height: 494px;
+    padding: 0;
+
+    // Vertical center
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.span-gpa-header
+{
+    font-size: 14px;
+}
+
+.span-gpa
+{
+    font-size: 35px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+.gpa-time
+{
+    font-size: 14px;
+}

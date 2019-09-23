@@ -27,4 +27,13 @@ export default class Navigation extends Vue
         // Call custom event
         this.$emit('navigation:select', this.activeIndex);
     }
+
+    /**
+     * This function is called when the sign out button is clicked.
+     */
+    public signOut()
+    {
+        // Call custom event
+        this.$emit('sign-out');
+    }
 }
