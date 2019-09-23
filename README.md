@@ -1,5 +1,5 @@
 <h1 align="center"><br><br>
-  VeracrossAnalyzer Web UI
+  VeracrossAnalyzer UI
 </h1>
 
 <h4 align="center">
