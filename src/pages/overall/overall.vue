@@ -17,7 +17,6 @@
             </el-col>
             <el-col :span="20">
                 <el-card style="margin-right: 20px">
-                    <p>Your average score graph all time:</p>
                     <graph-overall :chart="convertCharts"></graph-overall>
                 </el-card>
             </el-col>
