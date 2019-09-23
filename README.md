@@ -1,4 +1,22 @@
-# veracross-analyzer
+<h1 align="center"><br><br>
+  VeracrossAnalyzer Web UI
+</h1>
+
+<h4 align="center">
+  A Website, a Visual Representation of Students' Grade Data on Veracross
+</h4>
+
+<h5 align="center">
+  <a href="#intro">Introduction</a>&nbsp;&nbsp;
+  <a href="#development">Development</a>&nbsp;&nbsp;
+  <a href="#license">License</a>
+</h5><br><br><br>
+
+
+
+<a name="intro"></a>
+Introduction:
+--------
 
 ## Project setup
 ```
