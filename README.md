@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  A Website, a Visual Representation of Students' Grade Data on Veracross
+  A Website, A Visual Representation of Students' Grade Data on Veracross
 </h4>
 
 <h5 align="center">
@@ -24,6 +24,7 @@ This is a website that generates visual representation of students' grade data o
 
 ![](https://i.imgur.com/xl3Q4Nt.jpg)
 
+<br>
 
 <a name="setup"></a>
 Project Setup:
@@ -45,3 +46,11 @@ npm run serve
 ```
 npm run build
 ```
+
+<br>
+
+<a name="license"></a>
+License: [MIT](https://choosealicense.com/licenses/mit/)
+--------
+
+The MIT license basically means that this project is open-soucred and you can do whatever you want with it, as long as you include a copy of this license in your distribution. You don't have to ask for permissions to use or anything. However, if you do bad things with it, I'm not responsible.
