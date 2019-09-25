@@ -31,7 +31,7 @@ export class GPAUtils
      *
      * @param coursesOriginal List of courses
      */
-    public static getGPA(coursesOriginal: Course[]): {gpa: number, accurate: boolean}
+    public static getGPA(coursesOriginal: Course[]): {gpa: number, accurate: boolean, max: number}
     {
         // Clone array
         let courses: Course[] = [];
@@ -55,21 +55,23 @@ export class GPAUtils
         // If no course have grade, return -1
         if (courses.length == 0)
         {
-            return {gpa: -1, accurate: false};
+            return {gpa: -1, accurate: false, max: -1};
         }
 
         // Count total GPA
         let totalGPA = 0;
+        let maxGPA = 0;
         courses.forEach(course =>
         {
             totalGPA += this.getGP(course, course.letterGrade);
+            maxGPA += this.getGP(course, "A+");
         });
 
         // Get average GPA, round to two decimal places
         let gpa = Math.round(totalGPA / courses.length * 100) / 100;
 
         // Return results
-        return {gpa: gpa, accurate: accurate};
+        return {gpa: gpa, accurate: accurate, max: maxGPA};
     }
 
     /**
