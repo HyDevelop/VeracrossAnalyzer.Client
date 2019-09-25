@@ -62,7 +62,7 @@ export class GPAUtils
         let totalGPA = 0;
         courses.forEach(course =>
         {
-            totalGPA += this.getGP(course);
+            totalGPA += this.getGP(course, course.letterGrade);
         });
 
         // Get average GPA, round to two decimal places
@@ -76,14 +76,15 @@ export class GPAUtils
      * Calculate GPA for a course
      *
      * @param course Course
+     * @param letterGrade Letter grade
      */
-    public static getGP(course: Course): number
+    public static getGP(course: Course, letterGrade?: string): number
     {
         // Find the GPA for this course.
         for (let scale of this.SCALE)
         {
             // Letter grades are the same
-            if (scale[this.LETTER] == course.letterGrade)
+            if (scale[this.LETTER] == letterGrade)
             {
                 // Get grade and add it
                 let grade = <number> scale[this.GPA];
