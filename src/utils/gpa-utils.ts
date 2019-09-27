@@ -60,15 +60,16 @@ export class GPAUtils
 
         // Count total GPA
         let totalGPA = 0;
-        let maxGPA = 0;
+        let maxTotal = 0;
         courses.forEach(course =>
         {
             totalGPA += this.getGP(course, course.letterGrade);
-            maxGPA += this.getGP(course, "A+");
+            maxTotal += this.getGP(course, "A+");
         });
 
         // Get average GPA, round to two decimal places
         let gpa = Math.round(totalGPA / courses.length * 100) / 100;
+        let maxGPA = Math.round(maxTotal / courses.length * 100) / 100;
 
         // Return results
         return {gpa: gpa, accurate: accurate, max: maxGPA};
