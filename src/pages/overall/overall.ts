@@ -138,7 +138,7 @@ export default class Overall extends Vue
     public getGPA()
     {
         let gpa = GPAUtils.getGPA(this.courses);
-        let result = '' + gpa.gpa;
+        // let result = '' + gpa.gpa;
 
         /* Not accurate
         if (!gpa.accurate)
@@ -146,6 +146,6 @@ export default class Overall extends Vue
             result = `(${result})`;
         }*/
 
-        return result;
+        return gpa;
     }
 }
