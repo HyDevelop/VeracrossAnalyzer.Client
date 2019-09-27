@@ -4,6 +4,7 @@ import {HttpUtils} from '@/utils/http-utils';
 
 /**
  * This component handles user login, and obtains data from the server.
+ * TODO: Press enter to login
  */
 @Component({
     components: {},
@@ -69,5 +70,13 @@ export default class Login extends Vue
             // Allow the user to retry
             this.loading = false;
         });
+    }
+
+    /**
+     * This is called when the user hits enter in the input boxes.
+     */
+    public onEnter()
+    {
+        this.onLoginClick();
     }
 }
