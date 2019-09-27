@@ -12,18 +12,23 @@
     flex-direction: column;
 }
 
-.span-gpa-header
+.gpa
+{
+    display: block;
+}
+
+.gpa.header
 {
     font-size: 14px;
 }
 
-.span-gpa
+.gpa.text
 {
     font-size: 35px;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
-.gpa-time
+.gpa.time
 {
     font-size: 14px;
 }

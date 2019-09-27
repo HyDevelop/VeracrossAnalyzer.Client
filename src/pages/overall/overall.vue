@@ -4,14 +4,12 @@
             <el-col :span="4">
                 <el-card style="margin-left: 20px">
                     <div style="padding: 14px;">
-                        <span class="span-gpa-header">GPA:</span>
-                        <br>
-                        <span class="span-gpa">{{getGPA().gpa}}</span>
-                        <span class="span-gpa">(Out of {{getGPA().max}})</span>
-                        <div class="bottom clearfix gpa-time">
-                            <time class="time">{{ new Date().toDateString() }}</time>
-                            <br>
-                            <el-button type="text" class="button">Button</el-button>
+                        <span class="gpa header">GPA:</span>
+                        <span class="gpa text">{{getGPA().gpa}}</span>
+                        <span class="gpa max">(Out of {{getGPA().max}})</span>
+                        <div class="bottom clearfix gpa time">
+                            <time>{{ new Date().toDateString() }}</time>
+                            <el-button type="text" class="gpa button">Button</el-button>
                         </div>
                     </div>
                 </el-card>
