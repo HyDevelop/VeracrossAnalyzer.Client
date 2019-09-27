@@ -11,6 +11,9 @@ export default class Overall extends Vue
     // @ts-ignore
     @Prop({required: true}) courses: Course[];
 
+    /**
+     * Convert assignments list to a graph dataset.
+     */
     get convertCharts()
     {
         // Null case
@@ -133,7 +136,8 @@ export default class Overall extends Vue
     }
 
     /**
-     * This function is called to get gpa as a string.
+     * This function is called to get gpa since I can't import another
+     * class in the Vue file.
      */
     public getGPA()
     {
