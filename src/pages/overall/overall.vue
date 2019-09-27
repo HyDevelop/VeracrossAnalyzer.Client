@@ -6,7 +6,8 @@
                     <div style="padding: 14px;">
                         <span class="span-gpa-header">GPA:</span>
                         <br>
-                        <span class="span-gpa">{{getGPA()}}</span>
+                        <span class="span-gpa">{{getGPA().gpa}}</span>
+                        <span class="span-gpa">(Out of {{getGPA().max}})</span>
                         <div class="bottom clearfix gpa-time">
                             <time class="time">{{ new Date().toDateString() }}</time>
                             <br>
