@@ -7,8 +7,12 @@ export default class GraphOverall extends Vue
 {
     @Prop({required: true}) chart: any;
 
-    private settings =
+    private options =
     {
+        title:
+        {
+            text: 'Your average score graph all time'
+        },
         series:
         {
             smooth: false
