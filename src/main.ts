@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
-const VCharts = require('v-charts');
 
 import App from './components/app/app.vue';
 import VueCookies from 'vue-cookies';
@@ -9,9 +8,6 @@ Vue.config.productionTip = false;
 
 // Use Element UI
 Vue.use(ElementUI, {locale: 'en-us'});
-
-// Use VCharts
-Vue.use(VCharts);
 
 // Use Cookies
 Vue.use(VueCookies);
