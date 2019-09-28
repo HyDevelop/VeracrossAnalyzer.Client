@@ -9,8 +9,6 @@
                         <span class="gpa max">(Out of {{getGPA().max}})</span>
                         <div class="bottom clearfix gpa time">
                             <time>{{ new Date().toDateString() }}</time>
-                            <br>
-                            <el-button type="text" class="gpa button">Button</el-button>
                         </div>
                     </div>
                 </el-card>
