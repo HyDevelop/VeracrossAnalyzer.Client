@@ -12,10 +12,10 @@
     "echarts": "^4.2.1",
     "element-ui": "^2.11.1",
     "p-wait-for": "^3.1.0",
-    "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-cookies": "^1.5.13",
+    "vue-echarts": "^4.0.4",
     "vue-property-decorator": "^8.1.0"
   },
   "devDependencies": {
