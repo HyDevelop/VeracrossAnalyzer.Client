@@ -42,7 +42,7 @@ export class GPAUtils
         // Remove all courses that does not have a grade
         coursesOriginal.forEach(course =>
         {
-            if (course.letterGrade == null || course.letterGrade == "")
+            if (course.letterGrade == null || course.letterGrade == '')
             {
                 accurate = false;
             }
@@ -64,7 +64,7 @@ export class GPAUtils
         courses.forEach(course =>
         {
             totalGPA += this.getGP(course, course.letterGrade);
-            maxTotal += this.getGP(course, "A+");
+            maxTotal += this.getGP(course, 'A+');
         });
 
         // Get average GPA, round to two decimal places
