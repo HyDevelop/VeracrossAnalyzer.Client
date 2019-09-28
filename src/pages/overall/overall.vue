@@ -2,7 +2,7 @@
     <div id="overall">
         <el-row>
             <el-col :span="4">
-                <el-card style="margin-left: 20px">
+                <el-card class="gpa-card">
                     <div style="padding: 14px;">
                         <span class="gpa header">GPA:</span>
                         <span class="gpa text">{{getGPA().gpa}}</span>
