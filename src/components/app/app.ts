@@ -122,8 +122,6 @@ export default class App extends Vue
 
     /**
      * Load the assignments of the courses
-     *
-     * @param courses Courses Json
      */
     public loadAssignments()
     {
