@@ -16,17 +16,6 @@ export default class GraphAverage extends Vue
     {
         let settings =
         {
-            // Dataset
-            dataset:
-            {
-                source: this.courses.map(course =>
-                {
-                    // [Course name, GPA, MaxGPA]
-                    return [course.name, GPAUtils.getGP(course, course.letterGrade),
-                        GPAUtils.getGP(course, 'A+')];
-                })
-            },
-
             // X axis represents course names
             xAxis:
             {
@@ -48,14 +37,31 @@ export default class GraphAverage extends Vue
             },
 
             // Data
-            series: [2, 1].map(i =>
-            {
-                return {
+            series:
+            [
+                {
                     type: 'bar',
                     barGap: '-100%',
-                    encode: {x: 0, y: i}
+                    data: this.courses.map(course => [course.name, GPAUtils.getGP(course, 'A+')]),
+                },
+                {
+                    type: 'bar',
+                    barGap: '-100%',
+                    data: this.courses.map(course => [course.name, GPAUtils.getGP(course, course.letterGrade)]),
+
+                    label:
+                    {
+                        show: true,
+                        rotate: 90
+                    }
                 }
-            })
+            ],
+
+            // Disable tooltip
+            tooltip:
+            {
+                show: false
+            }
         };
 
         // TODO: Remove this
