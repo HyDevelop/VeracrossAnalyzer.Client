@@ -82,6 +82,10 @@ export default class GraphAverage extends Vue
             data.push(
             {
                 value: [course.name, GPAUtils.getGP(course, course.letterGrade)],
+                itemStyle:
+                {
+                    color: Constants.THEME.colors[data.length]
+                }
             });
         });
 
