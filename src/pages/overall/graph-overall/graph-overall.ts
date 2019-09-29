@@ -29,7 +29,8 @@ export default class GraphOverall extends Vue
             textStyle:
             {
                 fontSize: 11
-            }
+            },
+            icon: 'circle'
         },
         series:
         {
