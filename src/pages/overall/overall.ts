@@ -1,10 +1,11 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import GraphOverall from '@/pages/overall/graph-overall/graph-overall';
+import GraphAverage from '@/pages/overall/graph-average/graph-average';
 import {Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 
 @Component({
-    components: {GraphOverall}
+    components: {GraphOverall, GraphAverage}
 })
 export default class Overall extends Vue
 {
