@@ -2,7 +2,6 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import GraphOverall from '@/pages/overall/graph-overall/graph-overall';
 import {Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
-import {CourseUtils} from '@/utils/course-utils';
 
 @Component({
     components: {GraphOverall}
@@ -18,15 +17,6 @@ export default class Overall extends Vue
      */
     public getGPA()
     {
-        let gpa = GPAUtils.getGPA(this.courses);
-        // let result = '' + gpa.gpa;
-
-        /* Not accurate
-        if (!gpa.accurate)
-        {
-            result = `(${result})`;
-        }*/
-
-        return gpa;
+        return GPAUtils.getGPA(this.courses);
     }
 }
