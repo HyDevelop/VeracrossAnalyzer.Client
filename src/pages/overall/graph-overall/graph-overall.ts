@@ -19,7 +19,7 @@ export default class GraphOverall extends Vue
                 fontSize: 12
             },
             text: 'Average Grade',
-            subtext: 'Average grade trend for your classes',
+            subtext: 'Average score trend for every course',
             x: 'center'
         },
         // Legend
