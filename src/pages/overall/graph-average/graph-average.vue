@@ -1,6 +1,7 @@
 <template>
     <div id="graph-average">
-        <ve-bar :extend="chartSettings"></ve-bar>
+        <ve-bar height="450px" class="graph"
+                :extend="chartSettings"></ve-bar>
     </div>
 </template>
 
