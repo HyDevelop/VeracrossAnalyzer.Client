@@ -37,10 +37,7 @@ export default class GraphAverage extends Vue
                     rotate: 60,
 
                     // Truncate text length
-                    formatter: (value: string, index: number) =>
-                    {
-                        return value.length <= 16 ? value : value.substr(0, 14) + '...';
-                    }
+                    formatter: (value: string) => value.length <= 16 ? value : value.substr(0, 14) + '...'
                 },
             },
 
