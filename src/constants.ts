@@ -16,7 +16,7 @@ export default class Constants
         '      v0.1.2.236                  `---\'               ';
 
     // Graph Theme
-    public static THEME:
+    public static THEME =
     {
         // Colors
         colors:
