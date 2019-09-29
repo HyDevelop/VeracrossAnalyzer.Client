@@ -17,6 +17,19 @@ export default class GraphAverage extends Vue
     {
         let settings =
         {
+            // Title
+            title:
+            {
+                show: true,
+                textStyle:
+                {
+                    fontSize: 12
+                },
+                text: 'Course GPA',
+                subtext: 'Current GPA for every course',
+                x: 'center'
+            },
+
             // X axis represents course names
             xAxis:
             {
