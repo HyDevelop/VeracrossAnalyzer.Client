@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import GraphOverall from '@/pages/overall/graph-overall/graph-overall';
 import {Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
+import {CourseUtils} from '@/utils/course-utils';
 
 @Component({
     components: {GraphOverall}
@@ -20,7 +21,7 @@ export default class Overall extends Vue
         if (this.courses == null) return [];
 
         // Filter it
-        let courses: Course[] = this.filterCourses();
+        let courses: Course[] = CourseUtils.getGradedCourses(this.courses);
 
         // Compute the column names
         let columns = ['date'];
@@ -106,33 +107,6 @@ export default class Overall extends Vue
             columns: columns,
             rows: rows
         }
-    }
-
-    /**
-     * Return a list of courses that are graphed
-     */
-    private filterCourses(): Course[]
-    {
-        // Define result
-        let result: Course[] = [];
-
-        // Filter through courses
-        this.courses.forEach(course =>
-        {
-            // Skip future or past courses
-            if (course.status != 'active') return;
-
-            // Skip courses without levels
-            if (course.level == 'None') return;
-
-            // Skip courses without assignments
-            if (course.assignments.length == 0) return;
-
-            // Add it to the list
-            result.push(course);
-        });
-
-        return result;
     }
 
     /**
