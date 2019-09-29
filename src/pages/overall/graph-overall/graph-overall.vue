@@ -1,6 +1,5 @@
 <template>
     <div id="graph-overall">
-        <p>Your average score graph all time:</p>
         <ve-line :data="convertChart" :extend="settings"></ve-line>
     </div>
 </template>
