@@ -37,7 +37,7 @@ export default class GraphAverage extends Vue
                 axisLabel: {
                     interval: 0,
                     inside: false,
-                    rotate: 60,
+                    rotate: 90,
 
                     // Truncate text length
                     formatter: (value: string) => value.length <= 16 ? value : value.substr(0, 14) + '...'
