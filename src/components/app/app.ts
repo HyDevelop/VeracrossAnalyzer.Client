@@ -6,6 +6,7 @@ import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
+import {CourseUtils} from '@/utils/course-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -53,6 +54,9 @@ export default class App extends Vue
 
     // List of course that the student takes
     public courses: Course[] = [];
+
+    // List of course that should be displayed
+    public filteredCourses: Course[] = [];
 
     // Currently selected tab
     public selectedTab: string = 'overall';
@@ -152,6 +156,9 @@ export default class App extends Vue
         {
             // When the assignments are ready
             this.assignmentsReady = true;
+
+            // Filter courses
+            this.filteredCourses = CourseUtils.getGradedCourses(this.courses);
         });
     }
 
