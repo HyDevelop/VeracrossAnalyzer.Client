@@ -56,7 +56,7 @@ export default class GraphOverall extends Vue
         },
         yAxis:
         {
-            min: 70
+            min: (value: any) => value.min - 10
         }
     };
 
