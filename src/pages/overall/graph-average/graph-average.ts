@@ -52,6 +52,7 @@ export default class GraphAverage extends Vue
             {
                 return {
                     type: 'bar',
+                    barGap: '-100%',
                     encode: {x: 0, y: i}
                 }
             })
