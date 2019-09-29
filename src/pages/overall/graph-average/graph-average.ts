@@ -31,6 +31,11 @@ export default class GraphAverage extends Vue
             xAxis:
             {
                 type: 'category',
+                axisLabel: {
+                    interval: 0,
+                    inside: false,
+                    rotate: 90
+                },
             },
 
             // Y axis represents GPAs and MaxGPAs
