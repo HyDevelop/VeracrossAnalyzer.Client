@@ -35,6 +35,17 @@ export default class GraphOverall extends Vue
             },
             icon: 'circle'
         },
+        // Zoom bar
+        dataZoom:
+        [
+            // TODO: Calculate real value for startValue
+            {
+                startValue: '9/13/2019'
+            },
+            {
+                type: 'inside'
+            }
+        ],
         series:
         {
             smooth: false
