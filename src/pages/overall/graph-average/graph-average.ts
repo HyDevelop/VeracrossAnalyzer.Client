@@ -30,14 +30,13 @@ export default class GraphAverage extends Vue
             // X axis represents course names
             xAxis:
             {
-                type: 'value'
+                type: 'category',
             },
 
             // Y axis represents GPAs and MaxGPAs
             yAxis:
             {
-                type: 'category',
-                data: this.courses.map(course => course.name)
+                type: 'value'
             },
 
             // Data
@@ -47,16 +46,16 @@ export default class GraphAverage extends Vue
                     type: 'bar',
                     encode:
                     {
-                        x: 1,
-                        y: 0
+                        x: 0,
+                        y: 1
                     }
                 },
                 {
                     type: 'bar',
                     encode:
                     {
-                        x: 2,
-                        y: 0
+                        x: 0,
+                        y: 2
                     }
                 }
             ]
