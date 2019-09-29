@@ -19,6 +19,18 @@ export default class GraphOverall extends Vue
             },
             text: 'Your average score graph all time'
         },
+        // Legend
+        legend:
+        {
+            show: true,
+            //left: 'auto',
+            //align: 'left',
+            //orient: 'vertical'
+            textStyle:
+            {
+                fontSize: 11
+            }
+        },
         series:
         {
             smooth: false
