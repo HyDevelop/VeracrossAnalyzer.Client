@@ -48,7 +48,11 @@ export default class GraphOverall extends Vue
         ],
         series:
         {
-            smooth: false
+            smooth: true
+        },
+        xAxis:
+        {
+            //type: 'time'
         },
         yAxis:
         {
