@@ -64,11 +64,8 @@ export default class GraphOverall extends Vue
         let courses = this.courses;
 
         // Compute the column names
-        let columns = ['date'];
-        courses.forEach(course =>
-        {
-            columns.push(course.name);
-        });
+        let columns = courses.map(course => course.name);
+        columns.unshift('date');
 
         // Find the min date
         let minDate: Date = new Date();
