@@ -5,7 +5,8 @@ import {Course} from '@/components/app/app';
 })
 export default class GraphOverall extends Vue
 {
-    @Prop({required: true}) courses: any;
+    // @ts-ignore
+    @Prop({required: true}) courses: Course[];
 
     private settings =
     {
@@ -47,7 +48,7 @@ export default class GraphOverall extends Vue
      */
     get convertChart()
     {
-        let courses: Course[] = this.courses;
+        let courses = this.courses;
 
         // Compute the column names
         let columns = ['date'];
