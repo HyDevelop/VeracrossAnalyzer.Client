@@ -48,7 +48,7 @@ export default class GraphAverage extends Vue
             },
 
             // Data
-            series: [1, 2].map(i =>
+            series: [2, 1].map(i =>
             {
                 return {
                     type: 'bar',
