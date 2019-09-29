@@ -46,3 +46,17 @@
 {
     font-size: 11px;
 }
+
+// Graph average
+.graph-average-card
+{
+    margin-right: 20px;
+    min-width: 170px;
+}
+
+// Fix padding
+.el-card__body
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}

@@ -13,13 +13,13 @@
                     </div>
                 </el-card>
             </el-col>
-            <el-col :span="10">
+            <el-col :span="14">
                 <el-card>
                     <graph-overall :courses="courses"></graph-overall>
                 </el-card>
             </el-col>
-            <el-col :span="10">
-                <el-card style="margin-right: 20px">
+            <el-col :span="6">
+                <el-card class="graph-average-card">
                     <graph-average :courses="courses"></graph-average>
                 </el-card>
             </el-col>
