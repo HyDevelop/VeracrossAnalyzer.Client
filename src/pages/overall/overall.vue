@@ -15,7 +15,7 @@
             </el-col>
             <el-col :span="20">
                 <el-card style="margin-right: 20px">
-                    <graph-overall :chart="convertCharts"></graph-overall>
+                    <graph-overall :courses="courses"></graph-overall>
                 </el-card>
             </el-col>
         </el-row>
