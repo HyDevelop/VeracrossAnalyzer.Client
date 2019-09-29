@@ -25,7 +25,7 @@ export default class GraphOverall extends Vue
         // Legend
         legend:
         {
-            show: true,
+            show: false,
             //left: 'auto',
             //align: 'left',
             //orient: 'vertical'
