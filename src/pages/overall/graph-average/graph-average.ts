@@ -47,7 +47,7 @@ export default class GraphAverage extends Vue
                 {
                     type: 'bar',
                     barGap: '-100%',
-                    data: this.courses.map(course => [course.name, GPAUtils.getGP(course, course.letterGrade)]),
+                    data: this.generateGPData(),
 
                     label:
                     {
@@ -68,5 +68,23 @@ export default class GraphAverage extends Vue
         console.log(settings);
 
         return settings;
+    }
+
+    /**
+     * Generate GP data for each course
+     */
+    private generateGPData()
+    {
+        let data: any = [];
+
+        this.courses.forEach(course =>
+        {
+            data.push(
+            {
+                value: [course.name, GPAUtils.getGP(course, course.letterGrade)],
+            });
+        });
+
+        return data;
     }
 }
