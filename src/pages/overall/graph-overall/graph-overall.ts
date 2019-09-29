@@ -13,12 +13,13 @@ export default class GraphOverall extends Vue
         // Title
         title:
         {
-            show: false,
+            show: true,
             textStyle:
             {
                 fontSize: 12
             },
-            text: 'Your average score graph all time'
+            text: 'Average Grade',
+            subtext: 'Average grade trend for your classes',
         },
         // Legend
         legend:
