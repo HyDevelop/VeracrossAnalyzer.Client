@@ -1,6 +1,6 @@
 <template>
     <div id="graph-average">
-        <ve-histogram :data="chart" :extend="settings"></ve-histogram>
+        <ve-histogram :data="convertChart" :extend="settings"></ve-histogram>
     </div>
 </template>
 
