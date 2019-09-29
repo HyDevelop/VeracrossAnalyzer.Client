@@ -1,7 +1,7 @@
 <template>
     <div id="graph-overall">
         <p>Your average score graph all time:</p>
-        <v-chart :options="options"></v-chart>
+        <ve-line :data="chart" :extend="settings"></ve-line>
     </div>
 </template>
 
