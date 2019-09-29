@@ -20,6 +20,7 @@ export default class GraphOverall extends Vue
             },
             text: 'Average Grade',
             subtext: 'Average grade trend for your classes',
+            x: 'center'
         },
         // Legend
         legend:
