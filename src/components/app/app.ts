@@ -155,6 +155,7 @@ export default class App extends Vue
         pWaitFor(() => this.isAssignmentsReady()).then(() =>
         {
             // When the assignments are ready
+            // TODO: Display loading
             this.assignmentsReady = true;
 
             // Filter courses
