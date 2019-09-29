@@ -68,13 +68,8 @@ export default class GraphOverall extends Vue
         columns.unshift('date');
 
         // Find the min date
-        let minDate: Date = new Date();
-        courses.forEach(course =>
-        {
-            if (course.assignments.length == 0) return;
-            let date = new Date(course.assignments[course.assignments.length - 1].date);
-            if (date < minDate) minDate = date;
-        });
+        let minDates = courses.map(course => new Date(course.assignments[course.assignments.length - 1].date).getTime());
+        let minDate: Date = new Date(Math.min.apply(null, minDates));
 
         // Find the dates in between
         let now = new Date();
