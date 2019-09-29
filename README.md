@@ -22,7 +22,7 @@ This is a website that generates visual representation of students' grade data o
 
 **Here's how it looks like right now:** *(Now all of you know my grades ;-;)*
 
-![](https://i.imgur.com/xl3Q4Nt.jpg)
+![](https://user-images.githubusercontent.com/22280294/65841599-155ead00-e2f2-11e9-9d9f-c2f23c45d9a4.png)
 
 <br>
 
