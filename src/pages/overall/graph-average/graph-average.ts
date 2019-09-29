@@ -33,5 +33,7 @@ export default class GraphAverage extends Vue
             };
         });
 
+        // Return graph
+        return {columns: columns, rows: rows}
     }
 }
