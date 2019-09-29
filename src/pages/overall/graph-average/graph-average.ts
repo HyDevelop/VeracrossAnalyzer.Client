@@ -3,7 +3,7 @@ import {Course} from '@/components/app/app';
 
 @Component({
 })
-export default class GraphOverall extends Vue
+export default class GraphAverage extends Vue
 {
     // @ts-ignore
     @Prop({required: true}) courses: Course[];
