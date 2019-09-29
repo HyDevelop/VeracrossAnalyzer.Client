@@ -9,6 +9,16 @@ export default class GraphOverall extends Vue
 
     private settings =
     {
+        // Title
+        title:
+        {
+            show: false,
+            textStyle:
+            {
+                fontSize: 12
+            },
+            text: 'Your average score graph all time'
+        },
         series:
         {
             smooth: false
