@@ -19,7 +19,8 @@ export default class GraphAverage extends Vue
     {
         let courses = this.courses;
 
-        return {
-        }
+        // Make column list
+        let columns = ['Course', 'GPA', 'MaxGPA'];
+
     }
 }
