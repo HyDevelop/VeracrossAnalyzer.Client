@@ -41,6 +41,12 @@ export interface Course
     level: string,
     scaleUp: number,
 
+    grading:
+    {
+        method: string,
+        weightingMap: any
+    }
+
     assignments: Grade[]
 }
 
