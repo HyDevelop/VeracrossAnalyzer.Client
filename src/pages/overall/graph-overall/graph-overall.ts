@@ -148,7 +148,6 @@ export default class GraphOverall extends Vue
                     for (let type in typeScores)
                     {
                         score += typeScores[type] * course.grading.weightingMap[type] / typeCounts[type];
-                        console.log(type);
                     }
 
                     // Add average to the row
