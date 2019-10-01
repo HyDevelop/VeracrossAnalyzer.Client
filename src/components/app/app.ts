@@ -200,7 +200,7 @@ export default class App extends Vue
             else
             {
                 // Request grading scheme for this course
-                this.http.post('/grading', {assignments_id: course.assignmentsId}).then(response =>
+                this.http.post('/grading', {'assignment_id': course.assignmentsId}).then(response =>
                 {
                     // Check success
                     if (response.success)
