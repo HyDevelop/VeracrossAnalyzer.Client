@@ -7,6 +7,7 @@ import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
 import {CourseUtils} from '@/utils/course-utils';
+import {GPAUtils} from '@/utils/gpa-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -179,6 +180,67 @@ export default class App extends Vue
         for (const course of this.courses)
         {
             if (course.assignments == null) return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Check the courses' grading algorithms. (Total-average or percent-type)
+     */
+    private checkGradingAlgorithms()
+    {
+        // Loop through all the courses
+        for (const course of this.filteredCourses)
+        {
+            // Check if total-average grade is the same with percent-type grade
+            if (course.numericGrade == GPAUtils.getTotalMeanAverage(course))
+            {
+                course.grading.method = 'TOTAL_AVERAGE';
+            }
+            else
+            {
+                // Request grading scheme for this course
+                this.http.post('/grading', {assignments_id: course.assignmentsId}).then(response =>
+                {
+                    // Check success
+                    if (response.success)
+                    {
+                        // Add it to course
+                        course.grading = response.data;
+                    }
+                    else
+                    {
+                        // Show error message TODO: Show it properly
+                        alert(response.data)
+                    }
+                })
+                .catch(alert)
+            }
+        }
+
+        // Wait for done
+        pWaitFor(() => this.isGradingReady()).then(() =>
+        {
+            // When the assignments are ready
+            // TODO: Display loading
+            this.assignmentsReady = true;
+        })
+    }
+
+    /**
+     * Are grading algorithms ready or not.
+     *
+     * @returns boolean Ready or not
+     */
+    private isGradingReady(): boolean
+    {
+        for (const course of this.filteredCourses)
+        {
+            if (course.grading.method == undefined)
+            {
+                return false;
+            }
         }
 
         return true;
