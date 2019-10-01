@@ -142,12 +142,26 @@ export default class GraphOverall extends Vue
                         }
                     });
 
-                    let score = 0;
+                    // Count total percentage (This is to avoid less than expected cases)
+                    // Eg. If HW = 25% and Quiz = 75%, I have 1 hw and 0 quiz
+                    // Without total percentage, the avg grade I get is 25%.
+                    let totalPercentage = 0;
+                    for (let type in course.grading.weightingMap)
+                    {
+                        if (typeScores[type] != undefined)
+                        {
+                            totalPercentage += course.grading.weightingMap[type];
+                        }
+                    }
+
+                    console.log(totalPercentage);
 
                     // Count
+                    let score = 0;
                     for (let type in typeScores)
                     {
-                        score += typeScores[type] * course.grading.weightingMap[type] / typeCounts[type];
+                        let typeFactor = course.grading.weightingMap[type] / totalPercentage;
+                        score += typeScores[type] * typeFactor / typeCounts[type];
                     }
 
                     // Add average to the row
