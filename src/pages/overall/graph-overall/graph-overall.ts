@@ -171,8 +171,6 @@ export default class GraphOverall extends Vue
             rows.push(row);
         });
 
-        console.log(rows);
-
         return {
             columns: columns,
             rows: rows

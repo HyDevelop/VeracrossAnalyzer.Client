@@ -82,9 +82,6 @@ export default class GraphAverage extends Vue
             }
         };
 
-        // TODO: Remove this
-        console.log(settings);
-
         return settings;
     }
 
