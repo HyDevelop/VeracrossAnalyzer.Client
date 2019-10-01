@@ -154,8 +154,6 @@ export default class GraphOverall extends Vue
                         }
                     }
 
-                    console.log(totalPercentage);
-
                     // Count
                     let score = 0;
                     for (let type in typeScores)
