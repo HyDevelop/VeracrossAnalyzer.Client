@@ -18,7 +18,11 @@
 
 #sign-out-button
 {
-    float: right;
+    // Float right
+    position: absolute;
+    right: 0;
+
+    // Set width and height
     height: 60px;
     width: 110px;
 }
