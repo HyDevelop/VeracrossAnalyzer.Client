@@ -26,7 +26,7 @@ export class CourseUtils
             if (course.assignments.length == 0) return;
             
             // Skip if there are no grading scale
-            if (course.grading.method == 'NOT_GRADED') return;
+            // if (course.grading.method == 'NOT_GRADED') return;
 
             // Add it to the list
             result.push(course);
