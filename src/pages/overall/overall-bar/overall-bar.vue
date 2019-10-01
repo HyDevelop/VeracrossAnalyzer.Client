@@ -5,5 +5,5 @@
     </div>
 </template>
 
-<script src="./graph-average.ts" lang="ts"></script>
-<style src="./graph-average.scss" lang="scss"></style>
+<script src="./overall-bar.ts" lang="ts"></script>
+<style src="./overall-bar.scss" lang="scss"></style>

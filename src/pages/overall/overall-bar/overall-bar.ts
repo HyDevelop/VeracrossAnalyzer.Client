@@ -5,7 +5,7 @@ import Constants from '@/constants';
 
 @Component({
 })
-export default class GraphAverage extends Vue
+export default class OverallBar extends Vue
 {
     // @ts-ignore
     @Prop({required: true}) courses: Course[];
