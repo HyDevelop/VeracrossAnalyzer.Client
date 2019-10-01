@@ -151,7 +151,7 @@ export default class GraphOverall extends Vue
                     }
 
                     // Add average to the row
-                    row[course.name] = score * 100;
+                    if (score != 0) row[course.name] = score * 100;
                 }
             });
 
