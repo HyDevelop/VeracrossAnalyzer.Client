@@ -1,5 +1,5 @@
 <template>
-    <div id="graph-overall">
+    <div id="overall-line">
         <ve-line :data="convertChart" :extend="settings"></ve-line>
     </div>
 </template>

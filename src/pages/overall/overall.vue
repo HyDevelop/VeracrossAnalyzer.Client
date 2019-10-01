@@ -19,7 +19,7 @@
                 </el-card>
             </el-col>
             <el-col :span="6">
-                <el-card class="graph-average-card">
+                <el-card class="overall-bar-card">
                     <overall-bar :courses="courses"></overall-bar>
                 </el-card>
             </el-col>
