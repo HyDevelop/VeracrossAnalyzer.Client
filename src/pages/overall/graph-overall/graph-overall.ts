@@ -83,17 +83,6 @@ export default class GraphOverall extends Vue
             dates.push(new Date(date));
         }
 
-        // Initialize course specific variables
-        let courseScores: {[index: string]: any} = {};
-        let courseMaxScores: {[index: string]: any} = {};
-        let courseIndexes: {[index: string]: any} = {};
-        courses.forEach(course =>
-        {
-            courseScores[course.name] = 0;
-            courseMaxScores[course.name] = 0;
-            courseIndexes[course.name] = course.assignments.length - 1;
-        });
-
         // Compute the rows data
         let rows: {[index: string]: any}[] = [];
         dates.forEach(date =>
@@ -104,33 +93,67 @@ export default class GraphOverall extends Vue
             // Loop through courses
             courses.forEach(course =>
             {
-                // Reversed loop through the assignments
-                for (let r = courseIndexes[course.name]; r >= 0; r--)
+                // Total Mean
+                if (course.grading.method == 'TOTAL_MEAN')
                 {
-                    let assignment = course.assignments[r];
+                    let score = 0;
+                    let max = 0;
 
-                    // If assignment should be displayed
-                    if (assignment.complete != 'Complete') continue;
-
-                    // Date is being looked at
-                    let assignmentDate = new Date(assignment.date);
-                    if (assignmentDate.getTime() == date.getTime())
+                    // Loop through assignments
+                    course.assignments.forEach(assignment =>
                     {
-                        // Record scores
-                        courseScores[course.name] += assignment.score;
-                        courseMaxScores[course.name] += assignment.scoreMax;
-                    }
+                        // If assignment should be displayed
+                        if (assignment.complete != 'Complete') return;
 
-                    // Not now
-                    else if (assignmentDate > date)
-                    {
-                        courseIndexes[course.name] = r;
-                        break;
-                    }
+                        // Date is being looked at
+                        let assignmentDate = new Date(assignment.date);
+                        if (assignmentDate.getTime() < date.getTime())
+                        {
+                            // Record scores
+                            score += assignment.score;
+                            max += assignment.scoreMax;
+                        }
+                    });
+
+                    // Add average to the row
+                    row[course.name] = score / max * 100;
                 }
+                else if (course.grading.method == 'PERCENT_TYPE')
+                {
+                    let typeScores: {[index: string]: any} = {};
+                    let typeCounts: {[index: string]: any} = {};
 
-                // Add average to the row
-                row[course.name] = courseScores[course.name] / courseMaxScores[course.name] * 100;
+                    // Loop through assignments
+                    course.assignments.forEach(assignment =>
+                    {
+                        // If assignment should be displayed
+                        if (assignment.complete != 'Complete') return;
+
+                        // Date is being looked at
+                        let assignmentDate = new Date(assignment.date);
+                        if (assignmentDate.getTime() < date.getTime())
+                        {
+                            // Record scores
+                            if (typeScores[assignment.type] == undefined) typeScores[assignment.type] = 0;
+                            typeScores[assignment.type] += assignment.score / assignment.scoreMax;
+
+                            if (typeCounts[assignment.type] == undefined) typeCounts[assignment.type] = 0;
+                            typeCounts[assignment.type] ++;
+                        }
+                    });
+
+                    let score = 0;
+
+                    // Count
+                    for (let type in typeScores)
+                    {
+                        score += typeScores[type] * course.grading.weightingMap[type] / typeCounts[type];
+                        console.log(type);
+                    }
+
+                    // Add average to the row
+                    row[course.name] = score * 100;
+                }
             });
 
             // Add it to the array
