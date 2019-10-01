@@ -236,7 +236,7 @@ export default class App extends Vue
     {
         for (const course of this.filteredCourses)
         {
-            if (course.grading.method == undefined)
+            if (course.grading == undefined)
             {
                 return false;
             }
