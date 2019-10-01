@@ -102,4 +102,29 @@ export class GPAUtils
 
         return -1;
     }
+
+    /**
+     * Calculate the total-mean (total/max) average
+     *
+     * @param course Course
+     */
+    public static getTotalMeanAverage(course: Course)
+    {
+        let score = 0;
+        let max = 0;
+
+        // Loop through assignments
+        course.assignments.forEach(assignment =>
+        {
+            // If assignment should be displayed
+            if (assignment.complete != 'Complete') return;
+
+            // Record scores
+            score += assignment.score;
+            max += assignment.scoreMax;
+        });
+
+        // Return
+        return score / max * 100;
+    }
 }
