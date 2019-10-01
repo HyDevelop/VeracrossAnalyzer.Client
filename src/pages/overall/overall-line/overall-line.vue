@@ -4,5 +4,5 @@
     </div>
 </template>
 
-<script src="./graph-overall.ts" lang="ts"></script>
-<style src="./graph-overall.scss" lang="scss"></style>
+<script src="./overall-line.ts" lang="ts"></script>
+<style src="./overall-line.scss" lang="scss"></style>
