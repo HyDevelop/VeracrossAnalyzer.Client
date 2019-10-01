@@ -44,7 +44,7 @@ export interface Course
     grading:
     {
         method: string,
-        weightingMap: any
+        weightingMap: {[index: string]: number}
     }
 
     assignments: Grade[]
