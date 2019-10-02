@@ -11,9 +11,10 @@
 
 .course-col-name
 {
+    // Align left
     margin-left: 10px;
-    vertical-align: top;
     text-align: left;
+    float: left;
 
     .course-name
     {
@@ -37,4 +38,12 @@
         color: #999999;
         font-style: italic;
     }
+}
+
+.course-col-grade
+{
+    // Align right
+    margin-right: 10px;
+    text-align: right;
+    float: right;
 }
