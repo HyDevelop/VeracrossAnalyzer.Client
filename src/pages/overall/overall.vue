@@ -25,7 +25,7 @@
             </el-col>
         </el-row>
 
-        <overall-course :course="courses[0]"></overall-course>
+        <overall-course v-for="course in courses" :course="course"></overall-course>
     </div>
 </template>
 
