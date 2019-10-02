@@ -26,3 +26,25 @@
     height: 60px;
     width: 110px;
 }
+
+#nav-title
+{
+    // Float left
+    position: absolute;
+    left: 0;
+
+    // Set height
+    height: 60px;
+
+    // Center text
+    align-items: center;
+
+    // Margins
+    margin-left: 14px;
+    margin-right: 8px;
+
+    // Font
+    font-size: 1.25rem;
+    display: inline-flex;
+
+}

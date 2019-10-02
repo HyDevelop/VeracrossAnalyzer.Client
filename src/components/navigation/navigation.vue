@@ -2,6 +2,10 @@
     <div id="navigation">
         <el-menu class="centered" :default-active="activeIndex" mode="horizontal" @select="onSelect">
 
+            <!--div id="nav-title">
+                Veracross Analyzer
+            </div-->
+
             <el-menu-item index="overall">Overall</el-menu-item>
 
             <el-submenu index="courses">
