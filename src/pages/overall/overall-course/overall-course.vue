@@ -2,7 +2,7 @@
     <div id="overall-course">
         <el-card class="course-card">
             <el-row>
-                <el-col :span="4" class="course-col-name">
+                <el-col :span="6" class="course-col-name">
                     <div class="course-name">
                         <span>{{course.name}}</span>
                     </div>
@@ -10,7 +10,7 @@
                         {{course.teacherName}}
                     </div>
                 </el-col>
-                <el-col :span="14">
+                <el-col :span="12">
 
                 </el-col>
                 <el-col :span="6">
