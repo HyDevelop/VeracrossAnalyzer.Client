@@ -1,6 +1,7 @@
 <template>
     <div id="navigation">
-        <el-menu class="centered" :default-active="activeIndex" mode="horizontal" @select="onSelect">
+        <el-menu style="margin-bottom: 10px;"
+                 class="centered" :default-active="activeIndex" mode="horizontal" @select="onSelect">
 
             <!--div id="nav-title">
                 Veracross Analyzer
