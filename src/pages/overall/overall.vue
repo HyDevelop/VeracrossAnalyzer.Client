@@ -14,7 +14,7 @@
                 </el-card>
             </el-col>
             <el-col :span="14">
-                <el-card>
+                <el-card class="overall-line-card">
                     <overall-line :courses="courses"></overall-line>
                 </el-card>
             </el-col>
