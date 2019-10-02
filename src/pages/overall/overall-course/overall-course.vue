@@ -1,7 +1,22 @@
 <template>
     <div id="overall-course">
         <el-card class="course-card">
-            Hi
+            <el-row>
+                <el-col :span="4" class="course-col-name">
+                    <div class="course-name">
+                        <span>{{course.name}}</span>
+                    </div>
+                    <div class="course-teacher">
+                        {{course.teacherName}}
+                    </div>
+                </el-col>
+                <el-col :span="14">
+
+                </el-col>
+                <el-col :span="6">
+
+                </el-col>
+            </el-row>
         </el-card>
     </div>
 </template>
