@@ -24,7 +24,8 @@
                 </el-card>
             </el-col>
         </el-row>
-        <div class=""></div>
+
+        <overall-course :course="courses[0]"></overall-course>
     </div>
 </template>
 
