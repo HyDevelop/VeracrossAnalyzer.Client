@@ -1,5 +1,8 @@
 <template>
     <div id="overall-course">
+        <el-card class="course-card">
+            Hi
+        </el-card>
     </div>
 </template>
 
