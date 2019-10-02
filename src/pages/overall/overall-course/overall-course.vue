@@ -10,12 +10,19 @@
                 </div>
             </div>
             <div class="course-col-grade">
-                <div class="course-letter-grade">
-                    {{course.letterGrade}} {{course.numericGrade}}
+                <div class="course-grade">
+                    <span class="letter">{{course.letterGrade}} </span>
+                    <span class="numeric">{{course.numericGrade.toFixed(2)}} </span>
+                    <span class="percent">%</span>
                 </div>
-                <div class="course-numeric-grade">
+                <!--div class="course-updates">
+                    <span class="notifications">
 
-                </div>
+                    </span>
+                    <span class="">
+
+                    </span>
+                </div-->
             </div>
         </el-card>
     </div>
