@@ -4,7 +4,7 @@
             <el-row>
                 <el-col :span="6" class="course-col-name">
                     <div class="course-name">
-                        <span>{{course.name}}</span>
+                        {{course.name}}
                     </div>
                     <div class="course-teacher">
                         {{course.teacherName}}
