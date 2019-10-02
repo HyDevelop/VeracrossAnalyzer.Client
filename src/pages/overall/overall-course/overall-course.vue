@@ -11,10 +11,15 @@
                     </div>
                 </el-col>
                 <el-col :span="12">
-
+                    &nbsp;
                 </el-col>
-                <el-col :span="6">
-
+                <el-col :span="6" style="width: auto">
+                    <div class="course-letter-grade">
+                        {{course.letterGrade}}
+                    </div>
+                    <div class="course-numeric-grade">
+                        {{course.numericGrade}}
+                    </div>
                 </el-col>
             </el-row>
         </el-card>
