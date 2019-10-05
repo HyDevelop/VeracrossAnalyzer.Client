@@ -1,19 +1,9 @@
 <template>
     <div class="unread-entry vertical-center">
-        <el-row class="unread-row">
-            <el-col :span="3">
-                {{formatDate(new Date(assignment.date))}}
-            </el-col>
-            <el-col :span="6">
-                {{assignment.type}}
-            </el-col>
-            <el-col :span="9">
-                {{assignment.description}}
-            </el-col>
-            <el-col :span="6">
-                {{assignment.score + '|' + assignment.scoreMax}}
-            </el-col>
-        </el-row>
+        <span>{{formatDate(new Date(assignment.date))}}</span>
+        <span>{{assignment.type}}</span>
+        <span>{{assignment.description}}</span>
+        <span>{{assignment.score + '|' + assignment.scoreMax}}</span>
     </div>
 </template>
 
