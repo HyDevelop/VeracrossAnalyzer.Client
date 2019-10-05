@@ -2,7 +2,7 @@
     <div class="unread-entry vertical-center">
         <el-row class="unread-row">
             <el-col :span="3">
-                {{assignment.date}}
+                {{formatDate(new Date(assignment.date))}}
             </el-col>
             <el-col :span="6">
                 {{assignment.type}}
