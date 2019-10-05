@@ -10,6 +10,12 @@
 
     // Limit name length
     white-space: nowrap;
+
+    // Content
+    .course-card-content
+    {
+        height: 90px;
+    }
 }
 
 .course-col-name
