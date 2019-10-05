@@ -1,5 +1,19 @@
 <template>
     <div class="unread-entry">
+        <el-row class="unread-row">
+            <el-col :span="6">
+                {{assignment.date}}
+            </el-col>
+            <el-col :span="6">
+                {{assignment.type}}
+            </el-col>
+            <el-col :span="6">
+                {{assignment.description}}
+            </el-col>
+            <el-col :span="6">
+                {{assignment.score + '|' + assignment.scoreMax}}
+            </el-col>
+        </el-row>
     </div>
 </template>
 
