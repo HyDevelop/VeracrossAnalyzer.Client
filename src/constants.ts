@@ -10,6 +10,8 @@ export default class Constants
 
     public static VERSION: string = '0.2.3.315';
 
+    public static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
+
     public static SPLASH: string =
         '.    ,        ,---.          |                        \n' +
         '|    |.  ,    |---|,---.,---.|    ,   .,---,,---.,---.\n' +
