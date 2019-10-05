@@ -196,7 +196,7 @@ export default class App extends Vue
         for (const course of this.filteredCourses)
         {
             // Check if total-average grade is the same with percent-type grade
-            if (course.numericGrade == GPAUtils.getTotalMeanAverage(course))
+            if (course.numericGrade == +GPAUtils.getTotalMeanAverage(course).toFixed(2))
             {
                 course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
             }
