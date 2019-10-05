@@ -2,8 +2,10 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
+import UnreadEntry from '@/pages/overall/overall-course/unread-entry/unread-entry';
 
 @Component({
+    components: {UnreadEntry}
 })
 export default class OverallCourse extends Vue
 {
