@@ -9,7 +9,10 @@
                 <span class="text">{{assignment.description}}</span>
             </el-col>
             <el-col :span="6" class="grade">
-                <span class="percent">{{(assignment.score / assignment.scoreMax * 100).toFixed(2)}}%</span>
+                <span class="percent">
+                    {{(assignment.score / assignment.scoreMax * 100).toFixed(2)}}
+                    <span class="symbol">%</span>
+                </span>
                 <span class="score">{{assignment.score}}</span>
                 <span class="max">{{assignment.scoreMax}}</span>
             </el-col>
