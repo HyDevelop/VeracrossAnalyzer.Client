@@ -10,11 +10,17 @@ export default class OverallCourse extends Vue
     // @ts-ignore
     @Prop({required: true}) course: Course;
 
+    private unread: number = -1;
+
     /**
-     * Count the number of unread assignments
+     * Count the number of unread assignments with cache
      */
     countUnread(): number
     {
-        return this.course.assignments.filter(a => a.unread).length;
+        if (this.unread == -1)
+        {
+            return this.unread = this.course.assignments.filter(a => a.unread).length;
+        }
+        else return this.unread;
     }
 }
