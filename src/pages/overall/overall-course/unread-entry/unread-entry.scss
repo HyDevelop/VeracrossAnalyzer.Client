@@ -19,6 +19,13 @@
             padding: 0 5px;
         }
 
+        // Score you got
+        span.score
+        {
+            background: #ffc;
+            color: #555;
+        }
+
         // Max score
         span.max
         {
