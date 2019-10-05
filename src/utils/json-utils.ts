@@ -24,7 +24,7 @@ export default class JsonUtils
                 include: assignment.include_in_calculated_grade == 1,
                 display: assignment.display_grade == 1,
 
-                unread: assignment.unread == 1,
+                unread: assignment.is_unread == 1,
 
                 scoreMax: assignment.maximum_score,
                 score: +assignment.raw_score
