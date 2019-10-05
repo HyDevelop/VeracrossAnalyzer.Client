@@ -58,20 +58,19 @@
             width: 20px;
             text-align: center;
             border-radius: 5px;
-
-            .none
-            {
-                background: #eeeeee;
-                color: #999999;
-            }
-
-            .unread
-            {
-                background: #ff6c00;
-                color: white;
-            }
         }
 
+        .unread-number.none
+        {
+            background: #eeeeee;
+            color: #999999;
+        }
+
+        .unread-number.unread
+        {
+            background: #ff6c00;
+            color: white;
+        }
     }
 }
 
