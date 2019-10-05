@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Course} from '@/components/app/app';
+import {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
 
@@ -11,6 +11,7 @@ export default class OverallCourse extends Vue
     @Prop({required: true}) course: Course;
 
     private unread: number = -1;
+    private unreadAssignments: Assignment[] = [];
 
     /**
      * Count the number of unread assignments with cache
@@ -19,7 +20,8 @@ export default class OverallCourse extends Vue
     {
         if (this.unread == -1)
         {
-            return this.unread = this.course.assignments.filter(a => a.unread).length;
+            this.unreadAssignments = this.course.assignments.filter(a => a.unread);
+            return this.unread = this.unreadAssignments.length;
         }
         else return this.unread;
     }
