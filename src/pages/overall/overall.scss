@@ -4,11 +4,6 @@
 {
     margin: 10px;
     padding: 0;
-
-    // Vertical center
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .el-card.large
@@ -63,4 +58,13 @@
 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+}
+
+// Vertical centering
+.vertical-center
+{
+    // Vertical center
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
