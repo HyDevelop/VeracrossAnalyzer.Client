@@ -7,6 +7,9 @@
 
     // Height limit
     max-height: 90px;
+
+    // Limit name length
+    white-space: nowrap;
 }
 
 .course-col-name
@@ -17,11 +20,7 @@
 
     .course-name
     {
-        // Limit name length
-        white-space: nowrap;
         overflow: hidden;
-
-        // Font
         font-size: 22px;
         color: #0c6dad;
     }
@@ -44,6 +43,9 @@
     // Align right
     text-align: right;
     float: right;
+
+    // Adjust position
+    margin-top: -2px;
 
     .course-grade
     {
