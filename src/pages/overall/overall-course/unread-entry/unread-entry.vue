@@ -1,13 +1,13 @@
 <template>
     <div class="unread-entry vertical-center">
         <el-row class="unread-row">
-            <el-col :span="6">
+            <el-col :span="3">
                 {{assignment.date}}
             </el-col>
             <el-col :span="6">
                 {{assignment.type}}
             </el-col>
-            <el-col :span="6">
+            <el-col :span="9">
                 {{assignment.description}}
             </el-col>
             <el-col :span="6">
