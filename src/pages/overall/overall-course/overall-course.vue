@@ -31,8 +31,8 @@
                     </el-col>
                 </el-row>
             </div>
-            <div class="course-card-content expand notification">
-
+            <div v-if="countUnread() !== 0"
+                 class="course-card-content expand notification">
             </div>
         </el-card>
     </div>
