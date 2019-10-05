@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="theme-default">
         <login v-if="showLogin" v-on:login:token="onLogin" :http="http"></login>
         <navigation :courses="filteredCourses"
                     v-on:sign-out="signOut()"
