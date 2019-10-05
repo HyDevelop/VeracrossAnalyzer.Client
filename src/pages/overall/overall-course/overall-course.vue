@@ -34,7 +34,8 @@
             <div class="course-card-content expand notification"
                  v-if="countUnread() !== 0">
                 <unread-entry v-for="assignment in unreadAssignments"
-                              :assignment="assignment">
+                              :assignment="assignment"
+                              :key="assignment.id">
                 </unread-entry>
             </div>
         </el-card>
