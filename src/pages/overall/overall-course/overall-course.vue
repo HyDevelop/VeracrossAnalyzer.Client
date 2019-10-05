@@ -31,15 +31,11 @@
                     </el-col>
                 </el-row>
             </div>
-            <div v-if="countUnread() !== 0"
-                 class="course-card-content expand notification">
-                <!--el-table :data="unreadTable"
-                          style="width: 100%"
-                          :show-header="false">
-                    <el-table-column prop="date" width="180" />
-                    <el-table-column prop="name" width="500" />
-                    <el-table-column prop="address" />
-                </el-table-->
+            <div class="course-card-content expand notification"
+                 v-if="countUnread() !== 0">
+                <unread-entry v-for="assignment in unreadAssignments"
+                              :assignment="assignment">
+                </unread-entry>
             </div>
         </el-card>
     </div>
