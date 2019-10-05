@@ -1,4 +1,4 @@
-import {Grade} from '@/components/app/app';
+import {Assignment} from '@/components/app/app';
 
 export default class JsonUtils
 {
@@ -6,11 +6,11 @@ export default class JsonUtils
      * This method filters the information provided in an assignments json.
      *
      * @param assignments Assignments object
-     * @returns Grade[] Filtered assignment grade object list
+     * @returns Assignment[] Filtered assignment grade object list
      */
-    public static filterAssignments(assignments: any): Grade[]
+    public static filterAssignments(assignments: any): Assignment[]
     {
-        let result: Grade[] = [];
+        let result: Assignment[] = [];
 
         assignments.assignments.forEach((assignment: any) =>
         {

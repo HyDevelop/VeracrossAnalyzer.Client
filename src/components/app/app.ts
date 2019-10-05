@@ -12,7 +12,7 @@ import {GPAUtils} from '@/utils/gpa-utils';
 /**
  * Objects of this interface represent assignment grades.
  */
-export interface Grade
+export interface Assignment
 {
     type: string,
     description: string,
@@ -48,7 +48,7 @@ export interface Course
         weightingMap: {[index: string]: number}
     }
 
-    assignments: Grade[]
+    assignments: Assignment[]
 }
 
 @Component({
