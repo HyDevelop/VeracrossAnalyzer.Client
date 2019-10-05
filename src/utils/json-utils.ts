@@ -18,6 +18,7 @@ export default class JsonUtils
             {
                 id: assignment.assignment_id,
                 type: assignment.assignment_type,
+                typeId: assignment.assignment_type_id,
                 description: assignment.assignment_description,
                 date: assignment._date,
                 complete: assignment.completion_status,
