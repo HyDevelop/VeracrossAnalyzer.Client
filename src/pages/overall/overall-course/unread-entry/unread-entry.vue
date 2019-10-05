@@ -5,12 +5,12 @@
                 {{formatDate(new Date(assignment.date))}}
             </el-col>
             <el-col :span="15" class="description">
-                <span>{{assignment.type}}</span>
-                <span>{{assignment.description}}</span>
+                <span class="type">{{assignment.type}}</span>
+                <span class="text">{{assignment.description}}</span>
             </el-col>
             <el-col :span="6" class="grade">
-                <span>{{assignment.score}}</span>
-                <span>{{assignment.scoreMax}}</span>
+                <span class="score">{{assignment.score}}</span>
+                <span class="max">{{assignment.scoreMax}}</span>
             </el-col>
         </el-row>
     </div>
