@@ -72,14 +72,20 @@
             color: white;
             box-shadow: 0 0 5px 0 #ff6123;
         }
+
+        .unread-text
+        {
+            color: #ff6c00;
+        }
     }
 
     .course-updates.none
     {
+        color: #999999;
+
         .unread-number
         {
             background: #eeeeee;
-            color: #999999;
         }
     }
 }
