@@ -1,10 +1,10 @@
 <template>
     <div class="unread-entry vertical-center">
         <el-row class="unread-row">
-            <el-col :span="3" class="date">
+            <el-col :span="2" class="date">
                 {{formatDate(new Date(assignment.date))}}
             </el-col>
-            <el-col :span="15" class="description">
+            <el-col :span="16" class="description">
                 <span class="type">{{assignment.type}}</span>
                 <span class="text">{{assignment.description}}</span>
             </el-col>
