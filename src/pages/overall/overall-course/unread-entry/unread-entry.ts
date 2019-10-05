@@ -14,8 +14,8 @@ export default class UnreadEntry extends Vue
      *
      * @param date Date
      */
-    formatDate(date: Date)
+    private getMoment(date: string)
     {
-        return moment(date).format('MMM Do');
+        return moment(new Date(date));
     }
 }

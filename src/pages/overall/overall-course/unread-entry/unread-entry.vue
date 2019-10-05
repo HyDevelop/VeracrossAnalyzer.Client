@@ -2,7 +2,7 @@
     <div class="unread-entry vertical-center">
         <el-row class="unread-row">
             <el-col :span="2" class="date">
-                {{formatDate(new Date(assignment.date))}}
+                {{getMoment(assignment.date).format("MMM Do")}}
             </el-col>
             <el-col :span="16" class="description">
                 <span class="type entry-box">{{assignment.type}}</span>
