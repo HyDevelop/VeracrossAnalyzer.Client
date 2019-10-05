@@ -20,7 +20,23 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+
+        // Main color
+        background: white;
     }
+
+    // Expansion content
+    .course-card-content.expand.notification
+    {
+        height: 20px;
+    }
+}
+
+// Remove card padding for styling issues
+div.el-card.course-card > div.el-card__body
+{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 .course-col-name
