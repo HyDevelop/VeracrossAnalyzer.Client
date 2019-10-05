@@ -14,12 +14,15 @@ import {GPAUtils} from '@/utils/gpa-utils';
  */
 export interface Assignment
 {
+    id: number,
     type: string,
     description: string,
     date: string,
     complete: string,
     include: boolean,
     display: boolean,
+
+    unread: boolean,
 
     scoreMax: number,
     score: number
