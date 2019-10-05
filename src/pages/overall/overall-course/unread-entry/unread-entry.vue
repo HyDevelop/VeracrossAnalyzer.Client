@@ -5,7 +5,7 @@
                 {{formatDate(new Date(assignment.date))}}
             </el-col>
             <el-col :span="16" class="description">
-                <span class="type">{{assignment.type}}</span>
+                <span class="type entry-box">{{assignment.type}}</span>
                 <span class="text">{{assignment.description}}</span>
             </el-col>
             <el-col :span="6" class="grade">
