@@ -19,8 +19,8 @@
                         <span class="numeric">{{course.numericGrade.toFixed(2)}} </span>
                         <span class="percent">%</span>
                     </div>
-                    <div class="course-updates">
-                        <span class="unread-number" :class="countUnread() === 0 ? 'none' : 'unread'">
+                    <div class="course-updates" :class="countUnread() === 0 ? 'none' : 'unread'">
+                        <span class="unread-number">
                             {{countUnread()}}
                         </span>
                         <span class="unread-text">
