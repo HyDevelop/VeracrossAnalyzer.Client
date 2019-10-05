@@ -4,10 +4,8 @@
             <el-col :span="3">
                 {{formatDate(new Date(assignment.date))}}
             </el-col>
-            <el-col :span="6">
+            <el-col :span="15">
                 {{assignment.type}}
-            </el-col>
-            <el-col :span="9">
                 {{assignment.description}}
             </el-col>
             <el-col :span="6">
