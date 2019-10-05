@@ -16,7 +16,7 @@
                 <el-col :span="6" class="course-col-grade">
                     <div class="course-grade">
                         <span class="letter">{{course.letterGrade}} </span>
-                        <span class="numeric">{{course.numericGrade.toFixed(2)}} </span>
+                        <span class="numeric">{{course.numericGrade.toFixed(2)}}</span>
                         <span class="percent">%</span>
                     </div>
                     <div class="course-updates" :class="countUnread() === 0 ? 'none' : 'unread'">
