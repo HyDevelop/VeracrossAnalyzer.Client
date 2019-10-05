@@ -6,7 +6,7 @@
     margin-left: 20px;
 
     // Height limit
-    max-height: 120px;
+    max-height: 250px;
 
     // Limit name length
     white-space: nowrap;
@@ -32,7 +32,7 @@
     // Expansion content
     .course-card-content.expand.notification
     {
-        height: 20px;
+        height: 1000px;
     }
 }
 
