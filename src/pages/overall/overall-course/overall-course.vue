@@ -20,8 +20,8 @@
                         <span class="percent">%</span>
                     </div>
                     <div class="course-updates">
-                        <span class="unread-number">
-                            {{course.assignments.filter(a => a.unread).length}}
+                        <span class="unread-number" :class="countUnread() === 0 ? 'none' : 'unread'">
+                            {{countUnread()}}
                         </span>
                         <span class="unread-text">
 
