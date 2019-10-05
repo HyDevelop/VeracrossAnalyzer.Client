@@ -62,18 +62,24 @@
             padding-left: 3px;
             padding-right: 3px;
         }
+    }
 
-        .unread-number.none
-        {
-            background: #eeeeee;
-            color: #999999;
-        }
-
-        .unread-number.unread
+    .course-updates.unread
+    {
+        .unread-number
         {
             background: #ff6c00;
             color: white;
             box-shadow: 0 0 5px 0 #ff6123;
+        }
+    }
+
+    .course-updates.none
+    {
+        .unread-number
+        {
+            background: #eeeeee;
+            color: #999999;
         }
     }
 }
