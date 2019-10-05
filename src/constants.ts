@@ -8,12 +8,15 @@ export default class Constants
      */
     public static API_URL: string = 'https://va.hydev.org/api';
 
+    public static VERSION: string = '0.2.3.315';
+
     public static SPLASH: string =
         '.    ,        ,---.          |                        \n' +
         '|    |.  ,    |---|,---.,---.|    ,   .,---,,---.,---.\n' +
         ' \\  /  ><     |   ||   |,---||    |   | .-\' |---\'|    \n' +
         '  `\'  \'  `    `   \'`   \'`---^`---\'`---|\'---\'`---\'`    \n' +
-        '      v0.2.3.315                  `---\'               ';
+        '                                  `---\'               \n' +
+        ` Version v${Constants.VERSION} by Hykilpikonna (YGui21)\n`;
 
     // Graph Theme
     public static THEME =
