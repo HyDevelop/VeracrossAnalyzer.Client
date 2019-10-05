@@ -19,14 +19,14 @@
                         <span class="numeric">{{course.numericGrade.toFixed(2)}} </span>
                         <span class="percent">%</span>
                     </div>
-                    <!--div class="course-updates">
-                        <span class="notifications">
+                    <div class="course-updates">
+                        <span class="unread-number">
+                            {{course.assignments.filter(a => a.unread).length}}
+                        </span>
+                        <span class="unread-text">
 
                         </span>
-                        <span class="">
-
-                        </span>
-                    </div-->
+                    </div>
                 </el-col>
             </el-row>
         </el-card>
