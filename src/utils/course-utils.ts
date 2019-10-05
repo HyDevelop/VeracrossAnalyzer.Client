@@ -22,8 +22,8 @@ export class CourseUtils
             // Skip courses without levels
             if (course.level == 'None') return;
 
-            // Skip courses without assignments
-            if (course.assignments.length == 0) return;
+            // Skip courses without graded assignments
+            if (course.assignments.filter(a => a.complete == 'Complete').length == 0) return;
             
             // Skip if there are no grading scale
             // if (course.grading.method == 'NOT_GRADED') return;
