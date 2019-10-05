@@ -70,14 +70,14 @@
     {
         .unread-number
         {
-            background: #ff6c00;
+            background: var(--unread);
             color: white;
-            box-shadow: 0 0 5px 0 #ff6123;
+            box-shadow: 0 0 5px 0 var(--unread);
         }
 
         .unread-text
         {
-            color: #ff6c00;
+            color: var(--unread);
         }
     }
 
