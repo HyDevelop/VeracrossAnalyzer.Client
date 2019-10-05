@@ -24,7 +24,7 @@
                             {{countUnread()}}
                         </span>
                         <span class="unread-text">
-                            new update{{countUnread() >= 2 ? '' : 's'}}
+                            new update{{countUnread() >= 2 ? 's' : ''}}
                         </span>
                     </div>
                 </el-col>
