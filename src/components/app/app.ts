@@ -188,7 +188,7 @@ export default class App extends Vue
     }
 
     /**
-     * Check the courses' grading algorithms. (Total-average or percent-type)
+     * Check the courses' grading algorithms. (Total-mean or percent-type)
      */
     private checkGradingAlgorithms()
     {
@@ -198,7 +198,7 @@ export default class App extends Vue
             // Check if total-average grade is the same with percent-type grade
             if (course.numericGrade == GPAUtils.getTotalMeanAverage(course))
             {
-                course.grading = {method: 'TOTAL_AVERAGE', weightingMap: {}};
+                course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
             }
             else
             {
