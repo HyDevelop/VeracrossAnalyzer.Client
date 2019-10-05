@@ -16,12 +16,15 @@ export default class JsonUtils
         {
             result.push(
             {
+                id: assignment.assignment_id,
                 type: assignment.assignment_type,
                 description: assignment.assignment_description,
                 date: assignment._date,
                 complete: assignment.completion_status,
                 include: assignment.include_in_calculated_grade == 1,
                 display: assignment.display_grade == 1,
+
+                unread: assignment.unread == 1,
 
                 scoreMax: assignment.maximum_score,
                 score: +assignment.raw_score
