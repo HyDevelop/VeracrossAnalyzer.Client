@@ -18,7 +18,8 @@ export default class Constants
         ' \\  /  ><     |   ||   |,---||    |   | .-\' |---\'|    \n' +
         '  `\'  \'  `    `   \'`   \'`---^`---\'`---|\'---\'`---\'`    \n' +
         '                                  `---\'               \n' +
-        ` Version v${Constants.VERSION} by Hykilpikonna (YGui21)\n`;
+        ` Version v${Constants.VERSION} by Hykilpikonna (YGui21)\n` +
+        ` Github: ${Constants.GITHUB}`;
 
     // Graph Theme
     public static THEME =
