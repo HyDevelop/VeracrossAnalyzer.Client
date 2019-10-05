@@ -19,10 +19,24 @@
             padding: 0 5px;
         }
 
+        span.percent
+        {
+            font-style: italic;
+            background: #fefff2;
+            color: #555;
+
+            margin-right: 8px;
+
+            .symbol
+            {
+                padding: 0 1px;
+            }
+        }
+
         // Score you got
         span.score
         {
-            background: #ffc;
+            background: #f2f2f2;
             color: #555;
         }
 
