@@ -2,7 +2,7 @@
     <div id="overall">
         <el-row>
             <el-col :span="4">
-                <el-card class="gpa-card">
+                <el-card class="large gpa-card">
                     <div style="padding: 14px;">
                         <span class="gpa header">GPA:</span>
                         <span class="gpa text">{{getGPA().gpa}}</span>
@@ -14,12 +14,12 @@
                 </el-card>
             </el-col>
             <el-col :span="14">
-                <el-card class="overall-line-card">
+                <el-card class="large overall-line-card">
                     <overall-line :courses="courses"></overall-line>
                 </el-card>
             </el-col>
             <el-col :span="6">
-                <el-card class="overall-bar-card">
+                <el-card class="large overall-bar-card">
                     <overall-bar :courses="courses"></overall-bar>
                 </el-card>
             </el-col>

@@ -3,13 +3,17 @@
 .el-card
 {
     margin: 10px;
-    height: 494px;
     padding: 0;
 
     // Vertical center
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.el-card.large
+{
+    height: 494px;
 }
 
 .gpa-card
