@@ -1,7 +1,7 @@
 <template>
     <div id="overall-course">
         <el-card class="course-card">
-            <div class="course-card-content">
+            <div class="course-card-content main">
                 <el-row>
                     <el-col :span="6" class="course-col-name">
                         <div class="course-name">
