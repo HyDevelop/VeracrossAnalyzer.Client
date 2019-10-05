@@ -11,5 +11,19 @@
     .el-col.grade
     {
         text-align: right;
+
+        // Span box for score and max score
+        span
+        {
+            height: 22px;
+            padding: 0 5px;
+        }
+
+        // Max score
+        span.max
+        {
+            background: #ddd;
+            color: #333;
+        }
     }
 }
