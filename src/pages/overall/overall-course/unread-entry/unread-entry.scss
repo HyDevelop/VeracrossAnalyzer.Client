@@ -8,9 +8,7 @@
 
     text-align: left;
 
-    // Top shadow
-    // https://stackoverflow.com/questions/17572619/inset-box-shadow-only-on-one-side
-    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+
 
     // Grade
     .el-col.grade
@@ -51,4 +49,11 @@
         height: 22px;
         padding: 0 5px;
     }
+}
+
+.unread-entry:first-child
+{
+    // Top shadow
+    // https://stackoverflow.com/questions/17572619/inset-box-shadow-only-on-one-side
+    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
 }
