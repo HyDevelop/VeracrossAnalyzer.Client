@@ -16,6 +16,7 @@ export interface Assignment
 {
     id: number,
     type: string,
+    typeId: number,
     description: string,
     date: string,
     complete: string,
