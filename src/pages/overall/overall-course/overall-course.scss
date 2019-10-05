@@ -49,6 +49,19 @@
     {
         font-size: 21px;
     }
+
+    .course-updates
+    {
+        .unread-number
+        {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+
+            border-radius: 5px;
+        }
+
+    }
 }
 
 .el-card__body
