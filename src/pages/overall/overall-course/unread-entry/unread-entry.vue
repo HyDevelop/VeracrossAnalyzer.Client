@@ -1,5 +1,5 @@
 <template>
-    <div class="unread-entry">
+    <div class="unread-entry vertical-center">
         <el-row class="unread-row">
             <el-col :span="6">
                 {{assignment.date}}
