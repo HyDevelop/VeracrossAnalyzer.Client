@@ -1,11 +1,11 @@
 <template>
     <div class="unread-entry vertical-center">
         <el-row class="unread-row">
-            <el-col :span="2" class="date">
+            <el-col :span="3" class="date">
                 <span class="month">{{getMoment(assignment.date).format("MMM Do")}}</span>
                 <span class="now">({{getMoment(assignment.date).fromNow()}})</span>
             </el-col>
-            <el-col :span="16" class="description">
+            <el-col :span="15" class="description">
                 <span class="type entry-box">{{assignment.type}}</span>
                 <span class="text">{{assignment.description}}</span>
             </el-col>
