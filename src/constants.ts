@@ -8,7 +8,7 @@ export default class Constants
      */
     public static API_URL: string = 'https://va.hydev.org/api';
 
-    public static VERSION: string = '0.3.1.382';
+    public static VERSION: string = '0.3.2.452';
 
     public static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
 
