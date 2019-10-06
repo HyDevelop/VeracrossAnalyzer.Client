@@ -7,6 +7,14 @@
     color: #2c3e50;
 }
 
+#app-content
+{
+    // Limit max width
+    max-width: 1300px;
+    text-align: center;
+    margin: auto;
+}
+
 .theme-default
 {
     --unread: #ff6c00;
