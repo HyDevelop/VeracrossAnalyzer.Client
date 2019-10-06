@@ -11,6 +11,11 @@
     // Date
     .el-col.date
     {
+        span.month
+        {
+            margin-right: 5px;
+        }
+
         span.now
         {
             font-size: 11px;
@@ -32,6 +37,8 @@
 
             height: 22px;
             line-height: 22px;
+
+            margin-right: 8px;
         }
     }
 
