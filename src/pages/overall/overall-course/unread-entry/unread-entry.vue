@@ -6,7 +6,10 @@
                 <span class="now">({{getMoment(assignment.date).fromNow()}})</span>
             </el-col>
             <el-col :span="15" class="description">
-                <span class="type entry-box">{{assignment.type}}</span>
+                <span class="type entry-box"
+                      :style="`border-color: var(--assignment-type-${assignment.typeId})`">
+                    {{assignment.type}}
+                </span>
                 <span class="text">{{assignment.description}}</span>
             </el-col>
             <el-col :span="6" class="grade">
