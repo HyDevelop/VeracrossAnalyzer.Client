@@ -85,9 +85,9 @@
 
 .unread-entry:first-child
 {
-    padding-top: 4px;
+    padding-top: 3px;
 
     // Top shadow
     // https://stackoverflow.com/questions/17572619/inset-box-shadow-only-on-one-side
-    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.1);
 }
