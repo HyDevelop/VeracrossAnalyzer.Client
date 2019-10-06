@@ -11,6 +11,8 @@
     // Date
     .el-col.date
     {
+        min-width: 130px;
+
         span.month
         {
             margin-right: 5px;
@@ -25,6 +27,8 @@
 
     .el-col.description
     {
+        width: unset;
+
         span.type
         {
             display: inline-block;
@@ -46,6 +50,7 @@
     .el-col.grade
     {
         text-align: right;
+        float: right;
 
         span.percent
         {
