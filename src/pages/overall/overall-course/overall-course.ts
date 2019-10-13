@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Assignment, Course} from '@/components/app/app';
+import App, {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
 import UnreadEntry from '@/pages/overall/overall-course/unread-entry/unread-entry';
@@ -26,5 +26,27 @@ export default class OverallCourse extends Vue
             return this.unread = this.unreadAssignments.length;
         }
         else return this.unread;
+    }
+
+    /**
+     * Mark an assignment as read
+     */
+    markAsRead(assignment: Assignment)
+    {
+        App.http.post('/mark-as-read', {csrf: App.http.csrf, scoreId: assignment.id})
+        .then(response =>
+        {
+            // Check success
+            if (response.success)
+            {
+                this.unreadAssignments = this.unreadAssignments.filter(a => a.id == assignment.id);
+                this.unread = this.unreadAssignments.length;
+            }
+            else
+            {
+                // Show error message TODO: Show it properly
+                alert(response.data)
+            }
+        })
     }
 }
