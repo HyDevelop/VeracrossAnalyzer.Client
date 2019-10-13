@@ -14,8 +14,16 @@ export default class UnreadEntry extends Vue
      *
      * @param date Date
      */
-    private getMoment(date: string)
+    getMoment(date: string)
     {
         return moment(new Date(date));
+    }
+
+    /**
+     * Mark this unread assignment as read
+     */
+    markAsRead()
+    {
+        this.$emit('mark-as-read', this.assignment)
     }
 }
