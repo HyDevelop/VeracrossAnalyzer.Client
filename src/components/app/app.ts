@@ -86,8 +86,7 @@ export default class App extends Vue
     public assignmentsReady: boolean = false;
 
     // Token
-    // @ts-ignore
-    public token: Token;
+    public token: string = '';
 
     // Http Client
     public http: HttpUtils = new HttpUtils('');
@@ -106,7 +105,7 @@ export default class App extends Vue
      *
      * @param token Authorization token
      */
-    public onLogin(token: Token)
+    public onLogin(token: string)
     {
         // Hide login bar
         this.showLogin = false;
