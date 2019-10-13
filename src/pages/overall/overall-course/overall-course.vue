@@ -35,7 +35,8 @@
                  v-if="countUnread() !== 0">
                 <unread-entry v-for="assignment in unreadAssignments"
                               :assignment="assignment"
-                              :key="assignment.id">
+                              :key="assignment.id"
+                              v-on:mark-as-read="markAsRead">
                 </unread-entry>
             </div>
         </el-card>
