@@ -39,7 +39,7 @@ export default class OverallCourse extends Vue
             // Check success
             if (response.success)
             {
-                this.unreadAssignments = this.unreadAssignments.filter(a => a == assignment);
+                this.unreadAssignments = this.unreadAssignments.filter(a => a != assignment);
                 this.unread = this.unreadAssignments.length;
             }
             else
