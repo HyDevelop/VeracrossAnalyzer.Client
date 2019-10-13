@@ -133,6 +133,9 @@ export default class App extends Vue
                 // Save courses
                 this.courses = response.data.courses;
 
+                // Save CSRF token
+                this.http.csrf = response.data.csrf;
+
                 // Load assignments
                 this.loadAssignments();
             }
