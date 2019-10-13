@@ -154,7 +154,7 @@ export default class App extends Vue
         this.courses.forEach(course =>
         {
             // Send request to get assignments
-            this.http.post('/assignments', {id: course.assignmentsId}).then(response =>
+            this.http.post('/assignments', {'assignmentsId': course.assignmentsId}).then(response =>
             {
                 // Check success
                 if (response.success)
@@ -214,7 +214,7 @@ export default class App extends Vue
             else
             {
                 // Request grading scheme for this course
-                this.http.post('/grading', {'assignment_id': course.assignmentsId}).then(response =>
+                this.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
                 {
                     // Check success
                     if (response.success)
