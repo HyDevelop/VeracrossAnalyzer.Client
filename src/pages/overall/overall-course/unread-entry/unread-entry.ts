@@ -24,6 +24,7 @@ export default class UnreadEntry extends Vue
      */
     markAsRead()
     {
+        // Call custom event
         this.$emit('mark-as-read', this.assignment)
     }
 }
