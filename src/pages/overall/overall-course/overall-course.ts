@@ -27,9 +27,4 @@ export default class OverallCourse extends Vue
         }
         else return this.unread;
     }
-
-    unreadTable()
-    {
-        return [{date: '2019-10-04', name: 'Letter from a Penn Farmer Discussion Forum', grade: '14|14'}];
-    }
 }
