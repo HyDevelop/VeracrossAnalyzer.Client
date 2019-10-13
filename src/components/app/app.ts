@@ -89,7 +89,7 @@ export default class App extends Vue
     public token: Token;
 
     // Http Client
-    public http: HttpUtils = new HttpUtils();
+    public static http: HttpUtils = new HttpUtils();
 
     /**
      * This is called when the instance is created.
