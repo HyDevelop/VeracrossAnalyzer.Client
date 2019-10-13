@@ -3,8 +3,12 @@ import {Token} from '@/components/app/app';
 
 export class HttpUtils
 {
-    public token: Token = null as unknown as Token;
-    public csrf: String = '';
+    public token: Token;
+
+    constructor (token: Token)
+    {
+        this.token = token;
+    }
 
     public post(node: string, body: any): Promise<any>
     {
