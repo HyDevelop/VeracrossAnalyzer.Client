@@ -16,7 +16,6 @@ export class HttpUtils
         if (this.token != null)
         {
             body['token'] = this.token.token;
-            body['username'] = this.token.user;
         }
 
         // Create promise
