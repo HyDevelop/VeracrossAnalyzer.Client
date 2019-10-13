@@ -33,7 +33,7 @@ export default class OverallCourse extends Vue
      */
     markAsRead(assignment: Assignment)
     {
-        App.http.post('/mark-as-read', {csrf: App.http.csrf, scoreId: assignment.scoreId})
+        App.http.post('/mark-as-read', {scoreId: assignment.scoreId})
         .then(response =>
         {
             // Check success

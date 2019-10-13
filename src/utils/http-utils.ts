@@ -4,11 +4,6 @@ export class HttpUtils
 {
     public token: string = '';
 
-    constructor (token: string)
-    {
-        this.token = token;
-    }
-
     public post(node: string, body: any): Promise<any>
     {
         // Add token
