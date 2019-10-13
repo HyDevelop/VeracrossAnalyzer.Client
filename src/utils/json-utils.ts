@@ -17,6 +17,7 @@ export default class JsonUtils
             result.push(
             {
                 id: assignment.assignment_id,
+                scoreId: assignment.score_id,
                 type: assignment.assignment_type,
                 typeId: assignment.assignment_type_id,
                 description: assignment.assignment_description,
