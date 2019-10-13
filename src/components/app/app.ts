@@ -8,6 +8,7 @@ import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
+import Loading from '@/components/loading/loading';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -57,7 +58,7 @@ export interface Course
 }
 
 @Component({
-    components: {Login, Navigation, Overall},
+    components: {Login, Navigation, Overall, Loading},
 })
 export default class App extends Vue
 {
