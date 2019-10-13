@@ -19,7 +19,7 @@
                 </span>
                 <span class="score entry-box">{{assignment.score}}</span>
                 <span class="max entry-box">{{assignment.scoreMax}}</span>
-                <span class="mark-as-read entry-box">x</span>
+                <el-button class="mark-as-read" icon="el-icon-close"></el-button>
             </el-col>
         </el-row>
     </div>
