@@ -164,7 +164,7 @@ export default class App extends Vue
         });
 
         // Wait for assignments to be ready.
-        pWaitFor(() => this.isAssignmentsReady()).then(() =>
+        pWaitFor(() => this.courses.every(c => c.assignments != null)).then(() =>
         {
             // Filter courses
             this.filteredCourses = CourseUtils.getGradedCourses(this.courses);
@@ -172,21 +172,6 @@ export default class App extends Vue
             // Check grading algorithms
             this.checkGradingAlgorithms();
         });
-    }
-
-    /**
-     * Are assignments ready or not
-     *
-     * @returns boolean Ready or not
-     */
-    private isAssignmentsReady(): boolean
-    {
-        for (const course of this.courses)
-        {
-            if (course.assignments == null) return false;
-        }
-
-        return true;
     }
 
     /**
