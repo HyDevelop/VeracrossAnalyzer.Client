@@ -15,6 +15,7 @@ import {GPAUtils} from '@/utils/gpa-utils';
 export interface Assignment
 {
     id: number,
+    scoreId: number,
     type: string,
     typeId: number,
     description: string,
