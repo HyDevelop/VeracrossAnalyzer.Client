@@ -114,7 +114,7 @@ export default class App extends Vue
         this.token = token;
 
         // Assign token to http client
-        this.http.token = token;
+        App.http.token = token;
 
         // Load data
         this.loadCoursesAfterLogin();
@@ -125,7 +125,7 @@ export default class App extends Vue
      */
     public loadCoursesAfterLogin()
     {
-        this.http.post('/courses', {}).then(response =>
+        App.http.post('/courses', {}).then(response =>
         {
             // Check success
             if (response.success)
@@ -134,7 +134,7 @@ export default class App extends Vue
                 this.courses = response.data.courses;
 
                 // Save CSRF token
-                this.http.csrf = response.data.csrf;
+                App.http.csrf = response.data.csrf;
 
                 // Load assignments
                 this.loadAssignments();
@@ -157,7 +157,7 @@ export default class App extends Vue
         this.courses.forEach(course =>
         {
             // Send request to get assignments
-            this.http.post('/assignments', {'assignmentsId': course.assignmentsId}).then(response =>
+            App.http.post('/assignments', {'assignmentsId': course.assignmentsId}).then(response =>
             {
                 // Check success
                 if (response.success)
@@ -217,7 +217,7 @@ export default class App extends Vue
             else
             {
                 // Request grading scheme for this course
-                this.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
+                App.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
                 {
                     // Check success
                     if (response.success)

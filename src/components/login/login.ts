@@ -1,6 +1,7 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
 import {HttpUtils} from '@/utils/http-utils';
+import App from '@/components/app/app';
 
 /**
  * This component handles user login, and obtains data from the server.
@@ -16,9 +17,6 @@ export default class Login extends Vue
 
     public loading: boolean = false;
     public error: String = '';
-
-    @Prop()
-    public http?: HttpUtils;
 
     /**
      * This is called when the instance is created.
@@ -42,7 +40,7 @@ export default class Login extends Vue
         this.loading = true;
 
         // Fetch request
-        (<HttpUtils> this.http).post('/login', {username: this.username, password: this.password})
+        App.http.post('/login', {username: this.username, password: this.password})
         .then(response =>
         {
             // Check success
