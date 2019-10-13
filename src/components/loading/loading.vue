@@ -16,5 +16,6 @@
         position: absolute;
         top: 0;
         left: 0;
+        background: #00000065;
     }
 </style>
