@@ -23,6 +23,13 @@ export default class Login extends Vue
      */
     public created()
     {
+        // Check cookies version
+        if (!this.$cookies.isKey('va.version') || this.$cookies.get('va.version') != Constants.VERSION)
+        {
+            // Clear all cookies
+            this.$cookies.keys().forEach(key => this.$cookies.remove(key));
+        }
+
         // Check login cookies
         if (this.$cookies.isKey('va.token'))
         {
@@ -48,6 +55,7 @@ export default class Login extends Vue
             {
                 // Save token to cookies
                 this.$cookies.set('va.token', response.data, '7d');
+                this.$cookies.set('va.version', Constants.VERSION);
 
                 // Call custom event with token
                 this.$emit('login:token', response.data);
