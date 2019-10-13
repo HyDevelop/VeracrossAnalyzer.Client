@@ -18,4 +18,9 @@
         left: 0;
         background: #00000065;
     }
+
+    #text
+    {
+        color: white;
+    }
 </style>
