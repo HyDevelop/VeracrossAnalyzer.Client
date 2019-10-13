@@ -224,30 +224,12 @@ export default class App extends Vue
         }
 
         // Wait for done
-        pWaitFor(() => this.isGradingReady()).then(() =>
+        pWaitFor(() => this.filteredCourses.every(c => c.grading != undefined)).then(() =>
         {
             // When the assignments are ready
             // TODO: Display loading
             this.assignmentsReady = true;
         })
-    }
-
-    /**
-     * Are grading algorithms ready or not.
-     *
-     * @returns boolean Ready or not
-     */
-    private isGradingReady(): boolean
-    {
-        for (const course of this.filteredCourses)
-        {
-            if (course.grading == undefined)
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     /**
