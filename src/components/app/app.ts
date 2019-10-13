@@ -56,15 +56,6 @@ export interface Course
     assignments: Assignment[]
 }
 
-/**
- * A login token
- */
-export interface Token
-{
-    token: string,
-    user: string
-}
-
 @Component({
     components: {Login, Navigation, Overall},
 })
