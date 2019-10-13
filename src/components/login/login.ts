@@ -29,7 +29,7 @@ export default class Login extends Vue
         if (this.$cookies.isKey('va.token'))
         {
             // Already contains valid token / TODO: Validate
-            this.$emit('login:token', this.$cookies.get('va.token'));
+            this.$emit('login:token', {token: this.$cookies.get('va.token'), user: this.$cookies.get('va.user')});
         }
     }
 
@@ -55,7 +55,7 @@ export default class Login extends Vue
                 this.$cookies.set('va.user', this.username);
 
                 // Call custom event with token
-                this.$emit('login:token', response.data);
+                this.$emit('login:token', {token: response.data, user: this.username});
             }
             else
             {
