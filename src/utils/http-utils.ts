@@ -1,11 +1,10 @@
 import Constants from '@/constants';
-import {Token} from '@/components/app/app';
 
 export class HttpUtils
 {
-    public token: Token;
+    public token: string = '';
 
-    constructor (token: Token)
+    constructor (token: string)
     {
         this.token = token;
     }
@@ -13,10 +12,7 @@ export class HttpUtils
     public post(node: string, body: any): Promise<any>
     {
         // Add token
-        if (this.token != null)
-        {
-            body['token'] = this.token.token;
-        }
+        if (this.token != '') body['token'] = this.token;
 
         // Create promise
         return new Promise<any>((resolve, reject) =>
