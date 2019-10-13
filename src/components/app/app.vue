@@ -11,6 +11,8 @@
                      v-if="selectedTab === 'overall' && assignmentsReady">
             </overall>
         </div>
+
+        <loading :text="'hi'"></loading>
     </div>
 </template>
 
