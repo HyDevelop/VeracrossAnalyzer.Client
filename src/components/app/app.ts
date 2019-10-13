@@ -132,7 +132,7 @@ export default class App extends Vue
             if (response.success)
             {
                 // Save courses
-                this.courses = response.data.courses;
+                this.courses = response.data;
 
                 // Load assignments
                 this.loadAssignments();
