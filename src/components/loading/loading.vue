@@ -95,6 +95,11 @@
         color: #eeeeee;
     }
 
+    #error-details
+    {
+        font-size: 16px;
+    }
+
     .el-loading-spinner
     {
         top: unset !important;
