@@ -46,4 +46,9 @@
     {
         font-size: 16px;
     }
+
+    .el-loading-spinner .path
+    {
+        stroke: white;
+    }
 </style>
