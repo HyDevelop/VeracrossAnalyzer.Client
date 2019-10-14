@@ -24,6 +24,11 @@
     {
         // @ts-ignore
         @Prop() text: string;
+
+        getText()
+        {
+            return this.text.split('\n');
+        }
     }
 </script>
 
