@@ -12,7 +12,7 @@
             </overall>
         </div>
 
-        <loading :text="'hi'"></loading>
+        <loading :text="loading"></loading>
     </div>
 </template>
 
