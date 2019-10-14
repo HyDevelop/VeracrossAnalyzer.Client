@@ -11,7 +11,7 @@
         </div>
 
         <div id="details">
-            <span v-for="line in getText()">
+            <span v-for="(line, index) in getText()" :style="`font-size: ${16 - getText().length + index}px;`">
                 {{line}}
                 <br>
             </span>
