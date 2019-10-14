@@ -2,7 +2,7 @@
     <div id="app" class="theme-default">
         <login v-if="showLogin" v-on:login:token="onLogin"></login>
         <navigation :courses="filteredCourses"
-                    :activeIndex="selectedTab"
+                    :activeIndex.sync="selectedTab"
                     v-on:sign-out="signOut">
         </navigation>
 
