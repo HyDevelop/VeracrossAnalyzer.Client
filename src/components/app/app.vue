@@ -10,7 +10,9 @@
             <overall v-if="selectedTab === 'overall' && assignmentsReady"
                      :courses="filteredCourses">
             </overall>
-            <course-page v-if="selectedTab.split('/')[0] === 'course'"></course-page>
+            <course-page v-if="selectedTab.split('/')[0] === 'course'"
+                         :course="filteredCourses.find(c => +c.id === +selectedTab.split('/')[1])">
+            </course-page>
         </div>
 
         <loading v-if="loading !== ''" :text="loading" :error="loadingError"></loading>
