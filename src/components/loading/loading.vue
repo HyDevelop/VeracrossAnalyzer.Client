@@ -93,7 +93,7 @@
 
         margin-top: -5px;
         font-size: 16px;
-        color: #eeeeee;
+        color: #f9f9f9;
     }
 
     #error-details
