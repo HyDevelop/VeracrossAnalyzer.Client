@@ -141,11 +141,7 @@ export default class App extends Vue
                 // Load assignments
                 this.loadAssignments();
             }
-            else
-            {
-                // Show error message
-                this.showError(`Error: Course data failed to load.\n(${response.data})`);
-            }
+            else throw new Error(response.data);
         })
         .catch(e => this.showError(`Error: Course data failed to load.\n(${e})`));
     }
@@ -171,13 +167,9 @@ export default class App extends Vue
                     // Parse json and filter it
                     course.assignments = JsonUtils.filterAssignments(response.data);
                 }
-                else
-                {
-                    // Show error message TODO: Show it properly
-                    alert(response.data);
-                }
+                else throw new Error(response.data);
             })
-            .catch(alert);
+            .catch(e => this.showError(`Error: Assignments data failed to load.\n(${e})`));
         });
 
         // Wait for assignments to be ready.
@@ -218,13 +210,9 @@ export default class App extends Vue
                         // Add it to course
                         course.grading = response.data;
                     }
-                    else
-                    {
-                        // Show error message TODO: Show it properly
-                        alert(response.data)
-                    }
+                    else throw new Error(response.data);
                 })
-                .catch(alert)
+                .catch(e => this.showError(`Error: Grading data failed to load.\n(${e})`))
             }
         }
 
