@@ -1,5 +1,5 @@
 <template>
-    <div id="course-page">
+    <el-card id="course-page" class="">
         <el-row>
             <el-col :span="8" id="course-description">
                 <div class="name">{{course.name}}</div>
@@ -10,7 +10,7 @@
             <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
             <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
         </el-row>
-    </div>
+    </el-card>
 </template>
 
 <script src="./course-page.ts" lang="ts"></script>
