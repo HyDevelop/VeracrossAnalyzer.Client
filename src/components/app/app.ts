@@ -259,7 +259,7 @@ export default class App extends Vue
     public onNavigate(tab: string)
     {
         // Debug output TODO: Remove this
-        console.log(tab);
+        console.log(`onNavigate: Previous: ${this.selectedTab}, New: ${tab}`);
 
         // Check url
         let url = `/${tab}`;
