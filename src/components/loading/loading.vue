@@ -60,7 +60,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: #00000065;
+        box-shadow: inset 0 0 1px 1px rgba(0,0,0,.1);
+        background: -webkit-linear-gradient(left, rgba(95, 18, 72, 0.4), rgba(42, 81, 117, 0.4) 100%);
 
         text-align: center;
     }
