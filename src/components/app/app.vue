@@ -6,8 +6,8 @@
                     v-on:sign-out="signOut">
         </navigation>
 
-        <div id="app-content">
-            <overall v-if="selectedTab === 'overall' && assignmentsReady"
+        <div id="app-content" v-if="assignmentsReady && loading === ''">
+            <overall v-if="selectedTab === 'overall'"
                      :courses="filteredCourses">
             </overall>
             <course-page v-if="selectedTab.split('/')[0] === 'course'"
