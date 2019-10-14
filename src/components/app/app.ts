@@ -193,6 +193,9 @@ export default class App extends Vue
      */
     private checkGradingAlgorithms()
     {
+        // Show loading message
+        this.logLoading('4. Checking grading algorithms...');
+
         // Loop through all the courses
         for (const course of this.filteredCourses)
         {
