@@ -265,7 +265,7 @@ export default class App extends Vue
         this.selectedTab = tab;
 
         // Check url
-        let url = tab;
+        let url = `/${tab}`;
 
         // Push history state
         window.history.pushState({}, '', url);
