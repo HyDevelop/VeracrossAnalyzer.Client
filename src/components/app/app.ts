@@ -152,6 +152,9 @@ export default class App extends Vue
      */
     public loadAssignments()
     {
+        // Show loading message
+        this.logLoading('3. Loading assignments...');
+
         // Get assignments for all the courses
         this.courses.forEach(course =>
         {
