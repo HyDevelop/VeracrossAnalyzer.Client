@@ -47,6 +47,14 @@
         font-size: 16px;
     }
 
+    .el-loading-spinner
+    {
+        top: unset !important;
+        margin-top: 0 !important;
+        width: unset !important;
+        position: unset !important;
+    }
+
     .el-loading-spinner .path
     {
         stroke: white;
