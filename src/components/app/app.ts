@@ -252,6 +252,17 @@ export default class App extends Vue
     }
 
     /**
+     * Show error message on loading screen
+     *
+     * @param message Error message
+     */
+    private showError(message: string)
+    {
+        this.loadingError = true;
+        this.loading = message;
+    }
+
+    /**
      * This is called when a navigation tab is clicked
      *
      * @param tab Tab name
