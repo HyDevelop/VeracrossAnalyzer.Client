@@ -10,7 +10,11 @@
             </div>
         </div>
 
-        <div id="details"><pre>{{text}}</pre></div>
+        <div id="details">
+            <pre v-for="line in getText()">
+                {{line}}
+            </pre>
+        </div>
     </div>
 </template>
 
