@@ -19,8 +19,9 @@ export default class Navigation extends Vue
      */
     public created()
     {
-        // Set history state (TODO: Dynamically detect initial url
-        window.history.replaceState({lastTab: 'overall'}, '', '/overall');
+        // Set history state
+        let url = window.location.pathname;
+        window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
         // Create history state listener
         window.onpopstate = e =>
