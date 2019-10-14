@@ -13,6 +13,7 @@
         <div id="details">
             <span v-for="line in getText()">
                 {{line}}
+                <br>
             </span>
         </div>
     </div>
