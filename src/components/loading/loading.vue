@@ -1,7 +1,7 @@
 <template>
     <div id="loading">
         <div id="text">
-            Loading
+            {{error ? 'Error' : 'Loading'}}
 
             <div class="el-loading-spinner">
                 <svg viewBox="25 25 50 50" class="circular">
