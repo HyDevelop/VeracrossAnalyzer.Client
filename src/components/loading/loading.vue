@@ -8,9 +8,9 @@
                     <circle cx="50" cy="50" r="20" fill="none" class="path" />
                 </svg>
             </div>
-
-            <div id="details">{{text}}</div>
         </div>
+
+        <div id="details">{{text}}</div>
     </div>
 </template>
 
@@ -44,8 +44,14 @@
 
     #details
     {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        margin-top: -5px;
         font-size: 16px;
-        color: #b9ddc3;
+        color: #eeeeee;
     }
 
     .el-loading-spinner
