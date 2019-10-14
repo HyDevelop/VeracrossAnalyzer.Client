@@ -1,6 +1,6 @@
 <template>
     <div id="loading">
-        <div id="text" :style="message()">
+        <div id="text" :class="message()">
             {{message()}}
 
             <div v-if="!error" class="el-loading-spinner">
