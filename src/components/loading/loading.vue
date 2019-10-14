@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div id="details">{{text}}</div>
+        <div id="details"><pre>{{text}}</pre></div>
     </div>
 </template>
 
