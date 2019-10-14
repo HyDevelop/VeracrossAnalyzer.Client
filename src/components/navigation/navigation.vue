@@ -1,7 +1,7 @@
 <template>
     <div id="navigation">
-        <el-menu style="margin-bottom: 10px;"
-                 class="centered" :default-active="activeIndex" mode="horizontal" @select="onSelect">
+        <el-menu style="margin-bottom: 10px;" class="centered" mode="horizontal"
+                 :default-active="activeIndex" @select="onSelect">
 
             <!--div id="nav-title">
                 Veracross Analyzer
@@ -12,7 +12,7 @@
             <el-submenu index="courses">
                 <template slot="title">Courses</template>
                 <el-menu-item v-for="course in courses"
-                              :index="`course/${course.id}/${course.name.toLowerCase()}`"
+                              :index="`course/${course.id}/${course.name.toLowerCase().replace(' ', '-')}`"
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
