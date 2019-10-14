@@ -105,6 +105,9 @@ export default class App extends Vue
         // Hide login bar
         this.showLogin = false;
 
+        // Show loading message
+        this.logLoading('1. Logging in...');
+
         // Store token
         this.token = token;
 
@@ -223,10 +226,10 @@ export default class App extends Vue
 
     /**
      * Log a message to loading screen
-     * 
+     *
      * @param message Message
      */
-    private logLoad(message: string)
+    private logLoading(message: string)
     {
         if (message == '') this.loading = '';
         else this.loading += '\n' + message;
