@@ -19,9 +19,6 @@ export default class Navigation extends Vue
      */
     public created()
     {
-        // Show splash TODO: Remove
-        console.log('Created Navigation');
-
         // Set history state (TODO: Dynamically detect initial url
         window.history.replaceState({lastTab: 'overall'}, '', '/overall');
 
