@@ -1,6 +1,6 @@
 #app
 {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: var(--font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -23,4 +23,6 @@
     --assignment-type-2: #3f991e;
     --assignment-type-3: #ff9900;
     --assignment-type-4: #b02b02;
+
+    --font: 'Avenir', Helvetica, Arial, sans-serif;
 }
