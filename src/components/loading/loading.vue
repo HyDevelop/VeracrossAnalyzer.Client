@@ -65,6 +65,11 @@
         color: #eeeeee;
     }
 
+    #details pre
+    {
+        font-family: var(--font);
+    }
+
     .el-loading-spinner
     {
         top: unset !important;
