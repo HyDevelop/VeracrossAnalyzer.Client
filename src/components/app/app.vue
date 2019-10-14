@@ -12,7 +12,7 @@
             </overall>
         </div>
 
-        <loading v-if="loading !== ''" :text="loading"></loading>
+        <loading v-if="loading !== ''" :text="loading" :error="loadingError"></loading>
     </div>
 </template>
 
