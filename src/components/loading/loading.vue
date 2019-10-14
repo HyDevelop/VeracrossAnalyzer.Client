@@ -8,9 +8,16 @@
                     <circle cx="50" cy="50" r="20" fill="none" class="path" />
                 </svg>
             </div>
+
+            <div v-if="error" id="error-details">
+                <span v-for="(line, index) in getText()" :style="`font-size: ${16 - getText().length + index}px;`">
+                    {{line}}
+                    <br>
+                </span>
+            </div>
         </div>
 
-        <div id="details">
+        <div v-if="!error" id="details">
             <span v-for="(line, index) in getText()" :style="`font-size: ${16 - getText().length + index}px;`">
                 {{line}}
                 <br>
