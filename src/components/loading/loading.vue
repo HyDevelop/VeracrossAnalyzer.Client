@@ -11,9 +11,9 @@
         </div>
 
         <div id="details">
-            <pre v-for="line in getText()">
+            <span v-for="line in getText()">
                 {{line}}
-            </pre>
+            </span>
         </div>
     </div>
 </template>
