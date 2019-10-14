@@ -10,6 +10,7 @@
             <overall :courses="filteredCourses"
                      v-if="selectedTab === 'overall' && assignmentsReady">
             </overall>
+            <course-page></course-page>
         </div>
 
         <loading v-if="loading !== ''" :text="loading" :error="loadingError"></loading>
