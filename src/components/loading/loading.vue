@@ -10,7 +10,7 @@
             </div>
 
             <div v-if="error" id="error-details">
-                <span v-for="(line, index) in getText()" :style="`font-size: ${16 - getText().length + index}px;`">
+                <span v-for="(line, index) in getText()" :style="`font-size: ${-index === 0 ? 16 : 12}px;`">
                     {{line}}
                     <br>
                 </span>
