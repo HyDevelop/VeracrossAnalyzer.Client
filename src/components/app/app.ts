@@ -143,8 +143,9 @@ export default class App extends Vue
             }
             else
             {
-                // Show error message TODO: Show it properly
-                alert(response.data);
+                // Show error message
+                this.loadingError = true;
+                this.loading = `Error: Course data failed to load.\n(${response.data})`;
             }
         })
         .catch(alert);
