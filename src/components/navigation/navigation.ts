@@ -24,6 +24,9 @@ export default class Navigation extends Vue
         if (url == '') url = '/overall';
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
+        // Update initial index
+        this.updateIndex(url.substring(1));
+
         // Create history state listener
         window.onpopstate = e =>
         {
