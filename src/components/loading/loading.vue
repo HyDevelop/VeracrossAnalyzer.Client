@@ -37,6 +37,11 @@
         {
             return this.text.split('\n');
         }
+
+        message()
+        {
+            return this.error ? 'Error' : 'Loading';
+        }
     }
 </script>
 
