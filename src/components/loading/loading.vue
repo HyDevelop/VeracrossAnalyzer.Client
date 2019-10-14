@@ -1,7 +1,9 @@
 <template>
     <div id="loading">
         <div id="text">
-            {{text}}
+            Loading
+
+            <div id="details">{{text}}</div>
         </div>
     </div>
 </template>
