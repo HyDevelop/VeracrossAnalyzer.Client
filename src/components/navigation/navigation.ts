@@ -9,9 +9,33 @@ import Constants from '@/constants';
 })
 export default class Navigation extends Vue
 {
-    public activeIndex: string = 'overall';
+    // @ts-ignore
+    @Prop() activeIndex: string;
 
     @Prop() courses: any;
+
+    /**
+     * This is called when the instance is created.
+     */
+    public created()
+    {
+        // Show splash TODO: Remove
+        console.log('Created Navigation');
+
+        // Set history state (TODO: Dynamically detect initial url
+        window.history.replaceState({lastTab: 'overall'}, '', '/overall');
+
+        // Create history state listener
+        window.onpopstate = e =>
+        {
+            if (e.state)
+            {
+                // Restore previous tab
+                console.log(`onPopState: Current: ${this.activeIndex}, Previous: ${e.state.lastTab}`);
+                this.activeIndex = e.state.lastTab;
+            }
+        };
+    }
 
     /**
      * This function is called when the selection changes.
