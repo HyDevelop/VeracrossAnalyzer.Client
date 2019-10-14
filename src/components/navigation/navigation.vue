@@ -12,7 +12,7 @@
             <el-submenu index="courses">
                 <template slot="title">Courses</template>
                 <el-menu-item v-for="course in courses"
-                              :index="`course/${course.id}/${course.name.toLowerCase().replace(' ', '-')}`"
+                              :index="`course/${course.id}/${course.name.toLowerCase().split(' ').join('-')}`"
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
