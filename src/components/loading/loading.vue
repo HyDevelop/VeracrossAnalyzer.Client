@@ -35,4 +35,9 @@
 
         font-size: 46px;
     }
+
+    #details
+    {
+        font-size: 16px;
+    }
 </style>
