@@ -222,6 +222,17 @@ export default class App extends Vue
     }
 
     /**
+     * Log a message to loading screen
+     * 
+     * @param message Message
+     */
+    private logLoad(message: string)
+    {
+        if (message == '') this.loading = '';
+        else this.loading += '\n' + message;
+    }
+
+    /**
      * This is called when a navigation tab is clicked
      *
      * @param tab Tab name
