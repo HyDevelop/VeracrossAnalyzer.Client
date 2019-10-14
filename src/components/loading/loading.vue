@@ -58,6 +58,11 @@
         text-align: center;
     }
 
+    .Error
+    {
+        color: #ffdddd !important;
+    }
+
     #text
     {
         color: white;
