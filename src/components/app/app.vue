@@ -7,10 +7,10 @@
         </navigation>
 
         <div id="app-content">
-            <overall :courses="filteredCourses"
-                     v-if="selectedTab === 'overall' && assignmentsReady">
+            <overall v-if="selectedTab === 'overall' && assignmentsReady"
+                     :courses="filteredCourses">
             </overall>
-            <course-page></course-page>
+            <course-page v-if="selectedTab.split('/')[0] === 'course'"></course-page>
         </div>
 
         <loading v-if="loading !== ''" :text="loading" :error="loadingError"></loading>
