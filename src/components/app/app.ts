@@ -8,7 +8,7 @@ import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
-import Loading from '@/components/loading/loading';
+import Loading from '@/components/loading/loading.vue';
 
 /**
  * Objects of this interface represent assignment grades.
