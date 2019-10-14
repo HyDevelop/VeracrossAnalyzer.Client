@@ -48,9 +48,6 @@ export default class Navigation extends Vue
         // Update active index
         this.activeIndex = index;
 
-        // Call custom event
-        this.$emit('navigation:select', this.activeIndex);
-
         // Debug output TODO: Remove this
         console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${index}`);
 

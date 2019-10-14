@@ -3,8 +3,7 @@
         <login v-if="showLogin" v-on:login:token="onLogin"></login>
         <navigation :courses="filteredCourses"
                     :activeIndex="selectedTab"
-                    v-on:sign-out="signOut()"
-                    v-on:navigation:select="onNavigate">
+                    v-on:sign-out="signOut">
         </navigation>
 
         <div id="app-content">
