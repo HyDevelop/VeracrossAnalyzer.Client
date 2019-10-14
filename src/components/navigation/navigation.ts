@@ -59,6 +59,16 @@ export default class Navigation extends Vue
     }
 
     /**
+     * Update index
+     *
+     * @param newIndex New index
+     */
+    private updateIndex(newIndex: string)
+    {
+        this.$emit('update:activeIndex', newIndex);
+    }
+
+    /**
      * This function is called when the sign out button is clicked.
      */
     public signOut()
