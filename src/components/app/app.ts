@@ -144,11 +144,10 @@ export default class App extends Vue
             else
             {
                 // Show error message
-                this.loadingError = true;
-                this.loading = `Error: Course data failed to load.\n(${response.data})`;
+                this.showError(`Error: Course data failed to load.\n(${response.data})`);
             }
         })
-        .catch(alert);
+        .catch(e => this.showError(`Error: Course data failed to load.\n(${e})`));
     }
 
     /**
