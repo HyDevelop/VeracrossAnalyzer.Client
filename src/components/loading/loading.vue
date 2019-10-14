@@ -45,6 +45,7 @@
     #details
     {
         font-size: 16px;
+        color: #b9ddc3;
     }
 
     .el-loading-spinner
