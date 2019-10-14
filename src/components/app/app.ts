@@ -98,6 +98,9 @@ export default class App extends Vue
     {
         // Show splash
         console.log(Constants.SPLASH);
+
+        // Set history state (TODO: Dynamically detect initial url
+        window.history.replaceState({lastTab: 'overall'}, '', '/overall');
     }
 
     /**
