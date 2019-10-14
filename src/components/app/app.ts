@@ -123,6 +123,10 @@ export default class App extends Vue
      */
     public loadCoursesAfterLogin()
     {
+        // Show loading message
+        this.logLoading('2. Loading courses...');
+
+        // Post request
         App.http.post('/courses', {}).then(response =>
         {
             // Check success
