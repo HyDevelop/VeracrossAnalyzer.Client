@@ -83,6 +83,9 @@ export default class App extends Vue
     // Loading text
     public loading: string = '';
 
+    // Loading error
+    public loadingError: boolean = false;
+
     // Http Client
     public static http: HttpUtils = new HttpUtils();
 
