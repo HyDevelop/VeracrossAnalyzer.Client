@@ -30,6 +30,9 @@
         // @ts-ignore
         @Prop() text: string;
 
+        // @ts-ignore
+        @Prop() error: boolean;
+
         getText()
         {
             return this.text.split('\n');
