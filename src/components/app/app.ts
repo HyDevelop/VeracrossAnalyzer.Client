@@ -81,7 +81,7 @@ export default class App extends Vue
     public token: string = '';
 
     // Loading text
-    public loading: string = '1. Initiating...';
+    public loading: string = '';
 
     // Http Client
     public static http: HttpUtils = new HttpUtils();
