@@ -33,4 +33,4 @@
 </template>
 
 <script src="./overall.ts" lang="ts"></script>
-<style src="./overall.scss" lang="scss"></style>
+<style src="./overall.scss" lang="scss" scoped></style>
