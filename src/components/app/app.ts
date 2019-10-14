@@ -252,26 +252,6 @@ export default class App extends Vue
     }
 
     /**
-     * This is called when a navigation tab is clicked
-     *
-     * @param tab Tab name
-     */
-    public onNavigate(tab: string)
-    {
-        // Debug output TODO: Remove this
-        console.log(`onNavigate: Previous: ${this.selectedTab}, New: ${tab}`);
-
-        // Update selected tab
-        this.selectedTab = tab;
-
-        // Check url
-        let url = `/${tab}`;
-
-        // Push history state
-        window.history.pushState({lastTab: this.selectedTab}, '', url);
-    }
-
-    /**
      * Sign out
      */
     public signOut()

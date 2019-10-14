@@ -50,6 +50,18 @@ export default class Navigation extends Vue
 
         // Call custom event
         this.$emit('navigation:select', this.activeIndex);
+
+        // Debug output TODO: Remove this
+        console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${index}`);
+
+        // Update selected tab
+        this.activeIndex = index;
+
+        // Check url
+        let url = `/${index}`;
+
+        // Push history state
+        window.history.pushState({lastTab: index}, '', url);
     }
 
     /**
