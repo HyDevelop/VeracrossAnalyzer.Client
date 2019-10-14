@@ -101,6 +101,17 @@ export default class App extends Vue
 
         // Set history state (TODO: Dynamically detect initial url
         window.history.replaceState({lastTab: 'overall'}, '', '/overall');
+
+        // Create history state listener
+        window.onpopstate = e =>
+        {
+            if (e.state)
+            {
+                // Restore previous tab
+                console.log(`onPopState: Current: ${this.selectedTab}, Previous: ${e.state.lastTab}`);
+                this.selectedTab = e.state.lastTab;
+            }
+        };
     }
 
     /**
