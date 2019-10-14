@@ -261,14 +261,14 @@ export default class App extends Vue
         // Debug output TODO: Remove this
         console.log(tab);
 
-        // Update selected tab
-        this.selectedTab = tab;
-
         // Check url
         let url = `/${tab}`;
 
         // Push history state
-        window.history.pushState({}, '', url);
+        window.history.pushState({lastTab: this.selectedTab}, '', url);
+
+        // Update selected tab
+        this.selectedTab = tab;
     }
 
     /**
