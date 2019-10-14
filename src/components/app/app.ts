@@ -9,6 +9,8 @@ import {HttpUtils} from '@/utils/http-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
+import CoursePage from '@/pages/course/course-page';
+
 
 /**
  * Objects of this interface represent assignment grades.
@@ -58,7 +60,7 @@ export interface Course
 }
 
 @Component({
-    components: {Login, Navigation, Overall, Loading},
+    components: {Login, Navigation, Overall, Loading, CoursePage},
 })
 export default class App extends Vue
 {
