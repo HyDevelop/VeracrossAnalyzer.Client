@@ -26,3 +26,34 @@
 
     --font: 'Avenir', Helvetica, Arial, sans-serif;
 }
+
+// ##############
+// # Global CSS #
+// ##############
+
+.el-card
+{
+    margin: 10px;
+    padding: 0;
+}
+
+.el-card.large
+{
+    height: 494px;
+}
+
+// Fix padding
+.el-card__body
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+// Vertical centering
+.vertical-center
+{
+    // Vertical center
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
