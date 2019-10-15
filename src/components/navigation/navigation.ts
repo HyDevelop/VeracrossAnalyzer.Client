@@ -21,7 +21,7 @@ export default class Navigation extends Vue
     {
         // Set history state
         let url = window.location.pathname;
-        if (url == '') url = '/overall';
+        if (url == '/' || url == '') url = '/overall';
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
         // Update initial index
