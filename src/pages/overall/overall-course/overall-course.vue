@@ -1,6 +1,7 @@
 <template>
     <div id="overall-course">
         <el-card class="course-card">
+            <course-head :course="course" :unread="countUnread()"></course-head>
             <div class="course-card-content expand notification"
                  v-if="countUnread() !== 0">
                 <unread-entry v-for="assignment in unreadAssignments"
