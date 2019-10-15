@@ -57,3 +57,10 @@
     justify-content: center;
     flex-direction: column;
 }
+
+// Remove card padding for styling issues
+div.el-card.course-card > div.el-card__body
+{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}

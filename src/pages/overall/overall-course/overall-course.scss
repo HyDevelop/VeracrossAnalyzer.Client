@@ -14,15 +14,3 @@
     // Expansion color
     background: #f4f6f9;
 }
-
-// Remove card padding for styling issues
-div.el-card.course-card > div.el-card__body
-{
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-}
-
-.el-card__body
-{
-    margin: auto 0;
-}
