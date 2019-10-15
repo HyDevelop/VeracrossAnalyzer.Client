@@ -5,4 +5,6 @@
 </template>
 
 <script src="./overall-line.ts" lang="ts"></script>
-<style src="./overall-line.scss" lang="scss"></style>
+<style lang="scss" scoped>
+    
+</style>
