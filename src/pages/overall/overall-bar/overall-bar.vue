@@ -6,7 +6,7 @@
 </template>
 
 <script src="./overall-bar.ts" lang="ts"></script>
-<style lang="scss">
+<style lang="scss" scoped>
     #overall-bar
     {
         .graph
