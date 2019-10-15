@@ -6,4 +6,12 @@
 </template>
 
 <script src="./overall-bar.ts" lang="ts"></script>
-<style src="./overall-bar.scss" lang="scss"></style>
+<style lang="scss">
+    #overall-bar
+    {
+        .graph
+        {
+            margin-top: 50px;
+        }
+    }
+</style>
