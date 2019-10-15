@@ -15,4 +15,4 @@
 </template>
 
 <script src="./overall-course.ts" lang="ts"></script>
-<style src="./overall-course.scss" lang="scss"></style>
+<style src="./overall-course.scss" lang="scss" scoped></style>

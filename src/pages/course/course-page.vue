@@ -14,4 +14,4 @@
 </template>
 
 <script src="./course-page.ts" lang="ts"></script>
-<style src="./course-page.scss" lang="scss"></style>
+<style src="./course-page.scss" lang="scss" scoped></style>
