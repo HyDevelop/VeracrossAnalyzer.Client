@@ -1,15 +1,28 @@
-
-#course-page
+// Card
+.el-card.course-card
 {
-    margin: 0 20px;
+    // Margins
+    margin-right: 20px;
+    margin-left: 20px;
+
+    // Height limit
+    max-height: 250px;
+
+    // Limit name length
+    white-space: nowrap;
+
+    // Expansion color
+    background: #f4f6f9;
 }
 
-#course-description
+// Remove card padding for styling issues
+div.el-card.course-card > div.el-card__body
 {
-    text-align: left;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
 
-    .name
-    {
-        font-size: 36px;
-    }
+.el-card__body
+{
+    margin: auto 0;
 }
