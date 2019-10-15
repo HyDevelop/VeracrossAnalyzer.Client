@@ -13,22 +13,6 @@
 
     // Expansion color
     background: #f4f6f9;
-
-    // Main card content
-    .course-card-content.main
-    {
-        padding: 0 20px 0 20px;
-        height: 90px;
-
-        // Main color
-        background: white;
-    }
-
-    // Expansion content
-    .course-card-content.expand.notification
-    {
-
-    }
 }
 
 // Remove card padding for styling issues
@@ -36,94 +20,6 @@ div.el-card.course-card > div.el-card__body
 {
     padding-right: 0 !important;
     padding-left: 0 !important;
-}
-
-.course-col-name
-{
-    // Align left
-    text-align: left;
-    float: left;
-
-    .course-name
-    {
-        overflow: hidden;
-        font-size: 22px;
-        color: var(--main);
-    }
-
-    .course-name:hover
-    {
-        text-decoration: underline;
-    }
-
-    .course-teacher
-    {
-        font-size: 12px;
-        color: #999999;
-        font-style: italic;
-    }
-}
-
-.course-col-grade
-{
-    // Align right
-    text-align: right;
-    float: right;
-
-    // Adjust position
-    margin-top: -2px;
-
-    .course-grade
-    {
-        font-size: 21px;
-    }
-
-    .course-updates
-    {
-        font-size: 14px;
-
-        .unread-number
-        {
-            display: inline-block;
-            width: 20px;
-            text-align: center;
-            border-radius: 5px;
-
-            padding-left: 3px;
-            padding-right: 3px;
-
-            margin-right: 3px;
-        }
-
-        .unread-text
-        {
-            font-style: italic;
-        }
-    }
-
-    .course-updates.unread
-    {
-        .unread-number
-        {
-            background: var(--unread);
-            color: white;
-        }
-
-        .unread-text
-        {
-            color: var(--unread);
-        }
-    }
-
-    .course-updates.none
-    {
-        color: #999999;
-
-        .unread-number
-        {
-            background: #eeeeee;
-        }
-    }
 }
 
 .el-card__body
