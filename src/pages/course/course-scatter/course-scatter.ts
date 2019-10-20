@@ -15,6 +15,10 @@ export default class CourseScatter extends Vue
      */
     get chartSettings()
     {
+        // Map assignments
+        let map = this.mapAssignments();
+
+        // Create settings
         let settings =
         {
             // Title
@@ -47,7 +51,7 @@ export default class CourseScatter extends Vue
             },
 
             // Data
-            series: this.mapAssignments().forEach((assignments, type) =>
+            series: map.forEach((assignments, type) =>
             {
                 return {
                     type: 'scatter',
