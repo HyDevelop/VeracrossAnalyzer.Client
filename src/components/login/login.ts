@@ -49,11 +49,11 @@ export default class Login extends Vue
         if (!this.$cookies.isKey('va.version')) return true;
 
         // Get version numbers
-        let currentVersion = Constants.VERSION.split('.');
-        let cookiesVersion = this.$cookies.get('va.version').split('.');
+        let current = Constants.VERSION.split('.');
+        let cookies = this.$cookies.get('va.version').split('.');
 
         // Check the commit number is even or odd
-        return +currentVersion[currentVersion.length - 1] % 2 != +cookiesVersion[cookiesVersion.length - 1] % 2;
+        return +current[current.length - 1] % 2 != +cookies[cookies.length - 1] % 2;
     }
 
     /**
