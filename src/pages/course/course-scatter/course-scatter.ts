@@ -34,12 +34,16 @@ export default class CourseScatter extends Vue
             xAxis:
             {
                 type: 'time',
+                name: 'Timeline'
             },
 
             // Y axis represents GPAs and MaxGPAs
             yAxis:
             {
-                type: 'value'
+                type: 'value',
+                name: 'Percentage Score',
+                max: 1,
+                min: 0
             },
 
             // Data
