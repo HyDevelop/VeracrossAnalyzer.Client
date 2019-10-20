@@ -51,10 +51,15 @@ export default class CourseScatter extends Vue
             },
 
             // Data
-            series:
-            [
-
-            ],
+            series: this.mapAssignments().forEach((assignments, type) =>
+            {
+                return {
+                    type: 'scatter',
+                    name: type,
+                    data: CourseScatter.assignmentsData(assignments)
+                }
+            })
+            ,
 
             // Disable tooltip
             tooltip:
