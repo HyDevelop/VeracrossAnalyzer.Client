@@ -3,12 +3,14 @@
  */
 export default class Constants
 {
-    /**
-     * Base url for api access
-     */
+    /** Base url for api access */
     public static API_URL: string = 'https://va.hydev.org/api';
 
-    public static VERSION: string = '0.3.4.561';
+    /** Current version */
+    public static VERSION: string = '0.3.5.679';
+
+    /** Minimum version that still supports the same cookies */
+    public static MIN_SUPPORTED_VERSION: string = '0.3.4.561';
 
     public static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
 
