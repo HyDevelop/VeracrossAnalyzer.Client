@@ -5,10 +5,14 @@
         <div class="course-card-content expand notification">
             Todo: This is where per-course analysis would show up.<br>I haven't designed it yet.
             <el-row>
-                <el-col :span="8" id="course-description">
+                <el-col :span="12">
+                    <el-card class="large overall-line-card vertical-center">
+                        <course-scatter :courses="course"></course-scatter>
+                    </el-card>
                 </el-col>
-                <el-col :span="8"><div class="grid-content bg-purple-light"></div></el-col>
-                <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>
+                <el-col :span="12">
+
+                </el-col>
             </el-row>
         </div>
     </el-card>
