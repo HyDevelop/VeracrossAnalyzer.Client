@@ -64,7 +64,7 @@ export default class CourseScatter extends Vue
                 type: 'value',
                 name: 'Percentage Score',
                 max: 100,
-                min: 0
+                min: (value: any) => Math.floor(value.min) - 5
             },
 
             // Tooltip
