@@ -2,8 +2,8 @@
     <div id="course-head" class="course-card-content main vertical-center">
         <el-row>
             <el-col :span="12" class="course-col-name">
-                <div class="course-name"
-                     :class="clickable ? 'clickable' : ''">{{course.name}}</div>
+                <div v-if="clickable" class="course-name clickable" @click="redirect">{{course.name}}</div>
+                <div v-if="!clickable" class="course-name">{{course.name}}</div>
                 <div class="course-teacher">{{course.teacherName}}</div>
             </el-col>
             <el-col :span="12" class="course-col-grade">
@@ -38,6 +38,14 @@
 
         // @ts-ignore
         @Prop() clickable: boolean;
+
+        /**
+         * Redirect to the course page
+         */
+        redirect()
+        {
+            console.log('called!' + this.course.name)
+        }
     }
 </script>
 
