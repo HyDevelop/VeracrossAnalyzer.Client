@@ -53,7 +53,7 @@ export default class CourseScatter extends Vue
             {
                 type: 'time',
                 name: 'Timeline',
-                nameLocation: 'middle',
+                nameLocation: 'center',
                 nameGap: 42,
                 max: FormatUtils.toChartDate(new Date())
             },
@@ -63,6 +63,7 @@ export default class CourseScatter extends Vue
             {
                 type: 'value',
                 name: 'Percentage Score',
+                nameLocation: 'center',
                 max: 100,
                 min: (value: any) => Math.floor(value.min) - 5
             },
