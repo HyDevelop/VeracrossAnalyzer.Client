@@ -22,6 +22,9 @@ export default class CourseScatter extends Vue
         // Create settings
         let settings =
         {
+            // Color
+            color: Constants.THEME.colors,
+
             // Title
             title:
             {
