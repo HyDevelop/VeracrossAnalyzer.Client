@@ -45,6 +45,7 @@
          */
         redirect()
         {
+            if (!this.clickable) return;
             App.instance.selectedTab = CourseUtils.formatTabIndex(this.course);
         }
     }
