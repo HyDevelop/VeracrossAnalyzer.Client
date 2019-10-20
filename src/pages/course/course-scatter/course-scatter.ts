@@ -51,7 +51,7 @@ export default class CourseScatter extends Vue
             },
 
             // Data
-            series: map.forEach((assignments, type) =>
+            series: Array.from(map, ([type, assignments]) =>
             {
                 return {
                     type: 'scatter',
