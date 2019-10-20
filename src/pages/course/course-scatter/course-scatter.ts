@@ -53,8 +53,8 @@ export default class CourseScatter extends Vue
             {
                 type: 'time',
                 name: 'Timeline',
-                nameLocation: "middle",
-                nameGap: 22,
+                nameLocation: 'middle',
+                nameGap: 42,
             },
 
             // Y axis represents GPAs and MaxGPAs
