@@ -1,9 +1,10 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Assignment, Course} from '@/components/app/app';
 import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
+import CourseScatter from '@/pages/course/course-scatter/course-scatter';
 
 @Component({
-    components: {CourseHead}
+    components: {CourseHead, CourseScatter}
 })
 export default class CoursePage extends Vue
 {
