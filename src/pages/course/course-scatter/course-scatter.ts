@@ -50,7 +50,7 @@ export default class CourseScatter extends Vue
             {
                 type: 'value',
                 name: 'Percentage Score',
-                max: 1,
+                max: 100,
                 min: 0
             },
 
@@ -96,7 +96,7 @@ export default class CourseScatter extends Vue
      */
     private static assignmentsData(assignments: Assignment[])
     {
-        return assignments.map(a => [FormatUtils.toChartDate(a.date), a.score / a.scoreMax]);
+        return assignments.map(a => [FormatUtils.toChartDate(a.date), a.score / a.scoreMax * 100]);
     }
 
     afterConfig(options: any)
