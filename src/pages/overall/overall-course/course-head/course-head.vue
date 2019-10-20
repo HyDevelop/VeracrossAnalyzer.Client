@@ -75,11 +75,6 @@
             color: var(--main);
         }
 
-        .course-name.clickable:hover
-        {
-            text-decoration: underline;
-        }
-
         .course-teacher
         {
             font-size: 12px;

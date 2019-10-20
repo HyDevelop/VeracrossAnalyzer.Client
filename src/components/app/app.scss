@@ -64,3 +64,9 @@ div.el-card.course-card > div.el-card__body
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
+
+// Clickable text
+.clickable:hover
+{
+    text-decoration: underline;
+}
