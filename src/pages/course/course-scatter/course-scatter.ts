@@ -78,6 +78,7 @@ export default class CourseScatter extends Vue
                 itemWidth: 14,
                 textStyle:
                 {
+                    color: '#777',
                     fontSize: 11
                 }
             },
