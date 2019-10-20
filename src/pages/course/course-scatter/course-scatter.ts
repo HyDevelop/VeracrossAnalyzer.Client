@@ -64,6 +64,7 @@ export default class CourseScatter extends Vue
                 type: 'value',
                 name: 'Percentage Score',
                 nameLocation: 'center',
+                nameGap: 28,
                 max: 100,
                 min: (value: any) => Math.floor(value.min) - 5
             },
