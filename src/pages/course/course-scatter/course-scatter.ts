@@ -12,6 +12,16 @@ export default class CourseScatter extends Vue
     @Prop({required: true}) course: Course;
 
     /**
+     * Override options
+     *
+     * @param options Original options (Unused)
+     */
+    afterConfig(options: any)
+    {
+        return this.chartSettings;
+    }
+
+    /**
      * Generate settings
      */
     get chartSettings()
@@ -97,11 +107,5 @@ export default class CourseScatter extends Vue
     private static assignmentsData(assignments: Assignment[])
     {
         return assignments.map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2)]);
-    }
-
-    afterConfig(options: any)
-    {
-        console.log(options);
-        return options;
     }
 }
