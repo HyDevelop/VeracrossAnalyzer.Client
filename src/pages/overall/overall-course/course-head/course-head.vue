@@ -23,7 +23,8 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Course} from '@/components/app/app';
+    import App, {Course} from '@/components/app/app';
+    import {CourseUtils} from '@/utils/course-utils';
 
     @Component({
         components: {}
@@ -44,7 +45,7 @@
          */
         redirect()
         {
-            console.log('called!' + this.course.name)
+            App.instance.selectedTab = CourseUtils.formatTabIndex(this.course);
         }
     }
 </script>
