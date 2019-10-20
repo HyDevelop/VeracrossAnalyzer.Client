@@ -96,7 +96,7 @@ export default class CourseScatter extends Vue
      */
     private static assignmentsData(assignments: Assignment[])
     {
-        return assignments.map(a => [FormatUtils.toChartDate(a.date), a.score / a.scoreMax * 100]);
+        return assignments.map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2)]);
     }
 
     afterConfig(options: any)
