@@ -13,6 +13,6 @@ export class FormatUtils
         let date: Date = _date instanceof Date ? _date : new Date(_date);
 
         // Convert to yyyy-mm-dd
-        return moment(date).format('yyyy-mm-dd');
+        return moment(date).format('YYYY-MM-DD');
     }
 }
