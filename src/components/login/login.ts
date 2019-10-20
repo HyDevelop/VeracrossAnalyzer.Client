@@ -24,7 +24,7 @@ export default class Login extends Vue
     public created()
     {
         // Check cookies version
-        if (!this.$cookies.isKey('va.version') || this.$cookies.get('va.version') != Constants.VERSION)
+        if (this.needToUpdateCookies())
         {
             // Clear all cookies
             this.$cookies.keys().forEach(key => this.$cookies.remove(key));
