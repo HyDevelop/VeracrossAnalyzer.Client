@@ -55,8 +55,6 @@ export default class CourseScatter extends Vue
                 name: 'Timeline',
                 nameLocation: 'middle',
                 nameGap: 42,
-
-                // The last date is today.
                 max: FormatUtils.toChartDate(new Date())
             },
 
@@ -117,6 +115,7 @@ export default class CourseScatter extends Vue
      */
     private static assignmentsData(assignments: Assignment[])
     {
-        return assignments.map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2)]);
+        return assignments.filter(a => a.complete == 'Complete')
+            .map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2)]);
     }
 }
