@@ -67,7 +67,7 @@ export default class CourseScatter extends Vue
     }
 
     /**
-     * Map assignments
+     * Map assignments to {assignmentType, [assignment]} format.
      */
     private mapAssignments()
     {
@@ -83,7 +83,7 @@ export default class CourseScatter extends Vue
             // Put data
             map[a.type].push(a);
         });
-        
+
         return map;
     }
 }
