@@ -54,13 +54,7 @@ export default class CourseScatter extends Vue
                     name: type,
                     data: CourseScatter.assignmentsData(assignments)
                 }
-            }),
-
-            // Disable tooltip
-            tooltip:
-            {
-                show: false
-            }
+            })
         };
 
         return settings;
