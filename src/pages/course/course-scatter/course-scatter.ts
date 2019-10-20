@@ -52,9 +52,6 @@ export default class CourseScatter extends Vue
             xAxis:
             {
                 type: 'time',
-                name: 'Timeline',
-                nameLocation: 'center',
-                nameGap: 42,
                 max: FormatUtils.toChartDate(new Date())
             },
 
