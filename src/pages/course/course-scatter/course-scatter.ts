@@ -86,4 +86,14 @@ export default class CourseScatter extends Vue
 
         return map;
     }
+
+    /**
+     * Convert assignments to series data
+     *
+     * @param assignments Assignments
+     */
+    private static assignmentsData(assignments: Assignment[])
+    {
+        return assignments.map(a => [a.date, a.score / a.scoreMax]);
+    }
 }
