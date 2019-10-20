@@ -39,6 +39,24 @@ export default class Login extends Vue
     }
 
     /**
+     * Check version number
+     *
+     * @returns boolean Need to clear cookies or not
+     */
+    public needToUpdateCookies(): boolean
+    {
+        // Version doesn't exist
+        if (!this.$cookies.isKey('va.version')) return true;
+
+        // Get version numbers
+        let currentVersion = Constants.VERSION.split('.');
+        let cookiesVersion = this.$cookies.get('va.version').split('.');
+
+        // Check the commit number is even or odd
+        return +currentVersion[currentVersion.length - 1] % 2 != +cookiesVersion[cookiesVersion.length - 1] % 2;
+    }
+
+    /**
      * On click, sends username and password to the server.
      */
     public onLoginClick()
