@@ -12,9 +12,11 @@
                     <span class="numeric">{{course.numericGrade.toFixed(2)}}</span>
                     <span class="percent">%</span>
                 </div>
-                <div class="course-updates" :class="unread === 0 ? 'none' : 'unread'">
+                <div class="course-updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
                     <span class="unread-number">{{unread}}</span>
-                    <span class="unread-text">new update{{unread >= 2 ? 's' : ''}}</span>
+                    <span class="unread-text" :class="clickable ? 'clickable' : ''">
+                        new update{{unread >= 2 ? 's' : ''}}
+                    </span>
                 </div>
             </el-col>
         </el-row>
