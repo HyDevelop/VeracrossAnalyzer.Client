@@ -51,8 +51,8 @@ export default class Login extends Vue
         // Version doesn't exist
         if (!this.$cookies.isKey('va.version')) return true;
 
-        // If the current version is greater than the min supported version
-        return VersionUtils.compare(Constants.MIN_SUPPORTED_VERSION, this.$cookies.get('va.version')) == -1;
+        // If the current version is less than the min supported version
+        return VersionUtils.compare(this.$cookies.get('va.version'), Constants.MIN_SUPPORTED_VERSION) == -1;
     }
 
     /**
