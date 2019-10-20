@@ -25,8 +25,8 @@ export default class CourseScatter extends Vue
                 {
                     fontSize: 12
                 },
-                text: 'Course GPA',
-                subtext: 'Current GPA for every course',
+                text: 'Assignments',
+                subtext: 'Assignment scores for ' + this.course.name,
                 x: 'center'
             },
 
