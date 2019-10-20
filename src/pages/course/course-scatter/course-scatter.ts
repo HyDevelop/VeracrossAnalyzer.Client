@@ -64,6 +64,12 @@ export default class CourseScatter extends Vue
                 min: 0
             },
 
+            // Tooltip
+            tooltip:
+            {
+                trigger: 'axis'
+            },
+
             // Data
             series: Array.from(map, ([type, assignments]) =>
             {
