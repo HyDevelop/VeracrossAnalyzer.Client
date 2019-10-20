@@ -4,12 +4,12 @@
 
         <div class="course-card-content expand">
             <el-row>
-                <el-col :span="12">
+                <el-col :span="14">
                     <el-card class="large overall-line-card vertical-center">
                         <course-scatter :course="course"></course-scatter>
                     </el-card>
                 </el-col>
-                <el-col :span="12">
+                <el-col :span="10">
 
                 </el-col>
             </el-row>
