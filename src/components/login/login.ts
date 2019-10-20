@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
 import {HttpUtils} from '@/utils/http-utils';
 import App from '@/components/app/app';
+import VersionUtils from '@/utils/version-utils';
 
 /**
  * This component handles user login, and obtains data from the server.
@@ -50,12 +51,8 @@ export default class Login extends Vue
         // Version doesn't exist
         if (!this.$cookies.isKey('va.version')) return true;
 
-        // Get version numbers
-        let current = Constants.VERSION.split('.');
-        let cookies = this.$cookies.get('va.version').split('.');
-
-        // Check the commit number is even or odd
-        return +current[current.length - 1] % 2 != +cookies[cookies.length - 1] % 2;
+        // If the current version is greater than the min supported version
+        return VersionUtils.compare(Constants.MIN_SUPPORTED_VERSION, this.$cookies.get('va.version')) == -1;
     }
 
     /**

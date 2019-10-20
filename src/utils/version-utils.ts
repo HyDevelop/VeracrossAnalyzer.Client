@@ -6,7 +6,7 @@ export default class VersionUtils
      * Eg.
      *   compare('0.1.2', '0.1.3') = -1
      *   compare('1.0.0', '0.1.3') = 1
-     *   compare('0.0.1', '0.0.1') = 0;
+     *   compare('0.0.1', '0.0.1') = 0
      *
      * @param ver1 Version 1
      * @param ver2 Version 2
