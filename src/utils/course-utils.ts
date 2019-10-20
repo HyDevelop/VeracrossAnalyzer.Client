@@ -34,4 +34,15 @@ export class CourseUtils
 
         return result;
     }
+
+    /**
+     * Format course to tab index string
+     *
+     * @param course Course object
+     * @return string Tab index
+     */
+    public static formatTabIndex(course: Course): string
+    {
+        return `course/${course.id}/${course.name.toLowerCase().split(' ').join('-')}`;
+    }
 }
