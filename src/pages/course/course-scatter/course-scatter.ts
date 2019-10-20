@@ -75,7 +75,11 @@ export default class CourseScatter extends Vue
             legend:
             {
                 bottom: 24,
-                itemWidth: 14
+                itemWidth: 14,
+                textStyle:
+                {
+                    fontSize: 11
+                }
             },
 
             // Data
