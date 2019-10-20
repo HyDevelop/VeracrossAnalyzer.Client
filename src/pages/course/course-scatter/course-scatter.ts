@@ -69,19 +69,19 @@ export default class CourseScatter extends Vue
     /**
      * Map assignments to {assignmentType, [assignment]} format.
      */
-    private mapAssignments(): {[index: string]: Assignment[]}
+    private mapAssignments(): Map<string, Assignment[]>
     {
-        // Define map {assignmentType, [assignment]}
-        let map: {[index: string]: Assignment[]} = {};
+        // Define map
+        let map = new Map();
 
         // Move data to map
         this.course.assignments.forEach(a =>
         {
             // Null case, create empty array
-            if (map[a.type] == undefined) map[a.type] = [];
+            if (map.has(a.type)) map.set(a.type, []);
 
             // Put data
-            map[a.type].push(a);
+            map.get(a.type).push(a);
         });
 
         return map;
