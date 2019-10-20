@@ -77,7 +77,7 @@ export default class CourseScatter extends Vue
 
             legend:
             {
-                show: true
+                bottom: 10
             },
 
             // Data
