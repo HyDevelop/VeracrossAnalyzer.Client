@@ -58,8 +58,7 @@ export default class CourseScatter extends Vue
                     name: type,
                     data: CourseScatter.assignmentsData(assignments)
                 }
-            })
-            ,
+            }),
 
             // Disable tooltip
             tooltip:
@@ -83,7 +82,7 @@ export default class CourseScatter extends Vue
         this.course.assignments.forEach(a =>
         {
             // Null case, create empty array
-            if (map.has(a.type)) map.set(a.type, []);
+            if (!map.has(a.type)) map.set(a.type, []);
 
             // Put data
             map.get(a.type).push(a);
