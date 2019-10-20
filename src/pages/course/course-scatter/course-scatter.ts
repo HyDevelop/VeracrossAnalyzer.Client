@@ -55,6 +55,9 @@ export default class CourseScatter extends Vue
                 name: 'Timeline',
                 nameLocation: 'middle',
                 nameGap: 42,
+
+                // The last date is today.
+                max: FormatUtils.toChartDate(new Date())
             },
 
             // Y axis represents GPAs and MaxGPAs
