@@ -30,6 +30,18 @@ export default class CourseScatter extends Vue
         // Map assignments
         let map = this.mapAssignments();
 
+        let itemStyle =
+        {
+            normal:
+            {
+                opacity: 0.8,
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.2)'
+            }
+        };
+
         // Create settings
         let settings =
         {
@@ -102,7 +114,8 @@ export default class CourseScatter extends Vue
                 return {
                     type: 'scatter',
                     name: type,
-                    data: CourseScatter.assignmentsData(assignments)
+                    data: CourseScatter.assignmentsData(assignments),
+                    itemStyle: itemStyle
                 }
             })
         };
