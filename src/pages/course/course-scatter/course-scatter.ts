@@ -65,4 +65,25 @@ export default class CourseScatter extends Vue
 
         return settings;
     }
+
+    /**
+     * Map assignments
+     */
+    private mapAssignments()
+    {
+        // Define map {assignmentType, [assignment]}
+        let map: {[index: string]: Assignment[]} = {};
+
+        // Move data to map
+        this.course.assignments.forEach(a =>
+        {
+            // Null case, create empty array
+            if (map[a.type] == undefined) map[a.type] = [];
+
+            // Put data
+            map[a.type].push(a);
+        });
+        
+        return map;
+    }
 }
