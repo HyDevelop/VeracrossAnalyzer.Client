@@ -94,4 +94,10 @@ export default class CourseScatter extends Vue
     {
         return assignments.map(a => [a.date, a.score / a.scoreMax]);
     }
+
+    afterConfig(options: any)
+    {
+        console.log(options);
+        return options;
+    }
 }

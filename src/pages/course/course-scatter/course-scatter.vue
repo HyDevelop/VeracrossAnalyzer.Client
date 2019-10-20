@@ -1,6 +1,6 @@
 <template>
     <div id="course-scatter">
-        <ve-scatter height="450px" class="graph" :extend="chartSettings"></ve-scatter>
+        <ve-scatter height="450px" class="graph" :extend="chartSettings" :after-config="afterConfig"></ve-scatter>
     </div>
 </template>
 
