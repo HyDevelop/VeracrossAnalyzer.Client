@@ -1,6 +1,6 @@
 <template>
     <div id="course-scatter">
-        <ve-scatter height="450px" class="graph" :after-config="afterConfig"></ve-scatter>
+        <ve-scatter height="450px" class="graph" :extend="{heyIUsedCourseObject: this.course.name}" :after-config="afterConfig"></ve-scatter>
     </div>
 </template>
 
