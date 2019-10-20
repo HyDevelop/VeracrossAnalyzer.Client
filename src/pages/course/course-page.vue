@@ -7,7 +7,7 @@
             <el-row>
                 <el-col :span="12">
                     <el-card class="large overall-line-card vertical-center">
-                        <course-scatter :courses="course"></course-scatter>
+                        <course-scatter :course="course"></course-scatter>
                     </el-card>
                 </el-col>
                 <el-col :span="12">
