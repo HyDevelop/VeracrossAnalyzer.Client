@@ -33,15 +33,7 @@ export default class CourseScatter extends Vue
             // X axis represents course names
             xAxis:
             {
-                type: 'category',
-                axisLabel: {
-                    interval: 0,
-                    inside: false,
-                    rotate: 90,
-
-                    // Truncate text length
-                    formatter: (value: string) => value.length <= 16 ? value : value.substr(0, 14) + '...'
-                },
+                type: 'time',
             },
 
             // Y axis represents GPAs and MaxGPAs
