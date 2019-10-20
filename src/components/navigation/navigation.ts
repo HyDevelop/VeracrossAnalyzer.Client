@@ -1,5 +1,7 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
+import {Course} from '@/components/app/app';
+import {CourseUtils} from '@/utils/course-utils';
 
 /**
  * This component is the top navigation bar
@@ -37,6 +39,11 @@ export default class Navigation extends Vue
                 this.updateIndex(e.state.lastTab);
             }
         };
+    }
+
+    public formatCourseIndex(course: Course)
+    {
+        return CourseUtils.formatTabIndex(course);
     }
 
     /**
