@@ -75,6 +75,11 @@ export default class CourseScatter extends Vue
                 trigger: 'axis'
             },
 
+            legend:
+            {
+                show: true
+            },
+
             // Data
             series: Array.from(map, ([type, assignments]) =>
             {
