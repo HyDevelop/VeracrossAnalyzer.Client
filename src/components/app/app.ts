@@ -91,6 +91,9 @@ export default class App extends Vue
     // Http Client
     public static http: HttpUtils = new HttpUtils();
 
+    // Instance
+    public static instance: App;
+
     /**
      * This is called when the instance is created.
      */
@@ -98,6 +101,9 @@ export default class App extends Vue
     {
         // Show splash
         console.log(Constants.SPLASH);
+
+        // Update instance
+        App.instance = this;
     }
 
     /**
