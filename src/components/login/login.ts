@@ -54,7 +54,7 @@ export default class Login extends Vue
             if (response.success)
             {
                 // Save token to cookies
-                this.$cookies.set('va.token', response.data, '7d');
+                this.$cookies.set('va.token', response.data, '27d');
                 this.$cookies.set('va.version', Constants.VERSION);
 
                 // Call custom event with token
