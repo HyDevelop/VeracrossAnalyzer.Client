@@ -41,7 +41,7 @@ export default class CourseScatter extends Vue
                 show: true,
                 textStyle:
                 {
-                    fontSize: 12
+                    fontSize: 13
                 },
                 text: 'Assignments',
                 subtext: 'Assignment scores for ' + this.course.name,
