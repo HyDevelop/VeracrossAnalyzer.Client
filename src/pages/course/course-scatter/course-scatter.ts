@@ -62,6 +62,10 @@ export default class CourseScatter extends Vue
                 name: 'Percentage Score',
                 nameLocation: 'center',
                 nameGap: 28,
+                axisLabel:
+                {
+                    formatter: (name: any) => name + '%'
+                },
                 max: 100,
                 min: (value: any) => Math.floor(value.min) - 5
             },
