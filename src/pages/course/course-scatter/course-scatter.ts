@@ -78,7 +78,11 @@ export default class CourseScatter extends Vue
             // Tooltip
             tooltip:
             {
-                trigger: 'axis'
+                trigger: 'axis',
+                axisPointer:
+                {
+                    type: 'cross'
+                }
             },
 
             legend:
