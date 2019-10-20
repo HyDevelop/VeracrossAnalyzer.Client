@@ -26,7 +26,8 @@ export default class Constants
     {
         // Colors
         colors:
-        ['#19d4ae',
+        [
+            '#19d4ae',
             '#5ab1ef',
             '#fa6e86',
             '#ffb980',
