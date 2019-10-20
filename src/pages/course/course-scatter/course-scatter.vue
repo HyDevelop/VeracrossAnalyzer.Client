@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script src="course-scatter.ts" lang="ts"></script>
+<script src="./course-scatter.ts" lang="ts"></script>
 <style lang="scss" scoped>
     #overall-bar
     {
