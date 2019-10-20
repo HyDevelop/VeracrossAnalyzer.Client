@@ -3,6 +3,7 @@ import {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
+import moment from 'moment';
 
 @Component({
 })
@@ -52,6 +53,10 @@ export default class CourseScatter extends Vue
             xAxis:
             {
                 type: 'time',
+                axisLabel:
+                {
+                    formatter: (name: any) => moment(name).format('MMM DD')
+                },
                 max: FormatUtils.toChartDate(new Date())
             },
 
