@@ -2,7 +2,8 @@
     <div id="course-head" class="course-card-content main vertical-center">
         <el-row>
             <el-col :span="12" class="course-col-name">
-                <div class="course-name">{{course.name}}</div>
+                <div class="course-name"
+                     :class="clickable ? 'clickable' : ''">{{course.name}}</div>
                 <div class="course-teacher">{{course.teacherName}}</div>
             </el-col>
             <el-col :span="12" class="course-col-grade">
@@ -34,6 +35,9 @@
 
         // @ts-ignore
         @Prop() course: Course;
+
+        // @ts-ignore
+        @Prop() clickable: boolean;
     }
 </script>
 
@@ -61,7 +65,7 @@
             color: var(--main);
         }
 
-        .course-name:hover
+        .course-name.clickable:hover
         {
             text-decoration: underline;
         }
