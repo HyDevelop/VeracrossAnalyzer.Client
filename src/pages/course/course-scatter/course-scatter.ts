@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
+import {FormatUtils} from '@/utils/format-utils';
 
 @Component({
 })
@@ -92,7 +93,7 @@ export default class CourseScatter extends Vue
      */
     private static assignmentsData(assignments: Assignment[])
     {
-        return assignments.map(a => [a.date, a.score / a.scoreMax]);
+        return assignments.map(a => [FormatUtils.toChartDate(a.date), a.score / a.scoreMax]);
     }
 
     afterConfig(options: any)
