@@ -2,7 +2,7 @@
     <el-card id="course-card" class="course-card">
         <course-head :course="course" :unread="countUnread()"></course-head>
 
-        <div class="course-card-content expand notification">
+        <div class="course-card-content expand">
             <el-row>
                 <el-col :span="12">
                     <el-card class="large overall-line-card vertical-center">
