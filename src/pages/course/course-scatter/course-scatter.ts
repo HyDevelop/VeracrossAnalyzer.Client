@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Course} from '@/components/app/app';
+import {Assignment, Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
 
@@ -69,7 +69,7 @@ export default class CourseScatter extends Vue
     /**
      * Map assignments to {assignmentType, [assignment]} format.
      */
-    private mapAssignments()
+    private mapAssignments(): {[index: string]: Assignment[]}
     {
         // Define map {assignmentType, [assignment]}
         let map: {[index: string]: Assignment[]} = {};
