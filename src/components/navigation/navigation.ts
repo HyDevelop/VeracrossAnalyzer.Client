@@ -91,8 +91,14 @@ export default class Navigation extends Vue
         // Find current course index
         let courseIndex = this.courses.findIndex(c => c.id == +courseId);
 
+        // Find next course
+        let course = this.courses[courseIndex + indexOffset];
+
+        // Null case
+        if (course == null) return;
+
         // Set tab to the next index
-        this.updateIndex(CourseUtils.formatTabIndex(this.courses[courseIndex + indexOffset]))
+        this.updateIndex(CourseUtils.formatTabIndex(course))
     }
 
     /**
