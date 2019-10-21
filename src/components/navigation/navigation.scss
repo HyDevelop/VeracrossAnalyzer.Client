@@ -62,7 +62,14 @@
 
 #prev-course
 {
-    
+    // Up center
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+
+    // Trapezoid
+    transform: perspective(50px) rotateX(-10deg);
 }
 
 .nav-course-operations
