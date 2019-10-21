@@ -9,6 +9,8 @@ import moment from 'moment';
 })
 export default class CourseScatter extends Vue
 {
+    private static DOT = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:{color}"></span>';
+
     // @ts-ignore
     @Prop({required: true}) course: Course;
 
@@ -30,6 +32,7 @@ export default class CourseScatter extends Vue
         // Map assignments
         let map = this.mapAssignments();
 
+        // Scatter data point style
         let itemStyle =
         {
             normal:
@@ -94,7 +97,9 @@ export default class CourseScatter extends Vue
                 axisPointer:
                 {
                     type: 'cross'
-                }
+                },
+                formatter: (ps: any[]) => ps[0].data[0] + '<br>' + ps.map(p =>
+                    `${CourseScatter.DOT.replace('{color}', p.color)}${p.data[2]}: ${p.data[1]}<br>`).join('')
             },
 
             // Legend
