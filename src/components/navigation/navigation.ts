@@ -107,9 +107,17 @@ export default class Navigation extends Vue
      */
     public findNextCourse(indexOffset: number)
     {
-        // Find current course
-        let courseId = this.activeIndex.split('/')[1];
+        return this.findCourse(this.activeIndex.split('/')[1], indexOffset);
+    }
 
+    /**
+     * Find course
+     *
+     * @param courseId Course ID
+     * @param indexOffset Index offset (Eg. 1 for next)
+     */
+    public findCourse(courseId: string, indexOffset: number)
+    {
         // Find current course index
         let courseIndex = this.courses.findIndex(c => c.id == +courseId);
 
