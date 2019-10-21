@@ -43,7 +43,7 @@ export default class Navigation extends Vue
             {
                 // Restore previous tab
                 console.log(`onPopState: Current: ${this.activeIndex}, Previous: ${e.state.lastTab}`);
-                this.updateIndex(e.state.lastTab);
+                this.updateIndex(e.state.lastTab, false);
             }
         };
     }
