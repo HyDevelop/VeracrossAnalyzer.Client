@@ -97,6 +97,7 @@ export default class CourseScatter extends Vue
                 }
             },
 
+            // Legend
             legend:
             {
                 bottom: 24,
@@ -152,6 +153,6 @@ export default class CourseScatter extends Vue
     private static assignmentsData(assignments: Assignment[])
     {
         return assignments.filter(a => a.complete == 'Complete')
-            .map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2)]);
+            .map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2), a.description]);
     }
 }
