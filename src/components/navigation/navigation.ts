@@ -14,7 +14,8 @@ export default class Navigation extends Vue
     // @ts-ignore
     @Prop() activeIndex: string;
 
-    @Prop() courses: any;
+    // @ts-ignore
+    @Prop() courses: Course[];
 
     /**
      * This is called when the instance is created.
@@ -82,7 +83,14 @@ export default class Navigation extends Vue
      */
     public nextCourse()
     {
-        // TODO: implement this.
+        // Find current course
+        let courseId = this.activeIndex.split('/')[1];
+
+        // Find current course index
+        let courseIndex = this.courses.findIndex(c => c.id == +courseId);
+
+        // Set tab to the next index
+        this.updateIndex(CourseUtils.formatTabIndex(this.courses[courseIndex + 1]))
     }
 
     /**
