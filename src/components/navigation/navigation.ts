@@ -78,6 +78,14 @@ export default class Navigation extends Vue
     }
 
     /**
+     * Move to the next course
+     */
+    public nextCourse()
+    {
+        // TODO: implement this.
+    }
+
+    /**
      * This function is called when the sign out button is clicked.
      */
     public signOut()

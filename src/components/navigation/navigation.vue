@@ -18,7 +18,9 @@
 
             <el-button @click="signOut" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
-        <div class="line"></div>
+        <div v-if="activeIndex.includes('course')" @click="nextCourse" id="next-course">
+            ▼ NEXT COURSE ▼
+        </div>
     </div>
 </template>
 
