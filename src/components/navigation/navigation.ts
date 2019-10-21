@@ -35,7 +35,7 @@ export default class Navigation extends Vue
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
         // Update initial index
-        this.updateIndex(url.substring(1), false);
+        this.updateIndex(url.substring(2), false);
 
         // Create history state listener
         window.onpopstate = e =>
