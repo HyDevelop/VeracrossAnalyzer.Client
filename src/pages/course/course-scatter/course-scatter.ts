@@ -99,7 +99,8 @@ export default class CourseScatter extends Vue
                     type: 'cross'
                 },
                 formatter: (ps: any[]) => ps[0].data[0] + '<br>' + ps.map(p =>
-                    `${CourseScatter.DOT.replace('{color}', p.color)}${p.data[2]}: ${p.data[1]}<br>`).join('')
+                    `${CourseScatter.DOT.replace('{color}', p.color)}
+                    ${FormatUtils.limit(p.data[2], 22)}: ${p.data[1]}<br>`).join('')
             },
 
             // Legend

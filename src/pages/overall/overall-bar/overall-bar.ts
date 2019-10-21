@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Course} from '@/components/app/app';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
+import {FormatUtils} from '@/utils/format-utils';
 
 @Component({
 })
@@ -40,7 +41,7 @@ export default class OverallBar extends Vue
                     rotate: 90,
 
                     // Truncate text length
-                    formatter: (value: string) => value.length <= 16 ? value : value.substr(0, 14) + '...'
+                    formatter: (value: string) => FormatUtils.limit(value, 16)
                 },
             },
 
