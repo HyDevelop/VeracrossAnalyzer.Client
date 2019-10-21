@@ -74,7 +74,7 @@ export default class Navigation extends Vue
         this.$emit('update:activeIndex', newIndex);
 
         // Record or not
-        if (history == null || !history) return;
+        if (history != null && !history) return;
 
         // Check url
         let url = `/${newIndex}`;
