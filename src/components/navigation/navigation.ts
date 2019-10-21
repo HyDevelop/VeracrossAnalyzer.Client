@@ -31,7 +31,7 @@ export default class Navigation extends Vue
 
         // Set history state
         let url = window.location.pathname;
-        if (url == '/' || url == '') url = '/overall';
+        if (url == '/' || url == '') url = '/#overall';
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
         // Update initial index
@@ -84,7 +84,7 @@ export default class Navigation extends Vue
             console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${newIndex}`);
 
             // Check url
-            let url = `/${newIndex}`;
+            let url = `/#${newIndex}`;
 
             // Push history state
             window.history.pushState({lastTab: newIndex}, '', url);
