@@ -90,6 +90,23 @@ export default class Navigation extends Vue
     }
 
     /**
+     * Get title for index
+     *
+     * @param index Index
+     */
+    public getTitle(index: string)
+    {
+        // Course
+        if (index.startsWith('course'))
+        {
+            return this.findCourse(index.split('/')[1], 0).name;
+        }
+
+        // Others
+        return FormatUtils.toTitleCase(index);
+    }
+
+    /**
      * Move to the next course
      *
      * @param indexOffset Index offset (Eg. 1 for next)
