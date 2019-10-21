@@ -15,4 +15,15 @@ export class FormatUtils
         // Convert to yyyy-mm-dd
         return moment(date).format('YYYY-MM-DD');
     }
+
+    /**
+     * Limit string length
+     *
+     * @param str String
+     * @param length Max length
+     */
+    static limit(str: string, length: number): string
+    {
+        return str.length <= length ? str : str.substr(0, length - 2) + '...'
+    }
 }
