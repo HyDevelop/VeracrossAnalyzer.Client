@@ -77,20 +77,21 @@ export default class Navigation extends Vue
         // Call custom event
         this.$emit('update:activeIndex', newIndex);
 
+        // Record or not
+        if (history == null || history)
+        {
+            // Debug output TODO: Remove this
+            console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${newIndex}`);
+
+            // Check url
+            let url = `/${newIndex}`;
+
+            // Push history state
+            window.history.pushState({lastTab: newIndex}, '', url);
+        }
+
         // Update title
         document.title = 'Veracross Analyzer - ' + this.getTitle(newIndex);
-
-        // Record or not
-        if (history != null && !history) return;
-
-        // Debug output TODO: Remove this
-        console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${newIndex}`);
-
-        // Check url
-        let url = `/${newIndex}`;
-
-        // Push history state
-        window.history.pushState({lastTab: newIndex}, '', url);
     }
 
     /**
