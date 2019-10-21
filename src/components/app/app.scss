@@ -71,3 +71,14 @@ div.el-card.course-card > div.el-card__body
     text-decoration: underline;
     cursor: pointer;
 }
+
+// Non-selectable text
+.unselectable
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
