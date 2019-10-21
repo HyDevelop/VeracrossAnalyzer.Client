@@ -55,6 +55,7 @@
     position: absolute;
     bottom: 0;
     left: 25%;
+    padding-top: 2px;
 
     // Trapezoid
     transform: perspective(50px) rotateX(10deg);
@@ -67,6 +68,7 @@
     position: absolute;
     top: 61px;
     left: 25%;
+    padding-bottom: 2px;
 
     // Trapezoid
     transform: perspective(50px) rotateX(-10deg);
@@ -76,7 +78,6 @@
 {
     // Background
     background-color: rgba(214, 214, 214, 0.67);
-    padding-top: 2px;
 
     // Font
     font-size: 14px;
