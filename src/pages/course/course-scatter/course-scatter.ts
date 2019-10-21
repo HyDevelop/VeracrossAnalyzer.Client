@@ -100,7 +100,7 @@ export default class CourseScatter extends Vue
                 },
                 formatter: (ps: any[]) => ps[0].data[0] + '<br>' + ps.map(p =>
                     `${CourseScatter.DOT.replace('{color}', p.color)}
-                    ${FormatUtils.limit(p.data[2], 22)}: ${p.data[1]}<br>`).join('')
+                    ${FormatUtils.limit(p.data[2], 22)}: ${p.data[1]}%<br>`).join('')
             },
 
             // Legend
