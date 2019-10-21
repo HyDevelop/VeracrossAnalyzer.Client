@@ -7,7 +7,7 @@ export default class Constants
     public static API_URL: string = 'https://va.hydev.org/api';
 
     /** Current version */
-    public static VERSION: string = '0.3.5.697';
+    public static VERSION: string = '0.3.5.703';
 
     /** Minimum version that still supports the same cookies */
     public static MIN_SUPPORTED_VERSION: string = '0.3.4.561';
