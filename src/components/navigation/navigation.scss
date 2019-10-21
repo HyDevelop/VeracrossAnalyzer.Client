@@ -56,6 +56,9 @@
     bottom: 0;
     left: 25%;
 
+    // Trapezoid
+    transform: perspective(50px) rotateX(10deg);
+
     // Background
     background-color: rgba(214, 214, 214, 0.67);
     padding-top: 2px;
