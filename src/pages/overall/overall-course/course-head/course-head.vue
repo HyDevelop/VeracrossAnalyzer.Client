@@ -27,6 +27,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import App, {Course} from '@/components/app/app';
     import {CourseUtils} from '@/utils/course-utils';
+    import Navigation from '@/components/navigation/navigation';
 
     @Component({
         components: {}
@@ -48,7 +49,7 @@
         redirect()
         {
             if (!this.clickable) return;
-            App.instance.selectedTab = CourseUtils.formatTabIndex(this.course);
+            Navigation.instance.updateIndex(CourseUtils.formatTabIndex(this.course));
         }
     }
 </script>
