@@ -17,11 +17,17 @@ export default class Navigation extends Vue
     // @ts-ignore
     @Prop() courses: Course[];
 
+    // Instance
+    public static instance: Navigation;
+
     /**
      * This is called when the instance is created.
      */
     public created()
     {
+        // Set instance
+        Navigation.instance = this;
+
         // Set history state
         let url = window.location.pathname;
         if (url == '/' || url == '') url = '/overall';
