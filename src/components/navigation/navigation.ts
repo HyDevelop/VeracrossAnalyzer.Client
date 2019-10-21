@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
 import {Course} from '@/components/app/app';
 import {CourseUtils} from '@/utils/course-utils';
+import {FormatUtils} from '@/utils/format-utils';
 
 /**
  * This component is the top navigation bar
@@ -75,6 +76,9 @@ export default class Navigation extends Vue
     {
         // Call custom event
         this.$emit('update:activeIndex', newIndex);
+
+        // Update title
+        document.title = 'Veracross Analyzer - ' + this.getTitle(newIndex);
 
         // Record or not
         if (history != null && !history) return;
