@@ -80,8 +80,10 @@ export default class Navigation extends Vue
 
     /**
      * Move to the next course
+     *
+     * @param indexOffset Index offset (Eg. 1 for next)
      */
-    public nextCourse()
+    public nextCourse(indexOffset: number)
     {
         // Find current course
         let courseId = this.activeIndex.split('/')[1];
@@ -90,7 +92,7 @@ export default class Navigation extends Vue
         let courseIndex = this.courses.findIndex(c => c.id == +courseId);
 
         // Set tab to the next index
-        this.updateIndex(CourseUtils.formatTabIndex(this.courses[courseIndex + 1]))
+        this.updateIndex(CourseUtils.formatTabIndex(this.courses[courseIndex + indexOffset]))
     }
 
     /**
