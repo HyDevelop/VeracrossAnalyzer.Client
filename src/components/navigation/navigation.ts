@@ -60,22 +60,27 @@ export default class Navigation extends Vue
 
         // Debug output TODO: Remove this
         console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${index}`);
-
-        // Check url
-        let url = `/${index}`;
-
-        // Push history state
-        window.history.pushState({lastTab: index}, '', url);
     }
 
     /**
      * Update index
      *
      * @param newIndex New index
+     * @param history Record in history or not (Default true)
      */
-    private updateIndex(newIndex: string)
+    private updateIndex(newIndex: string, history?: boolean)
     {
+        // Call custom event
         this.$emit('update:activeIndex', newIndex);
+
+        // Record or not
+        if (history == null || !history) return;
+
+        // Check url
+        let url = `/${newIndex}`;
+
+        // Push history state
+        window.history.pushState({lastTab: newIndex}, '', url);
     }
 
     /**
