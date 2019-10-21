@@ -74,7 +74,7 @@ export default class Navigation extends Vue
      * @param newIndex New index
      * @param history Record in history or not (Default true)
      */
-    private updateIndex(newIndex: string, history?: boolean)
+    public updateIndex(newIndex: string, history?: boolean)
     {
         // Call custom event
         this.$emit('update:activeIndex', newIndex);
