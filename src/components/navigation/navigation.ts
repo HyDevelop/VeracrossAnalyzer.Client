@@ -89,6 +89,11 @@ export default class Navigation extends Vue
         this.updateIndex(CourseUtils.formatTabIndex(this.findNextCourse(indexOffset)))
     }
 
+    /**
+     * Find the next course
+     *
+     * @param indexOffset Index offset (Eg. 1 for next)
+     */
     public findNextCourse(indexOffset: number)
     {
         // Find current course
