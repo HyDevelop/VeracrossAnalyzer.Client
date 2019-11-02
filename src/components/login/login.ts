@@ -6,7 +6,6 @@ import VersionUtils from '@/utils/version-utils';
 
 /**
  * This component handles user login, and obtains data from the server.
- * TODO: Press enter to login
  */
 @Component({
     components: {},
