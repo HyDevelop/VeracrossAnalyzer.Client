@@ -9,7 +9,7 @@ import {HttpUtils} from '@/utils/http-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
-import CoursePage from '@/pages/course/course-page';
+import CoursePage from '@/pages/course/course-page.vue';
 
 
 /**
