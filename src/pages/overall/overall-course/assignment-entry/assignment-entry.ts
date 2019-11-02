@@ -4,7 +4,7 @@ import moment from 'moment';
 
 @Component({
 })
-export default class UnreadEntry extends Vue
+export default class AssignmentEntry extends Vue
 {
     // @ts-ignore
     @Prop({required: true}) assignment: Assignment;
