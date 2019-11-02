@@ -1,7 +1,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
-import Overall from '@/pages/overall/overall';
+import Overall from '@/pages/overall/overall.vue';
 import Constants from '@/constants';
 import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
