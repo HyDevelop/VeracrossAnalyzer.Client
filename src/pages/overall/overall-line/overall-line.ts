@@ -1,5 +1,6 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Course} from '@/components/app/app';
+import moment from 'moment';
 
 @Component({
 })
@@ -38,9 +39,8 @@ export default class OverallLine extends Vue
         // Zoom bar
         dataZoom:
         [
-            // TODO: Calculate real value for startValue
             {
-                startValue: '9/13/2019'
+                startValue: moment().subtract(30, 'days').format('M/D/YYYY')
             },
             {
                 type: 'inside'
