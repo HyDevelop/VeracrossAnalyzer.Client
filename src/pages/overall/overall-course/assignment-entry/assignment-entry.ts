@@ -8,7 +8,7 @@ export default class AssignmentEntry extends Vue
 {
     @Prop({required: true}) assignment: Assignment;
 
-    @Prop({default: false})
+    @Prop({default: false}) unread: boolean;
 
     /**
      * Format a date to the displayed format
