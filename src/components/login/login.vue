@@ -5,23 +5,24 @@
                 <img alt="Vue logo" src="../../assets/logo.png">
 
                 <h1>Veracross Analyzer</h1>
+                <form id="login-form">
+                    <el-input v-model="username"
+                              placeholder="School Username"
+                              :class="{'input-error': error !== ''}"
+                              @keyup.enter.native="onEnter">
+                    </el-input>
 
-                <el-input v-model="username"
-                          placeholder="School Username"
-                          :class="{'input-error': error !== ''}"
-                          @keyup.enter.native="onEnter">
-                </el-input>
+                    <el-input v-model="password"
+                              placeholder="Veracross Password"
+                              show-password=""
+                              :class="{'input-error': error !== ''}"
+                              @keyup.enter.native="onEnter">
+                    </el-input>
 
-                <el-input v-model="password"
-                          placeholder="Veracross Password"
-                          show-password=""
-                          :class="{'input-error': error !== ''}"
-                          @keyup.enter.native="onEnter">
-                </el-input>
+                    <div class="el-form-item__error custom">{{error}}</div>
 
-                <div class="el-form-item__error custom">{{error}}</div>
-
-                <el-button plain type="primary" @click="onLoginClick" :loading="loading">Login</el-button>
+                    <el-button plain type="primary" @click="onLoginClick" :loading="loading">Login</el-button>
+                </form>
             </div>
         </div>
     </div>
