@@ -10,7 +10,6 @@ import {GPAUtils} from '@/utils/gpa-utils';
 })
 export default class Overall extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) courses: Course[];
 
     /**

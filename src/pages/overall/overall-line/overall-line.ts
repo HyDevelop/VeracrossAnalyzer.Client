@@ -6,7 +6,6 @@ import moment from 'moment';
 })
 export default class OverallLine extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) courses: Course[];
 
     private settings =

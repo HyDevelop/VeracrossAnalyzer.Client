@@ -8,7 +8,6 @@ import CourseScatter from '@/pages/course/course-scatter/course-scatter';
 })
 export default class CoursePage extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) course: Course;
 
     private unread: number = -1;

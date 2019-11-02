@@ -8,7 +8,6 @@ import {FormatUtils} from '@/utils/format-utils';
 })
 export default class OverallBar extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) courses: Course[];
 
     /**

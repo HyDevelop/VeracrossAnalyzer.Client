@@ -12,11 +12,9 @@ import {FormatUtils} from '@/utils/format-utils';
 })
 export default class Navigation extends Vue
 {
-    // @ts-ignore
-    @Prop() activeIndex: string;
+    @Prop({required: true}) activeIndex: string;
 
-    // @ts-ignore
-    @Prop() courses: Course[];
+    @Prop({required: true}) courses: Course[];
 
     // Instance
     public static instance: Navigation;

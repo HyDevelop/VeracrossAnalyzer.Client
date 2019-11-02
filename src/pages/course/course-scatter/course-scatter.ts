@@ -11,7 +11,6 @@ export default class CourseScatter extends Vue
 {
     private static DOT = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:{color}"></span>';
 
-    // @ts-ignore
     @Prop({required: true}) course: Course;
 
     /**

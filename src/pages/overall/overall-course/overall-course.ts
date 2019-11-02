@@ -10,7 +10,6 @@ import CourseHead from '@/pages/overall/overall-course/course-head/course-head.v
 })
 export default class OverallCourse extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) course: Course;
 
     private unread: number = -1;
