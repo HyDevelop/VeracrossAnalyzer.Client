@@ -1,5 +1,4 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import Constants from '@/constants';
 import {Course} from '@/components/app/app';
 import {CourseUtils} from '@/utils/course-utils';
 import {FormatUtils} from '@/utils/format-utils';

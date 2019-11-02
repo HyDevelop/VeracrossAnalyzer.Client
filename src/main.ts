@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
-const VCharts = require('v-charts');
-
 import App from './components/app/app.vue';
 import VueCookies from 'vue-cookies';
+
+const VCharts = require('v-charts');
 
 Vue.config.productionTip = false;
 

@@ -1,6 +1,5 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Assignment, Course} from '@/components/app/app';
-import {GPAUtils} from '@/utils/gpa-utils';
 import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
 import moment from 'moment';

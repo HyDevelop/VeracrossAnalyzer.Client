@@ -1,6 +1,5 @@
-import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
-import {HttpUtils} from '@/utils/http-utils';
 import App from '@/components/app/app';
 import VersionUtils from '@/utils/version-utils';
 

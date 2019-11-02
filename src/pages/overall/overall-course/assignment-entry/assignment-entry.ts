@@ -1,5 +1,5 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Assignment, Course} from '@/components/app/app';
+import {Assignment} from '@/components/app/app';
 import moment from 'moment';
 
 @Component({
