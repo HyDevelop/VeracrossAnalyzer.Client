@@ -80,9 +80,6 @@ export default class Navigation extends Vue
         // Record or not
         if (history == null || history)
         {
-            // Debug output TODO: Remove this
-            console.log(`onNavigate: Previous: ${this.activeIndex}, New: ${newIndex}`);
-
             // Check url
             let url = `/#${newIndex}`;
 
