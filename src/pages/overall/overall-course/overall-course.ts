@@ -1,6 +1,6 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import App, {Assignment, Course} from '@/components/app/app';
-import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry';
+import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
 import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
 
 @Component({
