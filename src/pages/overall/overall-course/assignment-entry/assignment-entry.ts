@@ -6,8 +6,9 @@ import moment from 'moment';
 })
 export default class AssignmentEntry extends Vue
 {
-    // @ts-ignore
     @Prop({required: true}) assignment: Assignment;
+
+    @Prop({default: false})
 
     /**
      * Format a date to the displayed format
