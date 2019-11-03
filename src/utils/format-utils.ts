@@ -37,4 +37,14 @@ export class FormatUtils
     {
         return str.replace(/\w\S*/g, s => s.charAt(0).toUpperCase() + s.substr(1).toLowerCase())
     }
+
+    /**
+     * Parse html text
+     *
+     * @param str
+     */
+    public static parseText(str: string): string
+    {
+        return str.replace(/&amp;/g, '&');
+    }
 }
