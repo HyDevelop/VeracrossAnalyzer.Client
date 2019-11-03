@@ -148,7 +148,7 @@ export default class App extends Vue
                 this.courses = response.data;
 
                 // Post processing
-                this.courses.forEach(course => course.name = FormatUtils.parseText(course.name));
+                CourseUtils.postProcess(this.courses);
 
                 // Load assignments
                 this.loadAssignments();
