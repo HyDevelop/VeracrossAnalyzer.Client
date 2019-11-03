@@ -63,4 +63,31 @@ export class CourseUtils
     {
         return `course/${course.id}/${course.name.toLowerCase().split(' ').join('-')}`;
     }
+    /**
+     * Detect course level based on course name
+     *
+     * @param name Course name
+     */
+    private static detectLevel(name: string)
+    {
+        // Common ones
+        if (name.startsWith('AP')) return LEVEL_AP;
+        if (name.endsWith(' H')) return LEVEL_H;
+        if (name.endsWith(' A')) return LEVEL_A;
+        if (name.endsWith(' CP')) return LEVEL_CP;
+
+        // Uncommon ones
+        let lower = name.toLowerCase();
+
+        if (lower.startsWith('pre-ap')) return LEVEL_AP;
+        if (lower.endsWith(' acc')) return LEVEL_A;
+        if (name.endsWith('H')) return LEVEL_H;
+        if (name.endsWith('A')) return LEVEL_A;
+        if (name.endsWith('CP')) return LEVEL_CP;
+
+        // Even more uncommon
+        if (lower.includes('honors')) return LEVEL_H;
+        if (lower.includes('accelerated')) return LEVEL_A;
+        if (name.includes('Advanced')) return LEVEL_A;
+    }
 }
