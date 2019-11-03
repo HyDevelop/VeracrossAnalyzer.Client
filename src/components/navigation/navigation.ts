@@ -33,7 +33,7 @@ export default class Navigation extends Vue
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
         // Update initial index after loading is done
-        pWaitFor(() => App.instance.loading != '').then(() =>
+        pWaitFor(() => this.courses.length > 1 && App.instance.loading != '').then(() =>
         {
             this.updateIndex(url.substring(2), false);
         });
