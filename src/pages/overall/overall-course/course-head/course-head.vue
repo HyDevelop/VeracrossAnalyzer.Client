@@ -29,9 +29,7 @@
     import {CourseUtils} from '@/utils/course-utils';
     import Navigation from '@/components/navigation/navigation';
 
-    @Component({
-        components: {}
-    })
+    @Component
     export default class CourseHead extends Vue
     {
         @Prop({required: true}) unread: number;

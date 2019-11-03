@@ -1,6 +1,6 @@
 <template>
     <el-card id="course-card" class="course-card">
-        <course-head :course="course" :unread="countUnread()"></course-head>
+        <course-head :clickable="false" :course="course" :unread="countUnread()"></course-head>
 
         <div class="course-card-content expand">
             <el-row>
@@ -13,6 +13,10 @@
 
                 </el-col>
             </el-row>
+
+            <!--AssignmentEntry v-for="assignment in course.assignments"
+                             :assignment="assignment" :unread="false">
+            </AssignmentEntry-->
         </div>
     </el-card>
 </template>
@@ -22,9 +26,10 @@
     import {Assignment, Course} from '@/components/app/app';
     import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
     import CourseScatter from '@/pages/course/course-scatter/course-scatter';
+    import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
 
     @Component({
-        components: {CourseHead, CourseScatter}
+        components: {AssignmentEntry, CourseHead, CourseScatter}
     })
     export default class CoursePage extends Vue
     {
