@@ -3,9 +3,9 @@
         <el-menu style="margin-bottom: 10px;" class="centered" mode="horizontal"
                  :default-active="activeIndex" @select="onSelect">
 
-            <!--div id="nav-title">
+            <div id="nav-title">
                 Veracross Analyzer
-            </div-->
+            </div>
 
             <el-menu-item index="overall">Overall</el-menu-item>
 
