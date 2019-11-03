@@ -1,7 +1,8 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Course} from '@/components/app/app';
+import App, {Course} from '@/components/app/app';
 import {CourseUtils} from '@/utils/course-utils';
 import {FormatUtils} from '@/utils/format-utils';
+import pWaitFor from 'p-wait-for';
 
 /**
  * This component is the top navigation bar
@@ -21,7 +22,7 @@ export default class Navigation extends Vue
     /**
      * This is called when the instance is created.
      */
-    public created()
+    public mounted()
     {
         // Set instance
         Navigation.instance = this;
@@ -31,8 +32,11 @@ export default class Navigation extends Vue
         if (url == '/' || url == '') url = '/#overall';
         window.history.replaceState({lastTab: url.substring(1)}, '', url);
 
-        // Update initial index
-        this.updateIndex(url.substring(2), false);
+        // Update initial index after loading is done
+        pWaitFor(() => App.instance.loading != '').then(() =>
+        {
+            this.updateIndex(url.substring(2), false);
+        });
 
         // Create history state listener
         window.onpopstate = e =>
