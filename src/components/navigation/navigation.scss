@@ -46,6 +46,12 @@
     // Font
     font: bold 16px arial;
     display: inline-flex;
+
+    // Shadow effect
+    -webkit-background-clip: text;
+    background-color: #dedede;
+    color: transparent;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 #next-course
