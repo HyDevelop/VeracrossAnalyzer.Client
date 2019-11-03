@@ -4,6 +4,8 @@ const LEVEL_AP = {level: 'AP', scaleUp: 1};
 const LEVEL_H = {level: 'H', scaleUp: 0.75};
 const LEVEL_A = {level: 'A', scaleUp: 0.5};
 const LEVEL_CP = {level: 'CP', scaleUp: 0.25};
+const LEVEL_CLUB = {level: 'Club', scaleUp: -1};
+
 
 export class CourseUtils
 {
