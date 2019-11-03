@@ -1,4 +1,5 @@
 import {Course} from '@/components/app/app';
+import {FormatUtils} from '@/utils/format-utils';
 
 const LEVEL_AP = {level: 'AP', scaleUp: 1};
 const LEVEL_H = {level: 'H', scaleUp: 0.75};
@@ -63,6 +64,33 @@ export class CourseUtils
     {
         return `course/${course.id}/${course.name.toLowerCase().split(' ').join('-')}`;
     }
+
+    /**
+     * Post process course list
+     *
+     * @param courses Course list
+     */
+    public static postProcess(courses: Course[])
+    {
+        for (let course of courses)
+        {
+            // Parse name
+            course.name = FormatUtils.parseText(course.name);
+
+            // Detect level
+            let level = this.detectLevel(course.name);
+            if (level != undefined)
+            {
+                course.level = level.level;
+                course.scaleUp = level.scaleUp;
+            }
+            else
+            {
+                course.level = 'Unknown';
+            }
+        }
+    }
+
     /**
      * Detect course level based on course name
      *
