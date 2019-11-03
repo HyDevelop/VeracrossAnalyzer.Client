@@ -10,6 +10,7 @@ import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
+import {FormatUtils} from '@/utils/format-utils';
 
 
 /**
@@ -145,6 +146,9 @@ export default class App extends Vue
             {
                 // Save courses
                 this.courses = response.data;
+
+                // Post processing
+                this.courses.forEach(course => course.name = FormatUtils.parseText(course.name));
 
                 // Load assignments
                 this.loadAssignments();
