@@ -6,6 +6,17 @@ const LEVEL_A = {level: 'A', scaleUp: 0.5};
 const LEVEL_CP = {level: 'CP', scaleUp: 0.25};
 const LEVEL_CLUB = {level: 'Club', scaleUp: -1};
 
+const UNKNOWN_COURSE_LIST =
+{
+    'Piano Masterclass': LEVEL_H,
+    'Multivariable Calculus with Differential Equations': LEVEL_H,
+    'Introduction to Algorithmic Thinking and Computational Technologies': LEVEL_A,
+    'Ceramics 1': LEVEL_CP,
+    'Ceramics 2': LEVEL_A,
+    'Sculpture': LEVEL_CP,
+    'Drawing': LEVEL_CP,
+    'Painting': LEVEL_CP
+};
 
 export class CourseUtils
 {
