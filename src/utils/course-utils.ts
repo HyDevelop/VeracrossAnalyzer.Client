@@ -36,8 +36,8 @@ export class CourseUtils
             // Skip future or past courses
             if (course.status != 'active') return;
 
-            // Skip courses without levels
-            if (course.level == 'None') return;
+            // Skip courses without levels TODO: Ask for user input
+            if (course.level == 'None' || course.level == 'Unknown' || course.scaleUp == -1) return;
 
             // Skip courses without graded assignments
             if (course.assignments.filter(a => a.complete == 'Complete').length == 0) return;
