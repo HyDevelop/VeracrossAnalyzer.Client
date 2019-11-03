@@ -103,11 +103,13 @@ export class CourseUtils
         if (name.endsWith(' H')) return LEVEL_H;
         if (name.endsWith(' A')) return LEVEL_A;
         if (name.endsWith(' CP')) return LEVEL_CP;
+        if (name.startsWith('HS ')) return LEVEL_CLUB;
+        if (name.startsWith('MS ')) return LEVEL_CLUB;
 
         // Uncommon ones
         let lower = name.toLowerCase();
 
-        if (lower.startsWith('pre-ap')) return LEVEL_AP;
+        if (name.startsWith('Pre-AP')) return LEVEL_AP;
         if (lower.endsWith(' acc')) return LEVEL_A;
         if (name.endsWith('H')) return LEVEL_H;
         if (name.endsWith('A')) return LEVEL_A;
