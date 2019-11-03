@@ -89,5 +89,11 @@ export class CourseUtils
         if (lower.includes('honors')) return LEVEL_H;
         if (lower.includes('accelerated')) return LEVEL_A;
         if (name.includes('Advanced')) return LEVEL_A;
+
+        // Unknown course list
+        if (UNKNOWN_COURSE_LIST.has(name)) return UNKNOWN_COURSE_LIST.get(name);
+
+        // Really unknown
+        return undefined;
     }
 }
