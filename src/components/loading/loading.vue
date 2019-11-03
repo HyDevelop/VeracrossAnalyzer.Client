@@ -34,11 +34,9 @@
     })
     export default class Loading extends Vue
     {
-        // @ts-ignore
-        @Prop() text: string;
+        @Prop({required: true}) text: string;
 
-        // @ts-ignore
-        @Prop() error: boolean;
+        @Prop({required: true}) error: boolean;
 
         getText()
         {

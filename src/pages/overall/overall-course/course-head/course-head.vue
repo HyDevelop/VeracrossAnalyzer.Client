@@ -34,14 +34,11 @@
     })
     export default class CourseHead extends Vue
     {
-        // @ts-ignore
-        @Prop() unread: number;
+        @Prop({required: true}) unread: number;
 
-        // @ts-ignore
-        @Prop() course: Course;
+        @Prop({required: true}) course: Course;
 
-        // @ts-ignore
-        @Prop() clickable: boolean;
+        @Prop({required: true}) clickable: boolean;
 
         /**
          * Redirect to the course page
