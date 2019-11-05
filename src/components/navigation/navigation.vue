@@ -22,10 +22,12 @@
              @click="nextCourse(-1)" id="prev-course" class="nav-course-operations unselectable">
             ▲ PREVIOUS COURSE ▲
         </div>
-        <div v-if="activeIndex.includes('course') && findNextCourse(1) != null"
-             @click="nextCourse(1)" id="next-course" class="nav-course-operations unselectable">
-            ▼ NEXT COURSE ▼
-        </div>
+        <footer>
+            <div v-if="activeIndex.includes('course') && findNextCourse(1) != null"
+                 @click="nextCourse(1)" id="next-course" class="nav-course-operations unselectable">
+                ▼ NEXT COURSE ▼
+            </div>
+        </footer>
     </div>
 </template>
 
