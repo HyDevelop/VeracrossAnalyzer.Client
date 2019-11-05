@@ -1,5 +1,5 @@
 <template>
-    <div class="unread-entry vertical-center" :style="`background: ${background}`">
+    <div class="unread-entry vertical-center" :style="`background: ${backgroundColor}`">
         <el-row class="unread-row">
             <el-col :span="3" class="date">
                 <span class="month">{{getMoment(assignment.date).format("MMM Do")}}</span>
@@ -41,7 +41,7 @@
         @Prop({required: true}) assignment: Assignment;
 
         @Prop({default: false}) unread: boolean;
-        @Prop({default: '#f5f7fa'}) background: string;
+        @Prop({default: '#f5f7fa'}) backgroundColor: string;
 
         /**
          * Format a date to the displayed format

@@ -6,7 +6,7 @@
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
-                             :assignment="assignment">
+                             :assignment="assignment" :unread="assignment.unread" backgroundColor="#f5faff">
             </AssignmentEntry>
         </el-card>
     </div>
