@@ -17,10 +17,6 @@
             <AssignmentTypeHead v-for="type in getAssignmentTypes()" :key="type"
                                 :type-name="type" :assignments="course.assignments">
             </AssignmentTypeHead>
-
-            <!--AssignmentEntry v-for="assignment in course.assignments"
-                             :assignment="assignment" :unread="false">
-            </AssignmentEntry-->
         </div>
     </el-card>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div id="assignment-type-head">
-        <el-card>
+        <el-card :body-style="{padding: '0px'}">
             <span>{{typeName}}</span>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
@@ -14,7 +14,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import {Assignment} from '@/components/app/app';
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
-    
+
     @Component({
         components: {AssignmentEntry}
     })
@@ -37,6 +37,9 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss">
+#assignment-type-head
+{
 
+}
 </style>

@@ -18,10 +18,12 @@
 
             <el-button @click="signOut" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
+
         <div v-if="activeIndex.includes('course') && findNextCourse(-1) != null"
              @click="nextCourse(-1)" id="prev-course" class="nav-course-operations unselectable">
             ▲ PREVIOUS COURSE ▲
         </div>
+
         <footer>
             <div v-if="activeIndex.includes('course') && findNextCourse(1) != null"
                  @click="nextCourse(1)" id="next-course" class="nav-course-operations unselectable">
