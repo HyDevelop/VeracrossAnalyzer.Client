@@ -16,7 +16,16 @@
         @Prop({required: true}) typeName: string;
         @Prop({required: true}) assignments: Assignment[];
 
+        filteredAssignments: Assignment[];
 
+        /**
+         * Called when this component is created
+         */
+        created()
+        {
+            // Filter assignments to only this type
+            this.filteredAssignments = this.assignments.filter(a => a.type === this.typeName);
+        }
     }
 </script>
 
