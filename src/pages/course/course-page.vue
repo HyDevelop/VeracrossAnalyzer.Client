@@ -14,7 +14,8 @@
                 </el-col>
             </el-row>
 
-            <AssignmentTypeHead v-for="type in getAssignmentTypes" :type-name="type"></AssignmentTypeHead>
+            <AssignmentTypeHead v-for="type in getAssignmentTypes()"
+                                :type-name="type" :key="type"></AssignmentTypeHead>
 
             <!--AssignmentEntry v-for="assignment in course.assignments"
                              :assignment="assignment" :unread="false">
