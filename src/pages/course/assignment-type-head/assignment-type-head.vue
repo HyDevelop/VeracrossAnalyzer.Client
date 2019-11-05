@@ -24,7 +24,8 @@
         created()
         {
             // Filter assignments to only this type
-            this.filteredAssignments = this.assignments.filter(a => a.type === this.typeName);
+            this.filteredAssignments = this.assignments.filter(a => a.type == this.typeName);
+
         }
     }
 </script>
