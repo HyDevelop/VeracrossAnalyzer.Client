@@ -8,11 +8,15 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
+    import {Assignment} from '@/components/app/app';
 
     @Component
     export default class AssignmentTypeHead extends Vue
     {
         @Prop({required: true}) typeName: string;
+        @Prop({required: true}) assignments: Assignment[];
+
+
     }
 </script>
 
