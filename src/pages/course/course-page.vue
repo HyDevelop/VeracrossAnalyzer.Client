@@ -59,7 +59,14 @@
          */
         getAssignmentTypes(): string[]
         {
-            return [...this.course.assignments.map(a => a.type)];
+            // Get all types
+            let types = this.course.assignments.map(a => a.type);
+
+            // Remove duplicates
+            types = types.filter((type, i, a) => a.indexOf(type) == i);
+
+            // Return it
+            return types;
         }
     }
 </script>
