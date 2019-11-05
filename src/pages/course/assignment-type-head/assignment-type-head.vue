@@ -1,7 +1,7 @@
 <template>
     <div id="assignment-type-head">
         <el-card>
-
+            <span>{{typeName}}</span>
         </el-card>
     </div>
 </template>
