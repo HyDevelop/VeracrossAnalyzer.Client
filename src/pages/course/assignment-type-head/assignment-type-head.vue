@@ -1,7 +1,9 @@
 <template>
     <div id="assignment-type-head">
         <el-card :body-style="{padding: '0px'}">
-            <span>{{typeName}}</span>
+            <div id="info">
+                <span>{{typeName}}</span>
+            </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
                              :assignment="assignment">
