@@ -14,6 +14,8 @@
                 </el-col>
             </el-row>
 
+            <AssignmentTypeHead type-name=""></AssignmentTypeHead>
+
             <!--AssignmentEntry v-for="assignment in course.assignments"
                              :assignment="assignment" :unread="false">
             </AssignmentEntry-->
@@ -27,9 +29,10 @@
     import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
     import CourseScatter from '@/pages/course/course-scatter/course-scatter';
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
+    import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
 
     @Component({
-        components: {AssignmentEntry, CourseHead, CourseScatter}
+        components: {AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
     })
     export default class CoursePage extends Vue
     {

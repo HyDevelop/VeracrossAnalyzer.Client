@@ -7,9 +7,12 @@
 </template>
 
 <script lang="ts">
-    export default class AssignmentTypeHead
-    {
+    import {Component, Prop, Vue} from 'vue-property-decorator';
 
+    @Component
+    export default class AssignmentTypeHead extends Vue
+    {
+        @Prop({required: true}) typeName: string;
     }
 </script>
 
