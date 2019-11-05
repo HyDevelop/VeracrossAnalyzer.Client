@@ -53,6 +53,14 @@
             }
             else return this.unread;
         }
+
+        /**
+         * Get all the types of the assignments.
+         */
+        getAssignmentTypes(): string[]
+        {
+            return [...this.course.assignments.map(a => a.type)];
+        }
     }
 </script>
 
