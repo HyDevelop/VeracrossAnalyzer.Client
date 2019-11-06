@@ -202,6 +202,11 @@ export default class App extends Vue
                         {
                             currentTerm ++;
 
+                            // Check again
+                            i++;
+                            continue;
+                        }
+
                         // Push data
                         termAssignments[currentTerm].push(a);
                     }
