@@ -16,27 +16,28 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
+            <!-- Time selection -->
             <el-dropdown id="nav-time-selection">
                 <el-button type="primary" size="medium">
                     All Year<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>Term 1</el-dropdown-item>
-                    <el-dropdown-item>Term 2</el-dropdown-item>
-                    <el-dropdown-item disabled>Term 3</el-dropdown-item>
-                    <el-dropdown-item disabled>Term 4</el-dropdown-item>
-                    <el-dropdown-item divided>All Year</el-dropdown-item>
+                    <el-dropdown-item command="1">Term 1</el-dropdown-item>
+                    <el-dropdown-item command="2">Term 2</el-dropdown-item>
+                    <el-dropdown-item command="3" disabled>Term 3</el-dropdown-item>
+                    <el-dropdown-item command="4" disabled>Term 4</el-dropdown-item>
+                    <el-dropdown-item command="All" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
 
             <el-button @click="signOut" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
 
+        <!-- Previous course / Next course (Only when the page is courses) -->
         <div v-if="activeIndex.includes('course') && findNextCourse(-1) != null"
              @click="nextCourse(-1)" id="prev-course" class="nav-course-operations unselectable">
             ▲ PREVIOUS COURSE ▲
         </div>
-
         <footer>
             <div v-if="activeIndex.includes('course') && findNextCourse(1) != null"
                  @click="nextCourse(1)" id="next-course" class="nav-course-operations unselectable">
