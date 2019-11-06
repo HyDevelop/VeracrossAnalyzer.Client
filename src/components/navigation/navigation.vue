@@ -16,8 +16,8 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
-            <el-dropdown>
                 <el-button type="primary">
+            <el-dropdown id="nav-time-selection">
                     All Year<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
