@@ -2,6 +2,7 @@
     <div class="unread-entry vertical-center"
          :class="narrow ? 'narrow' : ''"
          :style="`background: ${backgroundColor}`">
+
         <el-row class="unread-row">
             <el-col :span="3" class="date">
                 <span class="month">{{getMoment(assignment.date).format("MMM Do")}}</span>

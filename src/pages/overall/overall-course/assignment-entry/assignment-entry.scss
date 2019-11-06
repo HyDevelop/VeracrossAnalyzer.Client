@@ -97,6 +97,12 @@
     }
 }
 
+// Narrow layout
+.unread-entry.narrow
+{
+    height: 30px;
+}
+
 .unread-entry:first-child
 {
     padding-top: 3px;
