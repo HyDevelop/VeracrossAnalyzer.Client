@@ -57,6 +57,12 @@ export interface Course
         weightingMap: {[index: string]: number}
     }
 
+    computed:
+    {
+        termAssignments: Assignment[][]
+        allYearGrade: number
+    }
+
     assignments: Assignment[]
 }
 
