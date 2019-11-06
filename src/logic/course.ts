@@ -99,4 +99,25 @@ export default class Course
         // Set computed data
         this.computed = {termAssignments: termAssignments, allYearGrade: -1};
     }
+
+    /**
+     * Is graded or not
+     */
+    get isGraded(): boolean
+    {
+        // Skip future or past courses
+        if (this.status != 'active') return false;
+
+        // Skip courses without levels TODO: Ask for user input
+        if (this.level == 'None' || this.level == 'Unknown' || this.scaleUp == -1) return false;
+
+        // Skip courses without graded assignments
+        if (this.assignments.filter(a => a.complete == 'Complete').length == 0) return false;
+
+        // Skip if there are no grading scale
+        // if (course.grading.method == 'NOT_GRADED') return;
+
+        // Is graded
+        return true;
+    }
 }
