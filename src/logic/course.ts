@@ -1,6 +1,7 @@
 import {Assignment} from '@/components/app/app';
 import JsonUtils from '@/utils/json-utils';
 import Constants from '@/constants';
+import {FormatUtils} from '@/utils/format-utils';
 
 export default class Course
 {
@@ -38,7 +39,7 @@ export default class Course
     {
         this.id = courseJson.id;
         this.assignmentsId = courseJson.assignmentsId;
-        this.name = courseJson.name;
+        this.name = FormatUtils.parseText(courseJson.name).trim();
         this.teacherName = courseJson.teacherName;
         this.status = courseJson.status;
 

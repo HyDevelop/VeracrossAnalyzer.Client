@@ -1,5 +1,5 @@
-import {Course} from '@/components/app/app';
 import {FormatUtils} from '@/utils/format-utils';
+import Course from '@/logic/course';
 
 const LEVEL_AP = {level: 'AP', scaleUp: 1};
 const LEVEL_H = {level: 'H', scaleUp: 0.75};
@@ -72,9 +72,6 @@ export class CourseUtils
     {
         for (let course of courses)
         {
-            // Parse name
-            course.name = FormatUtils.parseText(course.name).trim();
-
             // Detect level
             let level = this.detectLevel(course.name);
             if (level != undefined)
