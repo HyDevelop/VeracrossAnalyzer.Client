@@ -93,7 +93,7 @@ export default class OverallBar extends Vue
     {
         let data: any = [];
 
-        this.courses.forEach(course =>
+        this.courses.forEach((course, index) =>
         {
             // Get GP
             let gp = GPAUtils.getGP(course, course.letterGrade);
@@ -107,7 +107,7 @@ export default class OverallBar extends Vue
                 value: [course.name, gp],
                 itemStyle:
                 {
-                    color: Constants.THEME.colors[data.length]
+                    color: Constants.THEME.colors[index]
                 }
             });
         });
