@@ -1,7 +1,7 @@
 <template>
     <div id="assignment-type-head">
         <el-card :body-style="{padding: '0px'}">
-            <div id="type-info">
+            <div id="type-info-card">
                 <span id="type-name">{{typeName}}</span>
             </div>
 
@@ -40,6 +40,11 @@
 </script>
 
 <style lang="scss" scoped>
+    #type-info-card
+    {
+        height: 60px;
+    }
+
     #type-name
     {
         // Font
