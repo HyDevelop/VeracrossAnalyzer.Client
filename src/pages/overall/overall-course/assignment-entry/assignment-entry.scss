@@ -95,6 +95,14 @@
         height: 22px;
         padding: 0 5px;
     }
+
+    .entry-box.score, .entry-box.max
+    {
+        // Align the scores the same width
+        width: 30px;
+        display: inline-block;
+        text-align: center;
+    }
 }
 
 // Narrow layout
