@@ -16,6 +16,19 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
+            <el-dropdown>
+                <el-button type="primary">
+                    All Year<i class="el-icon-arrow-down el-icon--right"></i>
+                </el-button>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Term 1</el-dropdown-item>
+                    <el-dropdown-item>Term 2</el-dropdown-item>
+                    <el-dropdown-item disabled>Term 3</el-dropdown-item>
+                    <el-dropdown-item disabled>Term 4</el-dropdown-item>
+                    <el-dropdown-item divided>All Year</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+
             <el-button @click="signOut" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
 
