@@ -178,6 +178,9 @@ export default class App extends Vue
                     // Load assignments
                     // Parse json and filter it
                     course.assignments = JsonUtils.filterAssignments(response.data);
+
+                    // Sort by date
+                    course.assignments.sort((a, b) => a.date.getTime() - b.date.getTime());
                 }
                 else throw new Error(response.data);
             })
