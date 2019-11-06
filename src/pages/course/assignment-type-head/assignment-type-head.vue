@@ -49,5 +49,9 @@
         // Center
         height: 60px;
         line-height: 60px;
+
+        // Alignment
+        padding-left: 20px;
+        float: left;
     }
 </style>
