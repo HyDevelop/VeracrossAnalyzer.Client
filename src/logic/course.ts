@@ -2,6 +2,7 @@ import {Assignment} from '@/components/app/app';
 import JsonUtils from '@/utils/json-utils';
 import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
+import {CourseUtils} from '@/utils/course-utils';
 
 export default class Course
 {
@@ -46,8 +47,14 @@ export default class Course
         this.letterGrade = courseJson.letterGrade;
         this.numericGrade = courseJson.numericGrade;
 
-        this.level = courseJson.level;
-        this.scaleUp = courseJson.scaleUp;
+        // Level and scaleUp
+        let level = CourseUtils.detectLevel(this.name);
+        if (level != undefined)
+        {
+            this.level = level.level;
+            this.scaleUp = level.scaleUp;
+        }
+        else this.level = 'Unknown';
 
         this.grading = courseJson.grading;
     }

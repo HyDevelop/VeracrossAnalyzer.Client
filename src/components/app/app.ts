@@ -122,9 +122,6 @@ export default class App extends Vue
                 // Save courses
                 this.courses = response.data.map((courseJson: any) => new Course(courseJson));
 
-                // Post processing
-                CourseUtils.postProcess(this.courses);
-
                 // Load assignments
                 this.loadAssignments();
             }

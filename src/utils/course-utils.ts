@@ -64,34 +64,11 @@ export class CourseUtils
     }
 
     /**
-     * Post process course list
-     *
-     * @param courses Course list
-     */
-    public static postProcess(courses: Course[])
-    {
-        for (let course of courses)
-        {
-            // Detect level
-            let level = this.detectLevel(course.name);
-            if (level != undefined)
-            {
-                course.level = level.level;
-                course.scaleUp = level.scaleUp;
-            }
-            else
-            {
-                course.level = 'Unknown';
-            }
-        }
-    }
-
-    /**
      * Detect course level based on course name
      *
      * @param name Course name
      */
-    private static detectLevel(name: string)
+    static detectLevel(name: string)
     {
         // Common ones
         if (name.startsWith('AP')) return LEVEL_AP;
