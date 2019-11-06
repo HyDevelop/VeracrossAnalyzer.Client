@@ -5,7 +5,7 @@
 
         <el-row class="unread-row">
             <el-col :span="3" class="date">
-                <span class="month">{{getMoment(assignment.date).format("MMM Do")}}</span>
+                <span class="month">{{getMoment(assignment.date).format("MMM D")}}</span>
                 <span class="now">({{getMoment(assignment.date).fromNow()}})</span>
             </el-col>
 
