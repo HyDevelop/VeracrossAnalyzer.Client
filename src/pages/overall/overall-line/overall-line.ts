@@ -26,9 +26,6 @@ export default class OverallLine extends Vue
         legend:
         {
             show: false,
-            //left: 'auto',
-            //align: 'left',
-            //orient: 'vertical'
             textStyle:
             {
                 fontSize: 11
@@ -72,7 +69,7 @@ export default class OverallLine extends Vue
         columns.unshift('date');
 
         // Find the min date
-        let minDates = courses.map(course => new Date(course.assignments[course.assignments.length - 1].date).getTime());
+        let minDates = courses.map(course => course.assignments[course.assignments.length - 1].date.getTime());
         let minDate: Date = new Date(Math.min.apply(null, minDates));
 
         // Find the dates in between
@@ -106,8 +103,7 @@ export default class OverallLine extends Vue
                         if (assignment.complete != 'Complete') return;
 
                         // Date is being looked at
-                        let assignmentDate = new Date(assignment.date);
-                        if (assignmentDate.getTime() < date.getTime())
+                        if (assignment.date.getTime() < date.getTime())
                         {
                             // Record scores
                             score += assignment.score;
@@ -130,8 +126,7 @@ export default class OverallLine extends Vue
                         if (assignment.complete != 'Complete') return;
 
                         // Date is being looked at
-                        let assignmentDate = new Date(assignment.date);
-                        if (assignmentDate.getTime() < date.getTime())
+                        if (assignment.date.getTime() < date.getTime())
                         {
                             // Record scores
                             if (typeScores[assignment.type] == undefined) typeScores[assignment.type] = 0;
