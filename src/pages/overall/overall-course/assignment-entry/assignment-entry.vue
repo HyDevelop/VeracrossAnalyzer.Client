@@ -25,8 +25,9 @@
                 <span class="score entry-box">{{assignment.score}}</span>
                 <span class="max entry-box">{{assignment.scoreMax}}</span>
 
-                <el-button class="mark-as-read" size="mini" type="text"
-                           icon="el-icon-close" @click="markAsRead" v-if="unread">
+                <el-button class="mark-as-read" :class="unread ? 'unread' : ''"
+                           size="mini" type="text" icon="el-icon-close" 
+                           @click="markAsRead">
                 </el-button>
             </el-col>
         </el-row>
