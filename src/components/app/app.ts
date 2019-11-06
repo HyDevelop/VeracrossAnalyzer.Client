@@ -150,38 +150,7 @@ export default class App extends Vue
                 // Check success
                 if (response.success)
                 {
-                    // Load assignments
-                    // Parse json and filter it
-                    course.assignments = JsonUtils.filterAssignments(response.data);
-
-                    // Sort by date (Latest is at 0)
-                    course.assignments.sort((a, b) => b.date.getTime() - a.date.getTime());
-
-                    // Filter assignments into terms
-                    let termAssignments: Assignment[][] = [[], [], [], []];
-                    let currentTerm = 0;
-
-                    // Loop through it by time order
-                    for (let i = course.assignments.length - 1; i >= 0; i--)
-                    {
-                        let a = course.assignments[i];
-
-                        // On to the next term
-                        if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
-                        {
-                            currentTerm ++;
-
-                            // Check again
-                            i++;
-                            continue;
-                        }
-
-                        // Push data
-                        termAssignments[currentTerm].push(a);
-                    }
-
-                    // Set computed data
-                    course.computed = {termAssignments: termAssignments, allYearGrade: -1};
+                    course.loadAssignments(response.data);
                 }
                 else throw new Error(response.data);
             })

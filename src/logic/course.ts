@@ -1,4 +1,6 @@
 import {Assignment} from '@/components/app/app';
+import JsonUtils from '@/utils/json-utils';
+import Constants from '@/constants';
 
 export default class Course
 {
@@ -39,7 +41,6 @@ export default class Course
         this.name = courseJson.name;
         this.teacherName = courseJson.teacherName;
         this.status = courseJson.status;
-        this.assignments = courseJson.assignments;
 
         this.letterGrade = courseJson.letterGrade;
         this.numericGrade = courseJson.numericGrade;
@@ -48,5 +49,46 @@ export default class Course
         this.scaleUp = courseJson.scaleUp;
 
         this.grading = courseJson.grading;
+    }
+
+    /**
+     * Load in assignments data
+     *
+     * @param data Assignments data
+     */
+    loadAssignments(data: any)
+    {
+        // Load assignments
+        // Parse json and filter it
+        this.assignments = JsonUtils.filterAssignments(data);
+
+        // Sort by date (Latest is at 0)
+        this.assignments.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+        // Filter assignments into terms
+        let termAssignments: Assignment[][] = [[], [], [], []];
+        let currentTerm = 0;
+
+        // Loop through it by time order
+        for (let i = this.assignments.length - 1; i >= 0; i--)
+        {
+            let a = this.assignments[i];
+
+            // On to the next term
+            if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
+            {
+                currentTerm ++;
+
+                // Check again
+                i++;
+                continue;
+            }
+
+            // Push data
+            termAssignments[currentTerm].push(a);
+        }
+
+        // Set computed data
+        this.computed = {termAssignments: termAssignments, allYearGrade: -1};
     }
 }
