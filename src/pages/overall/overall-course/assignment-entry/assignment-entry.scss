@@ -100,12 +100,20 @@
         padding: 0 5px;
     }
 
+    // Unified width
     .entry-box.score, .entry-box.max
     {
-        // Align the scores the same width
-        width: 30px;
+        min-width: 30px;
         display: inline-block;
         text-align: center;
+    }
+
+    // Unified width
+    .entry-box.percent
+    {
+        min-width: 60px;
+        display: inline-block;
+        text-align: right;
     }
 }
 
