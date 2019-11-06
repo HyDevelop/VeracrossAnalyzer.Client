@@ -16,6 +16,10 @@
         span.month
         {
             margin-right: 5px;
+
+            // Unified width
+            display: inline-block;
+            min-width: 50px;
         }
 
         span.now
