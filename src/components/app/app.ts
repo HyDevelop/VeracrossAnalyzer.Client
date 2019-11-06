@@ -185,8 +185,8 @@ export default class App extends Vue
                     // Parse json and filter it
                     course.assignments = JsonUtils.filterAssignments(response.data);
 
-                    // Sort by date
-                    course.assignments.sort((a, b) => a.date.getTime() - b.date.getTime());
+                    // Sort by date (Latest is at 0)
+                    course.assignments.sort((a, b) => b.date.getTime() - a.date.getTime());
 
                     // Filter assignments into terms
                     let termAssignments: Assignment[][] = [[], [], [], []];
