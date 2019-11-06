@@ -46,6 +46,8 @@
         font-size: 30px;
         color: var(--main);
 
-}
+        // Center
+        height: 60px;
+        line-height: 60px;
     }
 </style>
