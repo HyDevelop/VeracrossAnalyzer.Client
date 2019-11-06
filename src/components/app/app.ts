@@ -11,6 +11,7 @@ import {GPAUtils} from '@/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
 import {FormatUtils} from '@/utils/format-utils';
+import Course from '@/logic/course';
 
 
 /**
@@ -32,38 +33,6 @@ export interface Assignment
 
     scoreMax: number
     score: number
-}
-
-/**
- * A course
- */
-export interface Course
-{
-    assignmentsId: number
-    id: number
-    name: string
-    teacherName: string
-    status: string
-
-    letterGrade?: string
-    numericGrade?: number
-
-    level: string
-    scaleUp: number
-
-    grading:
-    {
-        method: string
-        weightingMap: {[index: string]: number}
-    }
-
-    computed:
-    {
-        termAssignments: Assignment[][]
-        allYearGrade: number
-    }
-
-    assignments: Assignment[]
 }
 
 @Component({
@@ -151,7 +120,7 @@ export default class App extends Vue
             if (response.success)
             {
                 // Save courses
-                this.courses = response.data;
+                this.courses = response.data.map((courseJson: any) => new Course(courseJson));
 
                 // Post processing
                 CourseUtils.postProcess(this.courses);
