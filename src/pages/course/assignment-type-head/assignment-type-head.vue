@@ -6,7 +6,8 @@
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
-                             :assignment="assignment" :unread="assignment.unread" backgroundColor="#f5faff">
+                             :assignment="assignment" :unread="assignment.unread"
+                             backgroundColor="#ffffff" narrow="true">
             </AssignmentEntry>
         </el-card>
     </div>
@@ -48,7 +49,7 @@
     #type-name
     {
         // Font
-        font-size: 30px;
+        font-size: 22px;
         color: var(--main);
 
         // Center
