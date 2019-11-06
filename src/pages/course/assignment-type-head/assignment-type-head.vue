@@ -1,8 +1,8 @@
 <template>
     <div id="assignment-type-head">
         <el-card :body-style="{padding: '0px'}">
-            <div id="info">
-                <span>{{typeName}}</span>
+            <div id="type-info">
+                <span id="type-name">{{typeName}}</span>
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
@@ -39,9 +39,13 @@
     }
 </script>
 
-<style lang="scss">
-#assignment-type-head
-{
+<style lang="scss" scoped>
+    #type-name
+    {
+        // Font
+        font-size: 30px;
+        color: var(--main);
 
 }
+    }
 </style>
