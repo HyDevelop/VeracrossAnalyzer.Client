@@ -9,8 +9,8 @@
             <el-col :span="12" class="course-col-grade">
                 <div class="course-grade">
                     <span class="letter">{{course.letterGrade}} </span>
-                    <span class="numeric">{{course.numericGrade.toFixed(2)}}</span>
-                    <span class="percent">%</span>
+                    <span class="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
+                    <span class="percent" v-if="course.numericGrade !== undefined">%</span>
                 </div>
                 <div class="course-updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
                     <span class="unread-number">{{unread}}</span>
