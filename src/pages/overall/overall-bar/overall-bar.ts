@@ -53,15 +53,16 @@ export default class OverallBar extends Vue
             // Data
             series:
             [
+                // Max GP
                 {
                     type: 'bar',
                     barGap: '-100%',
                     data: this.courses.map(course =>
                     {
-                        return {value: [course.name, GPAUtils.getGP(course, 'A+')],
-                            itemStyle: {color: '#d8d8d8'}}
+                        return {value: [course.name, GPAUtils.getGP(course, 'A+')], itemStyle: {color: '#d8d8d8'}}
                     }),
                 },
+                // Current GP
                 {
                     type: 'bar',
                     barGap: '-100%',
@@ -94,9 +95,16 @@ export default class OverallBar extends Vue
 
         this.courses.forEach(course =>
         {
+            // Get GP
+            let gp = GPAUtils.getGP(course, course.letterGrade);
+
+            // No grade cases
+            if (gp == -1) return;
+
+            // Push data
             data.push(
             {
-                value: [course.name, GPAUtils.getGP(course, course.letterGrade)],
+                value: [course.name, gp],
                 itemStyle:
                 {
                     color: Constants.THEME.colors[data.length]
