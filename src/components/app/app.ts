@@ -191,15 +191,20 @@ export default class App extends Vue
                     // Filter assignments into terms
                     let termAssignments: Assignment[][] = [[], [], [], []];
                     let currentTerm = 0;
-                    course.assignments.forEach(a =>
+
+                    // Loop through it by time order
+                    for (let i = course.assignments.length - 1; i >= 0; i--)
                     {
+                        let a = course.assignments[i];
+
                         // On to the next term
                         if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
+                        {
                             currentTerm ++;
 
                         // Push data
                         termAssignments[currentTerm].push(a);
-                    });
+                    }
 
                     // Set computed data
                     course.computed = {termAssignments: termAssignments, allYearGrade: -1};
