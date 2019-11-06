@@ -21,7 +21,7 @@ export default class JsonUtils
                 type: assignment.assignment_type,
                 typeId: assignment.assignment_type_id,
                 description: assignment.assignment_description,
-                date: assignment._date,
+                date: new Date(assignment._date),
                 complete: assignment.completion_status,
                 include: assignment.include_in_calculated_grade == 1,
                 display: assignment.display_grade == 1,

@@ -18,19 +18,19 @@ import {FormatUtils} from '@/utils/format-utils';
  */
 export interface Assignment
 {
-    id: number,
-    scoreId: number,
-    type: string,
-    typeId: number,
-    description: string,
-    date: string,
-    complete: string,
-    include: boolean,
-    display: boolean,
+    id: number
+    scoreId: number
+    type: string
+    typeId: number
+    description: string
+    date: Date
+    complete: string
+    include: boolean
+    display: boolean
 
-    unread: boolean,
+    unread: boolean
 
-    scoreMax: number,
+    scoreMax: number
     score: number
 }
 
@@ -39,21 +39,21 @@ export interface Assignment
  */
 export interface Course
 {
-    assignmentsId: number,
-    id: number,
-    name: string,
-    teacherName: string,
-    status: string,
+    assignmentsId: number
+    id: number
+    name: string
+    teacherName: string
+    status: string
 
-    letterGrade?: string,
-    numericGrade?: number,
+    letterGrade?: string
+    numericGrade?: number
 
-    level: string,
-    scaleUp: number,
+    level: string
+    scaleUp: number
 
     grading:
     {
-        method: string,
+        method: string
         weightingMap: {[index: string]: number}
     }
 
