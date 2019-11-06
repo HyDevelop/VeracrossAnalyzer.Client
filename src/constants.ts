@@ -53,5 +53,8 @@ export default class Constants
             '#724e58',
             '#4b565b'
         ]
-    }
+    };
+
+    // Terms (TODO: Actually get the terms dynamically
+    public static TERMS = [new Date('2019-09-04'), new Date('2019-11-01')];
 }
