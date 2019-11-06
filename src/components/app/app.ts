@@ -187,6 +187,19 @@ export default class App extends Vue
 
                     // Sort by date
                     course.assignments.sort((a, b) => a.date.getTime() - b.date.getTime());
+
+                    // Filter assignments into terms
+                    let termAssignments: Assignment[][] = [[], [], [], []];
+                    let currentTerm = 0;
+                    course.assignments.forEach(a =>
+                    {
+                        // On to the next term
+                        if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
+                            currentTerm ++;
+
+                        // Push data
+                        termAssignments[currentTerm].push(a);
+                    });
                 }
                 else throw new Error(response.data);
             })
