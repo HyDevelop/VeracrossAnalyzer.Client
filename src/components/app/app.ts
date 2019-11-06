@@ -158,7 +158,7 @@ export default class App extends Vue
         pWaitFor(() => this.courses.every(c => c.assignments != null)).then(() =>
         {
             // Filter courses
-            this.filteredCourses = CourseUtils.getGradedCourses(this.courses);
+            this.filteredCourses = this.courses.filter(c => c.isGraded);
 
             // Check grading algorithms
             this.checkGradingAlgorithms();

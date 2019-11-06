@@ -1,8 +1,9 @@
+
+import Course from '@/logic/course';
+
 /**
  * This is an utility class to calculate GPA.
  */
-import {Course} from '@/components/app/app';
-
 export class GPAUtils
 {
     // [[Min score, Letter grade, Base GPA], ...]
