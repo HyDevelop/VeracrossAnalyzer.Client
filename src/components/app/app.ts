@@ -200,6 +200,9 @@ export default class App extends Vue
                         // Push data
                         termAssignments[currentTerm].push(a);
                     });
+
+                    // Set computed data
+                    course.computed = {termAssignments: termAssignments, allYearGrade: -1};
                 }
                 else throw new Error(response.data);
             })
