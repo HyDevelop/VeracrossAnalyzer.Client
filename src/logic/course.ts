@@ -4,6 +4,7 @@ import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
+import {GPAUtils} from '@/utils/gpa-utils';
 
 export default class Course
 {
@@ -14,8 +15,8 @@ export default class Course
     status: string;
     rawAssignments: Assignment[];
 
-    letterGrade?: string;
-    numericGrade?: number;
+    rawLetterGrade?: string;
+    rawNumericGrade?: number;
 
     level: string;
     scaleUp: number;
@@ -45,8 +46,8 @@ export default class Course
         this.teacherName = courseJson.teacherName;
         this.status = courseJson.status;
 
-        this.letterGrade = courseJson.letterGrade;
-        this.numericGrade = courseJson.numericGrade;
+        this.rawLetterGrade = courseJson.letterGrade;
+        this.rawNumericGrade = courseJson.numericGrade;
 
         // Level and scaleUp
         let level = CourseUtils.detectLevel(this.name);
