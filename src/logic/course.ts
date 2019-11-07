@@ -139,4 +139,45 @@ export default class Course
         // Specific time
         return this.computed.termAssignments[timeCode];
     }
+
+    /**
+     * Get letter grade
+     */
+    get letterGrade(): string
+    {
+        // Cached
+        if (this.rawLetterGrade != undefined)
+            return this.rawLetterGrade;
+
+        // Get scale
+        let scale = GPAUtils.findScale(this.numericGrade);
+
+        // Scale not found
+        if (scale == undefined) return this.rawLetterGrade = '--';
+
+        // Return
+        return this.rawLetterGrade = scale.letter;
+    }
+
+    /**
+     * Get numeric grade
+     */
+    get numericGrade(): number
+    {
+        // Cached
+        if (this.rawNumericGrade != undefined)
+            return this.rawNumericGrade;
+
+        // Calculate
+        if (this.grading.method == 'PERCENT_TYPE')
+        {
+            return this.rawNumericGrade = GPAUtils.getPercentTypeAverage(this, this.assignments);
+        }
+        if (this.grading.method == 'TOTAL_MEAN')
+        {
+            return this.rawNumericGrade = GPAUtils.getTotalMeanAverage(this.assignments);
+        }
+
+        return -1;
+    }
 }
