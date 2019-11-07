@@ -72,5 +72,10 @@
         // Center
         height: 60px;
         line-height: 64px;
+
+        // Alignment
+        float: left;
+        margin-left: 15px;
+        display: inline-block;
     }
 </style>
