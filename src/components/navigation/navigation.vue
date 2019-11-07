@@ -17,7 +17,7 @@
             </el-submenu>
 
             <!-- Time selection -->
-            <el-dropdown id="nav-time-selection">
+            <el-dropdown id="nav-time-selection" @command="selectTime">
                 <el-button type="primary" size="medium">
                     {{selectedTime}}<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>

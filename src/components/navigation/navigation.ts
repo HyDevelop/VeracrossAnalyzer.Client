@@ -149,6 +149,16 @@ export default class Navigation extends Vue
     }
 
     /**
+     * Select time
+     *
+     * @param command Term 1, Term 2, All Year, etc.
+     */
+    public selectTime(command: string)
+    {
+        this.selectedTime = command;
+    }
+
+    /**
      * This function is called when the sign out button is clicked.
      */
     public signOut()
