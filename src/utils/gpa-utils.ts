@@ -108,6 +108,16 @@ export class GPAUtils
     }
 
     /**
+     * Find the scale for a grade
+     *
+     * @param grade Letter grade or numeric grade
+     */
+    public static findScale(grade: string): Scale | undefined
+    {
+        return this.SCALE.find(scale => scale.letter == grade);
+    }
+
+    /**
      * Calculate the total-mean (total/max) average
      *
      * @param assignments
