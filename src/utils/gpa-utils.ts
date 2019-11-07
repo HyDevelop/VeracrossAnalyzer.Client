@@ -1,5 +1,6 @@
 
 import Course from '@/logic/course';
+import {Assignment} from '@/components/app/app';
 
 /**
  * This is an utility class to calculate GPA.
@@ -107,15 +108,15 @@ export class GPAUtils
     /**
      * Calculate the total-mean (total/max) average
      *
-     * @param course Course
+     * @param assignments
      */
-    public static getTotalMeanAverage(course: Course)
+    public static getTotalMeanAverage(assignments: Assignment[])
     {
         let score = 0;
         let max = 0;
 
         // Loop through assignments
-        course.assignments.forEach(assignment =>
+        assignments.forEach(assignment =>
         {
             // If assignment should be displayed
             if (assignment.complete != 'Complete') return;
