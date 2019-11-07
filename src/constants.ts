@@ -56,5 +56,5 @@ export default class Constants
     };
 
     // Terms (TODO: Actually get the terms dynamically
-    public static TERMS = [new Date('2019-09-04'), new Date('2019-11-01')];
+    public static TERMS = [new Date('Sep 04 2019'), new Date('Nov 01 2019'), new Date('Feb 02 2020')];
 }
