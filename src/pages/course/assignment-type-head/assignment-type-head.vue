@@ -66,4 +66,11 @@
         padding-left: 20px;
         float: left;
     }
+
+    #type-average
+    {
+        // Center
+        height: 60px;
+        line-height: 64px;
+    }
 </style>
