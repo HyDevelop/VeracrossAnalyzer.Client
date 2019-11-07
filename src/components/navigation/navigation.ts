@@ -183,13 +183,4 @@ export default class Navigation extends Vue
         if (this.selectedTime == 'All Year') return -1;
         else return +this.selectedTime.replace('Term ', '') - 1;
     }
-
-    /**
-     * This function is called when the sign out button is clicked.
-     */
-    public signOut()
-    {
-        // Call custom event
-        this.$emit('sign-out');
-    }
 }
