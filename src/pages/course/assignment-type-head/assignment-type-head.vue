@@ -35,7 +35,12 @@
         {
             // Filter assignments to only this type
             this.filteredAssignments = this.assignments.filter(a => a.type == this.typeName);
+        }
 
+        get average()
+        {
+            return this.filteredAssignments.reduce((a, b) => a + b.score, 0) /
+                this.filteredAssignments.reduce((a, b) => a + b.scoreMax, 0);
         }
     }
 </script>
