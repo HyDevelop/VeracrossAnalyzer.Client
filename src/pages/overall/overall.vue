@@ -37,7 +37,7 @@
     import OverallLine from '@/pages/overall/overall-line/overall-line';
     import OverallBar from '@/pages/overall/overall-bar/overall-bar';
     import OverallCourse from '@/pages/overall/overall-course/overall-course';
-    import {Course} from '@/components/app/app';
+    import Course from '@/logic/course';
     import {GPAUtils} from '@/utils/gpa-utils';
 
     @Component({
