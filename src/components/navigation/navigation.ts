@@ -17,7 +17,7 @@ export default class Navigation extends Vue
 
     @Prop({required: true}) courses: Course[];
 
-    private selectedTime: string;
+    private selectedTime: string = 'All Year';
 
     // Instance
     public static instance: Navigation;
@@ -30,9 +30,9 @@ export default class Navigation extends Vue
         // Check selected time
         if (!this.$cookies.isKey('va.selected-time'))
         {
-            this.$cookies.set('va.selected-time', 'All Year', '10y');
+            this.$cookies.set('va.selected-time', this.selectedTime, '10y');
         }
-        this.selectedTime = this.$cookies.get('va.selected-time');
+        this.selectTime(this.$cookies.get('va.selected-time'));
     }
 
     /**
@@ -172,7 +172,7 @@ export default class Navigation extends Vue
         this.$cookies.set('va.selected-time', command, '10y');
 
         // Call event
-        this.$emit('navigation:select-time', command);
+        this.$emit('select-time', this.getSelectedTimeCode());
     }
 
     /**
