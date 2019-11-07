@@ -17,13 +17,26 @@ export default class Navigation extends Vue
 
     @Prop({required: true}) courses: Course[];
 
-    private selectedTime = 'All Year';
+    private selectedTime: string;
 
     // Instance
     public static instance: Navigation;
 
     /**
      * This is called when the instance is created.
+     */
+    public created()
+    {
+        // Check selected time
+        if (!this.$cookies.isKey('va.selected-time'))
+        {
+            this.$cookies.set('va.selected-time', 'All Year', '10y');
+        }
+        this.selectedTime = this.$cookies.get('va.selected-time');
+    }
+
+    /**
+     * This is called when the instance is loaded.
      */
     public mounted()
     {
@@ -156,6 +169,10 @@ export default class Navigation extends Vue
     public selectTime(command: string)
     {
         this.selectedTime = command;
+        this.$cookies.set('va.selected-time', command, '10y');
+
+        // Call event
+        this.$emit('navigation:select-time', command);
     }
 
     /**
