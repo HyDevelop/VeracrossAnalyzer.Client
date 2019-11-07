@@ -27,15 +27,10 @@
         @Prop({required: true}) typeName: string;
         @Prop({required: true}) assignments: Assignment[];
 
-        filteredAssignments: Assignment[];
-
-        /**
-         * Called when this component is created
-         */
-        created()
+        get filteredAssignments()
         {
             // Filter assignments to only this type
-            this.filteredAssignments = this.assignments.filter(a => a.type == this.typeName);
+            return this.assignments.filter(a => a.complete == 'Complete' && a.type == this.typeName);
         }
 
         get average()
