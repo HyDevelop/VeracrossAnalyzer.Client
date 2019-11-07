@@ -41,7 +41,7 @@
         get average()
         {
             return this.filteredAssignments.reduce((a, b) => a + b.score, 0) /
-                this.filteredAssignments.reduce((a, b) => a + b.scoreMax, 0);
+                this.filteredAssignments.reduce((a, b) => a + b.scoreMax, 0) * 100;
         }
     }
 </script>
