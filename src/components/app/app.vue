@@ -3,7 +3,7 @@
         <login v-if="showLogin" v-on:login:token="onLogin"></login>
         <navigation :courses="filteredCourses"
                     :activeIndex.sync="selectedTab"
-                    v-on:sign-out="signOut">
+                    @sign-out="signOut" @select-time="selectTime">
         </navigation>
 
         <div id="app-content" v-if="assignmentsReady && loading === ''">

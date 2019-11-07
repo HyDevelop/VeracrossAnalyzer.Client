@@ -32,7 +32,7 @@ export default class Navigation extends Vue
         {
             this.$cookies.set('va.selected-time', this.selectedTime, '10y');
         }
-        this.selectTime(this.$cookies.get('va.selected-time'));
+        this.selectedTime = this.$cookies.get('va.selected-time');
     }
 
     /**

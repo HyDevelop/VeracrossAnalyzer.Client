@@ -242,4 +242,15 @@ export default class App extends Vue
         // Refresh
         window.location.reload();
     }
+
+    /**
+     * Select time (Eg. Term 1, Term 2, All Year, etc.)
+     *
+     * @param code
+     */
+    public selectTime(code: number)
+    {
+        // TODO: Optimize
+        window.location.reload();
+    }
 }
