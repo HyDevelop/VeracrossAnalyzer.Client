@@ -164,7 +164,7 @@ export default class Navigation extends Vue
     public getSelectedTimeCode(): number
     {
         if (this.selectedTime == 'All Year') return -1;
-        else return +this.selectedTime.replace('Term ', '');
+        else return +this.selectedTime.replace('Term ', '') - 1;
     }
 
     /**
