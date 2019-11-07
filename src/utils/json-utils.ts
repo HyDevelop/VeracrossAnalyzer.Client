@@ -26,7 +26,9 @@ export default class JsonUtils
                 unread: assignment.is_unread == 1,
 
                 scoreMax: assignment.maximum_score,
-                score: +assignment.raw_score
+                score: +assignment.raw_score,
+
+                gradingPeriod: +assignment.grading_period.replace('Quarter ', '') - 1
             }
         });
     }
