@@ -80,23 +80,7 @@ export default class Course
         let currentTerm = 0;
 
         // Loop through it by time order
-        for (let i = this.rawAssignments.length - 1; i >= 0; i--)
-        {
-            let a = this.rawAssignments[i];
-
-            // On to the next term
-            if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
-            {
-                currentTerm ++;
-
-                // Check again
-                i++;
-                continue;
-            }
-
-            // Push data
-            termAssignments[currentTerm].unshift(a);
-        }
+        this.rawAssignments.forEach(a => termAssignments[a.gradingPeriod].push(a));
 
         // Set computed data
         this.computed = {termAssignments: termAssignments, allYearGrade: -1};
