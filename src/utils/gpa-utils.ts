@@ -2,6 +2,13 @@
 import Course from '@/logic/course';
 import {Assignment} from '@/components/app/app';
 
+export interface Scale
+{
+    min: number
+    letter: string
+    gp: number
+}
+
 /**
  * This is an utility class to calculate GPA.
  */
