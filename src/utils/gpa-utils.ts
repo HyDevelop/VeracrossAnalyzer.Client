@@ -112,9 +112,16 @@ export class GPAUtils
      *
      * @param grade Letter grade or numeric grade
      */
-    public static findScale(grade: string): Scale | undefined
+    public static findScale(grade: string | number): Scale | undefined
     {
-        return this.SCALE.find(scale => scale.letter == grade);
+        // Letter grade
+        if (typeof grade == 'string')
+        {
+            return this.SCALE.find(scale => scale.letter == grade);
+        }
+
+        // Numeric grade
+        return this.SCALE.find(scale => grade >= scale.min);
     }
 
     /**
