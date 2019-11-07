@@ -10,12 +10,9 @@ export default class JsonUtils
      */
     public static filterAssignments(assignments: any): Assignment[]
     {
-        let result: Assignment[] = [];
-
-        assignments.assignments.forEach((assignment: any) =>
+        return assignments.assignments.map((assignment: any) =>
         {
-            result.push(
-            {
+            return {
                 id: assignment.assignment_id,
                 scoreId: assignment.score_id,
                 type: assignment.assignment_type,
@@ -30,9 +27,7 @@ export default class JsonUtils
 
                 scoreMax: assignment.maximum_score,
                 score: +assignment.raw_score
-            });
+            }
         });
-
-        return result;
     }
 }
