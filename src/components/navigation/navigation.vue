@@ -19,7 +19,7 @@
             <!-- Grading period selection -->
             <el-dropdown id="nav-grading-period" @command="selectGradingPeriod">
                 <el-button type="primary" size="medium">
-                    {{selectedTime}}<i class="el-icon-arrow-down el-icon--right"></i>
+                    {{gradingPeriod}}<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item command="Term 1">Term 1</el-dropdown-item>
