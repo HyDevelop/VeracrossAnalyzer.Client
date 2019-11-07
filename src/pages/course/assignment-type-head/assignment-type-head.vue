@@ -69,6 +69,10 @@
 
     #type-average
     {
+        // Font
+        font-size: 14px;
+        color: #8db3e4;
+
         // Center
         height: 60px;
         line-height: 64px;
