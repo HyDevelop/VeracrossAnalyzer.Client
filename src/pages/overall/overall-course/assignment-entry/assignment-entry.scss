@@ -1,6 +1,6 @@
 
 // Row
-.unread-entry
+.assignment-entry
 {
     height: 40px;
     padding: 0 10px 0 20px;
@@ -118,7 +118,7 @@
 }
 
 // Narrow layout
-.unread-entry.narrow
+.assignment-entry.narrow
 {
     height: 34px;
 }
@@ -132,7 +132,7 @@
     padding: 0 0 0 10px !important;
 }
 
-.unread-entry:first-child
+.assignment-entry:first-child
 {
     padding-top: 3px;
 

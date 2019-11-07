@@ -1,5 +1,5 @@
 <template>
-    <div class="unread-entry vertical-center"
+    <div class="assignment-entry vertical-center"
          :class="narrow ? 'narrow' : ''"
          :style="`background: ${backgroundColor}`">
 
