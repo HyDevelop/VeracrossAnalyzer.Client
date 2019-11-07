@@ -15,25 +15,20 @@ export interface Scale
 export class GPAUtils
 {
     // [[Min score, Letter grade, Base GPA], ...]
-    public static SCALE =
+    public static SCALE: Scale[] =
     [
-        [96.5, 'A+', 4.00],
-        [92.5, 'A' , 3.75],
-        [89.5, 'A-', 3.50],
-        [86.5, 'B+', 3.25],
-        [82.5, 'B' , 3.00],
-        [79.5, 'B-', 2.75],
-        [76.5, 'C+', 2.50],
-        [72.5, 'C' , 2.25],
-        [70.5, 'C-', 2.00],
-        [69.5, 'D' , 1.00],
-        [0   , 'F' , 0.00]
+        {min: 96.5, letter: 'A+', gp: 4.00},
+        {min: 92.5, letter: 'A' , gp: 3.75},
+        {min: 89.5, letter: 'A-', gp: 3.50},
+        {min: 86.5, letter: 'B+', gp: 3.25},
+        {min: 82.5, letter: 'B' , gp: 3.00},
+        {min: 79.5, letter: 'B-', gp: 2.75},
+        {min: 76.5, letter: 'C+', gp: 2.50},
+        {min: 72.5, letter: 'C' , gp: 2.25},
+        {min: 70.5, letter: 'C-', gp: 2.00},
+        {min: 69.5, letter: 'D' , gp: 1.00},
+        {min: 0   , letter: 'F' , gp: 0.00}
     ];
-
-    // Keywords
-    public static MIN = 0;
-    public static LETTER = 1;
-    public static GPA = 2;
 
     /**
      * Calculate GPA for a list of couses
