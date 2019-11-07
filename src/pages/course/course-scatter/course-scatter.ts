@@ -1,8 +1,9 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import {Assignment, Course} from '@/components/app/app';
+import {Assignment} from '@/components/app/app';
 import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
 import moment from 'moment';
+import Course from '@/logic/course';
 
 @Component({
 })
