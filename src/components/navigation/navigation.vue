@@ -22,11 +22,11 @@
                     {{selectedTime}}<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="1">Term 1</el-dropdown-item>
-                    <el-dropdown-item command="2">Term 2</el-dropdown-item>
-                    <el-dropdown-item command="3" disabled>Term 3</el-dropdown-item>
-                    <el-dropdown-item command="4" disabled>Term 4</el-dropdown-item>
-                    <el-dropdown-item command="All" divided>All Year</el-dropdown-item>
+                    <el-dropdown-item command="Term 1">Term 1</el-dropdown-item>
+                    <el-dropdown-item command="Term 2">Term 2</el-dropdown-item>
+                    <el-dropdown-item command="Term 3" disabled>Term 3</el-dropdown-item>
+                    <el-dropdown-item command="Term 4" disabled>Term 4</el-dropdown-item>
+                    <el-dropdown-item command="All Year" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
 
