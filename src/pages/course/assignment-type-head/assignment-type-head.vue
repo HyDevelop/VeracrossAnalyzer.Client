@@ -3,6 +3,7 @@
         <el-card :body-style="{padding: '0px'}">
             <div id="type-info-card">
                 <span id="type-name">{{typeName}}</span>
+                <span id="type-average">Average: {{average.toFixed(2)}}%</span>
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
