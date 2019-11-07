@@ -57,12 +57,17 @@ export default class OverallLine extends Vue
         }
     };
 
+    chartCache: any;
+
     /**
      * Convert assignments list to a graph dataset.
      */
     get convertChart()
     {
-        let courses = this.courses;
+        // Caching
+        if (this.chartCache != undefined) return this.chartCache;
+
+        let courses = this.courses.filter(c => c.assignments.length > 0);
 
         // Compute the column names
         let columns = courses.map(course => course.name);
@@ -166,7 +171,8 @@ export default class OverallLine extends Vue
             rows.push(row);
         });
 
-        return {
+        return this.chartCache =
+        {
             columns: columns,
             rows: rows
         }
