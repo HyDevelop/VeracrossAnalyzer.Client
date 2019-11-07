@@ -85,26 +85,17 @@ export class GPAUtils
      * @param course Course
      * @param letterGrade Letter grade
      */
-    public static getGP(course: Course, letterGrade?: string): number
+    public static getGP(course: Course, letterGrade: string): number
     {
-        // Find the GPA for this course.
-        for (let scale of this.SCALE)
-        {
-            // Letter grades are the same
-            if (scale[this.LETTER] == letterGrade)
-            {
-                // Get grade and add it
-                let grade = <number> scale[this.GPA];
+        // Get scale
+        let scale = this.findScale(letterGrade);
 
-                // Add scaleUp if not failed.
-                if (grade != 0) grade += course.scaleUp;
+        // No scale
+        if (scale == undefined) return -1;
 
-                // That's it
-                return grade;
-            }
-        }
+        // Add scaleUp if not failed.
+        return scale.gp == 0 ? 0 : scale.gp + course.scaleUp;
 
-        return -1;
     }
 
     /**
