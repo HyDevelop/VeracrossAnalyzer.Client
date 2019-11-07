@@ -19,7 +19,7 @@
             <!-- Time selection -->
             <el-dropdown id="nav-time-selection">
                 <el-button type="primary" size="medium">
-                    All Year<i class="el-icon-arrow-down el-icon--right"></i>
+                    {{selectedTime}}<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item command="1">Term 1</el-dropdown-item>

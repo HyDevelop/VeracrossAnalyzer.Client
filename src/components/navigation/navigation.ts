@@ -1,8 +1,9 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import App, {Course} from '@/components/app/app';
+import App from '@/components/app/app';
 import {CourseUtils} from '@/utils/course-utils';
 import {FormatUtils} from '@/utils/format-utils';
 import pWaitFor from 'p-wait-for';
+import Course from '@/logic/course';
 
 /**
  * This component is the top navigation bar
@@ -15,6 +16,8 @@ export default class Navigation extends Vue
     @Prop({required: true}) activeIndex: string;
 
     @Prop({required: true}) courses: Course[];
+
+    private selectedTime = 'All Year';
 
     // Instance
     public static instance: Navigation;
