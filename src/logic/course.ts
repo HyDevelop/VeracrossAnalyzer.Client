@@ -121,4 +121,21 @@ export default class Course
         // Is graded
         return true;
     }
+
+    /**
+     * Get assignments of the selected time
+     */
+    get assignments(): Assignment[]
+    {
+        let timeCode = Navigation.instance.getSelectedTimeCode();
+
+        // All year
+        if (timeCode == -1)
+        {
+            return this.rawAssignments;
+        }
+
+        // Specific time
+        return this.computed.termAssignments[timeCode];
+    }
 }
