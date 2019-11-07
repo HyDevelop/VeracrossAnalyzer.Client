@@ -28,11 +28,11 @@ export default class Navigation extends Vue
     public created()
     {
         // Check selected time
-        if (!this.$cookies.isKey('va.selected-time'))
+        if (!this.$cookies.isKey('va.grading-period'))
         {
-            this.$cookies.set('va.selected-time', this.gradingPeriod, '10y');
+            this.$cookies.set('va.grading-period', this.gradingPeriod, '10y');
         }
-        this.gradingPeriod = this.$cookies.get('va.selected-time');
+        this.gradingPeriod = this.$cookies.get('va.grading-period');
     }
 
     /**
@@ -169,7 +169,7 @@ export default class Navigation extends Vue
     public selectGradingPeriod(command: string)
     {
         this.gradingPeriod = command;
-        this.$cookies.set('va.selected-time', command, '10y');
+        this.$cookies.set('va.grading-period', command, '10y');
 
         // Call event
         this.$emit('select-time', this.getSelectedGradingPeriod());
