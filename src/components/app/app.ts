@@ -179,7 +179,7 @@ export default class App extends Vue
             let termGrade = +GPAUtils.getTotalMeanAverage(course.computed.termAssignments[Constants.CURRENT_TERM]).toFixed(2);
 
             // Check if total-average grade is the same with percent-type grade
-            if (course.numericGrade == termGrade)
+            if (course.rawNumericGrade == termGrade)
             {
                 course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
             }
