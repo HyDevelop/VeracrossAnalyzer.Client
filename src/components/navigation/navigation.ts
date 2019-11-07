@@ -159,6 +159,15 @@ export default class Navigation extends Vue
     }
 
     /**
+     * Get code for selected time
+     */
+    public getSelectedTimeCode(): number
+    {
+        if (this.selectedTime == 'All Year') return -1;
+        else return +this.selectedTime.replace('Term ', '');
+    }
+
+    /**
      * This function is called when the sign out button is clicked.
      */
     public signOut()
