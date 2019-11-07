@@ -94,7 +94,7 @@ export default class Course
             }
 
             // Push data
-            termAssignments[currentTerm].push(a);
+            termAssignments[currentTerm].unshift(a);
         }
 
         // Set computed data
