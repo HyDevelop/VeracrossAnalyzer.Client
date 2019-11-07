@@ -128,7 +128,7 @@ export default class Course
      */
     get assignments(): Assignment[]
     {
-        let timeCode = Navigation.instance.getSelectedTimeCode();
+        let timeCode = Navigation.instance.getSelectedGradingPeriod();
 
         // All year
         if (timeCode == -1)

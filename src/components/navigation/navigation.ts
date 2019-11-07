@@ -17,7 +17,7 @@ export default class Navigation extends Vue
 
     @Prop({required: true}) courses: Course[];
 
-    private selectedTime: string = 'All Year';
+    private gradingPeriod: string = 'All Year';
 
     // Instance
     public static instance: Navigation;
@@ -30,9 +30,9 @@ export default class Navigation extends Vue
         // Check selected time
         if (!this.$cookies.isKey('va.selected-time'))
         {
-            this.$cookies.set('va.selected-time', this.selectedTime, '10y');
+            this.$cookies.set('va.selected-time', this.gradingPeriod, '10y');
         }
-        this.selectedTime = this.$cookies.get('va.selected-time');
+        this.gradingPeriod = this.$cookies.get('va.selected-time');
     }
 
     /**
@@ -162,25 +162,25 @@ export default class Navigation extends Vue
     }
 
     /**
-     * Select time
+     * Select grading period
      *
      * @param command Term 1, Term 2, All Year, etc.
      */
-    public selectTime(command: string)
+    public selectGradingPeriod(command: string)
     {
-        this.selectedTime = command;
+        this.gradingPeriod = command;
         this.$cookies.set('va.selected-time', command, '10y');
 
         // Call event
-        this.$emit('select-time', this.getSelectedTimeCode());
+        this.$emit('select-time', this.getSelectedGradingPeriod());
     }
 
     /**
      * Get code for selected time
      */
-    public getSelectedTimeCode(): number
+    public getSelectedGradingPeriod(): number
     {
-        if (this.selectedTime == 'All Year') return -1;
-        else return +this.selectedTime.replace('Term ', '') - 1;
+        if (this.gradingPeriod == 'All Year') return -1;
+        else return +this.gradingPeriod.replace('Term ', '') - 1;
     }
 }

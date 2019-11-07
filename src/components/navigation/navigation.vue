@@ -16,8 +16,8 @@
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
-            <!-- Time selection -->
-            <el-dropdown id="nav-time-selection" @command="selectTime">
+            <!-- Grading period selection -->
+            <el-dropdown id="nav-grading-period" @command="selectTime">
                 <el-button type="primary" size="medium">
                     {{selectedTime}}<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
