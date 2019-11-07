@@ -129,4 +129,54 @@ export class GPAUtils
         // Return
         return score / max * 100;
     }
+
+    /**
+     * Calculate the percent type
+     * TODO: Combine it with overall-line
+     *
+     * @param course
+     * @param assignments
+     */
+    public static getPercentTypeAverage(course: Course, assignments: Assignment[])
+    {
+        let typeScores: {[index: string]: any} = {};
+        let typeCounts: {[index: string]: any} = {};
+
+        // Loop through assignments
+        assignments.forEach(assignment =>
+        {
+            // If assignment should be displayed
+            if (assignment.complete != 'Complete') return;
+
+            // Record scores
+            if (typeScores[assignment.type] == undefined) typeScores[assignment.type] = 0;
+            typeScores[assignment.type] += assignment.score / assignment.scoreMax;
+
+            if (typeCounts[assignment.type] == undefined) typeCounts[assignment.type] = 0;
+            typeCounts[assignment.type] ++;
+        });
+
+        // Count total percentage (This is to avoid less than expected cases)
+        // Eg. If HW = 25% and Quiz = 75%, I have 1 hw and 0 quiz
+        // Without total percentage, the avg grade I get is 25%.
+        let totalPercentage = 0;
+        for (let type in course.grading.weightingMap)
+        {
+            if (typeScores[type] != undefined)
+            {
+                totalPercentage += course.grading.weightingMap[type];
+            }
+        }
+
+        // Count
+        let score = 0;
+        for (let type in typeScores)
+        {
+            let typeFactor = course.grading.weightingMap[type] / totalPercentage;
+            score += typeScores[type] * typeFactor / typeCounts[type];
+        }
+
+        // Add average to the row
+        return score * 100;
+    }
 }
