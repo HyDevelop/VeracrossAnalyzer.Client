@@ -32,9 +32,6 @@ export default class Course
         allYearGrade: number
     };
 
-    // Useless string, used to update
-    temp: string;
-
     /**
      * Construct a course with a course json object
      *
