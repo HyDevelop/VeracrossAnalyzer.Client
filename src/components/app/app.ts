@@ -155,7 +155,7 @@ export default class App extends Vue
         });
 
         // Wait for assignments to be ready.
-        pWaitFor(() => this.courses.every(c => c.assignments != null)).then(() =>
+        pWaitFor(() => this.courses.every(c => c.rawAssignments != null)).then(() =>
         {
             // Filter courses
             this.filteredCourses = this.courses.filter(c => c.isGraded);

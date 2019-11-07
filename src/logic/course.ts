@@ -1,8 +1,9 @@
-import {Assignment} from '@/components/app/app';
+import App, {Assignment} from '@/components/app/app';
 import JsonUtils from '@/utils/json-utils';
 import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
 import {CourseUtils} from '@/utils/course-utils';
+import Navigation from '@/components/navigation/navigation';
 
 export default class Course
 {
@@ -11,7 +12,7 @@ export default class Course
     name: string;
     teacherName: string;
     status: string;
-    assignments: Assignment[];
+    rawAssignments: Assignment[];
 
     letterGrade?: string;
     numericGrade?: number;
@@ -68,19 +69,19 @@ export default class Course
     {
         // Load assignments
         // Parse json and filter it
-        this.assignments = JsonUtils.filterAssignments(data);
+        this.rawAssignments = JsonUtils.filterAssignments(data);
 
         // Sort by date (Latest is at 0)
-        this.assignments.sort((a, b) => b.date.getTime() - a.date.getTime());
+        this.rawAssignments.sort((a, b) => b.date.getTime() - a.date.getTime());
 
         // Filter assignments into terms
         let termAssignments: Assignment[][] = [[], [], [], []];
         let currentTerm = 0;
 
         // Loop through it by time order
-        for (let i = this.assignments.length - 1; i >= 0; i--)
+        for (let i = this.rawAssignments.length - 1; i >= 0; i--)
         {
-            let a = this.assignments[i];
+            let a = this.rawAssignments[i];
 
             // On to the next term
             if (currentTerm < 3 && a.date > Constants.TERMS[currentTerm + 1])
