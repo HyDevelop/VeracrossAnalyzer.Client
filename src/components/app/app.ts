@@ -33,6 +33,8 @@ export interface Assignment
 
     scoreMax: number
     score: number
+
+    gradingPeriod: number
 }
 
 @Component({
