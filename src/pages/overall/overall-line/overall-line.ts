@@ -55,7 +55,7 @@ export default class OverallLine extends Vue
                     // Above 100
                     [
                         {
-                            yAxis: 20000,
+                            yAxis: 120,
                             itemStyle: {color: 'rgba(230,253,255,0.09)'}
                         }, {yAxis: 100}
                     ],
@@ -85,7 +85,7 @@ export default class OverallLine extends Vue
                         {
                             yAxis: 70,
                             itemStyle: {color: 'rgb(255,190,184, 0.09)'}
-                        }, {yAxis: -1000}
+                        }, {yAxis: -100}
                     ]
                 ]
             }
@@ -97,7 +97,7 @@ export default class OverallLine extends Vue
         yAxis:
         {
             min: (value: any) => Math.floor(value.min),
-            max: (value: any) => Math.min(value.max, 120)
+            max: (value: any) => Math.min(value.max, 110)
         }
     };
 
