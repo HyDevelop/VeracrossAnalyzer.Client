@@ -56,44 +56,28 @@ export default class OverallLine extends Vue
                     [
                         {
                             yAxis: 20000,
-                            itemStyle:
-                            {
-                                color: 'rgb(230,253,255)',
-                                opacity: 0.1
-                            }
+                            itemStyle: {color: 'rgba(230,253,255,0.1)'}
                         }, {yAxis: 100}
                     ],
                     // 80 to 100
                     [
                         {
                             yAxis: 100,
-                            itemStyle:
-                            {
-                                color: 'rgb(241,255,237)',
-                                opacity: 0.1
-                            }
+                            itemStyle: {color: 'rgba(241,255,237,0.1)'}
                         }, {yAxis: 80}
                     ],
                     // 70 to 80
                     [
                         {
                             yAxis: 80,
-                            itemStyle:
-                            {
-                                color: 'rgb(255,244,213)',
-                                opacity: 0.1
-                            }
+                            itemStyle: {color: 'rgba(255,244,213,0.1)'}
                         }, {yAxis: 70}
                     ],
                     // Below 70 (Fail)
                     [
                         {
                             yAxis: 70,
-                            itemStyle:
-                            {
-                                color: 'rgb(255,190,184)',
-                                opacity: 0.1
-                            }
+                            itemStyle: {color: 'rgb(255,190,184, 0.1)'}
                         }, {yAxis: -1000}
                     ]
                 ]
