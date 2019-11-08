@@ -62,6 +62,18 @@ export default class OverallLine extends Vue
                                 opacity: 0.1
                             }
                         }, {yAxis: 100}
+                    ],
+                    // 80 - 100
+                    [
+                        {
+                            yAxis: 100,
+                            itemStyle:
+                            {
+                                color: 'rgb(241,255,237)',
+                                opacity: 0.1
+                            }
+                        }, {yAxis: 80}
+                    ]
                 ]
             }
         },
