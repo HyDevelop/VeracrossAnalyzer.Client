@@ -1,6 +1,6 @@
 <template>
     <div id="overall">
-        <el-row>
+        <el-row v-if="getGPA().gpa !== -1">
             <el-col :span="4">
                 <el-card class="large gpa-card vertical-center">
                     <div style="padding: 14px;">
@@ -23,6 +23,12 @@
                     <overall-bar :courses="courses"></overall-bar>
                 </el-card>
             </el-col>
+        </el-row>
+
+        <el-row v-if="getGPA().gpa === -1">
+            <el-card class="large gpa-card vertical-center">
+                <div class="no-grade">This quarter has no grades yet...</div>
+            </el-card>
         </el-row>
 
         <overall-course v-for="course in courses"
