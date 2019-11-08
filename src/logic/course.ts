@@ -48,6 +48,13 @@ export default class Course
         this.rawLetterGrade = courseJson.letterGrade;
         this.rawNumericGrade = courseJson.numericGrade;
 
+        // Other api issue
+        if (this.rawLetterGrade == '')
+        {
+            this.rawNumericGrade = undefined;
+            this.rawLetterGrade = undefined;
+        }
+
         // Level and scaleUp
         let level = CourseUtils.detectLevel(this.name);
         if (level != undefined)
