@@ -1,4 +1,3 @@
-import {FormatUtils} from '@/utils/format-utils';
 import Course from '@/logic/course';
 
 const LEVEL_AP = {level: 'AP', scaleUp: 1};

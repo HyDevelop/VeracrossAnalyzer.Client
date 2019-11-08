@@ -3,14 +3,11 @@ import Login from '@/components/login/login';
 import Navigation from '@/components/navigation/navigation';
 import Overall from '@/pages/overall/overall.vue';
 import Constants from '@/constants';
-import JsonUtils from '@/utils/json-utils';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/utils/http-utils';
-import {CourseUtils} from '@/utils/course-utils';
 import {GPAUtils} from '@/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
-import {FormatUtils} from '@/utils/format-utils';
 import Course from '@/logic/course';
 
 

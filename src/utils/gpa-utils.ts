@@ -1,4 +1,3 @@
-
 import Course from '@/logic/course';
 import {Assignment} from '@/components/app/app';
 

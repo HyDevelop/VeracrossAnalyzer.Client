@@ -1,6 +1,5 @@
-import App, {Assignment} from '@/components/app/app';
+import {Assignment} from '@/components/app/app';
 import JsonUtils from '@/utils/json-utils';
-import Constants from '@/constants';
 import {FormatUtils} from '@/utils/format-utils';
 import {CourseUtils} from '@/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
