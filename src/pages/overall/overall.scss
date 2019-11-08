@@ -38,6 +38,11 @@
 {
     font-size: 30px;
     color: #b1b1b1;
+
+    // Disable selecting
+    display:block;
+    pointer-events: none;
+    user-select: none;
 }
 
 // Cards
