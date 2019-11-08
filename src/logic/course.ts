@@ -130,14 +130,18 @@ export default class Course
         return this.computed.termAssignments[timeCode];
     }
 
+    // TODO: Optimize this
+    private letterGradeComputed = false;
+
     /**
      * Get letter grade
      */
     get letterGrade(): string
     {
         // Cached
-        if (this.rawLetterGrade != undefined)
+        if (this.rawLetterGrade != undefined && this.letterGradeComputed)
             return this.rawLetterGrade;
+        this.letterGradeComputed = true;
 
         // Get scale
         let scale = GPAUtils.findScale(this.numericGrade);
@@ -149,14 +153,17 @@ export default class Course
         return this.rawLetterGrade = scale.letter;
     }
 
+    private numericGradeComputed = false;
+
     /**
      * Get numeric grade
      */
     get numericGrade(): number
     {
         // Cached
-        if (this.rawNumericGrade != undefined)
+        if (this.rawNumericGrade != undefined && this.numericGradeComputed)
             return this.rawNumericGrade;
+        this.numericGradeComputed = true;
 
         // Calculate
         if (this.grading.method == 'PERCENT_TYPE')
@@ -168,6 +175,7 @@ export default class Course
             return this.rawNumericGrade = GPAUtils.getTotalMeanAverage(this.assignments);
         }
 
+        // Error
         return -1;
     }
 }
