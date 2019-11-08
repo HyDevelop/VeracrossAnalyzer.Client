@@ -44,7 +44,26 @@ export default class OverallLine extends Vue
         ],
         series:
         {
-            smooth: true
+            smooth: true,
+
+            // Mark area
+            markArea:
+            {
+                silent: true,
+                data:
+                [
+                    // Above 100
+                    [
+                        {
+                            yAxis: 20000,
+                            itemStyle:
+                            {
+                                color: 'rgb(230,253,255)',
+                                opacity: 0.1
+                            }
+                        }, {yAxis: 100}
+                ]
+            }
         },
         xAxis:
         {
