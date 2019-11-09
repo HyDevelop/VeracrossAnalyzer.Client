@@ -4,6 +4,7 @@ import Course from '@/logic/course';
 import Constants from '@/constants';
 import Navigation from '@/components/navigation/navigation';
 import {CourseUtils} from '@/logic/utils/course-utils';
+import GraphUtils from '@/logic/utils/graph-utils';
 
 @Component({
 })
@@ -43,17 +44,7 @@ export default class OverallLine extends Vue
             smooth: true,
 
             // Quarter lines
-            markLine:
-            {
-                silent: true,
-                symbol: 'none',
-                lineStyle: {color: Constants.THEME.colors[2]},
-                animationDuration: 500,
-                data: Constants.TERMS.map((term, index) =>
-                {
-                    return {xAxis: term.getTime(), label: {formatter: `Term ${index + 1}`}}
-                })
-            },
+            markLine: GraphUtils.getTermLines(),
 
             // Mark area
             markArea:
