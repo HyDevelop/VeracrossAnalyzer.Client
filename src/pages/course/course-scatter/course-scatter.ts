@@ -125,7 +125,7 @@ export default class CourseScatter extends Vue
 
         // Create scatter plots
         let map = this.mapAssignments();
-        let series: any = Array.from(map, ([type, assignments]) =>
+        let series: any[] = Array.from(map, ([type, assignments]) =>
         {
             return {
                 type: 'scatter',
@@ -133,6 +133,14 @@ export default class CourseScatter extends Vue
                 data: CourseScatter.assignmentsData(assignments),
                 itemStyle: itemStyle
             }
+        });
+
+        // Push other stuff
+        series.push(
+        {
+            type: 'line',
+            markLine: GraphUtils.getTermLines(),
+            markArea: GraphUtils.getGradeMarkAreas(1)
         });
 
         return series;
