@@ -19,7 +19,7 @@ export default class OverallLine extends Vue
      */
     created()
     {
-        this.filteredCourses = this.courses.filter(c => c.isGraded);
+        this.filteredCourses = this.courses.filter(c => c.isGraded && c.assignments.length > 0);
     }
 
     /**
