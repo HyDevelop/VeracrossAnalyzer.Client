@@ -70,6 +70,14 @@ export default class OverallLine extends Vue
         // Each course
         let series: any[] = this.filteredCourses.map(course => this.getCourseSeries(course));
 
+        // Push other stuff
+        series.push(
+        {
+            type: 'line',
+            markLine: GraphUtils.getTermLines(),
+            markArea: GraphUtils.getGradeMarkAreas(0.4)
+        });
+
         return series
     }
 
