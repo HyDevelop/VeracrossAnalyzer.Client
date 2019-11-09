@@ -9,8 +9,6 @@ import GraphUtils from '@/logic/utils/graph-utils';
 })
 export default class CourseScatter extends Vue
 {
-    private static DOT = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:{color}"></span>';
-
     @Prop({required: true}) course: Course;
 
     /**
@@ -82,7 +80,7 @@ export default class CourseScatter extends Vue
                     type: 'cross'
                 },
                 formatter: (ps: any[]) => ps[0].data[0] + '<br>' + ps.map(p =>
-                    `${CourseScatter.DOT.replace('{color}', p.color)}
+                    `${GraphUtils.DOT.replace('{color}', p.color)}
                     ${FormatUtils.limit(p.data[2], 22)}: ${p.data[1]}%<br>`).join('')
             },
 

@@ -2,6 +2,8 @@ import Constants from '@/constants';
 
 export default class GraphUtils
 {
+    static DOT = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:{color}"></span>';
+
     /**
      * Get term mark lines
      */
