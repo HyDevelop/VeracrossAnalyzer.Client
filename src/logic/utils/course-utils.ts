@@ -76,4 +76,14 @@ export class CourseUtils
 
         return selected == -1 ? Constants.TERMS[0] : Constants.TERMS[selected];
     }
+
+    /**
+     * Get the end date of the selected term
+     */
+    static getTermEndDate()
+    {
+        let selected = Navigation.instance.getSelectedGradingPeriod();
+
+        return selected == -1 ? Constants.TERMS[3] : Constants.TERMS[selected + 1];
+    }
 }
