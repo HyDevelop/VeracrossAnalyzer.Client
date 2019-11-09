@@ -28,7 +28,7 @@ export default class OverallLine extends Vue
         dataZoom:
         [
             {
-                startValue: moment().subtract(30, 'days').format('YYYY-MM-DD')
+                startValue: moment().subtract(30, 'days').toDate().getTime()
             },
             {
                 type: 'inside'
@@ -126,7 +126,7 @@ export default class OverallLine extends Vue
         dates.forEach(date =>
         {
             // Define row object
-            let row: {[index: string]:any} = {'date': moment(date).format('YYYY-MM-DD')};
+            let row: {[index: string]:any} = {'date': date.getTime()};
 
             // Loop through courses
             courses.forEach(course =>
