@@ -5,6 +5,33 @@ export default class GraphUtils
     static DOT = '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:{color}"></span>';
 
     /**
+     * Base settings
+     *
+     * @param title
+     * @param subtitle
+     */
+    static getBaseSettings(title?: String, subtitle?: String)
+    {
+        return {
+            // Color
+            color: Constants.THEME.colors,
+
+            // Title
+            title:
+            {
+                show: title != null,
+                textStyle:
+                {
+                    fontSize: 13
+                },
+                text: title,
+                subtext: subtitle,
+                x: 'center'
+            },
+        }
+    }
+
+    /**
      * Get term mark lines
      */
     static getTermLines()
