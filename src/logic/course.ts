@@ -1,9 +1,9 @@
 import {Assignment} from '@/components/app/app';
-import JsonUtils from '@/utils/json-utils';
-import {FormatUtils} from '@/utils/format-utils';
-import {CourseUtils} from '@/utils/course-utils';
+import JsonUtils from '@/logic/utils/json-utils';
+import {FormatUtils} from '@/logic/utils/format-utils';
+import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
-import {GPAUtils} from '@/utils/gpa-utils';
+import {GPAUtils} from '@/logic/utils/gpa-utils';
 
 export default class Course
 {

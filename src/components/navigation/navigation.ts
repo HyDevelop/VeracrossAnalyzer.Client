@@ -1,7 +1,7 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import App from '@/components/app/app';
-import {CourseUtils} from '@/utils/course-utils';
-import {FormatUtils} from '@/utils/format-utils';
+import {CourseUtils} from '@/logic/utils/course-utils';
+import {FormatUtils} from '@/logic/utils/format-utils';
 import pWaitFor from 'p-wait-for';
 import Course from '@/logic/course';
 

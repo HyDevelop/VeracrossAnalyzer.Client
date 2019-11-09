@@ -1,7 +1,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
 import App from '@/components/app/app';
-import VersionUtils from '@/utils/version-utils';
+import VersionUtils from '@/logic/utils/version-utils';
 
 /**
  * This component handles user login, and obtains data from the server.

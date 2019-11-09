@@ -26,7 +26,7 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import Course from '@/logic/course';
-    import {CourseUtils} from '@/utils/course-utils';
+    import {CourseUtils} from '@/logic/utils/course-utils';
     import Navigation from '@/components/navigation/navigation';
 
     @Component
