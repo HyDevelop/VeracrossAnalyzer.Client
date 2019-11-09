@@ -14,7 +14,7 @@ export interface Assignment
     type: string
     typeId: number
     description: string
-    date: Date
+    time: number
     complete: string
     include: boolean
     display: boolean
@@ -101,7 +101,7 @@ export default class Course
         this.rawAssignments = JsonUtils.filterAssignments(data);
 
         // Sort by date (Latest is at 0)
-        this.rawAssignments.sort((a, b) => b.date.getTime() - a.date.getTime());
+        this.rawAssignments.sort((a, b) => b.time - a.time);
 
         // Filter assignments into terms
         let termAssignments: Assignment[][] = [[], [], [], []];
