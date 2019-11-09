@@ -64,4 +64,30 @@ export default class OverallLine extends Vue
             max: (value: any) => Math.min(value.max, 110)
         }
     };
+
+    /**
+     * Generate series data for a course
+     *
+     * @param course
+     */
+    private getCourseSeries(course: Course)
+    {
+        return {
+            name: course.name,
+            type: 'line',
+            smooth: true,
+            data: course.gradedAssignments.slice().reverse().map((assignment, i, array) =>
+            {
+                // Find subset before this assignment
+                let subset = array.filter(a => a.time <= assignment.time);
+                console.log(subset);
+
+                // Find grade
+                if (course.grading.method == 'PERCENT_TYPE')
+                    return [assignment.time, GPAUtils.getPercentTypeAverage(course, subset)];
+                if (course.grading.method == 'TOTAL_MEAN')
+                    return [assignment.time, GPAUtils.getTotalMeanAverage(subset)];
+            })
+        }
+    }
 }
