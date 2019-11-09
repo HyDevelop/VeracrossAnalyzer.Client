@@ -13,13 +13,43 @@ export default class OverallLine extends Vue
     @Prop({required: true}) courses: Course[];
 
     filteredCourses: Course[];
+    settings: any;
 
     /**
      * When this component is created
      */
     created()
     {
+        // Filter courses
         this.filteredCourses = this.courses.filter(c => c.isGraded && c.assignments.length > 0);
+
+        // Generate settings
+        this.settings =
+        {
+            ...GraphUtils.getBaseSettings('Average Grade', 'Average score trend for every course'),
+
+            // Zoom bar
+            dataZoom:
+            [
+                {
+                    startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
+                        CourseUtils.getTermBeginDate().getTime())
+                },
+                {
+                    type: 'inside'
+                }
+            ],
+            series: this.series(),
+            xAxis:
+            {
+                type: 'time'
+            },
+            yAxis:
+            {
+                min: (value: any) => Math.floor(value.min),
+                max: (value: any) => Math.min(value.max, 110)
+            }
+        }
     }
 
     /**
@@ -29,36 +59,8 @@ export default class OverallLine extends Vue
      */
     afterConfig(options: any)
     {
-        console.log(options);
         return this.settings;
     }
-
-    private settings =
-    {
-        ...GraphUtils.getBaseSettings('Average Grade', 'Average score trend for every course'),
-
-        // Zoom bar
-        dataZoom:
-        [
-            {
-                startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
-                    CourseUtils.getTermBeginDate().getTime())
-            },
-            {
-                type: 'inside'
-            }
-        ],
-        series: this.series(),
-        xAxis:
-        {
-            type: 'time'
-        },
-        yAxis:
-        {
-            min: (value: any) => Math.floor(value.min),
-            max: (value: any) => Math.min(value.max, 110)
-        }
-    };
 
     /**
      * Generate series data
