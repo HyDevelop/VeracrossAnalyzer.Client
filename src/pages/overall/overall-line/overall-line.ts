@@ -48,12 +48,7 @@ export default class OverallLine extends Vue
                 type: 'inside'
             }
         ],
-        series:
-        {
-            smooth: true,
-            markLine: GraphUtils.getTermLines(),
-            markArea: GraphUtils.getGradeMarkAreas(0.09)
-        },
+        series: this.series(),
         xAxis:
         {
             type: 'time'
@@ -64,6 +59,18 @@ export default class OverallLine extends Vue
             max: (value: any) => Math.min(value.max, 110)
         }
     };
+
+    /**
+     * Generate series data
+     */
+    private series()
+    {
+        // Each course
+        // todo: filter graded
+        let series: any[] = this.courses.map(course => this.getCourseSeries(course));
+
+        return series
+    }
 
     /**
      * Generate series data for a course
