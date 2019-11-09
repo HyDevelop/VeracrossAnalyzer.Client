@@ -46,6 +46,10 @@ export default class OverallLine extends Vue
             },
             yAxis:
             {
+                axisLabel:
+                {
+                    formatter: (name: any) => name + '%'
+                },
                 min: (value: any) => Math.floor(value.min),
                 max: (value: any) => Math.min(Math.ceil(value.max), 110)
             }
