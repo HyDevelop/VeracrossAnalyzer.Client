@@ -5,8 +5,8 @@
 
         <el-row class="unread-row">
             <el-col :span="3" class="date">
-                <span class="month">{{getMoment(assignment.date).format("MMM D")}}</span>
-                <span class="now">({{getMoment(assignment.date).fromNow()}})</span>
+                <span class="month">{{getMoment(assignment.time).format("MMM D")}}</span>
+                <span class="now">({{getMoment(assignment.time).fromNow()}})</span>
             </el-col>
 
             <el-col :span="15" class="description">
@@ -53,7 +53,7 @@
          *
          * @param date Date
          */
-        getMoment(date: string)
+        getMoment(date: number)
         {
             return moment(new Date(date));
         }
