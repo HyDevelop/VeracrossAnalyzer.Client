@@ -36,8 +36,8 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Assignment} from '@/components/app/app';
     import moment from 'moment';
+    import {Assignment} from '@/logic/course';
 
     @Component
     export default class AssignmentEntry extends Vue

@@ -1,4 +1,4 @@
-import {Assignment} from '@/components/app/app';
+import {Assignment} from '@/logic/course';
 
 export default class JsonUtils
 {

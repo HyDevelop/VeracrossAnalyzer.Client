@@ -1,9 +1,31 @@
-import {Assignment} from '@/components/app/app';
 import JsonUtils from '@/logic/utils/json-utils';
 import {FormatUtils} from '@/logic/utils/format-utils';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
+
+/**
+ * Objects of this interface represent assignment grades.
+ */
+export interface Assignment
+{
+    id: number
+    scoreId: number
+    type: string
+    typeId: number
+    description: string
+    date: Date
+    complete: string
+    include: boolean
+    display: boolean
+
+    unread: boolean
+
+    scoreMax: number
+    score: number
+
+    gradingPeriod: number
+}
 
 export default class Course
 {

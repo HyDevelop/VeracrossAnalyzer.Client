@@ -16,8 +16,8 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Assignment} from '@/components/app/app';
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
+    import {Assignment} from '@/logic/course';
 
     @Component({
         components: {AssignmentEntry}

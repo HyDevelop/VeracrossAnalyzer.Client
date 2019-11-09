@@ -23,12 +23,11 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {Assignment} from '@/components/app/app';
     import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
     import CourseScatter from '@/pages/course/course-scatter/course-scatter';
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
     import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
-    import Course from '@/logic/course';
+    import Course, {Assignment} from '@/logic/course';
 
     @Component({
         components: {AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}

@@ -1,5 +1,4 @@
-import Course from '@/logic/course';
-import {Assignment} from '@/components/app/app';
+import Course, {Assignment} from '@/logic/course';
 
 export interface Scale
 {

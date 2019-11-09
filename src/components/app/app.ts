@@ -11,29 +11,6 @@ import CoursePage from '@/pages/course/course-page.vue';
 import Course from '@/logic/course';
 
 
-/**
- * Objects of this interface represent assignment grades.
- */
-export interface Assignment
-{
-    id: number
-    scoreId: number
-    type: string
-    typeId: number
-    description: string
-    date: Date
-    complete: string
-    include: boolean
-    display: boolean
-
-    unread: boolean
-
-    scoreMax: number
-    score: number
-
-    gradingPeriod: number
-}
-
 @Component({
     components: {Login, Navigation, Overall, Loading, CoursePage},
 })
