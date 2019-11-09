@@ -79,22 +79,26 @@ export default class OverallLine extends Vue
      */
     private getCourseSeries(course: Course)
     {
+        // Graded assignments
+        let assignments = course.gradedAssignments.slice().reverse();
+
+        // Create series
         return {
             name: course.name,
             type: 'line',
             smooth: true,
-            data: course.gradedAssignments.slice().reverse().map((assignment, i, array) =>
+            data: this.toDateRange([...assignments.map(a => a.time)].map((time, i) =>
             {
                 // Find subset before this assignment
-                let subset = array.filter(a => a.time <= assignment.time);
+                let subset = assignments.filter(a => a.time <= time);
                 console.log(subset);
 
                 // Find grade
                 if (course.grading.method == 'PERCENT_TYPE')
-                    return [assignment.time, GPAUtils.getPercentTypeAverage(course, subset)];
+                    return [time, GPAUtils.getPercentTypeAverage(course, subset)];
                 if (course.grading.method == 'TOTAL_MEAN')
-                    return [assignment.time, GPAUtils.getTotalMeanAverage(subset)];
-            })
+                    return [time, GPAUtils.getTotalMeanAverage(subset)];
+            }))
         }
     }
 
