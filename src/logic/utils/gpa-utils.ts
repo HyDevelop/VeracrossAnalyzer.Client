@@ -135,7 +135,7 @@ export class GPAUtils
         });
 
         // Return
-        return score / max * 100;
+        return +(score / max * 100).toFixed(2);
     }
 
     /**
@@ -185,6 +185,6 @@ export class GPAUtils
         }
 
         // Add average to the row
-        return score * 100;
+        return +(score * 100).toFixed(2);
     }
 }
