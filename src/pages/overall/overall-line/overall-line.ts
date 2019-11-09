@@ -100,7 +100,6 @@ export default class OverallLine extends Vue
             {
                 // Find subset before this assignment
                 let subset = assignments.filter(a => a.time <= time);
-                console.log(subset);
 
                 // Find grade
                 if (course.grading.method == 'PERCENT_TYPE')
@@ -119,8 +118,6 @@ export default class OverallLine extends Vue
      */
     private toDateRange(data: any[])
     {
-        // Construct date range
-
         // Find the min date
         let minDates = this.courses.map(course => course.assignments[course.assignments.length - 1].time);
         let minDate: Date = new Date(Math.min.apply(null, minDates));
@@ -132,8 +129,6 @@ export default class OverallLine extends Vue
         {
             dates.push(new Date(date).getTime());
         }
-
-        console.log(dates);
 
         let lastValue: any = null;
         return dates.map(date =>
