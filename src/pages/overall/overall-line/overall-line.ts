@@ -2,6 +2,8 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import moment from 'moment';
 import Course from '@/logic/course';
 import Constants from '@/constants';
+import Navigation from '@/components/navigation/navigation';
+import {CourseUtils} from '@/logic/utils/course-utils';
 
 @Component({
 })
@@ -128,7 +130,7 @@ export default class OverallLine extends Vue
         let minDate: Date = new Date(Math.min.apply(null, minDates));
 
         // Find the dates in between
-        let now = new Date();
+        let now = new Date(Math.min(new Date().getTime(), CourseUtils.getTermEndDate().getTime()));
         let dates = [];
         for (let date = minDate; date <= now; date.setDate(date.getDate() + 1))
         {
