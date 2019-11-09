@@ -126,7 +126,7 @@ export default class Course
         if (this.level == 'None' || this.level == 'Unknown' || this.scaleUp == -1) return false;
 
         // Skip courses without graded assignments
-        if (this.assignments.filter(a => a.complete == 'Complete').length == 0) return false;
+        if (this.gradedAssignments.length == 0) return false;
 
         // Skip if there are no grading scale
         // if (course.grading.method == 'NOT_GRADED') return;
@@ -150,6 +150,14 @@ export default class Course
 
         // Specific time
         return this.computed.termAssignments[timeCode];
+    }
+
+    /**
+     * Get graded assignments
+     */
+    get gradedAssignments(): Assignment[]
+    {
+        return this.assignments.filter(a => a.complete == 'Complete');
     }
 
     // TODO: Optimize this
