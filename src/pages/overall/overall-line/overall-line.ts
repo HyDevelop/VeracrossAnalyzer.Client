@@ -22,6 +22,8 @@ export default class OverallLine extends Vue
             subtext: 'Average score trend for every course',
             x: 'center'
         },
+        legend: {show: false},
+
         // Zoom bar
         dataZoom:
         [
