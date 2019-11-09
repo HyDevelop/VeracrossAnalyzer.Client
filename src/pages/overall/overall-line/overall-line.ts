@@ -43,7 +43,10 @@ export default class OverallLine extends Vue
             markLine:
             {
                 silent: true,
-                data: Constants.TERMS.map(term => {return {xAxis: term.getTime()}})
+                data: Constants.TERMS.map((term, index) =>
+                {
+                    return {xAxis: term.getTime(), label: {formatter: `Term ${index + 1}`}}
+                })
             },
 
             // Mark area
