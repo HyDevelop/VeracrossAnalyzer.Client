@@ -45,6 +45,7 @@ export default class OverallLine extends Vue
             {
                 silent: true,
                 symbol: 'none',
+                lineStyle: {color: Constants.THEME.colors[2]},
                 data: Constants.TERMS.map((term, index) =>
                 {
                     return {xAxis: term.getTime(), label: {formatter: `Term ${index + 1}`}}
