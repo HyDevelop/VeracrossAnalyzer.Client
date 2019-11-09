@@ -29,7 +29,8 @@ export default class OverallLine extends Vue
         dataZoom:
         [
             {
-                startValue: moment().subtract(30, 'days').toDate().getTime()
+                startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
+                    Constants.TERMS[Navigation.instance.getSelectedGradingPeriod()].getTime())
             },
             {
                 type: 'inside'
