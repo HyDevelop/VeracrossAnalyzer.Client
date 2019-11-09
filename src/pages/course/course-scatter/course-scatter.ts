@@ -40,7 +40,7 @@ export default class CourseScatter extends Vue
                 {
                     formatter: (name: any) => moment(name).format('MMM DD')
                 },
-                max: FormatUtils.toChartDate(new Date())
+                max: new Date().getTime()
             },
 
             // Y axis represents GPAs and MaxGPAs
@@ -160,6 +160,6 @@ export default class CourseScatter extends Vue
     private static assignmentsData(assignments: Assignment[])
     {
         return assignments.filter(a => a.complete == 'Complete')
-            .map(a => [FormatUtils.toChartDate(a.date), (a.score / a.scoreMax * 100).toFixed(2), a.description]);
+            .map(a => [a.time, (a.score / a.scoreMax * 100).toFixed(2), a.description]);
     }
 }
