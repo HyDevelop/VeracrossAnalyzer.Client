@@ -12,6 +12,17 @@ export default class OverallLine extends Vue
 {
     @Prop({required: true}) courses: Course[];
 
+    /**
+     * Override options
+     *
+     * @param options Original options (Unused)
+     */
+    afterConfig(options: any)
+    {
+        console.log(options);
+        return this.settings;
+    }
+
     private settings =
     {
         ...GraphUtils.getBaseSettings('Average Grade', 'Average score trend for every course'),
@@ -44,16 +55,11 @@ export default class OverallLine extends Vue
         }
     };
 
-    chartCache: any;
-
     /**
      * Convert assignments list to a graph dataset.
      */
     get convertChart()
     {
-        // Caching
-        if (this.chartCache != undefined) return this.chartCache;
-
         let courses = this.courses.filter(c => c.assignments.length > 0);
 
         // Compute the column names
@@ -158,8 +164,7 @@ export default class OverallLine extends Vue
             rows.push(row);
         });
 
-        return this.chartCache =
-        {
+        return {
             columns: columns,
             rows: rows
         }
