@@ -39,7 +39,14 @@ export default class OverallLine extends Vue
                     type: 'inside'
                 }
             ],
-            series: this.series(),
+
+            // Tooltip
+            tooltip:
+            {
+                trigger: 'axis'
+            },
+
+            // Axis
             xAxis:
             {
                 type: 'time'
@@ -52,7 +59,10 @@ export default class OverallLine extends Vue
                 },
                 min: (value: any) => Math.floor(value.min),
                 max: (value: any) => Math.min(Math.ceil(value.max), 110)
-            }
+            },
+
+            // Series data
+            series: this.series()
         }
     }
 
