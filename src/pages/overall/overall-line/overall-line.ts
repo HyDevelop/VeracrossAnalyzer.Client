@@ -1,16 +1,26 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import moment from 'moment';
-import Course from '@/logic/course';
+import Course, {Assignment} from '@/logic/course';
 import Constants from '@/constants';
 import Navigation from '@/components/navigation/navigation';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import GraphUtils from '@/logic/utils/graph-utils';
+import {GPAUtils} from '@/logic/utils/gpa-utils';
 
-@Component({
-})
+@Component
 export default class OverallLine extends Vue
 {
     @Prop({required: true}) courses: Course[];
+
+    filteredCourses: Course[];
+
+    /**
+     * When this component is created
+     */
+    created()
+    {
+        this.filteredCourses = this.courses.filter(c => c.isGraded);
+    }
 
     /**
      * Override options
