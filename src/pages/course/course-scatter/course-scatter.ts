@@ -140,7 +140,7 @@ export default class CourseScatter extends Vue
         {
             type: 'line',
             markLine: GraphUtils.getTermLines(),
-            markArea: GraphUtils.getGradeMarkAreas(1)
+            markArea: GraphUtils.getGradeMarkAreas(0.4)
         });
 
         return series;
