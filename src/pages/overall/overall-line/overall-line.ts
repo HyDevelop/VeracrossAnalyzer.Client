@@ -92,7 +92,7 @@ export default class OverallLine extends Vue
         },
         xAxis:
         {
-            //type: 'time'
+            type: 'time'
         },
         yAxis:
         {
