@@ -30,7 +30,7 @@ export default class OverallLine extends Vue
         [
             {
                 startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
-                    Constants.TERMS[Navigation.instance.getSelectedGradingPeriod()].getTime())
+                    CourseUtils.getTermBeginDate().getTime())
             },
             {
                 type: 'inside'
