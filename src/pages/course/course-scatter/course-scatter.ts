@@ -3,6 +3,7 @@ import Constants from '@/constants';
 import {FormatUtils} from '@/logic/utils/format-utils';
 import moment from 'moment';
 import Course, {Assignment} from '@/logic/course';
+import GraphUtils from '@/logic/utils/graph-utils';
 
 @Component({
 })
@@ -27,22 +28,6 @@ export default class CourseScatter extends Vue
      */
     get chartSettings()
     {
-        // Map assignments
-        let map = this.mapAssignments();
-
-        // Scatter data point style
-        let itemStyle =
-        {
-            normal:
-            {
-                opacity: 0.8,
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.2)'
-            }
-        };
-
         // Create settings
         let settings =
         {
@@ -114,18 +99,43 @@ export default class CourseScatter extends Vue
             },
 
             // Data
-            series: Array.from(map, ([type, assignments]) =>
-            {
-                return {
-                    type: 'scatter',
-                    name: type,
-                    data: CourseScatter.assignmentsData(assignments),
-                    itemStyle: itemStyle
-                }
-            })
+            series: this.series()
         };
 
         return settings;
+    }
+
+    /**
+     * Get series data
+     */
+    private series()
+    {
+        // Scatter data point style
+        let itemStyle =
+        {
+            normal:
+            {
+                opacity: 0.8,
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.2)'
+            }
+        };
+
+        // Create scatter plots
+        let map = this.mapAssignments();
+        let series: any = Array.from(map, ([type, assignments]) =>
+        {
+            return {
+                type: 'scatter',
+                name: type,
+                data: CourseScatter.assignmentsData(assignments),
+                itemStyle: itemStyle
+            }
+        });
+
+        return series;
     }
 
     /**
