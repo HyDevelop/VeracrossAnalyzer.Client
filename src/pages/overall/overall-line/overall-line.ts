@@ -14,19 +14,7 @@ export default class OverallLine extends Vue
 
     private settings =
     {
-        // Title
-        title:
-        {
-            show: true,
-            textStyle:
-            {
-                fontSize: 12
-            },
-            text: 'Average Grade',
-            subtext: 'Average score trend for every course',
-            x: 'center'
-        },
-        legend: {show: false},
+        ...GraphUtils.getBaseSettings('Average Grade', 'Average score trend for every course'),
 
         // Zoom bar
         dataZoom:
