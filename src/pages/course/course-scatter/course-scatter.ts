@@ -29,21 +29,8 @@ export default class CourseScatter extends Vue
         // Create settings
         let settings =
         {
-            // Color
-            color: Constants.THEME.colors,
-
-            // Title
-            title:
-            {
-                show: true,
-                textStyle:
-                {
-                    fontSize: 13
-                },
-                text: 'Assignments',
-                subtext: 'Assignment scores for ' + this.course.name,
-                x: 'center'
-            },
+            // Base settings
+            ...GraphUtils.getBaseSettings('Assignments', 'Assignment scores for ' + this.course.name),
 
             // X axis represents course names
             xAxis:
