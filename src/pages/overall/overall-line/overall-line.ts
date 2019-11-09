@@ -47,7 +47,7 @@ export default class OverallLine extends Vue
             yAxis:
             {
                 min: (value: any) => Math.floor(value.min),
-                max: (value: any) => Math.min(value.max, 110)
+                max: (value: any) => Math.min(Math.ceil(value.max), 110)
             }
         }
     }
