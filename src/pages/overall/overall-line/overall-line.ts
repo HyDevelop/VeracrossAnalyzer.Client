@@ -118,7 +118,7 @@ export default class OverallLine extends Vue
 
         // Find the dates in between
         let now = new Date(Math.min(new Date().getTime(), CourseUtils.getTermEndDate().getTime()));
-        let dates = [];
+        let dates: number[] = [];
         for (let date = minDate; date <= now; date.setDate(date.getDate() + 1))
         {
             dates.push(new Date(date).getTime());
@@ -126,6 +126,15 @@ export default class OverallLine extends Vue
 
         console.log(dates);
 
-        return dates.map(date => data.filter(d => d[0] <= date));
+        let lastValue: any = null;
+        return dates.map(date =>
+        {
+            // Data point on this specific date
+            let thisValue = data.find(a => a[0] == date);
+
+            // None
+            if (thisValue == null) return [date, lastValue == null ? null : lastValue[1]];
+            else return [date, (lastValue = thisValue)[1]];
+        });
     }
 }
