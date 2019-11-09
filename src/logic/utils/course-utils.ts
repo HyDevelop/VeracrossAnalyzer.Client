@@ -1,4 +1,6 @@
 import Course from '@/logic/course';
+import Navigation from '@/components/navigation/navigation';
+import Constants from '@/constants';
 
 const LEVEL_AP = {level: 'AP', scaleUp: 1};
 const LEVEL_H = {level: 'H', scaleUp: 0.75};
@@ -63,5 +65,15 @@ export class CourseUtils
 
         // Really unknown
         return undefined;
+    }
+
+    /**
+     * Get the begin date of the selected term
+     */
+    static getTermBeginDate()
+    {
+        let selected = Navigation.instance.getSelectedGradingPeriod();
+
+        return selected == -1 ? Constants.TERMS[0] : Constants.TERMS[selected];
     }
 }
