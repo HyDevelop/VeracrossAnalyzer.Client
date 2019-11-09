@@ -1,6 +1,7 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import moment from 'moment';
 import Course from '@/logic/course';
+import Constants from '@/constants';
 
 @Component({
 })
@@ -37,6 +38,13 @@ export default class OverallLine extends Vue
         series:
         {
             smooth: true,
+
+            // Quarter lines
+            markLine:
+            {
+                silent: true,
+                data: Constants.TERMS.map(term => {return {xAxis: term.getTime()}})
+            },
 
             // Mark area
             markArea:
