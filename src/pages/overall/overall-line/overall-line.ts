@@ -68,8 +68,7 @@ export default class OverallLine extends Vue
     private series()
     {
         // Each course
-        // todo: filter graded
-        let series: any[] = this.courses.map(course => this.getCourseSeries(course));
+        let series: any[] = this.filteredCourses.map(course => this.getCourseSeries(course));
 
         return series
     }
