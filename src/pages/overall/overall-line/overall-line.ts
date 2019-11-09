@@ -97,4 +97,31 @@ export default class OverallLine extends Vue
             })
         }
     }
+
+    /**
+     * Convert point data to date range data.
+     * Eg. [[Mon, 10], [Wed, 5]] to [[Mon, 10], [Tue, 10], [Wed, 5]]
+     *
+     * @param data
+     */
+    private toDateRange(data: any[])
+    {
+        // Construct date range
+
+        // Find the min date
+        let minDates = this.courses.map(course => course.assignments[course.assignments.length - 1].time);
+        let minDate: Date = new Date(Math.min.apply(null, minDates));
+
+        // Find the dates in between
+        let now = new Date(Math.min(new Date().getTime(), CourseUtils.getTermEndDate().getTime()));
+        let dates = [];
+        for (let date = minDate; date <= now; date.setDate(date.getDate() + 1))
+        {
+            dates.push(new Date(date).getTime());
+        }
+
+        console.log(dates);
+
+        return dates.map(date => data.filter(d => d[0] <= date));
+    }
 }
