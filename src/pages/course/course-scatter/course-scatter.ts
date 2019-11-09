@@ -54,8 +54,8 @@ export default class CourseScatter extends Vue
                 {
                     formatter: (name: any) => name + '%'
                 },
-                max: 100,
-                min: (value: any) => Math.floor(value.min) - 5
+                min: (value: any) => Math.floor(value.min) - 5,
+                max: (value: any) => Math.min(Math.ceil(value.max), 110)
             },
 
             // Tooltip
