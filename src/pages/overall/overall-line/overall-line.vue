@@ -1,6 +1,6 @@
 <template>
     <div id="overall-line">
-        <ve-line :data="convertChart" :extend="{a: this.courses}" :after-config="afterConfig"></ve-line>
+        <ve-line :extend="{a: this.courses}" :after-config="afterConfig"></ve-line>
     </div>
 </template>
 
