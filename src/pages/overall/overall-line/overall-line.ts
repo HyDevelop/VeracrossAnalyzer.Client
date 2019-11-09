@@ -42,53 +42,8 @@ export default class OverallLine extends Vue
         series:
         {
             smooth: true,
-
-            // Quarter lines
             markLine: GraphUtils.getTermLines(),
-
-            // Mark area
-            markArea:
-            {
-                silent: true,
-                data:
-                [
-                    // Above 100
-                    [
-                        {
-                            yAxis: 120,
-                            itemStyle: {color: 'rgba(230,253,255,0.09)'}
-                        }, {yAxis: 100}
-                    ],
-                    // 90 to 100
-                    [
-                        {
-                            yAxis: 100,
-                            itemStyle: {color: 'rgba(241,255,237,0.09)'}
-                        }, {yAxis: 90}
-                    ],
-                    // 80 to 90
-                    [
-                        {
-                            yAxis: 90,
-                            itemStyle: {color: 'rgba(255,250,216,0.09)'}
-                        }, {yAxis: 80}
-                    ],
-                    // 70 to 80
-                    [
-                        {
-                            yAxis: 80,
-                            itemStyle: {color: 'rgba(255,225,199,0.1)'}
-                        }, {yAxis: 70}
-                    ],
-                    // Below 70 (Fail)
-                    [
-                        {
-                            yAxis: 70,
-                            itemStyle: {color: 'rgb(255,190,184, 0.09)'}
-                        }, {yAxis: -100}
-                    ]
-                ]
-            }
+            markArea: GraphUtils.getGradeMarkAreas()
         },
         xAxis:
         {
