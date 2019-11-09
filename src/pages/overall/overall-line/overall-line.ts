@@ -43,7 +43,7 @@ export default class OverallLine extends Vue
         {
             smooth: true,
             markLine: GraphUtils.getTermLines(),
-            markArea: GraphUtils.getGradeMarkAreas()
+            markArea: GraphUtils.getGradeMarkAreas(0.09)
         },
         xAxis:
         {
