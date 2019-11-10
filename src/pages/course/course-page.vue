@@ -14,6 +14,10 @@
                 </el-col>
             </el-row>
 
+            <el-card class="large overall-line-card vertical-center">
+                <CourseTypeRadar :course="course"></CourseTypeRadar>
+            </el-card>
+
             <AssignmentTypeHead v-for="type in course.assignmentTypes" :key="type.id"
                                 :type="type" :assignments="course.assignments">
             </AssignmentTypeHead>
@@ -28,9 +32,10 @@
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
     import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
     import Course, {Assignment} from '@/logic/course';
+    import CourseTypeRadar from '@/pages/course/course-type-radar/course-type-radar';
 
     @Component({
-        components: {AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
+        components: {CourseTypeRadar, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
     })
     export default class CoursePage extends Vue
     {
