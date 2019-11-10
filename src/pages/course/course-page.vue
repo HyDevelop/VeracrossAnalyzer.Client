@@ -4,25 +4,21 @@
 
         <div class="course-card-content expand">
             <el-row>
-                <el-col :span="24">
+                <el-col :span="24" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center">
                         <course-scatter :course="course"></course-scatter>
                     </el-card>
                 </el-col>
-                <el-col :span="0">
-
-                </el-col>
             </el-row>
 
-
             <el-row>
-                <el-col :span="12">
+                <el-col :span="12" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center type-graph"
                              body-style="padding: 0">
                         <TypeRadar :course="course"></TypeRadar>
                     </el-card>
                 </el-col>
-                <el-col :span="12">
+                <el-col :span="12" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center type-graph"
                              body-style="padding: 0">
                         <TypePie :course="course"></TypePie>

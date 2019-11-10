@@ -65,12 +65,13 @@
     .entry-box.percent {background-color: #a7a490 !important}
     .course-name {color: #cffff6 !important}
 
-    .course-card-content.expand, .assignment-entry, .unread-row, .unread-row .el-col
+    .course-card-content.expand, .assignment-entry, .unread-row,
+    .unread-row .el-col, #assignment-type-head, .course-page-graph.el-col
     {
         background-color: var(--dark-layer-3) !important;
     }
 
-    .overall-span.el-col
+    .overall-span.el-col, .course-page-graph.el-col
     {
         div, span
         {
