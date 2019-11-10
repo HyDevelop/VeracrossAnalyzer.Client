@@ -28,8 +28,8 @@ export default class TypeRadar extends Vue
         // Create settings
         let settings =
         {
-            ...GraphUtils.getBaseSettings('Type Radar',
-                'Assignment type grades for ' + this.course.name),
+            ...GraphUtils.getBaseSettings('Assignment Type Radar',
+                'How are you doing for different types of assignment'),
 
             // Radar settings
             radar:
