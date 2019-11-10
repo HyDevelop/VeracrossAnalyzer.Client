@@ -45,7 +45,9 @@ export default class TypePie extends Vue
                     name: t.name,
                     itemStyle:
                     {
-                        color: Constants.THEME.colors[i]
+                        color: Constants.THEME.colors[i],
+                        shadowColor: 'rgba(0,0,0,0.22)',
+                        shadowBlur: 10
                     }
                 }}).sort((a, b) => a.value - b.value)
             }
