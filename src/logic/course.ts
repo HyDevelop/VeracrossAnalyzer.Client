@@ -162,42 +162,42 @@ export default class Course
         return this.computed.termAssignments[timeCode];
     }
 
-    private filteredAssignmentsCache: Assignment[];
+    private _cacheAssignments: Assignment[];
 
     /**
      * Get graded assignments
      */
     get assignments(): Assignment[]
     {
-        if (this.filteredAssignmentsCache == null)
-           this.filteredAssignmentsCache = this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
+        if (this._cacheAssignments == null)
+           this._cacheAssignments = this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
 
-        return this.filteredAssignmentsCache;
+        return this._cacheAssignments;
     }
 
-    private letterGradeComputed = false;
+    private _cacheLetterGrade: string;
 
     /**
      * Get letter grade
      */
     get letterGrade(): string
     {
-        // Cached
-        if (this.rawLetterGrade != undefined && this.letterGradeComputed)
-            return this.rawLetterGrade;
-        this.letterGradeComputed = true;
+        if (this._cacheLetterGrade == null)
+        {
+            // Get scale
+            let scale = GPAUtils.findScale(this.numericGrade);
 
-        // Get scale
-        let scale = GPAUtils.findScale(this.numericGrade);
+            // Scale not found
+            if (scale == undefined) return this._cacheLetterGrade = '--';
 
-        // Scale not found
-        if (scale == undefined) return this.rawLetterGrade = '--';
+            // Cache
+            this._cacheLetterGrade = scale.letter;
+        }
 
-        // Return
-        return this.rawLetterGrade = scale.letter;
+        return this._cacheLetterGrade;
     }
 
-    private numericGradeComputed = false;
+    private _cacheNumericGrade: number;
 
     /**
      * Get numeric grade
@@ -205,22 +205,21 @@ export default class Course
     get numericGrade(): number
     {
         // Cached
-        if (this.rawNumericGrade != undefined && this.numericGradeComputed)
-            return this.rawNumericGrade;
-        this.numericGradeComputed = true;
-
-        // Calculate
-        if (this.grading.method == 'PERCENT_TYPE')
+        if (this._cacheNumericGrade == null)
         {
-            return this.rawNumericGrade = GPAUtils.getPercentTypeAverage(this, this.assignments);
-        }
-        if (this.grading.method == 'TOTAL_MEAN')
-        {
-            return this.rawNumericGrade = GPAUtils.getTotalMeanAverage(this.assignments);
+            // Calculate
+            if (this.grading.method == 'PERCENT_TYPE')
+            {
+                this._cacheNumericGrade = GPAUtils.getPercentTypeAverage(this, this.assignments);
+            }
+            else if (this.grading.method == 'TOTAL_MEAN')
+            {
+                this._cacheNumericGrade = GPAUtils.getTotalMeanAverage(this.assignments);
+            }
+            else this._cacheNumericGrade = -1;
         }
 
-        // Error
-        return -1;
+        return this._cacheNumericGrade;
     }
 
     /**
