@@ -46,6 +46,7 @@ export default class TypePie extends Vue
                     itemStyle:
                     {
                         color: Constants.THEME.colors[i],
+                        opacity: 0.8,
                         shadowColor: 'rgba(0,0,0,0.22)',
                         shadowBlur: 10
                     }
