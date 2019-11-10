@@ -40,6 +40,7 @@ export default class TypePie extends Vue
                 avoidLabelOverlap: false,
                 radius: ['40%', '60%'],
                 center: ['50%', '55%'],
+                label: GraphUtils.pieTextStyle(),
                 data: this.course.assignmentTypes.map((t, i) => {return {
                     value: t.weight,
                     name: t.name,
