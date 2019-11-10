@@ -136,7 +136,7 @@ export default class Course
         if (this.level == 'None' || this.level == 'Unknown' || this.scaleUp == -1) return false;
 
         // Skip courses without graded assignments
-        if (this.gradedAssignments.length == 0) return false;
+        if (this.assignments.length == 0) return false;
 
         // Skip if there are no grading scale
         // if (course.grading.method == 'NOT_GRADED') return;
@@ -148,7 +148,7 @@ export default class Course
     /**
      * Get assignments of the selected time
      */
-    get assignments(): Assignment[]
+    get rawSelectedAssignments(): Assignment[]
     {
         let timeCode = Navigation.instance.getSelectedGradingPeriod();
 
@@ -162,12 +162,17 @@ export default class Course
         return this.computed.termAssignments[timeCode];
     }
 
+    private filteredAssignmentsCache: Assignment[];
+
     /**
      * Get graded assignments
      */
-    get gradedAssignments(): Assignment[]
+    get assignments(): Assignment[]
     {
-        return this.assignments.filter(a => a.complete == 'Complete');
+        if (this.filteredAssignmentsCache != null)
+           this.filteredAssignmentsCache = this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
+
+        return this.filteredAssignmentsCache;
     }
 
     // TODO: Optimize this

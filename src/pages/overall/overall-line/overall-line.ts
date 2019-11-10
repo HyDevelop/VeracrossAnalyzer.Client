@@ -108,7 +108,7 @@ export default class OverallLine extends Vue
     private getCourseSeries(course: Course)
     {
         // Graded assignments
-        let assignments = course.gradedAssignments.slice().reverse();
+        let assignments = course.assignments.slice().reverse();
 
         // Create series
         return {
