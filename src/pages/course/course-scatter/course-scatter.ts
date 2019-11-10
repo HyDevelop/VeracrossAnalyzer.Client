@@ -4,6 +4,7 @@ import {FormatUtils} from '@/logic/utils/format-utils';
 import moment from 'moment';
 import Course, {Assignment} from '@/logic/course';
 import GraphUtils from '@/logic/utils/graph-utils';
+import {CourseUtils} from '@/logic/utils/course-utils';
 
 @Component({
 })
@@ -109,13 +110,12 @@ export default class CourseScatter extends Vue
         };
 
         // Create scatter plots
-        let map = this.mapAssignments();
-        let series: any[] = Array.from(map, ([type, assignments]) =>
+        let series: any[] = this.course.assignmentTypes.map(type =>
         {
             return {
                 type: 'scatter',
-                name: type,
-                data: CourseScatter.assignmentsData(assignments),
+                name: type.name,
+                data: CourseScatter.assignmentsData(this.course.assignments.filter(a => a.typeId == type.id)),
                 itemStyle: itemStyle
             }
         });
@@ -129,27 +129,6 @@ export default class CourseScatter extends Vue
         });
 
         return series;
-    }
-
-    /**
-     * Map assignments to {assignmentType, [assignment]} format.
-     */
-    private mapAssignments(): Map<string, Assignment[]>
-    {
-        // Define map
-        let map = new Map();
-
-        // Move data to map
-        this.course.assignments.forEach(a =>
-        {
-            // Null case, create empty array
-            if (!map.has(a.type)) map.set(a.type, []);
-
-            // Put data
-            map.get(a.type).push(a);
-        });
-
-        return map;
     }
 
     /**
