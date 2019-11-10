@@ -36,34 +36,9 @@ export default class TypePie extends Vue
             // Data
             series:
             {
-                type: 'radar',
-                data:
-                [
-                    {
-                        name: 'Score',
-                        symbol: 'circle',
-                        areaStyle:
-                        {
-                            color:
-                            {
-                                type: 'radial',
-                                x: 0.5, y: 0.6, r: 0.5,
-                                colorStops:
-                                [
-                                    {offset: 0, color: '#ffa0a0'},
-                                    {offset: 0.5, color: '#fffead'},
-                                    {offset: 1, color: '#d1ffde'}
-                                ],
-                                global: false // 缺省为 false
-                            },
-                            opacity: 0.2
-                        },
-                        value: this.course.assignmentTypes.map(t => t.percent)
-                    }
-                ]
-            },
-
-            color: '#6771c1'
+                type: 'pie',
+                data: this.course.assignmentTypes.map(t => {return {value: t.weight}})
+            }
         };
 
         return settings;
