@@ -11,11 +11,11 @@ import VersionUtils from '@/logic/utils/version-utils';
 })
 export default class Login extends Vue
 {
-    public username: any = '';
-    public password: any = '';
+    public username: string = '';
+    public password: string = '';
 
     public loading: boolean = false;
-    public error: String = '';
+    public error: string = '';
 
     /**
      * This is called when the instance is created.
