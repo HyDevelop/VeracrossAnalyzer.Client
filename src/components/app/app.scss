@@ -30,17 +30,22 @@
 
 .dark
 {
-    background: #555555 !important;
+    --dark-layer-1: #555555;
+    --dark-layer-2: #7d7d7d;
+    --dark-layer-3: #898989;
+    --dark-foreground: #e9e9e9;
+
+    background: var(--dark-layer-1) !important;
 
     div, ul
     {
-        background: #7d7d7d !important;
-        color: #e9e9e9 !important;
+        background: var(--dark-layer-2) !important;
+        color: var(--dark-foreground) !important;
     }
 
     span, button
     {
-        color: #e9e9e9 !important;
+        color: var(--dark-foreground) !important;
     }
 
     .el-card
@@ -51,7 +56,6 @@
     // Overall
     #overall, #overall-course, .overall-span, #app-content
     {
-        background: #555555 !important;
     }
 
     .entry-box, .none .unread-number
@@ -62,6 +66,7 @@
     .entry-box.max
     {
         background-color: #949494 !important;
+        background: var(--dark-layer-1) !important;
     }
 
     .entry-box.percent
@@ -71,7 +76,7 @@
 
     .course-card-content.expand, .assignment-entry, .unread-row, .unread-row .el-col
     {
-        background-color: #898989 !important;
+        background-color: var(--dark-layer-3) !important;
     }
 
     .course-name
