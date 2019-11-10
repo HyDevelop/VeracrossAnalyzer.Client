@@ -63,6 +63,7 @@ export default class CourseTypeRadar extends Vue
                 indicator: this.course.assignmentTypes.map((t, i) => {return {
                     name: `${t.name}\n${t.percent}%`,
                     max: 100,
+                    color: Constants.THEME.colors[i]
                 }}),
                 radius: '60%',
                 center: ['50%', '60%']
