@@ -31,7 +31,7 @@ export default class TypePie extends Vue
             ...GraphUtils.getBaseSettings('Assignment Type Weight',
                 'How much each type of assignment affect your average'),
 
-            tooltip: {},
+            tooltip: GraphUtils.tooltipCssShadow(),
 
             // Data
             series:

@@ -44,6 +44,8 @@ export default class OverallLine extends Vue
             // Tooltip
             tooltip:
             {
+                ... GraphUtils.tooltipCssShadow(),
+
                 trigger: 'axis'
             },
 

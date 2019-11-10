@@ -87,4 +87,12 @@ export default class GraphUtils
             padding: [3, 5]
         }
     }
+
+    /**
+     * CSS shadow string (extraCssText) for tooltip
+     */
+    static tooltipCssShadow()
+    {
+        return {extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'}
+    }
 }

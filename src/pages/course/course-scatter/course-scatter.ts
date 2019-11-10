@@ -62,6 +62,8 @@ export default class CourseScatter extends Vue
             // Tooltip
             tooltip:
             {
+                ...GraphUtils.tooltipCssShadow(),
+
                 trigger: 'axis',
                 axisPointer:
                 {

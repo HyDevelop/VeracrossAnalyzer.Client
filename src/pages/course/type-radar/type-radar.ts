@@ -66,7 +66,7 @@ export default class TypeRadar extends Vue
                 center: ['50%', '55%']
             },
 
-            tooltip: {},
+            tooltip: GraphUtils.tooltipCssShadow(),
 
             // Data
             series:
