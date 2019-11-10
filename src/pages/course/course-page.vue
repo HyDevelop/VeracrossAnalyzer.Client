@@ -14,8 +14,8 @@
                 </el-col>
             </el-row>
 
-            <AssignmentTypeHead v-for="type in getAssignmentTypes()" :key="type"
-                                :type-name="type" :assignments="course.assignments">
+            <AssignmentTypeHead v-for="type in course.assignmentTypes" :key="type.id"
+                                :type="type" :assignments="course.assignments">
             </AssignmentTypeHead>
         </div>
     </el-card>
@@ -50,21 +50,6 @@
                 return this.unread = this.unreadAssignments.length;
             }
             else return this.unread;
-        }
-
-        /**
-         * Get all the types of the assignments.
-         */
-        getAssignmentTypes(): string[]
-        {
-            // Get all types
-            let types = this.course.assignments.map(a => a.type);
-
-            // Remove duplicates
-            types = types.filter((type, i, a) => a.indexOf(type) == i);
-
-            // Return it
-            return types;
         }
     }
 </script>
