@@ -95,7 +95,9 @@ export default class CourseTypeRadar extends Vue
                         value: this.course.assignmentTypes.map(t => t.percent)
                     }
                 ]
-            }
+            },
+
+            color: '#6771c1'
         };
 
         return settings;
