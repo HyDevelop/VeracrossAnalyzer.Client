@@ -18,11 +18,13 @@
             <el-row>
                 <el-col :span="12">
                     <el-card class="large overall-line-card vertical-center" body-style="padding: 0">
-                        <CourseTypeRadar :course="course"></CourseTypeRadar>
+                        <TypeRadar :course="course"></TypeRadar>
                     </el-card>
                 </el-col>
                 <el-col :span="12">
-                    Hi
+                    <el-card class="large overall-line-card vertical-center" body-style="padding: 0">
+                        <TypePie :course="course"></TypePie>
+                    </el-card>
                 </el-col>
             </el-row>
 
@@ -41,9 +43,10 @@
     import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
     import Course, {Assignment} from '@/logic/course';
     import TypeRadar from '@/pages/course/type-radar/type-radar';
+    import TypePie from '@/pages/course/type-pie/type-pie';
 
     @Component({
-        components: {CourseTypeRadar: TypeRadar, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
+        components: {TypeRadar, TypePie, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
     })
     export default class CoursePage extends Vue
     {
