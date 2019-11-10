@@ -2,8 +2,8 @@
     <div id="assignment-type-head">
         <el-card :body-style="{padding: '0px'}">
             <div id="type-info-card">
-                <span id="type-average">Average: {{average.toFixed(2)}}%</span>
                 <span id="type-name">{{type.name}}</span>
+                <span id="type-average">Average: {{(type.score / type.scoreMax * 100).toFixed(2)}}%</span>
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
@@ -31,12 +31,6 @@
         {
             // Filter assignments to only this type
             return this.assignments.filter(a => a.complete == 'Complete' && a.type == this.typeName);
-        }
-
-        get average()
-        {
-            return this.filteredAssignments.reduce((a, b) => a + b.score, 0) /
-                this.filteredAssignments.reduce((a, b) => a + b.scoreMax, 0) * 100;
         }
     }
 </script>
