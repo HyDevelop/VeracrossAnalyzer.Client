@@ -3,7 +3,7 @@
         <el-card :body-style="{padding: '0px'}">
             <div id="type-info-card">
                 <span id="type-name">{{type.name}}</span>
-                <span id="type-average">Average: {{(type.score / type.scoreMax * 100).toFixed(2)}}%</span>
+                <span id="type-average">Average: {{type.percent}}%</span>
             </div>
 
             <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
