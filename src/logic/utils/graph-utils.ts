@@ -15,6 +15,7 @@ export default class GraphUtils
         return {
             // Color
             color: Constants.THEME.colors,
+            backgroundColor: 'transparent',
 
             // Title
             title:
