@@ -117,6 +117,16 @@ export default class CourseScatter extends Vue
                 name: type.name,
                 data: CourseScatter.assignmentsData(this.course.assignments.filter(a => a.typeId == type.id)),
                 symbolSize: (data: any) => Math.max(Math.sqrt(type.weight * data[2].scoreMax / type.scoreMax) * 12, 12),
+
+                label:
+                {
+                    emphasis:
+                    {
+                        show: true,
+                        formatter: (p: any) => p.data[2].description,
+                        position: 'top'
+                    }
+                },
             }
         });
 
