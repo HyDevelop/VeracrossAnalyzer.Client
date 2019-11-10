@@ -66,9 +66,7 @@ export default class CourseTypeRadar extends Vue
                             color:
                             {
                                 type: 'radial',
-                                x: 0.5,
-                                y: 0.5,
-                                r: 0.5,
+                                x: 0.5, y: 0.6, r: 0.5,
                                 colorStops:
                                 [
                                     {offset: 0, color: '#ffa0a0'},
