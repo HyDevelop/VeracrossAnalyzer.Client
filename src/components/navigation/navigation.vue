@@ -46,7 +46,7 @@
         </footer>
 
         <!-- Back to top -->
-        <el-backtop style="box-shadow: 0 3px 11px 0 #b9b9b9;"></el-backtop>
+        <el-backtop style="box-shadow: rgba(0, 0, 0, 0.23) 0 3px 11px 0;"></el-backtop>
     </div>
 </template>
 
