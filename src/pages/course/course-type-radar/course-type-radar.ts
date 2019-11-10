@@ -3,6 +3,7 @@ import Constants from '@/constants';
 import {FormatUtils} from '@/logic/utils/format-utils';
 import moment from 'moment';
 import Course, {Assignment} from '@/logic/course';
+import GraphUtils from '@/logic/utils/graph-utils';
 
 @Component
 export default class CourseTypeRadar extends Vue
@@ -27,22 +28,10 @@ export default class CourseTypeRadar extends Vue
         // Create settings
         let settings =
         {
-            // Color
-            color: Constants.THEME.colors,
+            ...GraphUtils.getBaseSettings('Type Radar',
+                'Assignment type grades for ' + this.course.name),
 
-            // Title
-            title:
-            {
-                show: true,
-                textStyle:
-                {
-                    fontSize: 13
-                },
-                text: 'Assignment Types',
-                subtext: 'Assignment type weights for ' + this.course.name,
-                x: 'center'
-            },
-
+            // Radar settings
             radar:
             {
                 // shape: 'circle',
