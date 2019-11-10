@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/chroma-js": "^1.4.3",
+    "chroma-js": "^2.1.0",
     "core-js": "^2.6.5",
     "echarts": "^4.2.1",
     "element-ui": "^2.11.1",
