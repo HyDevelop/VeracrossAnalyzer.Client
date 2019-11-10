@@ -17,14 +17,14 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
-    import {Assignment} from '@/logic/course';
+    import {Assignment, AssignmentType} from '@/logic/course';
 
     @Component({
         components: {AssignmentEntry}
     })
     export default class AssignmentTypeHead extends Vue
     {
-        @Prop({required: true}) typeName: string;
+        @Prop({required: true}) type: AssignmentType;
         @Prop({required: true}) assignments: Assignment[];
 
         get filteredAssignments()

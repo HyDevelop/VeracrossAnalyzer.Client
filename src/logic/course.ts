@@ -258,7 +258,7 @@ export default class Course
                 return {name: type, id: typeAssignments[0].typeId, weight: weight, scoreMax: scoreMax, score: score}
             })
         }
-        
+
         return this._cacheAssignmentTypes;
     }
 }
