@@ -5,12 +5,4 @@
 </template>
 
 <script src="./course-scatter.ts" lang="ts"></script>
-<style lang="scss" scoped>
-    #overall-bar
-    {
-        .graph
-        {
-            margin-top: 50px;
-        }
-    }
-</style>
+<style lang="scss" scoped></style>
