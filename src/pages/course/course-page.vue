@@ -14,9 +14,17 @@
                 </el-col>
             </el-row>
 
-            <el-card class="large overall-line-card vertical-center">
-                <CourseTypeRadar :course="course"></CourseTypeRadar>
-            </el-card>
+
+            <el-row>
+                <el-col :span="12">
+                    <el-card class="large overall-line-card vertical-center" body-style="padding: 0">
+                        <CourseTypeRadar :course="course"></CourseTypeRadar>
+                    </el-card>
+                </el-col>
+                <el-col :span="12">
+                    Hi
+                </el-col>
+            </el-row>
 
             <AssignmentTypeHead v-for="type in course.assignmentTypes" :key="type.id"
                                 :type="type" :assignments="course.assignments">
