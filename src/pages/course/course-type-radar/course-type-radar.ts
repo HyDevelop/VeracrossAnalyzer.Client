@@ -46,7 +46,9 @@ export default class CourseTypeRadar extends Vue
                     }
                 },
                 indicator: this.course.assignmentTypes.map(t => {return {name: t.name, max: 100}}),
+                radius: '60%',
             },
+
             tooltip: {},
 
             // Data
