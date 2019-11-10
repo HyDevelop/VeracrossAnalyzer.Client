@@ -71,7 +71,7 @@ export default class TypeRadar extends Vue
                     color: Constants.THEME.colors[i]
                 }}),
                 radius: '60%',
-                center: ['50%', '60%']
+                center: ['50%', '55%']
             },
 
             tooltip: {},
@@ -90,7 +90,7 @@ export default class TypeRadar extends Vue
                             color:
                             {
                                 type: 'radial',
-                                x: 0.5, y: 0.6, r: 0.5,
+                                x: 0.5, y: 0.55, r: 0.5,
                                 colorStops:
                                 [
                                     {offset: 0, color: '#ffa0a0'},

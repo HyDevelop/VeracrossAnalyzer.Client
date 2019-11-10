@@ -17,12 +17,14 @@
 
             <el-row>
                 <el-col :span="12">
-                    <el-card class="large overall-line-card vertical-center" body-style="padding: 0">
+                    <el-card class="large overall-line-card vertical-center type-graph"
+                             body-style="padding: 0">
                         <TypeRadar :course="course"></TypeRadar>
                     </el-card>
                 </el-col>
                 <el-col :span="12">
-                    <el-card class="large overall-line-card vertical-center" body-style="padding: 0">
+                    <el-card class="large overall-line-card vertical-center type-graph"
+                             body-style="padding: 0">
                         <TypePie :course="course"></TypePie>
                     </el-card>
                 </el-col>

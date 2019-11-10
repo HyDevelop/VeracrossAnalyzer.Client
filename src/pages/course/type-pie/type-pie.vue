@@ -1,6 +1,6 @@
 <template>
     <div id="type-pie">
-        <ve-pie height="450px" class="graph" :extend="{a: this.course.name}" :after-config="afterConfig"></ve-pie>
+        <ve-pie height="420px" class="graph" :extend="{a: this.course.name}" :after-config="afterConfig"></ve-pie>
     </div>
 </template>
 
