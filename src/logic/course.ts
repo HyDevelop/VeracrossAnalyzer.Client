@@ -169,7 +169,7 @@ export default class Course
      */
     get assignments(): Assignment[]
     {
-        if (this.filteredAssignmentsCache != null)
+        if (this.filteredAssignmentsCache == null)
            this.filteredAssignmentsCache = this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
 
         return this.filteredAssignmentsCache;
