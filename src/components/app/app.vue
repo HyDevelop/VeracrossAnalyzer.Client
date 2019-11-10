@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="theme-default">
+    <div id="app" class="theme-default dark">
         <login v-if="showLogin" v-on:login:token="onLogin"></login>
         <navigation :courses="filteredCourses"
                     :activeIndex.sync="selectedTab"
