@@ -1,5 +1,5 @@
 <template>
-    <div id="course-head" class="course-card-content main vertical-center">
+    <div id="course-head" class="course-card-content main vertical-center" @click="redirect">
         <el-row>
             <el-col :span="12" class="course-col-name">
                 <div v-if="clickable" class="course-name clickable" @click="redirect">{{course.name}}</div>
