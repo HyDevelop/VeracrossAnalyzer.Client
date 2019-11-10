@@ -115,7 +115,7 @@ export default class OverallLine extends Vue
             name: course.name,
             type: 'line',
             smooth: true,
-            symbol: 'none', // circle, diamond, emptyCircle, none
+            symbol: 'circle', // circle, diamond, emptyCircle, none
             data: this.toDateRange([...assignments.map(a => a.time)].map((time, i) =>
             {
                 // Find subset before this assignment
