@@ -37,18 +37,7 @@ export default class TypeRadar extends Vue
                 // shape: 'circle',
                 name:
                 {
-                    textStyle:
-                    {
-                        fontSize: 14,
-                        textShadowColor: '#cfcfcf',
-                        textShadowBlur: 2,
-                        textShadowOffsetX: 1,
-                        textShadowOffsetY: 1,
-                        color: '#fff',
-                        backgroundColor: '#f6f6f6',
-                        borderRadius: 3,
-                        padding: [3, 5]
-                    }
+                    textStyle: GraphUtils.pieTextStyle()
                 },
                 splitArea:
                 {

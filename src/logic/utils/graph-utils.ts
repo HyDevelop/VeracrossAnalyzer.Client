@@ -70,4 +70,21 @@ export default class GraphUtils
             ]
         }
     }
+
+    /**
+     * Text style for pie graphs or radar graphs
+     */
+    static pieTextStyle()
+    {
+        return {
+            fontSize: 14,
+            textShadowColor: '#cfcfcf',
+            textShadowBlur: 2,
+            textShadowOffsetX: 1,
+            textShadowOffsetY: 1,
+            backgroundColor: '#f6f6f6',
+            borderRadius: 3,
+            padding: [3, 5]
+        }
+    }
 }
