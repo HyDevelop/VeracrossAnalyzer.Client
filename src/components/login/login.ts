@@ -68,6 +68,9 @@ export default class Login extends Vue
         // Make login button loading
         this.loading = true;
 
+        // Format it
+        this.username = this.username.toLowerCase().replace(/ /g, '').replace(/@.*/g, '');
+
         // Fetch request
         App.http.post('/login', {username: this.username, password: this.password})
         .then(response =>
