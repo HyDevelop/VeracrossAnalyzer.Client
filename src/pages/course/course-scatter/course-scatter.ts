@@ -4,7 +4,7 @@ import {FormatUtils} from '@/logic/utils/format-utils';
 import moment from 'moment';
 import Course, {Assignment} from '@/logic/course';
 import GraphUtils from '@/logic/utils/graph-utils';
-import {CourseUtils} from '@/logic/utils/course-utils';
+import chroma from 'chroma-js';
 
 @Component({
 })
@@ -96,21 +96,8 @@ export default class CourseScatter extends Vue
      */
     private series()
     {
-        // Scatter data point style
-        let itemStyle =
-        {
-            normal:
-            {
-                opacity: 0.8,
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.2)'
-            }
-        };
-
         // Create scatter plots
-        let series: any[] = this.course.assignmentTypes.map(type =>
+        let series: any[] = this.course.assignmentTypes.map((type, i) =>
         {
             return {
                 type: 'scatter',
@@ -127,6 +114,29 @@ export default class CourseScatter extends Vue
                         position: 'top'
                     }
                 },
+
+                itemStyle:
+                {
+                    normal:
+                    {
+                        opacity: 0.7,
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.2)',
+                        color:
+                        {
+                            type: 'radial',
+                            x: 0.4,
+                            y: 0.3,
+                            colorStops:
+                            [
+                                {offset: 0, color: chroma(Constants.THEME.colors[i]).set('hsl.l', 0.9).css()},
+                                {offset: 1, color: Constants.THEME.colors[i]}
+                            ]
+                        }
+                    }
+                }
             }
         });
 
