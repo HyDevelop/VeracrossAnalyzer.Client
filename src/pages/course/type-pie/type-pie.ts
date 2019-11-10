@@ -28,8 +28,8 @@ export default class TypePie extends Vue
         // Create settings
         let settings =
         {
-            ...GraphUtils.getBaseSettings('Type Radar',
-                'Assignment type grades for ' + this.course.name),
+            ...GraphUtils.getBaseSettings('Type Weight',
+                'Assignment type weights for ' + this.course.name),
 
             tooltip: {},
 
