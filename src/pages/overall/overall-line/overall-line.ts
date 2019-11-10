@@ -50,7 +50,11 @@ export default class OverallLine extends Vue
             // Axis
             xAxis:
             {
-                type: 'time'
+                type: 'time',
+                axisLabel:
+                {
+                    formatter: (name: any) => moment(name).format('MMM DD')
+                },
             },
             yAxis:
             {
