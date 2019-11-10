@@ -44,6 +44,9 @@
                 ▼ NEXT COURSE ▼
             </div>
         </footer>
+
+        <!-- Back to top -->
+        <el-backtop style="box-shadow: 0 3px 11px 0 #b9b9b9;"></el-backtop>
     </div>
 </template>
 
