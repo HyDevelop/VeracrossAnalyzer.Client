@@ -45,7 +45,7 @@ export default class CourseTypeRadar extends Vue
                         padding: [3, 5]
                     }
                 },
-                indicator: this.course.assignmentTypes.map(t => {return {name: t.name, max: t.scoreMax}})
+                indicator: this.course.assignmentTypes.map(t => {return {name: t.name, max: 100}}),
             },
             tooltip: {},
 
@@ -76,7 +76,7 @@ export default class CourseTypeRadar extends Vue
                             },
                             opacity: 0.2
                         },
-                        value: this.course.assignmentTypes.map(t => t.score)
+                        value: this.course.assignmentTypes.map(t => t.percent)
                     }
                 ]
             }
