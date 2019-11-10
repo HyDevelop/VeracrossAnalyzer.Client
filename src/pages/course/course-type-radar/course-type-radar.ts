@@ -45,6 +45,21 @@ export default class CourseTypeRadar extends Vue
                         padding: [3, 5]
                     }
                 },
+                splitArea:
+                {
+                    areaStyle:
+                    {
+                        color:
+                        [
+                            'rgb(255,161,151)',
+                            'rgb(255,190,184)',
+                            'rgba(255,225,199)',
+                            'rgba(255,250,216)',
+                            'rgba(241,255,237)',
+                        ],
+                        opacity: 0.4
+                    }
+                },
                 indicator: this.course.assignmentTypes.map(t => {return {name: t.name, max: 100}}),
                 radius: '60%',
                 center: ['50%', '60%']
