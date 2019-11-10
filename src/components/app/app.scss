@@ -30,7 +30,10 @@
 
 .dark
 {
-    background: #555555;
+    div
+    {
+        background: #555555 !important;
+    }
 }
 
 // ##############
