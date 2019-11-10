@@ -40,7 +40,7 @@
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
     import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
     import Course, {Assignment} from '@/logic/course';
-    import TypeRadar from '@/pages/course/course-type-radar/type-radar';
+    import TypeRadar from '@/pages/course/type-radar/type-radar';
 
     @Component({
         components: {CourseTypeRadar: TypeRadar, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
