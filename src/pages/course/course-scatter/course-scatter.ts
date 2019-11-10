@@ -69,7 +69,7 @@ export default class CourseScatter extends Vue
                 },
                 formatter: (ps: any[]) => moment(ps[0].data[0]).format('MMM DD, YYYY') + '<br>' + ps.map(p =>
                     `${GraphUtils.DOT.replace('{color}', p.color)}
-                    ${FormatUtils.limit(p.data[2], 22)}: ${p.data[1]}%<br>`).join('')
+                    ${FormatUtils.limit(p.data[2].description, 22)}: ${p.data[1]}%<br>`).join('')
             },
 
             // Legend
@@ -116,7 +116,7 @@ export default class CourseScatter extends Vue
                 type: 'scatter',
                 name: type.name,
                 data: CourseScatter.assignmentsData(this.course.assignments.filter(a => a.typeId == type.id)),
-                itemStyle: itemStyle
+                symbolSize: (data: any) => Math.max(Math.sqrt(type.weight * data[2].scoreMax / type.scoreMax) * 12, 12),
             }
         });
 
@@ -139,6 +139,6 @@ export default class CourseScatter extends Vue
     private static assignmentsData(assignments: Assignment[])
     {
         return assignments.filter(a => a.complete == 'Complete')
-            .map(a => [a.time, (a.score / a.scoreMax * 100).toFixed(2), a.description]);
+            .map(a => [a.time, (a.score / a.scoreMax * 100).toFixed(2), a]);
     }
 }
