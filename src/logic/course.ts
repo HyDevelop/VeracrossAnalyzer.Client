@@ -175,7 +175,6 @@ export default class Course
         return this.filteredAssignmentsCache;
     }
 
-    // TODO: Optimize this
     private letterGradeComputed = false;
 
     /**
@@ -222,5 +221,22 @@ export default class Course
 
         // Error
         return -1;
+    }
+
+    /**
+     * Get assignment types
+     */
+    get assignmentTypes(): AssignmentType[]
+    {
+        // Get all types
+        let types = this.assignments.map(a => {return {name: a.type, id: a.typeId}});
+
+        // Remove duplicates
+        types = types.filter((type, i, a) => a.indexOf(type) == i);
+
+        return types.map(type =>
+        {
+            return {...type, weight: 0, scoreMax: 0, score: 0}
+        })
     }
 }
