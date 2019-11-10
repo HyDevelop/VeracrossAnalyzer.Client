@@ -43,7 +43,7 @@ export default class TypePie extends Vue
                 label: GraphUtils.pieTextStyle(),
                 data: this.course.assignmentTypes.map((t, i) => {return {
                     value: t.weight,
-                    name: t.name,
+                    name: `${t.name}\n${t.weight}%`,
                     itemStyle:
                     {
                         color: Constants.THEME.colors[i],
