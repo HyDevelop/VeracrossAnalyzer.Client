@@ -36,6 +36,7 @@ export interface AssignmentType
     scoreMax: number
     score: number
     percent: number
+    assignmentCount: number
 }
 
 export default class Course
@@ -257,7 +258,8 @@ export default class Course
 
                 // Return
                 return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
-                    scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2)}
+                    scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2),
+                    assignmentCount: typeAssignments.length}
             })
         }
 
