@@ -7,13 +7,13 @@
                 <h1>Veracross Analyzer</h1>
                 <form id="login-form">
                     <el-input v-model="username"
-                              placeholder="School Username"
+                              placeholder="SJP Username (Eg. flast21)"
                               :class="{'input-error': error !== ''}"
                               @keyup.enter.native="onEnter">
                     </el-input>
 
                     <el-input v-model="password"
-                              placeholder="Veracross Password"
+                              placeholder="SJP Password"
                               show-password=""
                               :class="{'input-error': error !== ''}"
                               @keyup.enter.native="onEnter">
