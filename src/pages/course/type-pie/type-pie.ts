@@ -38,6 +38,7 @@ export default class TypePie extends Vue
             {
                 type: 'pie',
                 avoidLabelOverlap: false,
+                radius: '60%',
                 data: this.course.assignmentTypes.map((t, i) => {return {
                     value: t.weight,
                     name: t.name,
