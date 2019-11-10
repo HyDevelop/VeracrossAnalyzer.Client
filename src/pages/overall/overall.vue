@@ -2,7 +2,7 @@
     <div id="overall">
         <el-row v-if="getGPA().gpa !== -1">
             <el-col :span="4" class="overall-span">
-                <el-card class="large gpa-card vertical-center">
+                <el-card class="large gpa-card vertical-center" body-style="padding: 0">
                     <div style="padding: 14px;">
                         <span class="gpa header">GPA:</span>
                         <span class="gpa text">{{getGPA().gpa}}</span>
@@ -14,12 +14,12 @@
                 </el-card>
             </el-col>
             <el-col :span="14" class="overall-span">
-                <el-card class="large overall-line-card vertical-center">
+                <el-card class="large overall-line-card vertical-center" body-style="padding: 0 10px">
                     <overall-line :courses="courses"></overall-line>
                 </el-card>
             </el-col>
             <el-col :span="6" class="overall-span">
-                <el-card class="large overall-bar-card vertical-center">
+                <el-card class="large overall-bar-card vertical-center" body-style="padding: 0 10px">
                     <overall-bar :courses="courses"></overall-bar>
                 </el-card>
             </el-col>
