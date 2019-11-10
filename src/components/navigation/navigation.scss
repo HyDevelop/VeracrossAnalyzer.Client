@@ -85,6 +85,8 @@ footer
     left: 0;
     bottom: 0;
     width: 100%;
+
+    z-index: 1000;
 }
 
 #prev-course
@@ -96,6 +98,8 @@ footer
     left: 25%;
     padding-bottom: 2px;
     box-shadow: 0 2px 9px 0 #ecebeb;
+
+    z-index: 1001;
 }
 
 .nav-course-operations
