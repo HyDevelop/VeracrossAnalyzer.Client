@@ -256,7 +256,7 @@ export default class Course
                     ? this.grading.weightingMap[type] : scoreMax / totalScoreMax;
 
                 // Return
-                return {name: type, id: typeAssignments[0].typeId, weight: +weight.toFixed(2),
+                return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
                     scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2)}
             })
         }
