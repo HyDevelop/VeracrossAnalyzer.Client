@@ -40,6 +40,10 @@ export default class CourseTypeRadar extends Vue
                     textStyle:
                     {
                         fontSize: 14,
+                        textShadowColor: '#cfcfcf',
+                        textShadowBlur: 2,
+                        textShadowOffsetX: 1,
+                        textShadowOffsetY: 1,
                         color: '#fff',
                         backgroundColor: '#999',
                         borderRadius: 3,
