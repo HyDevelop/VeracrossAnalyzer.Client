@@ -106,6 +106,9 @@ export default class Navigation extends Vue
 
         // Update title
         document.title = 'Veracross Analyzer - ' + this.getTitle(newIndex);
+
+        // Scroll to top
+        window.scrollTo(0, 0);
     }
 
     /**
