@@ -37,9 +37,14 @@ export default class TypePie extends Vue
             series:
             {
                 type: 'pie',
-                data: this.course.assignmentTypes
-                    .map(t => {return {value: t.weight, name: t.name}})
-                    .sort((a, b) => a.value - b.value)
+                data: this.course.assignmentTypes.map((t, i) => {return {
+                    value: t.weight,
+                    name: t.name,
+                    itemStyle:
+                    {
+                        color: Constants.THEME.colors[i]
+                    }
+                }}).sort((a, b) => a.value - b.value)
             }
         };
 
