@@ -56,32 +56,21 @@
     // Overall
     #overall, #overall-course, .overall-span, #app-content
     {
-    }
-
-    .entry-box, .none .unread-number
-    {
-        background: #a1a1a1 !important;
-    }
-
-    .entry-box.max
-    {
-        background-color: #949494 !important;
         background: var(--dark-layer-1) !important;
     }
 
-    .entry-box.percent
-    {
-        background-color: #a7a490 !important;
-    }
+    // Course card
+    .entry-box, .none .unread-number {background: #a1a1a1 !important}
+    .entry-box.max {background-color: #949494 !important}
+    .entry-box.percent {background-color: #a7a490 !important}
+    .course-name {color: #cffff6 !important}
 
     .course-card-content.expand, .assignment-entry, .unread-row, .unread-row .el-col
     {
         background-color: var(--dark-layer-3) !important;
     }
 
-    .course-name
     {
-        color: #cffff6 !important;
     }
 }
 
