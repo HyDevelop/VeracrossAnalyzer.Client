@@ -6,7 +6,7 @@ import Course, {Assignment} from '@/logic/course';
 import GraphUtils from '@/logic/utils/graph-utils';
 
 @Component
-export default class CourseTypeRadar extends Vue
+export default class TypeRadar extends Vue
 {
     @Prop({required: true}) course: Course;
 

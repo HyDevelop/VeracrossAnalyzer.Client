@@ -40,10 +40,10 @@
     import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
     import AssignmentTypeHead from '@/pages/course/assignment-type-head/assignment-type-head.vue';
     import Course, {Assignment} from '@/logic/course';
-    import CourseTypeRadar from '@/pages/course/course-type-radar/course-type-radar';
+    import TypeRadar from '@/pages/course/course-type-radar/type-radar';
 
     @Component({
-        components: {CourseTypeRadar, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
+        components: {CourseTypeRadar: TypeRadar, AssignmentEntry, CourseHead, CourseScatter, AssignmentTypeHead}
     })
     export default class CoursePage extends Vue
     {

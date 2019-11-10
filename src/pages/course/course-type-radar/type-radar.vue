@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script src="./course-type-radar.ts" lang="ts"></script>
+<script src="./type-radar.ts" lang="ts"></script>
 <style lang="scss" scoped>
     #overall-bar
     {
