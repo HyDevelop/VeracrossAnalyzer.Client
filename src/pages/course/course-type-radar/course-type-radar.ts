@@ -38,13 +38,33 @@ export default class CourseTypeRadar extends Vue
                 {
                     fontSize: 13
                 },
-                text: 'Assignments',
-                subtext: 'Assignment scores for ' + this.course.name,
+                text: 'Assignment Types',
+                subtext: 'Assignment type weights for ' + this.course.name,
                 x: 'center'
             },
 
+            radar:
+            {
+                // shape: 'circle',
+                name:
+                {
+                    textStyle:
+                    {
+                        color: '#fff',
+                        backgroundColor: '#999',
+                        borderRadius: 3,
+                        padding: [3, 5]
+                    }
+                },
+                indicator: this.course.assignmentTypes.map(t => {return {name: t.name, max: 100}})
+            },
+
             // Data
-            series: {}
+            series:
+            {
+                type: 'radar',
+                data: []
+            }
         };
 
         return settings;
