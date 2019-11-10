@@ -30,7 +30,7 @@
         get filteredAssignments()
         {
             // Filter assignments to only this type
-            return this.assignments.filter(a => a.complete == 'Complete' && a.type == this.typeName);
+            return this.assignments.filter(a => a.typeId == this.type.id);
         }
     }
 </script>
