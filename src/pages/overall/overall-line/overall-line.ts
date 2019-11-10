@@ -32,11 +32,12 @@ export default class OverallLine extends Vue
             dataZoom:
             [
                 {
+                    type: 'slider',
                     startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
-                        CourseUtils.getTermBeginDate().getTime())
-                },
-                {
-                    type: 'inside'
+                        CourseUtils.getTermBeginDate().getTime()),
+
+                    // Minimum zoom: 1 week
+                    minValueSpan: 7 * 24 * 60 * 60 * 1000
                 }
             ],
 
