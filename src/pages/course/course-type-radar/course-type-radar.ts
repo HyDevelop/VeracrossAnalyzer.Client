@@ -45,7 +45,7 @@ export default class CourseTypeRadar extends Vue
                         textShadowOffsetX: 1,
                         textShadowOffsetY: 1,
                         color: '#fff',
-                        backgroundColor: '#999',
+                        backgroundColor: '#f6f6f6',
                         borderRadius: 3,
                         padding: [3, 5]
                     }
