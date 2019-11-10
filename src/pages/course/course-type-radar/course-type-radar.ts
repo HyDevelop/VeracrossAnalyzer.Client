@@ -63,7 +63,14 @@ export default class CourseTypeRadar extends Vue
             series:
             {
                 type: 'radar',
-                data: []
+                data:
+                [
+                    {
+                        name: 'Score',
+                        symbol: 'circle',
+                        value: this.course.assignmentTypes.map(t => t.score)
+                    }
+                ]
             }
         };
 
