@@ -27,6 +27,16 @@ export interface Assignment
     gradingPeriod: number
 }
 
+export interface AssignmentType
+{
+    id: number
+    name: string
+
+    weight: number
+    scoreMax: number
+    score: number
+}
+
 export default class Course
 {
     id: number;
