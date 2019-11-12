@@ -156,6 +156,7 @@ export default class App extends Vue
             if (this.$cookies.isKey('va.grading.' + course.assignmentsId))
             {
                 course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
+                continue;
             }
 
             // Request grading scheme for this course
