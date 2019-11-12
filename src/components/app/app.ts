@@ -152,28 +152,18 @@ export default class App extends Vue
         // Loop through all the courses
         for (const course of this.filteredCourses)
         {
-            let termGrade = +GPAUtils.getTotalMeanAverage(course.computed.termAssignments[Constants.CURRENT_TERM]).toFixed(2);
-
-            // Check if total-average grade is the same with percent-type grade
-            if (course.rawNumericGrade == termGrade)
+            // Request grading scheme for this course
+            App.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
             {
-                course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
-            }
-            else
-            {
-                // Request grading scheme for this course
-                App.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
+                // Check success
+                if (response.success)
                 {
-                    // Check success
-                    if (response.success)
-                    {
-                        // Add it to course
-                        course.grading = response.data;
-                    }
-                    else throw new Error(response.data);
-                })
-                .catch(e => this.showError(`Error: Grading data failed to load.\n(${e})`))
-            }
+                    // Add it to course
+                    course.grading = response.data;
+                }
+                else throw new Error(response.data);
+            })
+            .catch(e => this.showError(`Error: Grading data failed to load.\n(${e})`))
         }
 
         // Wait for done
