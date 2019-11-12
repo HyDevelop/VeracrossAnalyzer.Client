@@ -152,6 +152,12 @@ export default class App extends Vue
         // Loop through all the courses
         for (const course of this.filteredCourses)
         {
+            // Check if already exist in cookies
+            if (this.$cookies.isKey('va.grading.' + course.assignmentsId))
+            {
+                course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
+            }
+
             // Request grading scheme for this course
             App.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
             {
@@ -160,6 +166,13 @@ export default class App extends Vue
                 {
                     // Add it to course
                     course.grading = response.data;
+
+                    // If it's total_mean, cache it to cookies
+                    // This is because only percent_type can update over time
+                    if (course.grading.method == 'TOTAL_MEAN')
+                    {
+                        this.$cookies.set('va.grading.' + course.assignmentsId, 'TOTAL_MEAN', '3d');
+                    }
                 }
                 else throw new Error(response.data);
             })
