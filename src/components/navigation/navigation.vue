@@ -4,6 +4,7 @@
                  :default-active="activeIndex" @select="onSelect">
 
             <div id="nav-title">
+                <img id="nav-logo" alt="logo" src="../../assets/logo.png">
                 Veracross Analyzer
             </div>
 
