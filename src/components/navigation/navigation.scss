@@ -48,21 +48,12 @@
     height: 60px;
 
     // Center text
+    display: inline-flex;
     align-items: center;
 
     // Margins
     margin-left: 20px;
     margin-right: 8px;
-
-    // Font
-    font: bold 16px arial;
-    display: inline-flex;
-
-    // Shadow effect
-    -webkit-background-clip: text;
-    background-color: #b1b1b1;
-    color: transparent;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.85);
 
     // Make it non-clickable
     pointer-events: none;
