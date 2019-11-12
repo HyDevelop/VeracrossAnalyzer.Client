@@ -5,7 +5,7 @@
 
             <div id="nav-title">
                 <img id="nav-logo" alt="logo" src="../../assets/logo.png">
-                Veracross Analyzer
+                <span id="nav-logo-text">Veracross Analyzer</span>
             </div>
 
             <el-menu-item index="overall">Overall</el-menu-item>

@@ -63,6 +63,17 @@
         height: 70%;
         margin-right: 10px;
     }
+
+    #nav-logo-text
+    {
+        // Color
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        color: #6bbeff;
+        background: linear-gradient(90deg,
+                rgba(90,177,239,1) 0%,
+                rgba(25,212,174,1) 100%);
+    }
 }
 
 #next-course
