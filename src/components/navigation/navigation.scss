@@ -66,6 +66,11 @@
 
     // Make it non-clickable
     pointer-events: none;
+
+    #nav-logo
+    {
+        height: 70%;
+    }
 }
 
 #next-course
