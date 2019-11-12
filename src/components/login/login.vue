@@ -2,7 +2,7 @@
     <div id="login" class="login-overlay">
         <div class="login-vertical-center">
             <div class="login-panel">
-                <img alt="Vue logo" src="../../assets/logo.png">
+                <img id="login-logo-image" alt="logo" src="../../assets/logo.png">
 
                 <h1>Veracross Analyzer</h1>
                 <form id="login-form">
