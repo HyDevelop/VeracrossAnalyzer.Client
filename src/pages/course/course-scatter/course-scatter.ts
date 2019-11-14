@@ -70,8 +70,8 @@ export default class CourseScatter extends Vue
                     type: 'cross'
                 },
                 formatter: (ps: any[]) => moment(ps[0].data[0]).format('MMM DD, YYYY') + '<br>' + ps.map(p =>
-                    `${GraphUtils.DOT.replace('{color}', p.color)}
-                    ${FormatUtils.limit(p.data[2].description, 22)}: ${p.data[1]}%<br>`).join('')
+                        `${GraphUtils.DOT.replace('{color}', p.color.colorStops[1].color)}
+                        ${FormatUtils.limit(p.data[2].description, 22)}: ${p.data[1]}%<br>`).join('')
             },
 
             // Legend
