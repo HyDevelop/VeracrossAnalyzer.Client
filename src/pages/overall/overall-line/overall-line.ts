@@ -109,11 +109,8 @@ export default class OverallLine extends Vue
      */
     private getCourseSeries(course: Course)
     {
-        console.log('====================');
         // Graded assignments
         let assignments = course.assignments.slice().reverse();
-
-        let currentTerm = 0;
 
         // Create series
         return {
@@ -123,15 +120,8 @@ export default class OverallLine extends Vue
             symbol: 'circle', // circle, diamond, emptyCircle, none
             data: this.toDateRange([...assignments.map(a => a.time)].map((time, i) =>
             {
-                // Find current term
-                if (time > Constants.TERMS[currentTerm + 1].getTime())
-                    currentTerm ++;
-
                 // Find subset before this assignment
-                let subset = assignments.filter(a =>
-                    a.time >= Constants.TERMS[currentTerm].getTime() && a.time <= time);
-
-                console.log(subset);
+                let subset = assignments.filter(a => a.time <= time);
 
                 // Find grade
                 if (course.grading.method == 'PERCENT_TYPE')
