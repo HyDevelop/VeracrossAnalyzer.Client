@@ -4,6 +4,7 @@ import {CourseUtils} from '@/logic/utils/course-utils';
 import {FormatUtils} from '@/logic/utils/format-utils';
 import pWaitFor from 'p-wait-for';
 import Course from '@/logic/course';
+import Constants from '@/constants';
 
 /**
  * This component is the top navigation bar
@@ -186,4 +187,6 @@ export default class Navigation extends Vue
         if (this.gradingPeriod == 'All Year') return -1;
         else return +this.gradingPeriod.replace('Term ', '') - 1;
     }
+
+    get version() {return Constants.VERSION}
 }
