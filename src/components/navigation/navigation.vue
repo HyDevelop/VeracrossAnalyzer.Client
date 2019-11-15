@@ -6,7 +6,7 @@
             <div id="nav-title">
                 <img id="nav-logo" alt="logo" src="../../assets/logo.png">
                 <span id="nav-logo-text" class="logo-text">Veracross Analyzer</span>
-                <span id="nav-logo-version">Version {{version}}</span>
+                <span id="nav-logo-version">v{{version}}</span>
             </div>
 
             <el-menu-item index="overall">Overall</el-menu-item>
