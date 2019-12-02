@@ -85,12 +85,13 @@ export default class Login extends Vue
             // Check success
             if (response.success)
             {
+                // TODO: Maintenance
                 // Save token to cookies
-                this.$cookies.set('va.token', response.data, '27d');
+                this.$cookies.set('va.token', response.data.user.token, '27d');
                 this.$cookies.set('va.version', Constants.VERSION, '27d');
 
-                // Call custom event with token
-                this.$emit('login:token', response.data);
+                // Call a custom event with the token
+                this.$emit('login:user', response.data);
             }
             else
             {
