@@ -93,6 +93,12 @@ export default class Login extends Vue
             }
             else
             {
+                // Login expired -> clear cookies
+                if (response.data == 'Error: Login expired')
+                {
+                    this.clearCookies();
+                }
+
                 // Show error message & allow user to retry
                 this.error = response.data;
                 this.disableInput = this.loading = false;
