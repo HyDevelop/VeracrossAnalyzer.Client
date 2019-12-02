@@ -95,19 +95,15 @@ export default class Login extends Vue
             }
             else
             {
-                // Show error message
+                // Show error message & allow user to retry
                 this.error = response.data;
-
-                // Allow the user to retry
                 this.loading = false;
             }
         })
         .catch(err =>
         {
-            // TODO: Show error properly
-            alert(err);
-
-            // Allow the user to retry
+            // Show error message & allow user to retry
+            this.error = err;
             this.loading = false;
         });
     }
