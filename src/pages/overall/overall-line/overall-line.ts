@@ -1,8 +1,6 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import moment from 'moment';
-import Course, {Assignment} from '@/logic/course';
-import Constants from '@/constants';
-import Navigation from '@/components/navigation/navigation';
+import Course from '@/logic/course';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import GraphUtils from '@/logic/utils/graph-utils';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
