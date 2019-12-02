@@ -11,16 +11,16 @@ import VersionUtils from '@/logic/utils/version-utils';
 })
 export default class Login extends Vue
 {
-    public username: string = '';
-    public password: string = '';
+    username = '';
+    password = '';
 
-    public loading: boolean = false;
-    public error: string = '';
+    loading = false;
+    error = '';
 
     /**
      * This is called when the instance is created.
      */
-    public created()
+    created()
     {
         // Check login cookies
         if (this.$cookies.isKey('va.token'))
@@ -40,10 +40,7 @@ export default class Login extends Vue
                 this.$emit('login:token', this.$cookies.get('va.token'));
             }
         }
-        else
-        {
-            console.log('Cookies doesn\'t exist');
-        }
+        else console.log('Cookies doesn\'t exist');
     }
 
     /**
@@ -51,7 +48,7 @@ export default class Login extends Vue
      *
      * @returns boolean Need to clear cookies or not
      */
-    public needToUpdateCookies(): boolean
+    needToUpdateCookies(): boolean
     {
         // Version doesn't exist
         if (!this.$cookies.isKey('va.version')) return true;
@@ -63,7 +60,7 @@ export default class Login extends Vue
     /**
      * When the user clicks, send the username and password to the server.
      */
-    public onLoginClick()
+    onLoginClick()
     {
         // Make login button loading
         this.loading = true;
@@ -119,7 +116,7 @@ export default class Login extends Vue
     /**
      * This is called when the user hits enter on the input boxes.
      */
-    public onEnter()
+    onEnter()
     {
         this.onLoginClick();
     }
