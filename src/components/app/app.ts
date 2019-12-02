@@ -5,7 +5,6 @@ import Overall from '@/pages/overall/overall.vue';
 import Constants from '@/constants';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/logic/utils/http-utils';
-import {GPAUtils} from '@/logic/utils/gpa-utils';
 import Loading from '@/components/loading/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
 import Course from '@/logic/course';
@@ -25,7 +24,7 @@ export default class App extends Vue
     // List of course that should be displayed
     public filteredCourses: Course[] = [];
 
-    // Currently selected tab
+    // The currently selected tab
     public selectedTab: string = 'overall';
 
     // Are the course assignments loaded from the server.
@@ -82,7 +81,7 @@ export default class App extends Vue
     }
 
     /**
-     * Load courses data after login.
+     * Load courses data after logging in.
      */
     public loadCoursesAfterLogin()
     {
