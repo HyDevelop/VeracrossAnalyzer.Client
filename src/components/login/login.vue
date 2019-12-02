@@ -27,6 +27,8 @@
                 </form>
             </div>
         </div>
+
+        <Maintenance v-if="maintenance" :message="maintenance"/>
     </div>
 </template>
 

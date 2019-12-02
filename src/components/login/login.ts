@@ -3,11 +3,12 @@ import Constants from '@/constants';
 import App from '@/components/app/app';
 import VersionUtils from '@/logic/utils/version-utils';
 import LoginUser from '@/logic/login-user';
+import Maintenance from '@/components/overlays/maintenance.vue';
 
 /**
  * This component handles user login, and obtains data from the server.
  */
-@Component
+@Component({components: {Maintenance}})
 export default class Login extends Vue
 {
     username = '';
@@ -17,6 +18,8 @@ export default class Login extends Vue
     error = '';
 
     disableInput = false;
+
+    maintenance = '';
 
     /**
      * This is called when the instance is created.
