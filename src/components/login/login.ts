@@ -6,9 +6,7 @@ import VersionUtils from '@/logic/utils/version-utils';
 /**
  * This component handles user login, and obtains data from the server.
  */
-@Component({
-    components: {},
-})
+@Component
 export default class Login extends Vue
 {
     username = '';
