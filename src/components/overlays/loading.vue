@@ -1,7 +1,7 @@
 <template>
     <div id="loading">
-        <div id="text" :class="message()">
-            {{message()}}
+        <div id="text" :class="message">
+            {{message}}
 
             <div v-if="!error" class="el-loading-spinner">
                 <svg viewBox="25 25 50 50" class="circular">
@@ -10,7 +10,7 @@
             </div>
 
             <div v-if="error" id="error-details">
-                <span v-for="(line, index) in getText()" :style="`font-size: ${-index === 0 ? 16 : 12}px;`">
+                <span v-for="(line, index) in split" :style="`font-size: ${-index === 0 ? 16 : 12}px;`">
                     {{line}}
                     <br>
                 </span>
@@ -18,7 +18,7 @@
         </div>
 
         <div v-if="!error" id="details">
-            <span v-for="(line, index) in getText()" :style="`font-size: ${16 - getText().length + index}px;`">
+            <span v-for="(line, index) in split" :style="`font-size: ${16 - split.length + index}px;`">
                 {{line}}
                 <br>
             </span>
@@ -38,12 +38,12 @@
 
         @Prop({required: true}) error: boolean;
 
-        getText()
+        get split()
         {
             return this.text.split('\n');
         }
 
-        message()
+        get message()
         {
             return this.error ? 'Error' : 'Loading';
         }
