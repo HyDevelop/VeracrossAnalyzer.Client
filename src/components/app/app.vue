@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="theme-default">
-        <login v-if="showLogin" v-on:login:user="onLogin"></login>
+        <login v-if="showLogin" v-on:login:user="onLogin"/>
         <navigation :courses="filteredCourses"
                     :activeIndex.sync="selectedTab"
                     @sign-out="signOut" @select-time="selectTime">
@@ -15,9 +15,9 @@
             </course-page>
         </div>
 
-        <loading v-if="loading !== ''" :text="loading" :error="loadingError"></loading>
+        <loading v-if="loading !== ''" :text="loading" :error="loadingError"/>
     </div>
 </template>
 
 <script src="./app.ts" lang="ts"></script>
-<style src="./app.scss" lang="scss"></style>
+<style src="./app.scss" lang="scss"/>

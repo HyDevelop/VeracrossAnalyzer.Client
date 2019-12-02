@@ -15,12 +15,12 @@
             </el-col>
             <el-col :span="14" class="overall-span">
                 <el-card class="large overall-line-card vertical-center" body-style="padding: 0 10px">
-                    <overall-line :courses="courses"></overall-line>
+                    <overall-line :courses="courses"/>
                 </el-card>
             </el-col>
             <el-col :span="6" class="overall-span">
                 <el-card class="large overall-bar-card vertical-center" body-style="padding: 0 10px">
-                    <overall-bar :courses="courses"></overall-bar>
+                    <overall-bar :courses="courses"/>
                 </el-card>
             </el-col>
         </el-row>
@@ -64,4 +64,4 @@
     }
 </script>
 
-<style src="./overall.scss" lang="scss" scoped></style>
+<style src="./overall.scss" lang="scss" scoped/>

@@ -21,7 +21,7 @@
             <!-- Grading period selection -->
             <el-dropdown id="nav-grading-period" @command="selectGradingPeriod">
                 <el-button type="primary" size="medium">
-                    {{gradingPeriod}}<i class="el-icon-arrow-down el-icon--right"></i>
+                    {{gradingPeriod}}<i class="el-icon-arrow-down el-icon--right"/>
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item command="Term 1">Term 1</el-dropdown-item>
@@ -48,9 +48,9 @@
         </footer>
 
         <!-- Back to top -->
-        <el-backtop style="box-shadow: rgba(0, 0, 0, 0.23) 0 3px 11px 0;"></el-backtop>
+        <el-backtop style="box-shadow: rgba(0, 0, 0, 0.23) 0 3px 11px 0;"/>
     </div>
 </template>
 
 <script src="./navigation.ts" lang="ts"></script>
-<style src="./navigation.scss" lang="scss"></style>
+<style src="./navigation.scss" lang="scss"/>

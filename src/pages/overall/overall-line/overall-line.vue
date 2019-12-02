@@ -1,6 +1,6 @@
 <template>
     <div id="overall-line">
-        <ve-line :extend="{a: this.courses}" :after-config="afterConfig"></ve-line>
+        <ve-line :extend="{a: this.courses}" :after-config="afterConfig"/>
     </div>
 </template>
 

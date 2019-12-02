@@ -68,4 +68,4 @@
         }
     }
 </script>
-<style src="./assignment-entry.scss" lang="scss" scoped></style>
+<style src="./assignment-entry.scss" lang="scss" scoped/>

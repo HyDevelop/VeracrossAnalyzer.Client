@@ -1,12 +1,12 @@
 <template>
     <el-card id="course-card" class="course-card">
-        <course-head :clickable="false" :course="course" :unread="countUnread()"></course-head>
+        <course-head :clickable="false" :course="course" :unread="countUnread()"/>
 
         <div class="course-card-content expand">
             <el-row>
                 <el-col :span="24" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center">
-                        <course-scatter :course="course"></course-scatter>
+                        <course-scatter :course="course"/>
                     </el-card>
                 </el-col>
             </el-row>
@@ -15,13 +15,13 @@
                 <el-col :span="12" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center type-graph"
                              body-style="padding: 0">
-                        <TypeRadar :course="course"></TypeRadar>
+                        <TypeRadar :course="course"/>
                     </el-card>
                 </el-col>
                 <el-col :span="12" class="course-page-graph">
                     <el-card class="large overall-line-card vertical-center type-graph"
                              body-style="padding: 0">
-                        <TypePie :course="course"></TypePie>
+                        <TypePie :course="course"/>
                     </el-card>
                 </el-col>
             </el-row>
@@ -68,4 +68,4 @@
     }
 </script>
 
-<style src="./course-page.scss" lang="scss" scoped></style>
+<style src="./course-page.scss" lang="scss" scoped/>

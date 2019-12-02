@@ -31,4 +31,4 @@
 </template>
 
 <script src="./login.ts" lang="ts"></script>
-<style src="./login.scss" lang="scss"></style>
+<style src="./login.scss" lang="scss"/>

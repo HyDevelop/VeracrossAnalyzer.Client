@@ -1,7 +1,6 @@
 <template>
     <div id="overall-bar">
-        <ve-bar height="450px" class="graph"
-                :extend="chartSettings"></ve-bar>
+        <ve-bar height="450px" class="graph" :extend="chartSettings"/>
     </div>
 </template>
 

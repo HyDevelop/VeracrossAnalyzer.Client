@@ -49,4 +49,4 @@
     }
 </script>
 
-<style src="./course-head.scss" lang="scss"></style>
+<style src="./course-head.scss" lang="scss"/>
