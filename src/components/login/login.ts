@@ -16,6 +16,8 @@ export default class Login extends Vue
     loading = false;
     error = '';
 
+    disableInput = false;
+
     /**
      * This is called when the instance is created.
      */

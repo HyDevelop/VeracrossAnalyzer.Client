@@ -9,6 +9,7 @@
                     <el-input v-model="username"
                               placeholder="SJP Username (Eg. flast21)"
                               :class="{'input-error': error !== ''}"
+                              v-if="!disableInput"
                               @keyup.enter.native="onEnter">
                     </el-input>
 
@@ -16,6 +17,7 @@
                               placeholder="SJP Password"
                               show-password=""
                               :class="{'input-error': error !== ''}"
+                              v-if="!disableInput"
                               @keyup.enter.native="onEnter">
                     </el-input>
 
