@@ -8,6 +8,7 @@ import {HttpUtils} from '@/logic/utils/http-utils';
 import Loading from '@/components/loading/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
 import Course from '@/logic/course';
+import LoginUser from '@/logic/login-user';
 
 
 @Component({
@@ -31,7 +32,7 @@ export default class App extends Vue
     public assignmentsReady: boolean = false;
 
     // Token
-    public token: string = '';
+    public user: LoginUser;
 
     // Loading text
     public loading: string = '';
@@ -60,9 +61,9 @@ export default class App extends Vue
     /**
      * This is called when the user logs in.
      *
-     * @param token Authorization token
+     * @param user Authorization user
      */
-    public onLogin(token: string)
+    public onLogin(user: LoginUser)
     {
         // Hide login bar
         this.showLogin = false;
@@ -70,11 +71,11 @@ export default class App extends Vue
         // Show loading message
         this.logLoading('1. Logging in...');
 
-        // Store token
-        this.token = token;
+        // Store user
+        this.user = user;
 
-        // Assign token to http client
-        App.http.token = token;
+        // Assign user to http client
+        App.http.user = user;
 
         // Load data
         this.loadCoursesAfterLogin();
