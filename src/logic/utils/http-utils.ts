@@ -1,13 +1,14 @@
 import Constants from '@/constants';
+import LoginUser from '@/logic/login-user';
 
 export class HttpUtils
 {
-    public token: string = '';
+    public user: LoginUser;
 
     public post(node: string, body: any): Promise<any>
     {
         // Add token
-        if (this.token != '') body['token'] = this.token;
+        if (this.user != null) body['token'] = this.user.token;
 
         // Create promise
         return new Promise<any>((resolve, reject) =>
