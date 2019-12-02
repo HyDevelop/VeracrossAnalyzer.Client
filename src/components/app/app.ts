@@ -5,7 +5,7 @@ import Overall from '@/pages/overall/overall.vue';
 import Constants from '@/constants';
 import pWaitFor from 'p-wait-for';
 import {HttpUtils} from '@/logic/utils/http-utils';
-import Loading from '@/components/loading/loading.vue';
+import Loading from '@/components/overlays/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
 import Course from '@/logic/course';
 import LoginUser from '@/logic/login-user';
