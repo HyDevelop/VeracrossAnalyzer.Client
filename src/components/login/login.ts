@@ -71,8 +71,20 @@ export default class Login extends Vue
         // Format it
         this.username = this.username.toLowerCase().replace(/ /g, '').replace(/@.*/g, '');
 
+        // Login
+        this.login('/login', {username: this.username, password: this.password});
+    }
+
+    /**
+     * Actually post the login request and process the response
+     *
+     * @param url Posting url
+     * @param data Data to be posted
+     */
+    login(url: string, data: any)
+    {
         // Fetch request
-        App.http.post('/login', {username: this.username, password: this.password})
+        App.http.post(url, data)
         .then(response =>
         {
             // Check success
