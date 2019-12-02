@@ -1,10 +1,12 @@
 <template>
     <div id="maintenance">
-        <h1>We&rsquo;ll be back soon!</h1>
-        <div>
-            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.
-                We&rsquo;ll be back online shortly!</p>
-            <p>&mdash; Veracross Analyzer</p>
+        <div id="maintenance-content">
+            <h1>We&rsquo;ll be back soon!</h1>
+            <div>
+                <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.
+                    We&rsquo;ll be back online shortly!</p>
+                <p>&mdash; Veracross Analyzer</p>
+            </div>
         </div>
     </div>
 </template>
@@ -19,11 +21,33 @@
     }
 </script>
 
-<style scoped>
-    body {text-align: center; padding: 150px;}
-    h1 {font-size: 50px;}
-    body {font: 20px Helvetica, sans-serif; color: #333;}
-    article {display: block; text-align: left; width: 650px; margin: 0 auto;}
-    a {color: #dc8100; text-decoration: none;}
-    a:hover {color: #333; text-decoration: none;}
+<style lang="scss" scoped>
+    #maintenance
+    {
+        z-index: 1000;
+        background: white;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        #maintenance-content
+        {
+            font: 20px Helvetica, sans-serif;
+            color: #333;
+
+            display: block;
+            text-align: left;
+            margin: 150px;
+
+            h1
+            {
+                font-size: 50px;
+            }
+
+            a {color: #dc8100; text-decoration: none;}
+            a:hover {color: #333; text-decoration: none;}
+        }
+    }
 </style>
