@@ -2,6 +2,7 @@ import {Component, Vue} from 'vue-property-decorator';
 import Constants from '@/constants';
 import App from '@/components/app/app';
 import VersionUtils from '@/logic/utils/version-utils';
+import LoginUser from '@/logic/login-user';
 
 /**
  * This component handles user login, and obtains data from the server.
@@ -90,7 +91,7 @@ export default class Login extends Vue
                 this.$cookies.set('va.version', Constants.VERSION, '27d');
 
                 // Call a custom event with the token
-                this.$emit('login:user', response.data);
+                this.$emit('login:user', new LoginUser(response.data.user));
             }
             else
             {
