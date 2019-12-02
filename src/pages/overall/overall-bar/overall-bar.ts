@@ -4,8 +4,7 @@ import {GPAUtils} from '@/logic/utils/gpa-utils';
 import Constants from '@/constants';
 import {FormatUtils} from '@/logic/utils/format-utils';
 
-@Component({
-})
+@Component
 export default class OverallBar extends Vue
 {
     @Prop({required: true}) courses: Course[];

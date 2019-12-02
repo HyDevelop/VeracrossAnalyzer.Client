@@ -29,9 +29,7 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
 
-    @Component({
-        components: {}
-    })
+    @Component
     export default class Loading extends Vue
     {
         @Prop({required: true}) text: string;

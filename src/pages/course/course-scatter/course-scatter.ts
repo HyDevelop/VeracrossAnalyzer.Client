@@ -6,8 +6,7 @@ import Course, {Assignment} from '@/logic/course';
 import GraphUtils from '@/logic/utils/graph-utils';
 import chroma from 'chroma-js';
 
-@Component({
-})
+@Component
 export default class CourseScatter extends Vue
 {
     @Prop({required: true}) course: Course;

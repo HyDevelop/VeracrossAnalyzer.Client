@@ -9,9 +9,7 @@ import Constants from '@/constants';
 /**
  * This component is the top navigation bar
  */
-@Component({
-    components: {},
-})
+@Component
 export default class Navigation extends Vue
 {
     @Prop({required: true}) activeIndex: string;
