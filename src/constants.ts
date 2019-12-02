@@ -9,7 +9,7 @@ export default class Constants
     /** Current version */
     public static VERSION: string = '0.4.6.1087';
 
-    /** Minimum version that still supports the same cookies */
+    /** The minimum version that still supports the same cookies */
     public static MIN_SUPPORTED_VERSION: string = '0.3.4.561';
 
     public static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
