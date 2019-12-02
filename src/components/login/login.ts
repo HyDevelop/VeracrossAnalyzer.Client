@@ -120,4 +120,12 @@ export default class Login extends Vue
     {
         this.onLoginClick();
     }
+
+    /**
+     * Clear cookies
+     */
+    clearCookies()
+    {
+        this.$cookies.keys().forEach(key => this.$cookies.remove(key));
+    }
 }
