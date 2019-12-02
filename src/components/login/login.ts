@@ -36,6 +36,9 @@ export default class Login extends Vue
             }
             else
             {
+                // Show loading
+                this.disableInput = this.loading = true;
+
                 // Login with token TODO: Logout if expired
                 this.login('/login/token', {token: this.$cookies.get('va.token')});
             }
@@ -99,14 +102,14 @@ export default class Login extends Vue
             {
                 // Show error message & allow user to retry
                 this.error = response.data;
-                this.loading = false;
+                this.disableInput = this.loading = false;
             }
         })
         .catch(err =>
         {
             // Show error message & allow user to retry
             this.error = err;
-            this.loading = false;
+            this.disableInput = this.loading = false;
         });
     }
 
