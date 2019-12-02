@@ -33,9 +33,8 @@ export default class Login extends Vue
             }
             else
             {
-                // Already contains valid token / TODO: Validate
-                // TODO: Update token each access
-                this.$emit('login:token', this.$cookies.get('va.token'));
+                // Login with token TODO: Logout if expired
+                this.login('/login/token', {token: this.$cookies.get('va.token')});
             }
         }
         else console.log('Cookies doesn\'t exist');
