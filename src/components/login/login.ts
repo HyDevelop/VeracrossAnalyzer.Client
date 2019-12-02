@@ -27,23 +27,16 @@ export default class Login extends Vue
         if (this.$cookies.isKey('va.token'))
         {
             // Check cookies version
-            if (this.needToUpdateCookies())
-            {
-                console.log('Version Updated! Clearing cookies...');
-
-                // Clear all cookies
-                this.$cookies.keys().forEach(key => this.$cookies.remove(key));
-            }
+            if (this.needToUpdateCookies()) this.clearCookies();
             else
             {
                 // Show loading
                 this.disableInput = this.loading = true;
 
-                // Login with token TODO: Logout if expired
+                // Login with token
                 this.login('/login/token', {token: this.$cookies.get('va.token')});
             }
         }
-        else console.log('Cookies doesn\'t exist');
     }
 
     /**
