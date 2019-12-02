@@ -61,7 +61,7 @@ export default class Login extends Vue
     }
 
     /**
-     * On click, sends username and password to the server.
+     * When the user clicks, send the username and password to the server.
      */
     public onLoginClick()
     {
@@ -96,6 +96,7 @@ export default class Login extends Vue
         })
         .catch(err =>
         {
+            // TODO: Show error properly
             alert(err);
 
             // Allow the user to retry
@@ -104,7 +105,7 @@ export default class Login extends Vue
     }
 
     /**
-     * This is called when the user hits enter in the input boxes.
+     * This is called when the user hits enter on the input boxes.
      */
     public onEnter()
     {
