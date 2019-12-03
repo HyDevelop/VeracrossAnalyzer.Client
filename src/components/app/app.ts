@@ -32,7 +32,7 @@ export default class App extends Vue
     public assignmentsReady: boolean = false;
 
     // Token
-    public user: LoginUser;
+    public user: LoginUser = null as any;
 
     // Loading text
     public loading: string = '';
