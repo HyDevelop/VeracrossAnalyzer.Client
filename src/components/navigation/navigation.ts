@@ -5,6 +5,7 @@ import {FormatUtils} from '@/logic/utils/format-utils';
 import pWaitFor from 'p-wait-for';
 import Course from '@/logic/course';
 import Constants from '@/constants';
+import LoginUser from '@/logic/login-user';
 
 /**
  * This component is the top navigation bar
@@ -13,8 +14,8 @@ import Constants from '@/constants';
 export default class Navigation extends Vue
 {
     @Prop({required: true}) activeIndex: string;
-
     @Prop({required: true}) courses: Course[];
+    @Prop({required: true}) user: LoginUser;
 
     private gradingPeriod: string = 'All Year';
 
