@@ -29,7 +29,7 @@ export default class LoginUser
         this.nickname = json.nickname;
         this.graduationYear = json.graduationYear;
         this.groups = json.groups;
-        this.emails = json.emails.split('|');
+        this.emails = json.emails.split('|').map((e: any) => e.toLowerCase().trim());
         this.classes = json.classes.split('|');
         this.birthday = json.birthday;
         this.avatarUrl = json.avatarUrl;
