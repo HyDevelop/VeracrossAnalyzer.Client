@@ -39,8 +39,8 @@ export default class LoginUser
         // Generate default avatar
         if (this.avatarUrl == null || this.avatarUrl == '')
         {
-            this.avatarUrl = `https://www.gravatar.com/avatar/${md5(this.emails[0])}?d=` + encodeURIComponent(
-                `https://ui-avatars.com/api/${this.firstName.charAt(0)}${this.lastName.charAt(0)}/128`);
+            this.avatarUrl = [...this.emails.map(e => `https://www.gravatar.com/avatar/${md5(e)}?d=404`),
+                `https://ui-avatars.com/api/${this.firstName.charAt(0)}${this.lastName.charAt(0)}/128`].join(',');
         }
     }
 }
