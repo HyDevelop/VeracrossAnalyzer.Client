@@ -3,6 +3,7 @@
         <login v-if="showLogin" v-on:login:user="onLogin"/>
         <navigation :courses="filteredCourses"
                     :activeIndex.sync="selectedTab"
+                    :user="user"
                     @sign-out="signOut" @select-time="selectTime">
         </navigation>
 
