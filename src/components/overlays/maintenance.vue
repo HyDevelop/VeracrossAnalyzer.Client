@@ -5,7 +5,12 @@
             <div>
                 <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.
                     We&rsquo;ll be back online shortly!</p>
-                <p>&mdash; Veracross Analyzer</p>
+
+                <p>What went wrong: {{json.reason}}</p>
+
+                <p>Estimated fix: {{json.eta}}</p>
+
+                <p>&mdash; An Average SJP Junior</p>
             </div>
         </div>
     </div>
@@ -18,6 +23,11 @@
     export default class Maintenance extends Vue
     {
         @Prop({required: true}) message: any;
+
+        get json()
+        {
+            return JSON.parse(this.message);
+        }
     }
 </script>
 
