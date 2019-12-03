@@ -1,3 +1,4 @@
+const md5 = require('md5');
 
 export default class LoginUser
 {
@@ -34,5 +35,12 @@ export default class LoginUser
         this.birthday = json.birthday;
         this.avatarUrl = json.avatarUrl;
         this.token = json.token;
+
+        // Generate default avatar
+        if (this.avatarUrl == null || this.avatarUrl == '')
+        {
+            this.avatarUrl = `https://www.gravatar.com/avatar/${md5(this.emails[0])}?d=` + encodeURIComponent(
+                `https://ui-avatars.com/api/${this.firstName.charAt(0)}${this.lastName.charAt(0)}/128`);
+        }
     }
 }
