@@ -32,7 +32,7 @@
                 </el-dropdown-menu>
             </el-dropdown>
 
-            <el-avatar :src="user.avatarUrl"/>
+            <el-avatar id="nav-avatar" :src="user.avatarUrl"/>
 
             <el-button @click="$emit('sign-out')" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
