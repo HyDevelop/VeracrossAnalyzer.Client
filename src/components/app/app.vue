@@ -1,7 +1,8 @@
 <template>
     <div id="app" class="theme-default">
         <login v-if="showLogin" v-on:login:user="onLogin"/>
-        <navigation :courses="filteredCourses"
+        <navigation v-if="user != null"
+                    :courses="filteredCourses"
                     :activeIndex.sync="selectedTab"
                     :user="user"
                     @sign-out="signOut" @select-time="selectTime">
