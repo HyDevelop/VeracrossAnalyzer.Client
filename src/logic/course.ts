@@ -213,14 +213,12 @@ export default class Course
         })
     }
 
-    private _cacheAssignmentTypes: AssignmentType[];
-
     /**
      * Get assignment types
      */
     get assignmentTypes(): AssignmentType[]
     {
-        if (this._cacheAssignmentTypes == null)
+        return this.cache.get('AssignmentTypes', () =>
         {
             // Get all types
             let types = this.assignments.map(a => a.type);
@@ -232,7 +230,7 @@ export default class Course
             let totalScoreMax = this.assignments.reduce((sum, a) => sum + a.scoreMax, 0);
 
             // For every type...
-            this._cacheAssignmentTypes = types.map(type =>
+            return types.map(type =>
             {
                 // Get assignments of the type
                 let typeAssignments = this.assignments.filter(a => a.type == type);
@@ -250,8 +248,6 @@ export default class Course
                     scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2),
                     assignmentCount: typeAssignments.length}
             })
-        }
-
-        return this._cacheAssignmentTypes;
+        })
     }
 }
