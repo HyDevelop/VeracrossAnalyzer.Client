@@ -178,26 +178,19 @@ export default class Course
         });
     }
 
-    private _cacheLetterGrade: string;
-
     /**
      * Get letter grade
      */
     get letterGrade(): string
     {
-        if (this._cacheLetterGrade == null)
+        return this.cache.get('LetterGrade', () =>
         {
             // Get scale
             let scale = GPAUtils.findScale(this.numericGrade);
 
             // Scale not found
-            if (scale == undefined) return this._cacheLetterGrade = '--';
-
-            // Cache
-            this._cacheLetterGrade = scale.letter;
-        }
-
-        return this._cacheLetterGrade;
+            return scale == undefined ? '--' : scale.letter;
+        })
     }
 
     private _cacheNumericGrade: number;
