@@ -4,6 +4,7 @@ import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
 import CacheUtils from '@/logic/utils/cache-utils';
+import cache from '@/logic/utils/cache-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -66,8 +67,6 @@ export default class Course
         termAssignments: Assignment[][]
         allYearGrade: number
     };
-
-    cache: CacheUtils = new CacheUtils();
 
     /**
      * Construct a course with a course json object
@@ -172,7 +171,7 @@ export default class Course
      */
     get assignments(): Assignment[]
     {
-        return this.cache.get('Assignments', () =>
+        return cache('Assignments', () =>
         {
             return this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
         });
@@ -183,7 +182,7 @@ export default class Course
      */
     get letterGrade(): string
     {
-        return this.cache.get('LetterGrade', () =>
+        return cache('LetterGrade', () =>
         {
             // Get scale
             let scale = GPAUtils.findScale(this.numericGrade);
@@ -198,7 +197,7 @@ export default class Course
      */
     get numericGrade(): number
     {
-        return this.cache.get('NumericGrade', () =>
+        return cache('NumericGrade', () =>
         {
             // Calculate
             if (this.grading.method == 'PERCENT_TYPE')
@@ -218,7 +217,7 @@ export default class Course
      */
     get assignmentTypes(): AssignmentType[]
     {
-        return this.cache.get('AssignmentTypes', () =>
+        return cache('AssignmentTypes', () =>
         {
             // Get all types
             let types = this.assignments.map(a => a.type);
