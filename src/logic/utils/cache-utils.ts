@@ -1,5 +1,5 @@
 
-export default class Cache
+export default class CacheUtils
 {
     map: Map<string, any> = new Map();
 
