@@ -9,7 +9,7 @@ const cacheMap: Map<string, any> = new Map();
  */
 export default function cache(name: string, callback: () => any)
 {
-    if (cacheMap.has(name))
+    if (!cacheMap.has(name))
     {
         cacheMap.set(name, callback());
     }
