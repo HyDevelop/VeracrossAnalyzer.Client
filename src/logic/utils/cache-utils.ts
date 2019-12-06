@@ -1,17 +1,20 @@
 
-const cacheMap: Map<string, any> = new Map();
-
-/**
- * Get a cached value, or if not cached, cache it.
- *
- * @param name Name of the cached value
- * @param callback Callback function
- */
-export default function cache(name: string, callback: () => any)
+export default class CacheUtils
 {
-    if (cacheMap.has(name))
+    map: Map<string, any> = new Map();
+
+    /**
+     * Get a cached value, or if not cached, cache it.
+     *
+     * @param name Name of the cached value
+     * @param callback Callback function
+     */
+    public get(name: string, callback: () => any)
     {
-        cacheMap.set(name, callback());
+        if (!this.map.has(name))
+        {
+            this.map.set(name, callback());
+        }
+        return this.map.get(name);
     }
-    return cacheMap.get(name);
 }
