@@ -193,29 +193,24 @@ export default class Course
         })
     }
 
-    private _cacheNumericGrade: number;
-
     /**
      * Get numeric grade
      */
     get numericGrade(): number
     {
-        // Cached
-        if (this._cacheNumericGrade == null)
+        return this.cache.get('NumericGrade', () =>
         {
             // Calculate
             if (this.grading.method == 'PERCENT_TYPE')
             {
-                this._cacheNumericGrade = GPAUtils.getPercentTypeAverage(this, this.assignments);
+                return GPAUtils.getPercentTypeAverage(this, this.assignments);
             }
             else if (this.grading.method == 'TOTAL_MEAN')
             {
-                this._cacheNumericGrade = GPAUtils.getTotalMeanAverage(this.assignments);
+                return GPAUtils.getTotalMeanAverage(this.assignments);
             }
-            else this._cacheNumericGrade = -1;
-        }
-
-        return this._cacheNumericGrade;
+            else return -1;
+        })
     }
 
     private _cacheAssignmentTypes: AssignmentType[];
