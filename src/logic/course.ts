@@ -3,6 +3,7 @@ import {FormatUtils} from '@/logic/utils/format-utils';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
+import CacheUtils from '@/logic/utils/cache-utils';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -65,6 +66,8 @@ export default class Course
         termAssignments: Assignment[][]
         allYearGrade: number
     };
+
+    cache: CacheUtils = new CacheUtils();
 
     /**
      * Construct a course with a course json object
