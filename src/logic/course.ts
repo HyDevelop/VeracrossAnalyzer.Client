@@ -167,17 +167,15 @@ export default class Course
         return this.computed.termAssignments[timeCode];
     }
 
-    private _cacheAssignments: Assignment[];
-
     /**
      * Get graded assignments
      */
     get assignments(): Assignment[]
     {
-        if (this._cacheAssignments == null)
-           this._cacheAssignments = this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
-
-        return this._cacheAssignments;
+        return this.cache.get('Assignments', () =>
+        {
+            return this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
+        });
     }
 
     private _cacheLetterGrade: string;
