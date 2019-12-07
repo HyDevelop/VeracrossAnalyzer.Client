@@ -31,7 +31,7 @@
                     <el-dropdown-item command="All Year" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-            <el-dropdown id="nav-avatar">
+            <el-dropdown id="nav-avatar" trigger="click">
                 <el-avatar :src="user.avatarUrl"/>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item>Yay</el-dropdown-item>
