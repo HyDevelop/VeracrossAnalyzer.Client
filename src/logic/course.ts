@@ -196,7 +196,8 @@ export default class Course
     {
         return this.gradingPeriods
             .flatMap(term => this.termAssignments[term])
-            .filter(a => a.graded);
+            .filter(a => a.graded)
+            .sort((a, b) => b.time - a.time);
     }
 
     /**
