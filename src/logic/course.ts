@@ -40,6 +40,12 @@ export interface AssignmentType
     assignmentCount: number
 }
 
+export interface Grading
+{
+    method: string
+    weightingMap: {[index: string]: number}
+}
+
 export default class Course
 {
     id: number;
@@ -55,11 +61,7 @@ export default class Course
     level: string;
     scaleUp: number;
 
-    grading:
-    {
-        method: string
-        weightingMap: {[index: string]: number}
-    }[];
+    rawGrading: Grading[];
 
     computed:
     {
