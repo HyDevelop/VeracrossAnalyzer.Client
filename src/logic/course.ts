@@ -103,7 +103,7 @@ export default class Course
         }
         else this.level = 'Unknown';
 
-        this.grading = new Array(4);
+        this.rawGrading = new Array(4);
     }
 
     /**
@@ -129,6 +129,16 @@ export default class Course
 
         // Set computed data
         this.computed = {termAssignments: termAssignments, allYearGrade: -1};
+    }
+
+    /**
+     * Get grading by term
+     *
+     * @param term
+     */
+    getGrading(term: number)
+    {
+        return this.rawGrading[term];
     }
 
     /**
