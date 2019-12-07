@@ -174,29 +174,11 @@ export default class Course
     /**
      * Get assignments of the selected time
      */
-    get rawSelectedAssignments(): Assignment[]
-    {
-        let timeCode = Navigation.instance.getSelectedGradingPeriod();
-
-        // All year
-        if (timeCode == -1)
-        {
-            return this.rawAssignments;
-        }
-
-        // Specific time
-        return this.computed.termAssignments[timeCode];
-    }
-
-    /**
-     * Get graded assignments
-     */
     get assignments(): Assignment[]
     {
-        return this.cache.get('Assignments', () =>
-        {
-            return this.rawSelectedAssignments.filter(a => a.complete == 'Complete');
-        });
+        return this.gradingPeriods
+            .flatMap(term => this.computed.termAssignments[term])
+            .filter(a => a.complete == 'Complete');
     }
 
     /**
