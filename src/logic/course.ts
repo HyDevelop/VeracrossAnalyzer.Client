@@ -26,6 +26,31 @@ export class Assignment
     score: number;
 
     gradingPeriod: number;
+
+    /**
+     * Construct assignment with json object
+     *
+     * @param json Json object
+     */
+    constructor(json: any)
+    {
+        this.id =  json.assignment_id;
+        this.scoreId =  json.score_id;
+        this.type =  json.assignment_type;
+        this.typeId =  json.assignment_type_id;
+        this.description =  json.assignment_description;
+        this.time =  new Date(json._date).getTime();
+        this.complete =  json.completion_status;
+        this.include =  json.include_in_calculated_grade == 1;
+        this.display =  json.display_grade == 1;
+
+        this.unread =  json.is_unread == 1;
+
+        this.scoreMax =  json.maximum_score;
+        this.score =  +json.raw_score;
+
+        this.gradingPeriod =  +json.grading_period.replace('Quarter ', '') - 1;
+    }
 }
 
 export interface AssignmentType
