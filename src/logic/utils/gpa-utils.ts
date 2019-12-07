@@ -65,7 +65,7 @@ export class GPAUtils
         let maxTotal = 0;
         courses.forEach(course =>
         {
-            totalGPA += this.getGP(course, course.letterGrade);
+            totalGPA += this.getGP(course, course.numericGrade);
             maxTotal += this.getGP(course, 'A+');
         });
 
@@ -83,7 +83,7 @@ export class GPAUtils
      * @param course Course
      * @param letterGrade Letter grade
      */
-    public static getGP(course: Course, letterGrade: string): number
+    public static getGP(course: Course, letterGrade: string | number): number
     {
         // Get scale
         let scale = this.findScale(letterGrade);
