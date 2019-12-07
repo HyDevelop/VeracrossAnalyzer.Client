@@ -8,24 +8,24 @@ import CacheUtils from '@/logic/utils/cache-utils';
 /**
  * Objects of this interface represent assignment grades.
  */
-export interface Assignment
+export class Assignment
 {
-    id: number
-    scoreId: number
-    type: string
-    typeId: number
-    description: string
-    time: number
-    complete: string
-    include: boolean
-    display: boolean
+    id: number;
+    scoreId: number;
+    type: string;
+    typeId: number;
+    description: string;
+    time: number;
+    complete: string;
+    include: boolean;
+    display: boolean;
 
-    unread: boolean
+    unread: boolean;
 
-    scoreMax: number
-    score: number
+    scoreMax: number;
+    score: number;
 
-    gradingPeriod: number
+    gradingPeriod: number;
 }
 
 export interface AssignmentType
