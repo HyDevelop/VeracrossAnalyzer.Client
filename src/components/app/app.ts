@@ -152,32 +152,37 @@ export default class App extends Vue
         // Loop through all the courses
         for (const course of this.filteredCourses)
         {
-            // Check if already exist in cookies
-            if (this.$cookies.isKey('va.grading.' + course.assignmentsId))
+            for (const i of [0, 1, 2, 3])
             {
-                course.grading = {method: 'TOTAL_MEAN', weightingMap: {}};
-                continue;
-            }
+                const cookieIndex = `va.grading.${i}.${course.assignmentsId}`;
 
-            // Request grading scheme for this course
-            App.http.post('/grading', {'assignmentsId': course.assignmentsId}).then(response =>
-            {
-                // Check success
-                if (response.success)
+                // Check if already exist in cookies
+                if (this.$cookies.isKey(cookieIndex))
                 {
-                    // Add it to course
-                    course.grading = response.data;
-
-                    // If it's total_mean, cache it to cookies
-                    // This is because only percent_type can update over time
-                    if (course.grading.method == 'TOTAL_MEAN')
-                    {
-                        this.$cookies.set('va.grading.' + course.assignmentsId, 'TOTAL_MEAN', '3d');
-                    }
+                    course.grading[i] = {method: 'TOTAL_MEAN', weightingMap: {}};
+                    continue;
                 }
-                else throw new Error(response.data);
-            })
-            .catch(e => this.showError(`Error: Grading data failed to load.\n(${e})`))
+
+                // Request grading scheme for this course at this grading period
+                App.http.post('/grading/term', {assignmentsId: course.assignmentsId, term: i}).then(resp =>
+                {
+                    // Check success
+                    if (resp.success)
+                    {
+                        // Add it to course
+                        course.grading[i] = resp.data;
+
+                        // If it's total_mean, cache it to cookies
+                        // This is because only percent_type can update over time
+                        if (course.grading[i].method == 'TOTAL_MEAN')
+                        {
+                            this.$cookies.set(cookieIndex, 'TOTAL_MEAN', 'd');
+                        }
+                    }
+                    else throw new Error(resp.data);
+                })
+                .catch(e => this.showError(`Error: Grading data failed to load.\n(${e})`))
+            }
         }
 
         // Wait for done
