@@ -3,6 +3,7 @@ import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
 import CacheUtils from '@/logic/utils/cache-utils';
+import Constants from '@/constants';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -196,6 +197,19 @@ export default class Course
         return this.gradingPeriods
             .flatMap(term => this.termAssignments[term])
             .filter(a => a.graded);
+    }
+
+    /**
+     * Get assignments before a certain date
+     *
+     * @param date
+     */
+    getAssignmentsBefore(date: Date): {term: number, assignments: Assignment[]}
+    {
+        let term = Constants.getTerm(date);
+        let assignments = this.assignments.filter(a => a.time <= date.getTime());
+
+        return {term: term, assignments: assignments}
     }
 
     /**
