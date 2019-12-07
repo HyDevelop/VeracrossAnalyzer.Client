@@ -181,9 +181,12 @@ export default class Course
      */
     get gradingPeriods(): number[]
     {
-        let timeCode = Navigation.instance.getSelectedGradingPeriod();
-        return (timeCode == -1 ? [0, 1, 2, 3] : [timeCode]).filter(term =>
-            this.termAssignments[term].filter(a => a.graded).length != 0);
+        return this.cache.get('GradingPeriods', () =>
+        {
+            let timeCode = Navigation.instance.getSelectedGradingPeriod();
+            return (timeCode == -1 ? [0, 1, 2, 3] : [timeCode]).filter(term =>
+                this.termAssignments[term].filter(a => a.graded).length != 0);
+        })
     }
 
     /**
@@ -211,6 +214,7 @@ export default class Course
         })
     }
 
+    get numericGrade()
     /**
      * Get numeric grade by term
      *
