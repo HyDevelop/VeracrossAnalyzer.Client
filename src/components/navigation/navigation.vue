@@ -34,10 +34,9 @@
             <el-dropdown id="nav-avatar" trigger="click">
                 <el-avatar :src="user.avatarUrl"/>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>Yay</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-switch-button">Sign-out</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-
         </el-menu>
 
         <!-- Previous course / Next course (Only when the page is courses) -->
