@@ -1,4 +1,4 @@
-import Course, {Assignment} from '@/logic/course';
+import Course, {Assignment, Grading} from '@/logic/course';
 
 export interface Scale
 {
@@ -140,12 +140,11 @@ export class GPAUtils
 
     /**
      * Calculate the percent type
-     * TODO: Combine it with overall-line
      *
-     * @param course
+     * @param grading
      * @param assignments
      */
-    public static getPercentTypeAverage(course: Course, assignments: Assignment[])
+    public static getPercentTypeAverage(grading: Grading, assignments: Assignment[])
     {
         let typeScores: {[index: string]: any} = {};
         let typeCounts: {[index: string]: any} = {};
@@ -168,11 +167,11 @@ export class GPAUtils
         // Eg. If HW = 25% and Quiz = 75%, I have 1 hw and 0 quiz
         // Without total percentage, the avg grade I get is 25%.
         let totalPercentage = 0;
-        for (let type in course.grading.weightingMap)
+        for (let type in grading.weightingMap)
         {
             if (typeScores[type] != undefined)
             {
-                totalPercentage += course.grading.weightingMap[type];
+                totalPercentage += grading.weightingMap[type];
             }
         }
 
@@ -180,7 +179,7 @@ export class GPAUtils
         let score = 0;
         for (let type in typeScores)
         {
-            let typeFactor = course.grading.weightingMap[type] / totalPercentage;
+            let typeFactor = grading.weightingMap[type] / totalPercentage;
             score += typeScores[type] * typeFactor / typeCounts[type];
         }
 
