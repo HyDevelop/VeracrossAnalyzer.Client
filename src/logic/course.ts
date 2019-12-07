@@ -196,7 +196,7 @@ export default class Course
     {
         return this.gradingPeriods
             .flatMap(term => this.termAssignments[term])
-            .filter(a => a.complete == 'Complete');
+            .filter(a => a.graded);
     }
 
     /**
