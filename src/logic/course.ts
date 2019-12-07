@@ -163,6 +163,15 @@ export default class Course
     }
 
     /**
+     * Get currently selected grading periods
+     */
+    get gradingPeriods(): number[]
+    {
+        let timeCode = Navigation.instance.getSelectedGradingPeriod();
+        return timeCode == -1 ? [0, 1, 2, 3] : [timeCode];
+    }
+
+    /**
      * Get assignments of the selected time
      */
     get rawSelectedAssignments(): Assignment[]
