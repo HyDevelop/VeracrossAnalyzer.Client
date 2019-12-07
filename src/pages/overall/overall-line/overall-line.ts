@@ -143,20 +143,19 @@ export default class OverallLine extends Vue
         // Find the dates in between
         let now = new Date(Math.min(new Date().getTime(), CourseUtils.getTermEndDate().getTime()));
         let times: number[] = [];
-        for (let date = minDate; date <= now; date.setDate(date.getDate() + 1))
-        {
-            times.push(date.getTime());
-        }
+        for (let date = minDate; date <= now; date.setDate(date.getDate() + 1)) times.push(date.getTime());
 
+        // Map the points
         let lastValue: any = null;
         return times.map(time =>
         {
             // Data point on this specific date
             let thisValue = data.find(a => a[0] == time);
 
-            // None
-            if (thisValue == null) return [time, lastValue == null ? null : lastValue[1]];
-            else return [time, (lastValue = thisValue)[1]];
+            // Find value
+            return thisValue == null
+                ? lastValue == null ? null : [time, lastValue[1]]
+                : [time, (lastValue = thisValue)[1]];
         });
     }
 }
