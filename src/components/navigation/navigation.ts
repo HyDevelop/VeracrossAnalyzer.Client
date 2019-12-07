@@ -175,13 +175,13 @@ export default class Navigation extends Vue
         this.$cookies.set('va.grading-period', command, '10y');
 
         // Call event
-        this.$emit('select-time', this.getSelectedGradingPeriod());
+        this.$emit('select-time', this.getSelectedTerm());
     }
 
     /**
      * Get code for selected time
      */
-    public getSelectedGradingPeriod(): number
+    public getSelectedTerm(): number
     {
         if (this.gradingPeriod == 'All Year') return -1;
         else return +this.gradingPeriod.replace('Term ', '') - 1;

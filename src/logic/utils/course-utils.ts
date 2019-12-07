@@ -72,7 +72,7 @@ export class CourseUtils
      */
     static getTermBeginDate()
     {
-        let selected = Navigation.instance.getSelectedGradingPeriod();
+        let selected = Navigation.instance.getSelectedTerm();
 
         return selected == -1 ? Constants.TERMS[0] : Constants.TERMS[selected];
     }
@@ -82,7 +82,7 @@ export class CourseUtils
      */
     static getTermEndDate()
     {
-        let selected = Navigation.instance.getSelectedGradingPeriod();
+        let selected = Navigation.instance.getSelectedTerm();
 
         return selected == -1 ? Constants.TERMS[4] : Constants.TERMS[selected + 1];
     }

@@ -183,7 +183,7 @@ export default class Course
     {
         return this.cache.get('GradingPeriods', () =>
         {
-            let timeCode = Navigation.instance.getSelectedGradingPeriod();
+            let timeCode = Navigation.instance.getSelectedTerm();
             return (timeCode == -1 ? [0, 1, 2, 3] : [timeCode]).filter(term =>
                 this.termAssignments[term].filter(a => a.graded).length != 0);
         })
