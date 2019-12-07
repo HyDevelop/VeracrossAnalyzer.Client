@@ -207,7 +207,7 @@ export default class Course
     getAssignmentsBefore(time: number): {term: number, assignments: Assignment[]}
     {
         let term = Constants.getTerm(new Date(time));
-        let assignments = this.assignments.filter(a => a.time <= time);
+        let assignments = this.assignments.filter(a => a.gradingPeriod == term && a.time <= time);
 
         return {term: term, assignments: assignments}
     }
