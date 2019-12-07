@@ -186,7 +186,7 @@ export default class App extends Vue
         }
 
         // Wait for done
-        pWaitFor(() => this.filteredCourses.every(c => c.grading != undefined)).then(() =>
+        pWaitFor(() => this.filteredCourses.every(c => c.termGrading.every(g => g != null))).then(() =>
         {
             // When the assignments are ready
             this.assignmentsReady = true;
