@@ -215,6 +215,12 @@ export default class Course
     }
 
     get numericGrade()
+    {
+        return this.gradingPeriods
+            .map(term => this.numericGradeTerm(term)).reduce((p, v) => p + v)
+            / this.gradingPeriods.length;
+    }
+
     /**
      * Get numeric grade by term
      *
