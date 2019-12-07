@@ -233,7 +233,7 @@ export default class Course
             // Calculate
             if (this.termGrading[term].method == 'PERCENT_TYPE')
             {
-                return GPAUtils.getPercentTypeAverage(this, this.assignments);
+                return GPAUtils.getPercentTypeAverage(this.termGrading[term], this.assignments);
             }
             else if (this.termGrading[term].method == 'TOTAL_MEAN')
             {
@@ -270,8 +270,8 @@ export default class Course
                 let scoreMax = typeAssignments.reduce((sum, a) => sum + a.scoreMax, 0);
 
                 // Calculate weight
-                let weight = this.grading.method == 'PERCENT_TYPE'
-                    ? this.grading.weightingMap[type] : scoreMax / totalScoreMax;
+                let weight = this.termGrading[0].method == 'PERCENT_TYPE'
+                    ? this.termGrading[0].weightingMap[type] : scoreMax / totalScoreMax;
 
                 // Return
                 return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
