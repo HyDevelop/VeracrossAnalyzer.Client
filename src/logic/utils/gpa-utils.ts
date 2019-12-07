@@ -48,7 +48,7 @@ export class GPAUtils
             {
                 accurate = false;
             }
-            else if (course.level != 'none')
+            else if (course.level != 'none' && !isNaN(course.numericGrade))
             {
                 courses.push(course);
             }
