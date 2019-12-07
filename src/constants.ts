@@ -10,7 +10,7 @@ export default class Constants
     // public static API_URL: string = 'http://localhost:24021/api';
 
     /** Current version */
-    public static VERSION: string = '0.4.6.1087';
+    static VERSION: string = '0.5.0.1188';
 
     /** The minimum version that still supports the same cookies */
     public static MIN_SUPPORTED_VERSION: string = '0.4.6.1087';
