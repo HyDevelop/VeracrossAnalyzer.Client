@@ -116,7 +116,7 @@ export default class OverallLine extends Vue
             type: 'line',
             smooth: true,
             symbol: 'circle', // circle, diamond, emptyCircle, none
-            data: this.toDateRange([...new Set(assignments.map(a => a.time))].map(time =>
+            data: this.toDateRange([...new Set(assignments.map(a => a.time))].sort((a, b) => a - b).map(time =>
             {
                 // Find subset before this assignment
                 let subset = assignments.filter(a => a.time <= time);
