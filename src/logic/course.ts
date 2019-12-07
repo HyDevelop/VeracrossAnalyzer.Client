@@ -247,11 +247,11 @@ export default class Course
             // Calculate
             if (this.termGrading[term].method == 'PERCENT_TYPE')
             {
-                return GPAUtils.getPercentTypeAverage(this.termGrading[term], this.assignments);
+                return GPAUtils.getPercentTypeAverage(this.termGrading[term], this.termAssignments[term]);
             }
             else if (this.termGrading[term].method == 'TOTAL_MEAN')
             {
-                return GPAUtils.getTotalMeanAverage(this.assignments);
+                return GPAUtils.getTotalMeanAverage(this.termAssignments[term]);
             }
             else return -1;
         })
