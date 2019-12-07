@@ -6,18 +6,18 @@ import {findLastIndex} from '@/logic/utils/general-utils';
 export default class Constants
 {
     /** Base url for api access */
-    public static API_URL: string = 'https://va.hydev.org/api';
-    // public static API_URL: string = 'http://localhost:24021/api';
+    static API_URL: string = 'https://va.hydev.org/api';
+    // static API_URL: string = 'http://localhost:24021/api';
 
     /** Current version */
     static VERSION: string = '0.5.0.1188';
 
     /** The minimum version that still supports the same cookies */
-    public static MIN_SUPPORTED_VERSION: string = '0.4.6.1087';
+    static MIN_SUPPORTED_VERSION: string = '0.4.6.1087';
 
-    public static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
+    static GITHUB: string = 'https://github.com/HyDevelop/VeracrossAnalyzer.Client';
 
-    public static SPLASH: string =
+    static SPLASH: string =
         '.    ,        ,---.          |                        \n' +
         '|    |.  ,    |---|,---.,---.|    ,   .,---,,---.,---.\n' +
         ' \\  /  ><     |   ||   |,---||    |   | .-\' |---\'|    \n' +
@@ -27,7 +27,7 @@ export default class Constants
         ` Github: ${Constants.GITHUB}`;
 
     // Graph Theme
-    public static THEME =
+    static THEME =
     {
         // Colors
         colors:
@@ -59,7 +59,7 @@ export default class Constants
     };
 
     // Terms (TODO: Actually get the terms dynamically
-    public static TERMS =
+    static TERMS =
     [
         new Date('Sep 04 2019'),
         new Date('Nov 03 2019'),
