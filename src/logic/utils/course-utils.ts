@@ -84,6 +84,6 @@ export class CourseUtils
     {
         let selected = Navigation.instance.getSelectedGradingPeriod();
 
-        return selected == -1 ? Constants.TERMS[3] : Constants.TERMS[selected + 1];
+        return selected == -1 ? Constants.TERMS[4] : Constants.TERMS[selected + 1];
     }
 }
