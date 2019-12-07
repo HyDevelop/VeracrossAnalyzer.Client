@@ -119,13 +119,12 @@ export default class OverallLine extends Vue
             data: this.toDateRange([...new Set(assignments.map(a => a.time))].map(time =>
             {
                 // Find subset before this assignment
-                let subset = assignments.filter(a => a.time <= time);
+                let subset = course.getAssignmentsBefore(time);
 
                 // Find grade
-                if (course.grading.method == 'PERCENT_TYPE')
-                    return [time, GPAUtils.getPercentTypeAverage(course, subset)];
-                if (course.grading.method == 'TOTAL_MEAN')
-                    return [time, GPAUtils.getTotalMeanAverage(subset)];
+                if (course.termGrading[subset.term].method == 'PERCENT_TYPE')
+                    return [time, GPAUtils.getPercentTypeAverage(course.termGrading[subset.term], subset.assignments)];
+                else return [time, GPAUtils.getTotalMeanAverage(subset.assignments)];
             }))
         }
     }
