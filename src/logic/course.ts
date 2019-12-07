@@ -148,7 +148,7 @@ export default class Course
     {
         // Load assignments
         // Parse json and filter it
-        this.rawAssignments = JsonUtils.filterAssignments(data);
+        this.rawAssignments = data.assignments.map((a: any) => new Assignment(a));
 
         // Sort by date (Latest is at 0)
         this.rawAssignments.sort((a, b) => b.time - a.time);
