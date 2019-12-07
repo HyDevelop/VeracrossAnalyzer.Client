@@ -149,13 +149,10 @@ export default class Course
         this.rawAssignments.sort((a, b) => b.time - a.time);
 
         // Filter assignments into terms
-        let termAssignments: Assignment[][] = [[], [], [], []];
+        this.termAssignments = [[], [], [], []];
 
         // Loop through it by time order
-        this.rawAssignments.forEach(a => termAssignments[a.gradingPeriod].push(a));
-
-        // Set computed data
-        this.computed = {termAssignments: termAssignments, allYearGrade: -1};
+        this.rawAssignments.forEach(a => this.termAssignments[a.gradingPeriod].push(a));
     }
 
     /**
@@ -194,7 +191,7 @@ export default class Course
     get assignments(): Assignment[]
     {
         return this.gradingPeriods
-            .flatMap(term => this.computed.termAssignments[term])
+            .flatMap(term => this.termAssignments[term])
             .filter(a => a.complete == 'Complete');
     }
 
@@ -218,16 +215,16 @@ export default class Course
      *
      * @param term
      */
-    numericGrade(term: number): number
+    numericGradeTerm(term: number): number
     {
         return this.cache.get('NumericGrade' + term, () =>
         {
             // Calculate
-            if (this.getGrading(term).method == 'PERCENT_TYPE')
+            if (this.termGrading[term].method == 'PERCENT_TYPE')
             {
                 return GPAUtils.getPercentTypeAverage(this, this.assignments);
             }
-            else if (this.getGrading(term).method == 'TOTAL_MEAN')
+            else if (this.termGrading[term].method == 'TOTAL_MEAN')
             {
                 return GPAUtils.getTotalMeanAverage(this.assignments);
             }
