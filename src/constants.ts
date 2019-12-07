@@ -68,4 +68,14 @@ export default class Constants
         new Date('Jun 05 2020'),
     ];
     public static CURRENT_TERM = findLastIndex(Constants.TERMS, d => d < new Date());
+
+    /**
+     * Find out the specified date is in which term
+     *
+     * @param date
+     */
+    static getTerm(date: Date)
+    {
+        return findLastIndex(Constants.TERMS, d => d <= date);
+    }
 }
