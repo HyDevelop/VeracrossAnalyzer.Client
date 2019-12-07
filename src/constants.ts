@@ -1,6 +1,8 @@
 /**
  * This class stores the static constants.
  */
+import {findLastIndex} from '@/logic/utils/general-utils';
+
 export default class Constants
 {
     /** Base url for api access */
@@ -64,5 +66,5 @@ export default class Constants
         new Date('Mar 22 2020'),
         new Date('Jun 05 2020'),
     ];
-    public static CURRENT_TERM = 1;
+    public static CURRENT_TERM = findLastIndex(Constants.TERMS, d => d < new Date());
 }
