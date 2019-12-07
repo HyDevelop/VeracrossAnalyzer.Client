@@ -98,9 +98,9 @@ export default class Course
 
     computed:
     {
-        termAssignments: Assignment[][]
         allYearGrade: number
     };
+    termAssignments: Assignment[][];
 
     cache: CacheUtils = new CacheUtils();
 
