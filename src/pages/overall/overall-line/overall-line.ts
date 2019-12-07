@@ -88,7 +88,8 @@ export default class OverallLine extends Vue
     private getStartDate()
     {
         // If it's a past term, use the term's end date, else use today.
-        let end = Navigation.instance.getSelectedTerm() == Constants.CURRENT_TERM
+        let selected = Navigation.instance.getSelectedTerm();
+        let end = selected == Constants.CURRENT_TERM || selected == -1
             ? moment() : moment(CourseUtils.getTermEndDate());
 
         return Math.max(end.subtract(30, 'days').toDate().getTime(),
