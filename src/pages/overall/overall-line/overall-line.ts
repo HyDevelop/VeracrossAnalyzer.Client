@@ -152,6 +152,10 @@ export default class OverallLine extends Vue
             // Data point on this specific date
             let thisValue = data.find(a => a[0] == time);
 
+            // Switching terms
+            if (Constants.TERMS.find(t => t.getTime() == time))
+                lastValue = null;
+
             // Find value
             return thisValue == null
                 ? lastValue == null ? null : [time, lastValue[1]]
