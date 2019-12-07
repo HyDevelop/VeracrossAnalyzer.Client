@@ -51,6 +51,14 @@ export class Assignment
 
         this.gradingPeriod =  +json.grading_period.replace('Quarter ', '') - 1;
     }
+
+    /**
+     * Graded or not
+     */
+    get graded()
+    {
+        return this.complete == 'Complete';
+    }
 }
 
 export interface AssignmentType
