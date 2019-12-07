@@ -31,10 +31,13 @@
                     <el-dropdown-item command="All Year" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-            <el-dropdown id="nav-avatar" trigger="click">
+
+            <!-- User avatar -->
+            <el-dropdown id="nav-avatar" trigger="click" @command="onAvatarMenu">
                 <el-avatar :src="user.avatarUrl"/>
+
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item icon="el-icon-switch-button">Sign-out</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-switch-button" command="sign-out">Sign-out</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </el-menu>
