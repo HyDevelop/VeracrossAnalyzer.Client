@@ -4,6 +4,8 @@ import Course from '@/logic/course';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import GraphUtils from '@/logic/utils/graph-utils';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
+import Constants from '@/constants';
+import Navigation from '@/components/navigation/navigation';
 
 @Component
 export default class OverallLine extends Vue
@@ -31,8 +33,7 @@ export default class OverallLine extends Vue
             [
                 {
                     type: 'slider',
-                    startValue: Math.max(moment().subtract(30, 'days').toDate().getTime(),
-                        CourseUtils.getTermBeginDate().getTime()),
+                    startValue: this.getStartDate(),
 
                     // Minimum zoom: 1 week
                     minValueSpan: 7 * 24 * 60 * 60 * 1000
@@ -79,6 +80,19 @@ export default class OverallLine extends Vue
     afterConfig(options: any)
     {
         return this.settings;
+    }
+
+    /**
+     * Get starting date
+     */
+    private getStartDate()
+    {
+        // If it's a past term, use the term's end date, else use today.
+        let end = Navigation.instance.getSelectedTerm() == Constants.CURRENT_TERM
+            ? moment() : moment(CourseUtils.getTermEndDate());
+
+        return Math.max(end.subtract(30, 'days').toDate().getTime(),
+                CourseUtils.getTermBeginDate().getTime())
     }
 
     /**
