@@ -202,12 +202,12 @@ export default class Course
     /**
      * Get assignments before a certain date
      *
-     * @param date
+     * @param time
      */
-    getAssignmentsBefore(date: Date): {term: number, assignments: Assignment[]}
+    getAssignmentsBefore(time: number): {term: number, assignments: Assignment[]}
     {
-        let term = Constants.getTerm(date);
-        let assignments = this.assignments.filter(a => a.time <= date.getTime());
+        let term = Constants.getTerm(new Date(time));
+        let assignments = this.assignments.filter(a => a.time <= time);
 
         return {term: term, assignments: assignments}
     }
