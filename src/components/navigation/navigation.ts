@@ -187,5 +187,22 @@ export default class Navigation extends Vue
         else return +this.gradingPeriod.replace('Term ', '') - 1;
     }
 
+    /**
+     * Avatar dropdown menu event
+     *
+     * @param cmd Command: sign-out
+     */
+    onAvatarMenu(cmd: string)
+    {
+        switch (cmd)
+        {
+            case 'sign-out':
+            {
+                this.$emit('sign-out');
+                break
+            }
+        }
+    }
+
     get version() {return Constants.VERSION}
 }
