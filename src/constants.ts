@@ -67,7 +67,7 @@ export default class Constants
         new Date('Mar 22 2020'),
         new Date('Jun 05 2020'),
     ];
-    public static CURRENT_TERM = findLastIndex(Constants.TERMS, d => d < new Date());
+    static CURRENT_TERM = Constants.getTerm(new Date());
 
     /**
      * Find out the specified date is in which term
