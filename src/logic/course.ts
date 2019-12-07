@@ -155,7 +155,6 @@ export default class Course
 
         // Filter assignments into terms
         let termAssignments: Assignment[][] = [[], [], [], []];
-        let currentTerm = 0;
 
         // Loop through it by time order
         this.rawAssignments.forEach(a => termAssignments[a.gradingPeriod].push(a));
