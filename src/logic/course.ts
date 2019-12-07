@@ -130,7 +130,7 @@ export default class Course
         }
         else this.level = 'Unknown';
 
-        this.termGrading = new Array(4);
+        this.termGrading = new Array(4).fill(null);
     }
 
     /**
@@ -189,7 +189,7 @@ export default class Course
     }
 
     /**
-     * Get assignments of the selected time
+     * Get assignments of the selected grading periods
      */
     get assignments(): Assignment[]
     {
