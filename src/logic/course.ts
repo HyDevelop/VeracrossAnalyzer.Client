@@ -95,11 +95,6 @@ export default class Course
     scaleUp: number;
 
     termGrading: Grading[];
-
-    computed:
-    {
-        allYearGrade: number
-    };
     termAssignments: Assignment[][];
 
     cache: CacheUtils = new CacheUtils();
