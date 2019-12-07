@@ -101,7 +101,7 @@ export default class Course
         }
         else this.level = 'Unknown';
 
-        this.grading = courseJson.grading;
+        this.grading = new Array(4);
     }
 
     /**
