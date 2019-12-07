@@ -197,18 +197,20 @@ export default class Course
     }
 
     /**
-     * Get numeric grade
+     * Get numeric grade by term
+     *
+     * @param term
      */
-    get numericGrade(): number
+    numericGrade(term: number): number
     {
-        return this.cache.get('NumericGrade', () =>
+        return this.cache.get('NumericGrade' + term, () =>
         {
             // Calculate
-            if (this.grading.method == 'PERCENT_TYPE')
+            if (this.getGrading(term).method == 'PERCENT_TYPE')
             {
                 return GPAUtils.getPercentTypeAverage(this, this.assignments);
             }
-            else if (this.grading.method == 'TOTAL_MEAN')
+            else if (this.getGrading(term).method == 'TOTAL_MEAN')
             {
                 return GPAUtils.getTotalMeanAverage(this.assignments);
             }
