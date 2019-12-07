@@ -31,8 +31,13 @@
                     <el-dropdown-item command="All Year" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
+            <el-dropdown id="nav-avatar">
+                <el-avatar :src="user.avatarUrl"/>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Yay</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
 
-            <el-avatar id="nav-avatar" :src="user.avatarUrl"/>
 
             <el-button @click="$emit('sign-out')" id="sign-out-button" type="text">Sign Out</el-button>
         </el-menu>
