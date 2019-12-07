@@ -59,7 +59,7 @@ export default class Course
     {
         method: string
         weightingMap: {[index: string]: number}
-    };
+    }[];
 
     computed:
     {
