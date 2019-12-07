@@ -1,4 +1,3 @@
-import JsonUtils from '@/logic/utils/json-utils';
 import {FormatUtils} from '@/logic/utils/format-utils';
 import {CourseUtils} from '@/logic/utils/course-utils';
 import Navigation from '@/components/navigation/navigation';

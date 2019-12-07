@@ -159,7 +159,7 @@ export default class App extends Vue
                 // Check if already exist in cookies
                 if (this.$cookies.isKey(cookieIndex))
                 {
-                    course.grading[i] = {method: 'TOTAL_MEAN', weightingMap: {}};
+                    course.termGrading[i] = {method: 'TOTAL_MEAN', weightingMap: {}};
                     continue;
                 }
 
@@ -170,11 +170,11 @@ export default class App extends Vue
                     if (resp.success)
                     {
                         // Add it to course
-                        course.grading[i] = resp.data;
+                        course.termGrading[i] = resp.data;
 
                         // If it's total_mean, cache it to cookies
                         // This is because only percent_type can update over time
-                        if (course.grading[i].method == 'TOTAL_MEAN')
+                        if (course.termGrading[i].method == 'TOTAL_MEAN')
                         {
                             this.$cookies.set(cookieIndex, 'TOTAL_MEAN', 'd');
                         }
