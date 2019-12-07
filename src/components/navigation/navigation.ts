@@ -20,12 +20,12 @@ export default class Navigation extends Vue
     private gradingPeriod: string = 'All Year';
 
     // Instance
-    public static instance: Navigation;
+    static instance: Navigation;
 
     /**
      * This is called when the instance is created.
      */
-    public created()
+    created()
     {
         // Check selected time
         if (!this.$cookies.isKey('va.grading-period'))
@@ -38,7 +38,7 @@ export default class Navigation extends Vue
     /**
      * This is called when the instance is loaded.
      */
-    public mounted()
+    mounted()
     {
         // Set instance
         Navigation.instance = this;
@@ -66,7 +66,7 @@ export default class Navigation extends Vue
         };
     }
 
-    public formatCourseIndex(course: Course)
+    formatCourseIndex(course: Course)
     {
         return CourseUtils.formatTabIndex(course);
     }
@@ -77,7 +77,7 @@ export default class Navigation extends Vue
      * @param index The index selected
      * @param indexPath The path of the index
      */
-    public onSelect(index: string, indexPath: string)
+    onSelect(index: string, indexPath: string)
     {
         // Update active index
         this.updateIndex(index);
@@ -89,7 +89,7 @@ export default class Navigation extends Vue
      * @param newIndex New index
      * @param history Record in history or not (Default true)
      */
-    public updateIndex(newIndex: string, history?: boolean)
+    updateIndex(newIndex: string, history?: boolean)
     {
         // Call custom event
         this.$emit('update:activeIndex', newIndex);
@@ -116,7 +116,7 @@ export default class Navigation extends Vue
      *
      * @param index Index
      */
-    public getTitle(index: string)
+    getTitle(index: string)
     {
         // Course
         if (index.startsWith('course'))
@@ -133,7 +133,7 @@ export default class Navigation extends Vue
      *
      * @param indexOffset Index offset (Eg. 1 for next)
      */
-    public nextCourse(indexOffset: number)
+    nextCourse(indexOffset: number)
     {
         // Set tab to the next index
         this.updateIndex(CourseUtils.formatTabIndex(this.findNextCourse(indexOffset)))
@@ -144,7 +144,7 @@ export default class Navigation extends Vue
      *
      * @param indexOffset Index offset (Eg. 1 for next)
      */
-    public findNextCourse(indexOffset: number)
+    findNextCourse(indexOffset: number)
     {
         return this.findCourse(this.activeIndex.split('/')[1], indexOffset);
     }
@@ -155,7 +155,7 @@ export default class Navigation extends Vue
      * @param courseId Course ID
      * @param indexOffset Index offset (Eg. 1 for next)
      */
-    public findCourse(courseId: string, indexOffset: number)
+    findCourse(courseId: string, indexOffset: number)
     {
         // Find current course index
         let courseIndex = this.courses.findIndex(c => c.id == +courseId);
@@ -169,7 +169,7 @@ export default class Navigation extends Vue
      *
      * @param command Term 1, Term 2, All Year, etc.
      */
-    public selectGradingPeriod(command: string)
+    selectGradingPeriod(command: string)
     {
         this.gradingPeriod = command;
         this.$cookies.set('va.grading-period', command, '10y');
@@ -181,7 +181,7 @@ export default class Navigation extends Vue
     /**
      * Get code for selected time
      */
-    public getSelectedTerm(): number
+    getSelectedTerm(): number
     {
         if (this.gradingPeriod == 'All Year') return -1;
         else return +this.gradingPeriod.replace('Term ', '') - 1;
