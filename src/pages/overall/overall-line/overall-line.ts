@@ -139,8 +139,7 @@ export default class OverallLine extends Vue
     private toDateRange(data: any[])
     {
         // Find the min date
-        let minDates = this.courses.map(course => course.assignments[course.assignments.length - 1].time);
-        let minDate: Date = new Date(Math.min.apply(null, minDates));
+        let minDate: Date = new Date(data[0][0]);
 
         // Find the dates in between
         let now = new Date(Math.min(new Date().getTime(), CourseUtils.getTermEndDate().getTime()));
