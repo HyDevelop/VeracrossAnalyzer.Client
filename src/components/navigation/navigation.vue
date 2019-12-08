@@ -37,9 +37,9 @@
                 <el-avatar :src="user.avatarUrl"/>
 
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item icon="el-icon-switch-button" command="sign-out">Sign-out</el-dropdown-item>
                     <el-dropdown-item style="text-align: center">{{user.nickname}}</el-dropdown-item>
 
+                    <el-dropdown-item icon="el-icon-switch-button" command="sign-out" divided>Sign Out</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </el-menu>
