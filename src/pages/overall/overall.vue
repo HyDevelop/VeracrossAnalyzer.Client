@@ -65,13 +65,35 @@
     {
         @Prop({required: true}) courses: Course[];
 
+        promptClearNotification = false;
+
         /**
          * This function is called to get gpa since I can't import another
          * class in the Vue file.
          */
-        public getGPA()
+        getGPA()
         {
             return GPAUtils.getGPA(this.courses);
+        }
+
+        /**
+         * On page load - check if the user has too many notifications
+         */
+        mounted()
+        {
+            // Check unread
+            if (!this.$cookies.isKey('IgnoreUnread'))
+            {
+                // Count unread
+                let unread = this.courses.reduce((p, c) => p +
+                    c.assignments.reduce((p, a) => p + (a.unread ? 1 : 0), 0), 0);
+
+                // Prompt clear
+                if (unread > 15)
+                {
+                    this.promptClearNotification = true;
+                }
+            }
         }
     }
 </script>
