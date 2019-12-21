@@ -14,6 +14,17 @@ export default class Navigator
     /**
      * Update index
      *
+     * @param hash
+     * @param history Record in history or not (Default true)
+     */
+    updateIndexHash(hash: string, history?: boolean)
+    {
+        this.updateIndex({hash: hash}, history)
+    }
+
+    /**
+     * Update index
+     *
      * @param index Hash and title
      * @param history Record in history or not (Default true)
      */
