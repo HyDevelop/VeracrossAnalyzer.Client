@@ -1,7 +1,7 @@
 <template>
     <div id="navigation">
         <el-menu style="margin-bottom: 10px;" class="centered" mode="horizontal"
-                 :default-active="activeIndex" @select="onSelect">
+                 :default-active="nav.id" @select="onSelect">
 
             <div id="nav-title">
                 <img id="nav-logo" alt="logo" src="../../assets/logo.png">
@@ -45,12 +45,12 @@
         </el-menu>
 
         <!-- Previous course / Next course (Only when the page is courses) -->
-        <div v-if="activeIndex.includes('course') && findNextCourse(-1) != null"
+        <div v-if="nav.id === 'course' && findNextCourse(-1) != null"
              @click="nextCourse(-1)" id="prev-course" class="nav-course-operations unselectable">
             ▲ PREVIOUS COURSE ▲
         </div>
         <footer>
-            <div v-if="activeIndex.includes('course') && findNextCourse(1) != null"
+            <div v-if="nav.id === 'course' && findNextCourse(1) != null"
                  @click="nextCourse(1)" id="next-course" class="nav-course-operations unselectable">
                 ▼ NEXT COURSE ▼
             </div>
