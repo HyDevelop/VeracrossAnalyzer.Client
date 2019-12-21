@@ -1,4 +1,3 @@
-import Course from '@/logic/course';
 import Navigation from '@/components/navigation/navigation';
 import Constants from '@/constants';
 

@@ -309,6 +309,6 @@ export default class Course
      */
     get urlIndex(): Index
     {
-        return {hash: this.urlHash, title: this.name}
+        return {hash: this.urlHash, title: this.name, identifier: 'course', info: {id: this.id}}
     }
 }
