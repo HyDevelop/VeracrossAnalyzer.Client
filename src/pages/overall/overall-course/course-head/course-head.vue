@@ -1,9 +1,9 @@
 <template>
-    <div id="course-head" class="course-card-content main vertical-center">
+    <div id="course-head" class="course-card-content main vertical-center"
+         :class="clickable ? 'clickable' : ''" @click="redirect">
         <el-row>
             <el-col :span="12" class="course-col-name">
-                <div v-if="clickable" class="course-name clickable" @click="redirect">{{course.name}}</div>
-                <div v-if="!clickable" class="course-name">{{course.name}}</div>
+                <div class="course-name">{{course.name}}</div>
                 <div class="course-teacher">{{course.teacherName}}</div>
             </el-col>
             <el-col :span="12" class="course-col-grade">
