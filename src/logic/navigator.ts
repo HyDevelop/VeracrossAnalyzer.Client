@@ -2,7 +2,7 @@
 export interface Index
 {
     hash: string
-    title: string
+    title?: string
 }
 
 export default class Navigator
