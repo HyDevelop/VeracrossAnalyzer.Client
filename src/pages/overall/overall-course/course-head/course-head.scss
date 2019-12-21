@@ -96,8 +96,9 @@
 #block-term-grades
 {
     // Align right
-    width: 100px;
+    width: auto;
     float: right;
+    margin-right: 10px;
 
     #term
     {
