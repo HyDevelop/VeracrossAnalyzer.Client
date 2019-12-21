@@ -73,6 +73,9 @@ export default class NavController
 
         // Scroll to top
         window.scrollTo(0, 0);
+
+        // Update selected index
+        this.index = index;
     }
 
     get id(): string
