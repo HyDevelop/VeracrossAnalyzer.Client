@@ -11,11 +11,11 @@
 
             <el-menu-item index="overall">Overall</el-menu-item>
 
-            <el-submenu index="courses">
+            <el-submenu index="">
                 <template slot="title">Courses</template>
                 <el-menu-item v-for="course in courses"
-                              :index="course.urlHash"
-                              :key="course.name">{{course.name}}</el-menu-item>
+                              :index="JSON.stringify(course.urlIndex)"
+                              :key="course.id">{{course.name}}</el-menu-item>
             </el-submenu>
 
             <!-- Grading period selection -->
