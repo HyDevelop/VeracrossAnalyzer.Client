@@ -14,7 +14,7 @@
             <el-submenu index="courses">
                 <template slot="title">Courses</template>
                 <el-menu-item v-for="course in courses"
-                              :index="formatCourseIndex(course)"
+                              :index="course.urlHash"
                               :key="course.name">{{course.name}}</el-menu-item>
             </el-submenu>
 
