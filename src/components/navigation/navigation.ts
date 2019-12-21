@@ -1,11 +1,8 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import App from '@/components/app/app';
-import {CourseUtils} from '@/logic/utils/course-utils';
-import {FormatUtils} from '@/logic/utils/format-utils';
-import pWaitFor from 'p-wait-for';
 import Course from '@/logic/course';
 import Constants from '@/constants';
 import LoginUser from '@/logic/login-user';
+import NavController from '@/logic/nav-controller';
 
 /**
  * This component is the top navigation bar
@@ -13,7 +10,7 @@ import LoginUser from '@/logic/login-user';
 @Component
 export default class Navigation extends Vue
 {
-    @Prop({required: true}) activeIndex: string;
+    @Prop({required: true}) nav: NavController;
     @Prop({required: true}) courses: Course[];
     @Prop({required: true}) user: LoginUser;
 
@@ -40,35 +37,7 @@ export default class Navigation extends Vue
      */
     mounted()
     {
-        // Set instance
         Navigation.instance = this;
-
-        // Set history state
-        let url = '/' + window.location.hash;
-        if (url == '/' || url == '') url = '/#overall';
-        window.history.replaceState({lastTab: url.substring(1)}, '', url);
-
-        // Update initial index after loading is done
-        pWaitFor(() => this.courses.length > 1 && App.instance.loading != '').then(() =>
-        {
-            this.updateIndex(url.substring(2), false);
-        });
-
-        // Create history state listener
-        window.onpopstate = e =>
-        {
-            if (e.state)
-            {
-                // Restore previous tab
-                console.log(`onPopState: Current: ${this.activeIndex}, Previous: ${e.state.lastTab}`);
-                this.updateIndex(e.state.lastTab, false);
-            }
-        };
-    }
-
-    formatCourseIndex(course: Course)
-    {
-        return CourseUtils.formatTabIndex(course);
     }
 
     /**
@@ -80,35 +49,7 @@ export default class Navigation extends Vue
     onSelect(index: string, indexPath: string)
     {
         // Update active index
-        this.updateIndex(index);
-    }
-
-    /**
-     * Update index
-     *
-     * @param newIndex New index
-     * @param history Record in history or not (Default true)
-     */
-    updateIndex(newIndex: string, history?: boolean)
-    {
-        // Call custom event
-        this.$emit('update:activeIndex', newIndex);
-
-        // Record or not
-        if (history == null || history)
-        {
-            // Check url
-            let url = `/#${newIndex}`;
-
-            // Push history state
-            window.history.pushState({lastTab: newIndex}, '', url);
-        }
-
-        // Update title
-        document.title = 'Veracross Analyzer - ' + this.getTitle(newIndex);
-
-        // Scroll to top
-        window.scrollTo(0, 0);
+        this.nav.updateIndex(index);
     }
 
     /**
@@ -119,7 +60,7 @@ export default class Navigation extends Vue
     nextCourse(indexOffset: number)
     {
         // Set tab to the next index
-        this.updateIndex(CourseUtils.formatTabIndex(this.findNextCourse(indexOffset)))
+        this.nav.updateIndex(this.findNextCourse(indexOffset).urlIndex)
     }
 
     /**
@@ -129,7 +70,7 @@ export default class Navigation extends Vue
      */
     findNextCourse(indexOffset: number)
     {
-        return this.findCourse(this.activeIndex.split('/')[1], indexOffset);
+        return this.findCourse(this.nav.activeIndex.hash.split('/')[1], indexOffset);
     }
 
     /**
