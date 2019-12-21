@@ -21,7 +21,7 @@ export default class NavController
         // Set history state
         let url = '/' + window.location.hash;
         if (url == '/' || url == '') url = '/#overall';
-        window.history.replaceState({lastTab: url.substring(1)}, '', url);
+        window.history.replaceState(this.convertIndex('overall'), '', url);
 
         // Update initial index after loading is done
         // TODO: Test this
@@ -48,7 +48,7 @@ export default class NavController
      */
     updateIndex(index: Index | string, history: boolean = true)
     {
-        index = this.checkIndex(index);
+        index = this.convertIndex(index);
 
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
@@ -79,7 +79,7 @@ export default class NavController
      * @param index Hash and title | Hash only
      * @return Index Hash and title
      */
-    private checkIndex(index: Index | string): Index
+    private convertIndex(index: Index | string): Index
     {
         // Convert index format if it is hash only
         if (typeof index == 'string') index = {hash: index, identifier: index};
