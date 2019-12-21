@@ -32,8 +32,8 @@ export default class OverallCourse extends Vue
             // Check success
             if (response.success)
             {
-                this.unreadAssignments = this.unreadAssignments.filter(a => a != assignment);
-                this.unread = this.unreadAssignments.length;
+                // @ts-ignore
+                this.unreadAssignments.find(a => a.id == response.data.assignment_id).unread = false;
             }
             else
             {
