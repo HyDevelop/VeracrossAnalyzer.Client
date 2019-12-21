@@ -35,6 +35,18 @@
                         :course="course"
                         :key="course.id">
         </overall-course>
+
+        <el-dialog
+                title="Notice"
+                :visible.sync="promptClearNotification"
+                width="30%"
+                :before-close="handleClose">
+            <span>You have too many new grade notifications. Clear them now?</span>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="promptClearNotification = false">Nah</el-button>
+                <el-button type="primary" @click="promptClearNotification = false">Sure!</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
