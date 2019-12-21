@@ -9,7 +9,7 @@ import Loading from '@/components/overlays/loading.vue';
 import CoursePage from '@/pages/course/course-page.vue';
 import Course from '@/logic/course';
 import LoginUser from '@/logic/login-user';
-import Navigator from '@/logic/navigator';
+import NavController from '@/logic/nav-controller';
 
 @Component({
     components: {Login, Navigation, Overall, Loading, CoursePage},
@@ -35,7 +35,7 @@ export default class App extends Vue
     // Loading error
     loadingError: boolean = false;
 
-    navigator: Navigator = new Navigator();
+    navigator: NavController = new NavController();
 
     // Http Client
     static http: HttpUtils = new HttpUtils();

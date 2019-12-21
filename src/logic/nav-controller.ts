@@ -6,7 +6,7 @@ export interface Index
     title?: string
 }
 
-export default class Navigator
+export default class NavController
 {
     private activeIndex: Index;
     private updateCallback?: () => void;
