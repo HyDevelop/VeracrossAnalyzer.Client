@@ -1,3 +1,4 @@
+import {FormatUtils} from '@/logic/utils/format-utils';
 
 export interface Index
 {
@@ -23,6 +24,7 @@ export default class Navigator
 
         // Null case
         if (history == null) history = true;
+        if (index.title == null) index.title = FormatUtils.toTitleCase(index.hash);
 
         // Record history or not
         if (history)
