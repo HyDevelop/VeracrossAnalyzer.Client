@@ -48,16 +48,13 @@ export default class NavController
      */
     updateIndex(index: Index | string, history?: boolean)
     {
-        // Convert index format if it is hash only
-        if (typeof index == 'string') index = {hash: index, identifier: index};
+        index = this.checkIndex(index);
 
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
 
         // Null case
         if (history == null) history = true;
-        if (index.title == null) index.title = FormatUtils.toTitleCase(index.hash);
-
         // Record history or not
         if (history)
         {
@@ -76,6 +73,20 @@ export default class NavController
 
         // Update selected index
         this.index = index;
+    }
+
+    /**
+     * Check index conversion
+     *
+     * @param index Hash and title | Hash only
+     * @return Index Hash and title
+     */
+    private checkIndex(index: Index | string): Index
+    {
+        // Convert index format if it is hash only
+        if (typeof index == 'string') index = {hash: index, identifier: index};
+        if (index.title == null) index.title = FormatUtils.toTitleCase(index.hash);
+        return index;
     }
 
     get id(): string
