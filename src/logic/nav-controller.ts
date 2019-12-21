@@ -4,7 +4,7 @@ export interface Index
 {
     hash: string
     title?: string
-    identifier?: string
+    identifier: string
     info?: any
 }
 
@@ -49,7 +49,7 @@ export default class NavController
     updateIndex(index: Index | string, history?: boolean)
     {
         // Convert index format if it is hash only
-        if (typeof index == 'string') index = {hash: index};
+        if (typeof index == 'string') index = {hash: index, identifier: index};
 
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
