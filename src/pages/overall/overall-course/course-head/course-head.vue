@@ -43,7 +43,7 @@
         redirect()
         {
             if (!this.clickable) return;
-            App.instance.navigator.updateIndex(this.course.urlIndex);
+            App.instance.nav.updateIndex(this.course.urlIndex);
         }
     }
 </script>

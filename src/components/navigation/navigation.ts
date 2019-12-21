@@ -70,7 +70,7 @@ export default class Navigation extends Vue
      */
     findNextCourse(indexOffset: number)
     {
-        return this.findCourse(this.nav.activeIndex.hash.split('/')[1], indexOffset);
+        return this.findCourse(this.nav.info.id, indexOffset);
     }
 
     /**

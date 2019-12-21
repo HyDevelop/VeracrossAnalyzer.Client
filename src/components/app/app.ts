@@ -32,7 +32,7 @@ export default class App extends Vue
     // Loading error
     loadingError: boolean = false;
 
-    navigator: NavController = new NavController();
+    nav: NavController = new NavController();
 
     // Http Client
     static http: HttpUtils = new HttpUtils();

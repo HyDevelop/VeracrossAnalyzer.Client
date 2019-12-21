@@ -4,16 +4,16 @@
         <navigation v-if="user != null"
                     :courses="gradedCourses"
                     :user="user"
-                    :nav="navigator"
+                    :nav="nav"
                     @sign-out="signOut" @select-time="selectTime">
         </navigation>
 
         <div id="app-content" v-if="assignmentsReady && loading === ''">
-            <overall v-if="selectedTab === 'overall'"
+            <overall v-if="nav.id === 'overall'"
                      :courses="gradedCourses">
             </overall>
-            <course-page v-if="selectedTab.split('/')[0] === 'course'"
-                         :course="gradedCourses.find(c => +c.id === +selectedTab.split('/')[1])">
+            <course-page v-if="nav.id === 'course'"
+                         :course="gradedCourses.find(c => +c.id === +nav.info.id)">
             </course-page>
         </div>
 
