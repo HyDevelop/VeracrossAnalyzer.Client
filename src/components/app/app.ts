@@ -17,39 +17,41 @@ import LoginUser from '@/logic/login-user';
 export default class App extends Vue
 {
     // Is the login panel shown
-    public showLogin: boolean = true;
+    showLogin: boolean = true;
 
     // List of course that the student takes
-    public courses: Course[] = [];
+    courses: Course[] = [];
 
     // List of course that should be displayed
-    public filteredCourses: Course[] = [];
+    filteredCourses: Course[] = [];
 
     // The currently selected tab
-    public selectedTab: string = 'overall';
+    selectedTab: string = 'overall';
 
     // Are the course assignments loaded from the server.
-    public assignmentsReady: boolean = false;
+    assignmentsReady: boolean = false;
 
     // Token
-    public user: LoginUser = null as any;
+    user: LoginUser = null as any;
 
     // Loading text
-    public loading: string = '';
+    loading: string = '';
 
     // Loading error
-    public loadingError: boolean = false;
+    loadingError: boolean = false;
+
+
 
     // Http Client
-    public static http: HttpUtils = new HttpUtils();
+    static http: HttpUtils = new HttpUtils();
 
     // Instance
-    public static instance: App;
+    static instance: App;
 
     /**
      * This is called when the instance is created.
      */
-    public created()
+    created()
     {
         // Show splash
         console.log(Constants.SPLASH);
@@ -63,7 +65,7 @@ export default class App extends Vue
      *
      * @param user Authorization user
      */
-    public onLogin(user: LoginUser)
+    onLogin(user: LoginUser)
     {
         // Hide login bar
         this.showLogin = false;
@@ -84,7 +86,7 @@ export default class App extends Vue
     /**
      * Load courses data after logging in.
      */
-    public loadCoursesAfterLogin()
+    loadCoursesAfterLogin()
     {
         // Show loading message
         this.logLoading('2. Loading courses...');
@@ -109,7 +111,7 @@ export default class App extends Vue
     /**
      * Load the assignments of the courses
      */
-    public loadAssignments()
+    loadAssignments()
     {
         // Show loading message
         this.logLoading('3. Loading assignments...');
@@ -144,7 +146,7 @@ export default class App extends Vue
     /**
      * Check the courses' grading algorithms. (Total-mean or percent-type)
      */
-    private checkGradingAlgorithms()
+    checkGradingAlgorithms()
     {
         // Show loading message
         this.logLoading('4. Checking grading algorithms...');
@@ -201,7 +203,7 @@ export default class App extends Vue
      *
      * @param message Message
      */
-    private logLoading(message: string)
+    logLoading(message: string)
     {
         if (message == '') this.loading = '';
         else this.loading += '\n' + message;
@@ -212,7 +214,7 @@ export default class App extends Vue
      *
      * @param message Error message
      */
-    private showError(message: string)
+    showError(message: string)
     {
         this.loadingError = true;
         this.loading = message;
@@ -221,7 +223,7 @@ export default class App extends Vue
     /**
      * Sign out
      */
-    public signOut()
+    signOut()
     {
         // Clear all cookies
         this.$cookies.keys().forEach(key => this.$cookies.remove(key));
@@ -235,7 +237,7 @@ export default class App extends Vue
      *
      * @param code
      */
-    public selectTime(code: number)
+    selectTime(code: number)
     {
         // TODO: Optimize
         window.location.reload();
