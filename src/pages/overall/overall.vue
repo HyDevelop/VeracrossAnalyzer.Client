@@ -53,7 +53,7 @@
     import OverallLine from '@/pages/overall/overall-line/overall-line';
     import OverallBar from '@/pages/overall/overall-bar/overall-bar';
     import OverallCourse from '@/pages/overall/overall-course/overall-course';
-    import Course from '@/logic/course';
+    import Course, {Assignment} from '@/logic/course';
     import {GPAUtils} from '@/logic/utils/gpa-utils';
 
     @Component({
@@ -74,6 +74,8 @@
             return GPAUtils.getGPA(this.courses);
         }
 
+        // For clear unread prompt
+        unread: Assignment[];
         /**
          * On page load - check if the user has too many notifications
          */
@@ -83,11 +85,10 @@
             if (!this.$cookies.isKey('IgnoreUnread'))
             {
                 // Count unread
-                let unread = this.courses.reduce((p, c) => p +
-                    c.assignments.reduce((p, a) => p + (a.unread ? 1 : 0), 0), 0);
+                this.unread = this.courses.flatMap(c => c.assignments.filter(a => a.unread));
 
                 // Prompt clear
-                if (unread > 15)
+                if (this.unread.length > 15)
                 {
                     this.promptClearNotification = true;
                 }
