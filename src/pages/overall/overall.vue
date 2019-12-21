@@ -36,13 +36,13 @@
                         :key="course.id">
         </overall-course>
 
-        <el-dialog title="Notice" :visible.sync="promptClearNotification"
+        <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
                    width="30%" style="word-break: unset;">
             <span>You have too many new grade notifications. Clear them now?</span>
             <img src="./too-many-unread.png" alt=""/>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="promptClearNotification = false">Nah</el-button>
-                <el-button type="primary" @click="promptClearNotification = false">Sure!</el-button>
+                <el-button @click="clearUnreadPrompt = false">Nah</el-button>
+                <el-button type="primary" @click="clearUnreadPrompt = false">Sure!</el-button>
             </span>
         </el-dialog>
     </div>
@@ -63,8 +63,6 @@
     {
         @Prop({required: true}) courses: Course[];
 
-        promptClearNotification = false;
-
         /**
          * This function is called to get gpa since I can't import another
          * class in the Vue file.
@@ -76,6 +74,8 @@
 
         // For clear unread prompt
         unread: Assignment[];
+        clearUnreadPrompt = false;
+
         /**
          * On page load - check if the user has too many notifications
          */
@@ -90,7 +90,7 @@
                 // Prompt clear
                 if (this.unread.length > 15)
                 {
-                    this.promptClearNotification = true;
+                    this.clearUnreadPrompt = true;
                 }
             }
         }
