@@ -14,22 +14,14 @@ export default class Navigator
     /**
      * Update index
      *
-     * @param hash
+     * @param index Hash and title | Hash only
      * @param history Record in history or not (Default true)
      */
-    updateIndexHash(hash: string, history?: boolean)
+    updateIndex(index: Index | string, history?: boolean)
     {
-        this.updateIndex({hash: hash}, history)
-    }
+        // Convert index format if it is hash only
+        if (typeof index == 'string') index = {hash: index};
 
-    /**
-     * Update index
-     *
-     * @param index Hash and title
-     * @param history Record in history or not (Default true)
-     */
-    updateIndex(index: Index, history?: boolean)
-    {
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
 
