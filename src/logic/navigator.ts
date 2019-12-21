@@ -11,6 +11,30 @@ export default class Navigator
     private activeIndex: Index;
     private updateCallback?: () => void;
 
+    constructor()
+    {
+        // Set history state
+        let url = '/' + window.location.hash;
+        if (url == '/' || url == '') url = '/#overall';
+        window.history.replaceState({lastTab: url.substring(1)}, '', url);
+
+        // Update initial index after loading is done
+        // TODO: Test this
+        //pWaitFor(() => this.courses.length > 1 && App.instance.loading != '').then(() =>
+        this.updateIndex(url.substring(2), false);
+
+        // Create history state listener
+        window.onpopstate = (e: any) =>
+        {
+            if (e.state)
+            {
+                // Restore previous tab
+                console.log(`onPopState: Current: ${this.activeIndex}, Previous: ${e.state.lastTab}`);
+                this.updateIndex(e.state.lastTab, false);
+            }
+        };
+    }
+
     /**
      * Update index
      *
