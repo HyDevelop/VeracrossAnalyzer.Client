@@ -75,12 +75,12 @@ export default class NavController
         window.scrollTo(0, 0);
     }
 
-    get id()
+    get id(): string
     {
         return this.index.identifier
     }
 
-    get info()
+    get info(): any
     {
         return this.index.info
     }
