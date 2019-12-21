@@ -1,21 +1,19 @@
 <template>
     <div id="course-head" class="course-card-content main vertical-center"
          :class="clickable ? 'clickable' : ''" @click="redirect">
-            <div class="course-name">{{course.name}}</div>
-            <div class="course-teacher">{{course.teacherName}}</div>
         <div id="block-info">
+            <div id="name">{{course.name}}</div>
+            <div id="teacher">{{course.teacherName}}</div>
         </div>
         <div id="block-grade">
-            <div class="course-grade">
-                <span class="letter">{{course.letterGrade}} </span>
-                <span class="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
-                <span class="percent" v-if="course.numericGrade !== undefined">%</span>
+            <div id="grade">
+                <span id="letter">{{course.letterGrade}} </span>
+                <span id="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
+                <span id="percent" v-if="course.numericGrade !== undefined">%</span>
             </div>
-            <div class="course-updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
-                <span class="unread-number">{{unread}}</span>
-                <span class="unread-text" :class="clickable ? 'clickable' : ''">
-                        new update{{unread >= 2 ? 's' : ''}}
-                    </span>
+            <div id="updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
+                <span id="unread-number">{{unread}}</span>
+                <span id="unread-text" :class="clickable ? 'clickable' : ''">new update{{unread >= 2 ? 's' : ''}}</span>
             </div>
         </div>
     </div>
