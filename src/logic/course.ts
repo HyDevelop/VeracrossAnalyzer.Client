@@ -240,6 +240,22 @@ export default class Course
         })
     }
 
+    /**
+     * Get letter grade by term
+     *
+     * @param term
+     */
+    letterGradeTerm(term: number): string
+    {
+        return this.cache.get('LetterGrade' + term, () =>
+        {
+            // Get scale
+            let scale = GPAUtils.findScale(this.numericGradeTerm(term));
+
+            // Scale not found
+            return scale == undefined ? '--' : scale.letter;
+        })
+    }
     get numericGrade()
     {
         return this.gradingPeriods
