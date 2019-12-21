@@ -191,6 +191,17 @@ export default class Course
     }
 
     /**
+     * Get currently selected grading periods
+     */
+    get allGradingPeriods(): number[]
+    {
+        return this.cache.get('AllGradingPeriods', () =>
+        {
+            return [0, 1, 2, 3].filter(term => this.termAssignments[term].filter(a => a.graded).length != 0);
+        })
+    }
+
+    /**
      * Get assignments of the selected grading periods
      */
     get assignments(): Assignment[]
