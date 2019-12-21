@@ -17,9 +17,9 @@
             </div>
         </div>
         <div id="block-term-grades" v-for="term in course.allGradingPeriods.slice().reverse()">
-            <div class="term">Term {{term + 1}} </div>
-            <div class="term-letter">{{course.letterGradeTerm(term)}} </div>
-            <div class="term-numeric">{{course.numericGradeTerm(term).toFixed(1)}}%</div>
+            <div id="term">Term {{term + 1}}</div>
+            <div id="term-letter">{{course.letterGradeTerm(term)}}</div>
+            <div id="term-numeric">{{course.numericGradeTerm(term).toFixed(1)}}%</div>
         </div>
     </div>
 </template>
