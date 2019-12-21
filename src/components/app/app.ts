@@ -23,9 +23,6 @@ export default class App extends Vue
     courses: Course[] = [];
     gradedCourses: Course[] = [];
 
-    // The currently selected tab
-    selectedTab: string = 'overall';
-
     // Token
     user: LoginUser = null as any;
 

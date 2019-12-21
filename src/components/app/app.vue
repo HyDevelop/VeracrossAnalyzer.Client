@@ -3,8 +3,8 @@
         <login v-if="showLogin" v-on:login:user="onLogin"/>
         <navigation v-if="user != null"
                     :courses="gradedCourses"
-                    :activeIndex.sync="selectedTab"
                     :user="user"
+                    :nav="navigator"
                     @sign-out="signOut" @select-time="selectTime">
         </navigation>
 
