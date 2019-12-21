@@ -23,6 +23,9 @@ export default class App extends Vue
     courses: Course[] = [];
     gradedCourses: Course[] = [];
 
+    // Are the course assignments loaded from the server.
+    assignmentsReady: boolean = false;
+
     // Token
     user: LoginUser = null as any;
 
@@ -32,6 +35,7 @@ export default class App extends Vue
     // Loading error
     loadingError: boolean = false;
 
+    // Navigation controller
     nav: NavController = new NavController();
 
     // Http Client
@@ -180,19 +184,13 @@ export default class App extends Vue
         }
 
         // Wait for done
-        pWaitFor(() => this.assignmentsReady).then(() =>
+        pWaitFor(() => this.gradedCourses.every(c => c.termGrading.every(g => g != null))).then(() =>
         {
+            this.assignmentsReady = true;
+
             // Remove loading
             this.logLoading('');
         })
-    }
-
-    /**
-     * Returns true when assignments are done loading
-     */
-    get assignmentsReady(): boolean
-    {
-        return this.gradedCourses.every(c => c.termGrading.every(g => g != null));
     }
 
     /**
