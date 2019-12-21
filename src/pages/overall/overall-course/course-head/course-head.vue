@@ -1,11 +1,11 @@
 <template>
     <div id="course-head" class="course-card-content main vertical-center"
          :class="clickable ? 'clickable' : ''" @click="redirect">
-        <div class="course-col-name">
             <div class="course-name">{{course.name}}</div>
             <div class="course-teacher">{{course.teacherName}}</div>
+        <div id="block-info">
         </div>
-        <div class="course-col-grade">
+        <div id="block-grade">
             <div class="course-grade">
                 <span class="letter">{{course.letterGrade}} </span>
                 <span class="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
