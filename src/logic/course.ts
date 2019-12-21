@@ -256,11 +256,17 @@ export default class Course
             return scale == undefined ? '--' : scale.letter;
         })
     }
+
+    /**
+     * Get numeric grade
+     */
     get numericGrade()
     {
-        return this.gradingPeriods
-            .map(term => this.numericGradeTerm(term)).reduce((p, v) => p + v)
-            / this.gradingPeriods.length;
+        return this.cache.get('NumericGrade', () =>
+        {
+            return this.gradingPeriods.map(term => this.numericGradeTerm(term))
+                    .reduce((p, v) => p + v) / this.gradingPeriods.length
+        })
     }
 
     /**
