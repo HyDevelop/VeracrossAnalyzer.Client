@@ -46,15 +46,13 @@ export default class NavController
      * @param index Hash and title | Hash only
      * @param history Record in history or not (Default true)
      */
-    updateIndex(index: Index | string, history?: boolean)
+    updateIndex(index: Index | string, history: boolean = true)
     {
         index = this.checkIndex(index);
 
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
 
-        // Null case
-        if (history == null) history = true;
         // Record history or not
         if (history)
         {
