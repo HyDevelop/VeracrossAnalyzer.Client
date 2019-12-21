@@ -294,4 +294,12 @@ export default class Course
             })
         })
     }
+
+    /**
+     * Get url hash code
+     */
+    get urlHash(): string
+    {
+        return `course/${this.id}`
+    }
 }
