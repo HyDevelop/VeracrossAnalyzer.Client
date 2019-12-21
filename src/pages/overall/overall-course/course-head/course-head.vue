@@ -1,25 +1,23 @@
 <template>
     <div id="course-head" class="course-card-content main vertical-center"
          :class="clickable ? 'clickable' : ''" @click="redirect">
-        <el-row>
-            <el-col :span="12" class="course-col-name">
-                <div class="course-name">{{course.name}}</div>
-                <div class="course-teacher">{{course.teacherName}}</div>
-            </el-col>
-            <el-col :span="12" class="course-col-grade">
-                <div class="course-grade">
-                    <span class="letter">{{course.letterGrade}} </span>
-                    <span class="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
-                    <span class="percent" v-if="course.numericGrade !== undefined">%</span>
-                </div>
-                <div class="course-updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
-                    <span class="unread-number">{{unread}}</span>
-                    <span class="unread-text" :class="clickable ? 'clickable' : ''">
+        <div class="course-col-name">
+            <div class="course-name">{{course.name}}</div>
+            <div class="course-teacher">{{course.teacherName}}</div>
+        </div>
+        <div class="course-col-grade">
+            <div class="course-grade">
+                <span class="letter">{{course.letterGrade}} </span>
+                <span class="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
+                <span class="percent" v-if="course.numericGrade !== undefined">%</span>
+            </div>
+            <div class="course-updates" @click="redirect" :class="unread === 0 ? 'none' : 'unread'">
+                <span class="unread-number">{{unread}}</span>
+                <span class="unread-text" :class="clickable ? 'clickable' : ''">
                         new update{{unread >= 2 ? 's' : ''}}
                     </span>
-                </div>
-            </el-col>
-        </el-row>
+            </div>
+        </div>
     </div>
 </template>
 

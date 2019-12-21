@@ -1,11 +1,14 @@
 // Main card content
 .course-card-content.main
 {
-    padding: 0 20px 0 20px;
-    height: 90px;
-
     // Main color
     background: white;
+
+    // Alignment
+    display: block;
+
+    padding: 20px;
+    height: 50px;
 }
 
 .course-col-name
