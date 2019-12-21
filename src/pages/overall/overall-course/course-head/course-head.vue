@@ -26,8 +26,7 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import Course from '@/logic/course';
-    import {CourseUtils} from '@/logic/utils/course-utils';
-    import Navigation from '@/components/navigation/navigation';
+    import App from '@/components/app/app';
 
     @Component
     export default class CourseHead extends Vue
@@ -44,7 +43,7 @@
         redirect()
         {
             if (!this.clickable) return;
-            Navigation.instance.updateIndex(CourseUtils.formatTabIndex(this.course));
+            App.instance.navigator.updateIndex(this.course.urlIndex);
         }
     }
 </script>
