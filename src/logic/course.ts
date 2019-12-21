@@ -302,4 +302,12 @@ export default class Course
     {
         return `course/${this.id}`
     }
+
+    /**
+     * Get navigation index
+     */
+    get urlIndex()
+    {
+        return {hash: this.urlHash, title: this.name}
+    }
 }
