@@ -28,9 +28,6 @@ export default class App extends Vue
     // The currently selected tab
     selectedTab: string = 'overall';
 
-    // Are the course assignments loaded from the server.
-    assignmentsReady: boolean = false;
-
     // Token
     user: LoginUser = null as any;
 
@@ -188,14 +185,19 @@ export default class App extends Vue
         }
 
         // Wait for done
-        pWaitFor(() => this.filteredCourses.every(c => c.termGrading.every(g => g != null))).then(() =>
+        pWaitFor(() => this.assignmentsReady).then(() =>
         {
-            // When the assignments are ready
-            this.assignmentsReady = true;
-
             // Remove loading
             this.logLoading('');
         })
+    }
+
+    /**
+     * Returns true when assignments are done loading
+     */
+    get assignmentsReady(): boolean
+    {
+        return this.gradedCourses.every(c => c.termGrading.every(g => g != null));
     }
 
     /**
