@@ -8,7 +8,10 @@ export interface Index
 
 export default class NavController
 {
-    activeIndex: Index;
+    // Current index
+    index: Index;
+
+    // Callback
     updateCallback?: () => void;
 
     constructor()
@@ -29,7 +32,7 @@ export default class NavController
             if (e.state)
             {
                 // Restore previous tab
-                console.log(`onPopState: Current: ${this.activeIndex}, Previous: ${e.state.lastTab}`);
+                console.log(`onPopState: Current: ${this.index}, Previous: ${e.state.lastTab}`);
                 this.updateIndex(e.state.lastTab, false);
             }
         };
