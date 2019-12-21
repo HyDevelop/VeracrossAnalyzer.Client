@@ -21,17 +21,6 @@ UNKNOWN_COURSE_LIST.set('Painting', LEVEL_CP);
 export class CourseUtils
 {
     /**
-     * Format course to tab index string
-     *
-     * @param course Course object
-     * @return string Tab index
-     */
-    public static formatTabIndex(course: Course): string
-    {
-        return `course/${course.id}/${course.name.toLowerCase().split(' ').join('-')}`;
-    }
-
-    /**
      * Detect course level based on course name
      *
      * @param name Course name
