@@ -40,6 +40,7 @@
                    width="30%" style="word-break: unset;">
             <span>You have too many new grade notifications. Clear them now?</span>
             <img src="./too-many-unread.png" alt=""/>
+            <el-checkbox v-model="dontAskAgain">Don't Ask Again</el-checkbox>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="clearUnreadPrompt = false">Nah</el-button>
                 <el-button type="primary" @click="clearUnreadPrompt = false">Sure!</el-button>
@@ -75,6 +76,7 @@
         // For clear unread prompt
         unread: Assignment[];
         clearUnreadPrompt = false;
+        dontAskAgain = false;
 
         /**
          * On page load - check if the user has too many notifications
