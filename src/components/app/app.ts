@@ -21,9 +21,7 @@ export default class App extends Vue
 
     // List of course that the student takes
     courses: Course[] = [];
-
-    // List of course that should be displayed
-    filteredCourses: Course[] = [];
+    gradedCourses: Course[] = [];
 
     // The currently selected tab
     selectedTab: string = 'overall';
@@ -133,7 +131,7 @@ export default class App extends Vue
         pWaitFor(() => this.courses.every(c => c.rawAssignments != null)).then(() =>
         {
             // Filter courses
-            this.filteredCourses = this.courses.filter(c => c.isGraded);
+            this.gradedCourses = this.courses.filter(c => c.isGraded);
 
             // Check grading algorithms
             this.checkGradingAlgorithms();
@@ -149,7 +147,7 @@ export default class App extends Vue
         this.logLoading('4. Checking grading algorithms...');
 
         // Loop through all the courses
-        for (const course of this.filteredCourses)
+        for (const course of this.gradedCourses)
         {
             for (const i of [0, 1, 2, 3])
             {
