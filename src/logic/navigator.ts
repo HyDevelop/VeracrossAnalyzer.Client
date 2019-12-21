@@ -1,16 +1,22 @@
+
+export interface Index
+{
+    hash: string
+    title: string
+}
+
 export default class Navigator
 {
-    private activeIndex: string;
+    private activeIndex: Index;
     private updateCallback: (() => void) | undefined;
-    
+
     /**
      * Update index
      *
-     * @param newIndex
-     * @param title
+     * @param index Hash and title
      * @param history Record in history or not (Default true)
      */
-    updateIndex(newIndex: string, title: string, history?: boolean)
+    updateIndex(index: Index, history?: boolean)
     {
         // Call custom event
         if (this.updateCallback != null) this.updateCallback();
@@ -22,14 +28,14 @@ export default class Navigator
         if (history)
         {
             // Check url
-            let url = `/#${newIndex}`;
+            let url = `/#${index.hash}`;
 
             // Push history state
-            window.history.pushState({lastTab: newIndex}, '', url);
+            window.history.pushState({lastTab: index}, '', url);
         }
 
         // Update title
-        document.title = 'Veracross Analyzer - ' + title;
+        document.title = 'Veracross Analyzer - ' + index.title;
 
         // Scroll to top
         window.scrollTo(0, 0);
