@@ -46,4 +46,4 @@
     }
 </script>
 
-<style src="./course-head.scss" lang="scss"/>
+<style src="./course-head.scss" lang="scss" scoped/>
