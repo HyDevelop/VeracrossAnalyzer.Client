@@ -49,7 +49,16 @@ export default class Navigation extends Vue
     onSelect(index: string, indexPath: string)
     {
         // Update active index
-        this.nav.updateIndex(index);
+        try
+        {
+            // Is json
+            this.nav.updateIndex(JSON.parse(index))
+        }
+        catch (e)
+        {
+            // Not json
+            this.nav.updateIndex(index);
+        }
     }
 
     /**
