@@ -8,7 +8,7 @@ export interface Index
 export default class Navigator
 {
     private activeIndex: Index;
-    private updateCallback: (() => void) | undefined;
+    private updateCallback?: () => void;
 
     /**
      * Update index
