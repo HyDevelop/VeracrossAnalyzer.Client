@@ -5,6 +5,11 @@
             <div id="name">{{course.name}}</div>
             <div id="teacher">{{course.teacherName}}</div>
         </div>
+        <div id="block-term-grades" v-for="term in course.allGradingPeriods">
+            <span class="letter">{{course.letterGradeTerm(term)}} </span>
+            <span class="numeric">{{course.numericGradeTerm(term).toFixed(2)}}</span>
+            <span class="percent">%</span>
+        </div>
         <div id="block-grade">
             <div id="grade">
                 <span id="letter">{{course.letterGrade}} </span>
