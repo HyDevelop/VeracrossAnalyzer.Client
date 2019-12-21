@@ -32,12 +32,6 @@
     }
 }
 
-#block-term-grades
-{
-    width: 100px;
-    float: right;
-}
-
 #block-grade
 {
     // Align right
@@ -97,4 +91,13 @@
             background: #eeeeee;
         }
     }
+}
+
+#block-term-grades
+{
+    // Align right
+    width: 100px;
+    float: right;
+
+
 }
