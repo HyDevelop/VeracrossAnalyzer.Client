@@ -16,7 +16,8 @@
                 <span id="unread-text" :class="clickable ? 'clickable' : ''">new update{{unread >= 2 ? 's' : ''}}</span>
             </div>
         </div>
-        <div id="block-term-grades" v-for="term in course.allGradingPeriods.slice().reverse()">
+        <div id="block-term-grades" v-if="course.rawSelectedTerm === -1"
+             v-for="term in course.allGradingPeriods.slice().reverse()">
             <div id="term">Term {{term + 1}}</div>
             <div id="term-letter">{{course.letterGradeTerm(term)}}</div>
             <div id="term-numeric">{{course.numericGradeTerm(term).toFixed(1)}}%</div>
