@@ -184,8 +184,7 @@ export default class Course
     {
         return this.cache.get('GradingPeriods', () =>
         {
-            let timeCode = Navigation.instance.getSelectedTerm();
-            return (timeCode == -1 ? [0, 1, 2, 3] : [timeCode]).filter(term =>
+            return (this.rawSelectedTerm == -1 ? [0, 1, 2, 3] : [this.rawSelectedTerm]).filter(term =>
                 this.termAssignments[term].filter(a => a.graded).length != 0);
         })
     }
@@ -343,5 +342,13 @@ export default class Course
     get urlIndex(): Index
     {
         return {hash: this.urlHash, title: this.name, identifier: 'course', info: {id: this.id}}
+    }
+
+    /**
+     * Selected term
+     */
+    get rawSelectedTerm(): number
+    {
+        return Navigation.instance.getSelectedTerm()
     }
 }
