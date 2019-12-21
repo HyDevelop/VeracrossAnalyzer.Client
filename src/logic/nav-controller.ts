@@ -8,8 +8,8 @@ export interface Index
 
 export default class NavController
 {
-    private activeIndex: Index;
-    private updateCallback?: () => void;
+    activeIndex: Index;
+    updateCallback?: () => void;
 
     constructor()
     {
