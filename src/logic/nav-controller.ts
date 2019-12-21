@@ -4,6 +4,7 @@ export interface Index
 {
     hash: string
     title?: string
+    identifier?: string
 }
 
 export default class NavController
@@ -71,5 +72,10 @@ export default class NavController
 
         // Scroll to top
         window.scrollTo(0, 0);
+    }
+
+    get id()
+    {
+        return this.index.identifier
     }
 }
