@@ -4,6 +4,7 @@ import Navigation from '@/components/navigation/navigation';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
 import CacheUtils from '@/logic/utils/cache-utils';
 import Constants from '@/constants';
+import {Index} from '@/logic/nav-controller';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -306,7 +307,7 @@ export default class Course
     /**
      * Get navigation index
      */
-    get urlIndex()
+    get urlIndex(): Index
     {
         return {hash: this.urlHash, title: this.name}
     }
