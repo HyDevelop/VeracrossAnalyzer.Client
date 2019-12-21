@@ -1,9 +1,9 @@
 <template>
     <div id="overall-course">
         <el-card class="course-card">
-            <course-head :clickable="true" :course="course" :unread="countUnread()"/>
+            <course-head :clickable="true" :course="course" :unread="unread"/>
             <div class="course-card-content expand"
-                 v-if="countUnread() !== 0">
+                 v-if="unread !== 0">
                 <unread-entry v-for="assignment in unreadAssignments"
                               :assignment="assignment"
                               :key="assignment.id"
