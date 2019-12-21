@@ -5,6 +5,7 @@ export interface Index
     hash: string
     title?: string
     identifier?: string
+    info?: any
 }
 
 export default class NavController
@@ -77,5 +78,10 @@ export default class NavController
     get id()
     {
         return this.index.identifier
+    }
+
+    get info()
+    {
+        return this.index.info
     }
 }
