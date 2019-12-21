@@ -34,8 +34,8 @@ export default class NavController
             if (e.state)
             {
                 // Restore previous tab
-                console.log(`onPopState: Current: ${this.index}, Previous: ${e.state.lastTab}`);
-                this.updateIndex(e.state.lastTab, false);
+                console.log(`onPopState: Current: ${JSON.stringify(this.index)}, Previous: ${JSON.stringify(e.state)}`);
+                this.updateIndex(e.state, false);
             }
         };
     }
@@ -65,7 +65,7 @@ export default class NavController
             let url = `/#${index.hash}`;
 
             // Push history state
-            window.history.pushState({lastTab: index}, '', url);
+            window.history.pushState(index, '', url);
         }
 
         // Update title
