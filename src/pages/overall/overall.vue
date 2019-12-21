@@ -39,7 +39,7 @@
         <el-dialog
                 title="Notice"
                 :visible.sync="promptClearNotification"
-                width="30%"
+                width="30%" style="word-break: unset;"
                 :before-close="handleClose">
             <span>You have too many new grade notifications. Clear them now?</span>
             <span slot="footer" class="dialog-footer">
