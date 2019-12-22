@@ -1,14 +1,14 @@
 <template>
     <div id="overall-course">
         <el-card class="course-card">
-            <course-head :clickable="true" :course="course" :unread="unread"/>
+            <course-head :clickable="true" :course="course" :unread="unread()"/>
             <div class="course-card-content expand"
-                 v-if="unread !== 0">
-                <assignment-entry v-for="assignment in unreadAssignments"
+                 v-if="unread() !== 0">
+                <assignment-entry v-for="assignment in unreadAssignments()"
                               :assignment="assignment"
                               :key="assignment.id"
                               unread="true"
-                              v-on:mark-as-read="assignment.markAsRead()">
+                              v-on:mark-as-read="markAsRead(assignment)">
                 </assignment-entry>
             </div>
         </el-card>
@@ -28,14 +28,19 @@
     {
         @Prop({required: true}) course: Course;
 
-        get unreadAssignments(): Assignment[]
+        unreadAssignments(): Assignment[]
         {
             return this.course.assignments.filter(a => a.unread);
         }
 
-        get unread(): number
+        unread(): number
         {
-            return this.unreadAssignments.length;
+            return this.unreadAssignments().length;
+        }
+
+        markAsRead(assignment: Assignment)
+        {
+            assignment.markAsRead().then(() => this.$forceUpdate()).catch(alert);
         }
     }
 </script>
