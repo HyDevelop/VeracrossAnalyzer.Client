@@ -4,16 +4,39 @@
             <course-head :clickable="true" :course="course" :unread="unread"/>
             <div class="course-card-content expand"
                  v-if="unread !== 0">
-                <unread-entry v-for="assignment in unreadAssignments"
+                <assignment-entry v-for="assignment in unreadAssignments"
                               :assignment="assignment"
                               :key="assignment.id"
                               unread="true"
-                </unread-entry>
                               v-on:mark-as-read="assignment.markAsRead()">
+                </assignment-entry>
             </div>
         </el-card>
     </div>
 </template>
 
-<script src="./overall-course.ts" lang="ts"></script>
+<script lang="ts">
+    import {Component, Prop, Vue} from 'vue-property-decorator';
+    import AssignmentEntry from '@/pages/overall/overall-course/assignment-entry/assignment-entry.vue';
+    import CourseHead from '@/pages/overall/overall-course/course-head/course-head.vue';
+    import Course, {Assignment} from '@/logic/course';
+
+    @Component({
+        components: {AssignmentEntry, CourseHead}
+    })
+    export default class OverallCourse extends Vue
+    {
+        @Prop({required: true}) course: Course;
+
+        get unreadAssignments(): Assignment[]
+        {
+            return this.course.assignments.filter(a => a.unread);
+        }
+
+        get unread(): number
+        {
+            return this.unreadAssignments.length;
+        }
+    }
+</script>
 <style src="./overall-course.scss" lang="scss" scoped/>
