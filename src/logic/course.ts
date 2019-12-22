@@ -5,6 +5,7 @@ import {GPAUtils} from '@/logic/utils/gpa-utils';
 import CacheUtils from '@/logic/utils/cache-utils';
 import Constants from '@/constants';
 import {Index} from '@/logic/nav-controller';
+import App from '@/components/app/app';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -59,6 +60,27 @@ export class Assignment
     get graded()
     {
         return this.complete == 'Complete';
+    }
+
+    /**
+     * Mark as read
+     */
+    markAsRead(): Promise<void>
+    {
+        return new Promise((resolve, reject) => {
+            App.http.post('/mark-as-read', {scoreId: this.scoreId})
+            .then(response =>
+            {
+                // Check success
+                if (response.success)
+                {
+                    this.unread = false;
+                    resolve();
+                }
+                else reject(response.data);
+            })
+            .catch(reject)
+        })
     }
 }
 
