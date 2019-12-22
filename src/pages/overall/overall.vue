@@ -1,6 +1,6 @@
 <template>
     <div id="overall">
-        <el-progress v-if="progress !== 0" :text-inside="true" :percentage="progress"/>
+        <el-progress v-if="progress !== -1" :text-inside="true" :percentage="progress"/>
 
         <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
                    width="30%" style="word-break: unset;">
@@ -79,7 +79,7 @@
         unread: Assignment[];
         clearUnreadPrompt = false;
         dontAskAgain = false;
-        progress = 0;
+        progress = -1;
 
         /**
          * On page load - check if the user has too many notifications
