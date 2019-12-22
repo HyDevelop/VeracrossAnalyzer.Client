@@ -87,7 +87,7 @@
         mounted()
         {
             // Check unread
-            if (!this.$cookies.isKey('IgnoreUnread'))
+            if (!this.$cookies.isKey('va.ignore-unread'))
             {
                 // Count unread
                 this.unread = this.courses.flatMap(c => c.assignments.filter(a => a.unread));
@@ -116,7 +116,7 @@
                 if (!this.dontAskAgain) return;
 
                 // Don't ask again
-                this.$cookies.set('IgnoreUnread', true);
+                this.$cookies.set('va.ignore-unread', true);
             }
         }
     }
