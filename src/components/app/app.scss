@@ -144,3 +144,9 @@ div.el-card.course-card > div.el-card__body
 {
     font-family: Nunito Sans, Helvetica Neue, Microsoft YaHei, "微软雅黑", Arial, sans-serif;
 }
+
+// Fix word breaking
+.el-dialog__body
+{
+    word-break: unset !important;
+}
