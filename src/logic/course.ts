@@ -66,6 +66,16 @@ export class Assignment
     }
 
     /**
+     * Add callback
+     *
+     * @param callback
+     */
+    addCallback(callback: () => void)
+    {
+        this.updateCallbacks.push(callback);
+    }
+
+    /**
      * Mark as read
      */
     markAsRead(): Promise<void>
