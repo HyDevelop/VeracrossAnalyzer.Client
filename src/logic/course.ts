@@ -88,6 +88,7 @@ export class Assignment
                 if (response.success)
                 {
                     this.unread = false;
+                    this.updateCallbacks.forEach(callback => callback());
                     resolve();
                 }
                 else reject(response.data);
