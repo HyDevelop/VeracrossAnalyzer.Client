@@ -29,6 +29,9 @@ export class Assignment
 
     gradingPeriod: number;
 
+    // Callbacks when this object updates
+    private updateCallbacks: (() => void)[] = [];
+
     /**
      * Construct assignment with json object
      *
