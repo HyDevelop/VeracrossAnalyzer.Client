@@ -8,7 +8,7 @@
                               :assignment="assignment"
                               :key="assignment.id"
                               unread="true"
-                              v-on:mark-as-read="markAsRead(assignment)">
+                              v-on:mark-as-read="assignment.markAsRead()">
                 </assignment-entry>
             </div>
         </el-card>
@@ -28,6 +28,11 @@
     {
         @Prop({required: true}) course: Course;
 
+        mounted()
+        {
+            this.unreadAssignments().forEach(a => a.addCallback(() => this.$forceUpdate()));
+        }
+
         unreadAssignments(): Assignment[]
         {
             return this.course.assignments.filter(a => a.unread);
@@ -36,11 +41,6 @@
         unread(): number
         {
             return this.unreadAssignments().length;
-        }
-
-        markAsRead(assignment: Assignment)
-        {
-            assignment.markAsRead().then(() => this.$forceUpdate()).catch(alert);
         }
     }
 </script>
