@@ -1,6 +1,6 @@
 <template>
     <div id="overall">
-        <el-progress v-if="progress !== -1" :text-inside="true" :percentage="progress"/>
+        <el-progress v-if="started" :text-inside="true" :percentage="progress()"/>
 
         <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
                    width="30%" style="word-break: unset;">
@@ -79,6 +79,7 @@
         unread: Assignment[];
         clearUnreadPrompt = false;
         dontAskAgain = false;
+        started = false;
 
         /**
          * Mark as read progress
