@@ -1,5 +1,18 @@
 <template>
     <div id="overall">
+        <el-progress :text-inside="true" :percentage="progress"/>
+
+        <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
+                   width="30%" style="word-break: unset;">
+            <span>You have too many new grade notifications. Clear them now?</span>
+            <img src="./too-many-unread.png" alt=""/>
+            <el-checkbox class="dialog-checkbox" v-model="dontAskAgain">Don't Ask Again</el-checkbox>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="clearUnread(false)">Nah</el-button>
+                <el-button type="primary" @click="clearUnread(true)">Sure!</el-button>
+            </span>
+        </el-dialog>
+
         <el-row v-if="getGPA().gpa !== -1">
             <el-col :span="4" class="overall-span">
                 <el-card class="large gpa-card vertical-center" body-style="padding: 0">
@@ -35,17 +48,6 @@
                         :course="course"
                         :key="course.id">
         </overall-course>
-
-        <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
-                   width="30%" style="word-break: unset;">
-            <span>You have too many new grade notifications. Clear them now?</span>
-            <img src="./too-many-unread.png" alt=""/>
-            <el-checkbox v-model="dontAskAgain">Don't Ask Again</el-checkbox>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="clearUnreadPrompt = false">Nah</el-button>
-                <el-button type="primary" @click="clearUnreadPrompt = false">Sure!</el-button>
-            </span>
-        </el-dialog>
     </div>
 </template>
 
