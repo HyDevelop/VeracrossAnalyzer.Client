@@ -1,6 +1,6 @@
 <template>
     <div id="overall">
-        <el-progress :text-inside="true" :percentage="progress"/>
+        <el-progress v-if="progress !== 0" :text-inside="true" :percentage="progress"/>
 
         <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
                    width="30%" style="word-break: unset;">
