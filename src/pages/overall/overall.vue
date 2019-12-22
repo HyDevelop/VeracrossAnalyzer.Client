@@ -1,7 +1,7 @@
 <template>
     <div id="overall">
         <el-progress v-if="started" :text-inside="true" :percentage="progress()"
-                     :stroke-width="20"/>
+                     :stroke-width="20" status="success"/>
 
         <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
                    width="30%" style="word-break: unset;">
