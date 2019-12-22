@@ -19,7 +19,7 @@ export default class NavController
     constructor()
     {
         // Check history from last session
-        if (window.history.state.hash == undefined)
+        if (window.history.state == undefined || window.history.state.hash == undefined)
         {
             // Set history state
             let url = '/' + window.location.hash;
