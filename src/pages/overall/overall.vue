@@ -127,6 +127,15 @@
                 // Don't ask again
                 this.$cookies.set('va.ignore-unread', true);
             }
+
+            // Clear unread
+            this.started = true;
+            this.unread.forEach((a, i) =>
+            {
+                // Delay: 100ms per assignment
+                // I don't want my server to explode lol
+                setTimeout(() => a.markAsRead().then(() => this.$forceUpdate()), 100 * i);
+            });
         }
     }
 </script>
