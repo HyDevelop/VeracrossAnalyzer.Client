@@ -86,7 +86,7 @@
          */
         progress()
         {
-            return this.unread.filter(a => !a.unread).length / this.unread.length;
+            return this.unread.filter(a => !a.unread).length / this.unread.length * 100;
         }
 
         /**
