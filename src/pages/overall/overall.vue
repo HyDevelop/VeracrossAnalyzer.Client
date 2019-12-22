@@ -79,7 +79,14 @@
         unread: Assignment[];
         clearUnreadPrompt = false;
         dontAskAgain = false;
-        progress = -1;
+
+        /**
+         * Mark as read progress
+         */
+        progress()
+        {
+            return this.unread.filter(a => !a.unread).length / this.unread.length;
+        }
 
         /**
          * On page load - check if the user has too many notifications
