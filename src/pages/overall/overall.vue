@@ -55,7 +55,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import OverallLine from '@/pages/overall/overall-line/overall-line';
     import OverallBar from '@/pages/overall/overall-bar/overall-bar';
-    import OverallCourse from '@/pages/overall/overall-course/overall-course';
+    import OverallCourse from '@/pages/overall/overall-course/overall-course.vue';
     import Course, {Assignment} from '@/logic/course';
     import {GPAUtils} from '@/logic/utils/gpa-utils';
 
