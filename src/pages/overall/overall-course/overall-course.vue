@@ -8,8 +8,8 @@
                               :assignment="assignment"
                               :key="assignment.id"
                               unread="true"
-                              v-on:mark-as-read="markAsRead">
                 </unread-entry>
+                              v-on:mark-as-read="assignment.markAsRead()">
             </div>
         </el-card>
     </div>
