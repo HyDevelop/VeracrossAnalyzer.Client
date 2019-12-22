@@ -79,6 +79,7 @@
         unread: Assignment[];
         clearUnreadPrompt = false;
         dontAskAgain = false;
+        progress = 0;
 
         /**
          * On page load - check if the user has too many notifications
@@ -96,6 +97,26 @@
                 {
                     this.clearUnreadPrompt = true;
                 }
+            }
+        }
+
+        /**
+         * Clear unread
+         *
+         * @param confirmed
+         */
+        clearUnread(confirmed: boolean)
+        {
+            // Hide prompt
+            this.clearUnreadPrompt = false;
+
+            // Not confirmed, do nothing
+            if (!confirmed)
+            {
+                if (!this.dontAskAgain) return;
+
+                // Don't ask again
+                this.$cookies.set('IgnoreUnread', true);
             }
         }
     }
