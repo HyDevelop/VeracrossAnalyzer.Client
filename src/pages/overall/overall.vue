@@ -9,7 +9,7 @@
             <img src="./too-many-unread.png" alt=""/>
             <el-checkbox class="dialog-checkbox" v-model="dontAskAgain">Don't Ask Again</el-checkbox>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="clearUnread(false)">Nah</el-button>
+                <el-button @click="clearUnread(false)" style="float: left">Nope</el-button>
                 <el-button type="primary" @click="clearUnread(true)">Sure!</el-button>
             </span>
         </el-dialog>
