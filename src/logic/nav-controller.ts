@@ -1,4 +1,6 @@
 import {FormatUtils} from '@/logic/utils/format-utils';
+import pWaitFor from 'p-wait-for';
+import App from '@/components/app/app';
 
 export interface Index
 {
@@ -18,24 +20,6 @@ export default class NavController
 
     constructor()
     {
-        // Check history from last session
-        if (window.history.state == undefined || window.history.state.hash == undefined)
-        {
-            // Set history state
-            let url = '/' + window.location.hash;
-            if (url == '/') url = '/#overall';
-            window.history.replaceState(this.convertIndex('overall'), '', url);
-
-            // Update initial index after loading is done
-            // TODO: Test this
-            //pWaitFor(() => this.courses.length > 1 && App.instance.loading != '').then(() =>
-            this.updateIndex(url.substring(2), false);
-        }
-        else
-        {
-            this.index = window.history.state;
-        }
-
         // Create history state listener
         window.onpopstate = (e: any) =>
         {
@@ -46,6 +30,71 @@ export default class NavController
                 this.updateIndex(e.state, false);
             }
         };
+
+        // Initialize
+        this.init()
+    }
+
+    /**
+     * Initialize from last location
+     */
+    private init()
+    {
+        // Check history from last session
+        if (window.history.state != undefined && window.history.state.hash != undefined)
+        {
+            // Last history exists
+            this.index = window.history.state;
+            return;
+        }
+
+        // Last history doesn't exist but hash url might exist
+        let hash = window.location.hash.replace('#', '');
+
+        // Check hash
+        if (hash == '')
+        {
+            // No location info in url, set page to overall
+            window.history.replaceState(this.convertIndex('overall'), '', '/#overall');
+            this.updateIndex('overall', false);
+            return;
+        }
+
+        // There is hash info in url
+        let split = hash.split('/');
+
+        // Not course -> don't know what to do with this url, so just refresh
+        if (split[0] != 'course')
+        {
+            this.initClear();
+            return;
+        }
+
+        // Is course -> Update index with placeholder title
+        this.updateIndex({hash: hash, title: `Loading...`, identifier: 'course', info: {id: +split[1]}}, false);
+
+        // Wait for courses to finish loading
+        pWaitFor(() => App.instance != undefined && App.instance.assignmentsReady).then(() =>
+        {
+            // Find course
+            let course = App.instance.courses.find(c => c.id == +split[1]);
+
+            // This person has no such course, refresh to overall
+            if (course == null)
+            {
+                this.initClear();
+                return;
+            }
+
+            window.history.replaceState(course.urlIndex, '', '/#' + course.urlHash);
+            this.updateIndex(course.urlIndex, false);
+        })
+    }
+
+    private initClear()
+    {
+        window.location.hash = '';
+        window.location.reload();
     }
 
     /**
