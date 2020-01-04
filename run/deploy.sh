@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#echo "Switch to production database settings"
+#exit
+
 # abort on errors
 set -e
 
