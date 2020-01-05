@@ -1,4 +1,5 @@
 import Constants from '@/constants';
+import App from '@/components/app/app';
 
 export default class GraphUtils
 {
@@ -54,6 +55,9 @@ export default class GraphUtils
      */
     static getGradeMarkAreas(opacity: number)
     {
+        // TODO: Auto update after switching dark mode (possibly by refreshing)
+        opacity = App.instance.darkMode ? 0.1 : opacity;
+
         return {
             silent: true,
             data:
