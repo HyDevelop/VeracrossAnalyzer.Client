@@ -67,6 +67,9 @@ export default class App extends Vue
         {
             this.staticPage = 'info';
         }
+
+        // Dark mode
+        this.darkMode = this.$cookies.isKey('dark');
     }
 
     /**
