@@ -48,6 +48,9 @@ export default class App extends Vue
     // Static page
     staticPage: string = '';
 
+    // Dark mode
+    darkMode: boolean = false;
+
     /**
      * This is called when the instance is created.
      */
