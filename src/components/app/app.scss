@@ -73,6 +73,9 @@
     {
         background-color: var(--dark-layer-3) !important;
     }
+
+    // Nav bar
+    .el-menu--horizontal>.el-menu-item.is-active {color: var(--dark-foreground) !important;}
 }
 
 // ##############
