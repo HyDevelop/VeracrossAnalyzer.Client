@@ -137,5 +137,10 @@ export default class Navigation extends Vue
         }
     }
 
+    isDark()
+    {
+        return App.instance.darkMode;
+    }
+
     get version() {return Constants.VERSION}
 }
