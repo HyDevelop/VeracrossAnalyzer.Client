@@ -1,6 +1,6 @@
 <template>
-    <div id="app" class="theme-default" :class="{dark: darkMode}">
-        <div id="app-inner" v-if="staticPage === ''">
+    <div id="app" class="theme-default">
+        <div id="app-inner" v-if="staticPage === ''" :class="{dark: darkMode}">
             <login v-if="showLogin" v-on:login:user="onLogin"/>
             <navigation v-if="user != null"
                         :courses="gradedCourses"
