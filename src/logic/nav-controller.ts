@@ -40,6 +40,8 @@ export default class NavController
      */
     private init()
     {
+        if (window.location.hash == '#info') return;
+        
         // Check history from last session
         if (window.history.state != undefined && window.history.state.hash != undefined)
         {
