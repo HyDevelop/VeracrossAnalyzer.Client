@@ -45,6 +45,9 @@ export default class App extends Vue
     // Instance
     static instance: App;
 
+    // Static page
+    staticPage: string = '';
+
     /**
      * This is called when the instance is created.
      */
