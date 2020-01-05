@@ -58,6 +58,12 @@ export default class App extends Vue
 
         // Update instance
         App.instance = this;
+
+        // Check location
+        if (window.location.hash == '#info')
+        {
+            this.staticPage = 'info';
+        }
     }
 
     /**
