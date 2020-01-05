@@ -3,6 +3,7 @@ import Course from '@/logic/course';
 import Constants from '@/constants';
 import LoginUser from '@/logic/login-user';
 import NavController from '@/logic/nav-controller';
+import App from '@/components/app/app';
 
 /**
  * This component is the top navigation bar
@@ -132,6 +133,15 @@ export default class Navigation extends Vue
             case 'sign-out':
             {
                 this.$emit('sign-out');
+                break
+            }
+            case 'switch-dark':
+            {
+                App.instance.darkMode = !App.instance.darkMode;
+
+                if (this.isDark()) this.$cookies.set('dark', true);
+                else this.$cookies.remove('dark');
+
                 break
             }
         }
