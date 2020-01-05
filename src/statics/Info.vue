@@ -1,6 +1,9 @@
 <template>
     <div id="info">
-        Hello World
+        <div id="top">
+            <span id="title">Veracross Analyzer for SJP</span>
+            <span id="subtitle">Know your grades better.</span>
+        </div>
     </div>
 </template>
 
