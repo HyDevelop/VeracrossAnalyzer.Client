@@ -62,7 +62,8 @@ export class Assignment
      */
     get graded()
     {
-        return this.complete == 'Complete';
+        // TODO: Add more cases
+        return this.include && (this.complete == 'Complete' || this.complete == 'Late' || this.complete == 'NREQ');
     }
 
     /**
