@@ -57,6 +57,13 @@
         text-align: right;
         float: right;
 
+        // Status / Problems
+        span.status
+        {
+            margin-right: 8px;
+        }
+
+        // Percentage score
         span.percent
         {
             font-style: italic;
