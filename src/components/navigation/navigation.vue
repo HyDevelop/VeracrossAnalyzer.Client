@@ -26,8 +26,9 @@
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item command="Term 1">Term 1</el-dropdown-item>
                     <el-dropdown-item command="Term 2">Term 2</el-dropdown-item>
-                    <el-dropdown-item command="Term 3" disabled>Term 3</el-dropdown-item>
+                    <el-dropdown-item command="Term 3">Term 3</el-dropdown-item>
                     <el-dropdown-item command="Term 4" disabled>Term 4</el-dropdown-item>
+<!--                    TODO: Auto enable / disable quarters -->
                     <el-dropdown-item command="All Year" divided>All Year</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
