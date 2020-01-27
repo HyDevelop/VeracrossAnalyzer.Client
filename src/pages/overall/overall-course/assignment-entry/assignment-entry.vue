@@ -18,6 +18,9 @@
             </el-col>
 
             <el-col :span="6" class="grade">
+                <span v-if="assignment.problem" class="status entry-box" :style="{color: assignment.problemColor}">
+                    {{assignment.problem}}
+                </span>
                 <span class="percent entry-box">
                     {{(assignment.score / assignment.scoreMax * 100).toFixed(1)}}
                     <span class="symbol">%</span>

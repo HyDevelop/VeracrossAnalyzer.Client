@@ -21,7 +21,6 @@
     #top
     {
         padding: 40vh 0;
-        background-image: url("../assets/info/background-min.jpg");
 
         // Center and scale the image nicely
         background-position: center;
