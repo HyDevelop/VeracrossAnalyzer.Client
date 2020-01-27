@@ -67,6 +67,21 @@ export class Assignment
     }
 
     /**
+     * What is the problem with this assignment
+     *
+     * @return string Empty string if complete, otherwise return problem.
+     */
+    get problem()
+    {
+        switch (this.complete)
+        {
+            case 'Complete': return '';
+            case 'Late': return 'Late';
+            case 'NREQ': return 'Dropped';
+        }
+    }
+
+    /**
      * Add callback
      *
      * @param callback
