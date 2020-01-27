@@ -82,6 +82,18 @@ export class Assignment
     }
 
     /**
+     * Get the text color of the problem
+     */
+    get problemColor()
+    {
+        switch (this.complete)
+        {
+            case 'Late': return '#ff0036';
+            case 'NREQ': return '#41b141';
+        }
+    }
+
+    /**
      * Add callback
      *
      * @param callback
