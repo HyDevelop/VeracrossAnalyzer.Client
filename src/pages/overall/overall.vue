@@ -126,6 +126,7 @@
 
                 // Don't ask again
                 this.$cookies.set('va.ignore-unread', true);
+                return;
             }
 
             // Clear unread
