@@ -379,7 +379,7 @@ export default class Course
             return types.map(type =>
             {
                 // Get assignments of the type
-                let typeAssignments = this.assignments.filter(a => a.type == type);
+                let typeAssignments = this.assignments.filter(a => a.graded && a.type == type);
 
                 // Count scores and max scores
                 let score = typeAssignments.reduce((sum, a) => sum + a.score, 0);
