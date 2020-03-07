@@ -57,6 +57,9 @@
         text-align: right;
         float: right;
 
+        // Fix smaller screen display issues.
+        width: unset;
+
         // Status / Problems
         span.status
         {
