@@ -36,6 +36,11 @@
 </script>
 
 <style lang="scss" scoped>
+    #assignment-type-head
+    {
+        margin-bottom: 20px;
+    }
+
     #type-info-card
     {
         height: 60px;
