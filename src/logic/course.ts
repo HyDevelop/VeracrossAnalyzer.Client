@@ -75,9 +75,9 @@ export class Assignment
     {
         switch (this.complete)
         {
-            case 'Complete': return '';
+            case 'Complete': return ''; // ID: 3
+            case 'NREQ': return 'Dropped'; // ID: 4
             case 'Late': return 'Late';
-            case 'NREQ': return 'Dropped';
         }
     }
 
@@ -88,8 +88,8 @@ export class Assignment
     {
         switch (this.complete)
         {
-            case 'Late': return '#ff0036';
             case 'NREQ': return '#41b141';
+            case 'Late': return '#ff0036';
         }
     }
 
