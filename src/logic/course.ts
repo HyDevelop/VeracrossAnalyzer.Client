@@ -63,7 +63,9 @@ export class Assignment
     get graded()
     {
         // TODO: Add more cases
-        return this.include && (this.complete == 'Complete' || this.complete == 'Late' || this.complete == 'NREQ');
+        // Incomplete doesn't mean that the teacher didn't grade it yet, which is "Pending".
+        // NREQ is not graded.
+        return this.include && (this.complete == 'Complete' || this.complete == 'Late' || this.complete == 'Incomplete');
     }
 
     /**
