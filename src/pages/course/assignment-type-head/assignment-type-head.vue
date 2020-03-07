@@ -6,9 +6,9 @@
                 <span id="type-average">Average: {{type.percent}}%</span>
             </div>
 
-            <AssignmentEntry v-for="assignment of filteredAssignments" :key="assignment.id"
+            <AssignmentEntry v-for="(assignment, index) of filteredAssignments" :key="assignment.id"
                              :assignment="assignment" :unread="false"
-                             backgroundColor="#ffffff" narrow="true">
+                             :backgroundColor="index % 2 === 0 ? '#ffffff' : '#f7f7f7'" narrow="true">
             </AssignmentEntry>
         </el-card>
     </div>
