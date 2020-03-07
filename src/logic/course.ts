@@ -76,6 +76,7 @@ export class Assignment
         switch (this.complete)
         {
             case 'Pending': return 'Pending'; // ID: 0
+            case 'Incomplete': return 'Incomplete'; // ID: 2
             case 'Complete': return ''; // ID: 3
             case 'NREQ': return 'Dropped'; // ID: 4
             case 'Late': return 'Late';
@@ -90,6 +91,7 @@ export class Assignment
         switch (this.complete)
         {
             case 'Pending': return '#b1b1b1';
+            case 'Incomplete': return '#ff7a2f';
             case 'NREQ': return '#41b141';
             case 'Late': return '#ff0036';
         }
