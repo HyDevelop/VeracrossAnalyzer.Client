@@ -127,7 +127,7 @@ export class GPAUtils
         assignments.forEach(assignment =>
         {
             // If assignment should be displayed
-            if (assignment.complete != 'Complete') return;
+            if (!assignment.graded) return;
 
             // Record scores
             score += assignment.score;
@@ -153,7 +153,7 @@ export class GPAUtils
         assignments.forEach(assignment =>
         {
             // If assignment should be displayed
-            if (assignment.complete != 'Complete') return;
+            if (!assignment.graded) return;
 
             // Record scores
             if (typeScores[assignment.type] == undefined) typeScores[assignment.type] = 0;
