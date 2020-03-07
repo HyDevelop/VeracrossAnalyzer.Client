@@ -8,7 +8,7 @@
 
             <AssignmentEntry v-for="(assignment, index) of filteredAssignments" :key="assignment.id"
                              :assignment="assignment" :unread="false"
-                             :backgroundColor="index % 2 === 0 ? '#ffffff' : '#f7f7f7'" narrow="true">
+                             :backgroundColor="index % 2 === 1 ? '#ffffff' : '#f7f7f7'" narrow="true">
             </AssignmentEntry>
         </el-card>
     </div>
