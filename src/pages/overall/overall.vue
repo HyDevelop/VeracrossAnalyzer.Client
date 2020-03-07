@@ -3,7 +3,7 @@
         <el-progress v-if="started" :text-inside="true" :percentage="progress()"
                      :stroke-width="20" status="success" style="margin: 0 20px"/>
 
-        <el-dialog title="Notice" :visible.sync="clearUnreadPrompt"
+        <el-dialog title="Notice" :visible.sync="clearUnreadPrompt" @close="clearUnread(false)"
                    width="30%" style="word-break: unset;">
             <span>You have too many new grade notifications. Clear them now?</span>
             <img src="./too-many-unread.png" alt=""/>
