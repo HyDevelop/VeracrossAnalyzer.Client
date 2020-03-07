@@ -21,12 +21,12 @@
                 <span v-if="assignment.problem" class="status entry-box" :style="{color: assignment.problemColor}">
                     {{assignment.problem}}
                 </span>
-                <span class="percent entry-box">
+                <span v-if="assignment.graded" class="percent entry-box">
                     {{(assignment.score / assignment.scoreMax * 100).toFixed(1)}}
                     <span class="symbol">%</span>
                 </span>
-                <span class="score entry-box">{{assignment.score}}</span>
-                <span class="max entry-box">{{assignment.scoreMax}}</span>
+                <span v-if="assignment.graded" class="score entry-box">{{assignment.score}}</span>
+                <span v-if="assignment.graded" class="max entry-box">{{assignment.scoreMax}}</span>
 
                 <el-button class="mark-as-read" :class="unread ? 'unread' : 'no-unread'"
                            size="mini" type="text" icon="el-icon-close"
