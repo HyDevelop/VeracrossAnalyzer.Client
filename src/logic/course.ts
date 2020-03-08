@@ -98,7 +98,7 @@ export class Assignment
             case 'Not Turned In': return '#ff0036';
             case 'Incomplete': return '#ff7a2f';
             case 'NREQ': return '#41b141';
-            case 'Late': return '#ff0036';
+            case 'Late': return '#ff7a2f';
         }
     }
 
