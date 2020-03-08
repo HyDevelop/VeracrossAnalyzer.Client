@@ -65,7 +65,7 @@ export class Assignment
         // TODO: Add more cases
         // Incomplete doesn't mean that the teacher didn't grade it yet, which is "Pending".
         // NREQ is not graded.
-        return this.include && (this.complete == 'Complete' || this.complete == 'Late' || this.complete == 'Incomplete');
+        return this.include && (this.complete == 'Complete' || this.complete == 'Late' || this.complete == 'Incomplete' || this.complete == 'Not Turned In');
     }
 
     /**
@@ -78,6 +78,7 @@ export class Assignment
         switch (this.complete)
         {
             case 'Pending': return 'Pending'; // ID: 0
+            case 'Not Turned In': return 'Not Turned In'; // ID: 1
             case 'Incomplete': return 'Incomplete'; // ID: 2
             case 'Complete': return ''; // ID: 3
             case 'NREQ': return 'Dropped'; // ID: 4
@@ -93,6 +94,7 @@ export class Assignment
         switch (this.complete)
         {
             case 'Pending': return '#b1b1b1';
+            case 'Not Turned In': return '#ff0036';
             case 'Incomplete': return '#ff7a2f';
             case 'NREQ': return '#41b141';
             case 'Late': return '#ff0036';
