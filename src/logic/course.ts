@@ -83,6 +83,7 @@ export class Assignment
             case 'Complete': return ''; // ID: 3
             case 'NREQ': return 'Dropped'; // ID: 4
             case 'Late': return 'Late';
+            default: return this.complete;
         }
     }
 
