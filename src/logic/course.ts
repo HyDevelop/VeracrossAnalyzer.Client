@@ -145,6 +145,8 @@ export interface AssignmentType
     score: number
     percent: number
     assignmentCount: number
+
+    graded: boolean
 }
 
 export interface Grading
