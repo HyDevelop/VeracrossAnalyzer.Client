@@ -98,7 +98,7 @@ export default class CourseScatter extends Vue
     private series()
     {
         // Create scatter plots
-        let series: any[] = this.course.assignmentTypes.map((type, i) =>
+        let series: any[] = this.course.assignmentTypes.filter(t => t.graded).map((type, i) =>
         {
             return {
                 type: 'scatter',
