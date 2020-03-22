@@ -3,7 +3,8 @@
         <el-card :body-style="{padding: '0px'}">
             <div id="type-info-card">
                 <span id="type-name">{{type.name}}</span>
-                <span id="type-average">Average: {{type.percent}}%</span>
+                <span class="type-average" v-if="type.graded">Average: {{type.percent}}%</span>
+                <span class="type-average" v-if="!type.graded">No grades yet!</span>
             </div>
 
             <AssignmentEntry v-for="(assignment, index) of filteredAssignments" :key="assignment.id"
@@ -61,7 +62,7 @@
         float: left;
     }
 
-    #type-average
+    .type-average
     {
         // Font
         font-size: 14px;
