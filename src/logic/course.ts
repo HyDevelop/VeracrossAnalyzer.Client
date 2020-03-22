@@ -384,11 +384,14 @@ export default class Course
             return types.map(type =>
             {
                 // Get assignments of the type
-                let typeAssignments = this.assignments.filter(a => a.graded && a.type == type);
+                let typeAssignments = this.assignments.filter(a => a.type == type);
+
+                // Get graded assignments
+                let gradedAssignments = typeAssignments.filter(a => a.graded);
 
                 // Count scores and max scores
-                let score = typeAssignments.reduce((sum, a) => sum + a.score, 0);
-                let scoreMax = typeAssignments.reduce((sum, a) => sum + a.scoreMax, 0);
+                let score = gradedAssignments.reduce((sum, a) => sum + a.score, 0);
+                let scoreMax = gradedAssignments.reduce((sum, a) => sum + a.scoreMax, 0);
 
                 // Calculate weight
                 let weight = this.termGrading[0].method == 'PERCENT_TYPE'
@@ -397,7 +400,7 @@ export default class Course
                 // Return
                 return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
                     scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2),
-                    assignmentCount: typeAssignments.length}
+                    assignmentCount: typeAssignments.length, graded: gradedAssignments.length > 0}
             })
         })
     }
