@@ -3,7 +3,7 @@ import Course from '@/logic/course';
 import Constants from '@/constants';
 import LoginUser from '@/logic/login-user';
 import NavController from '@/logic/nav-controller';
-import App from '@/components/app/app';
+import App from '@/components/app/app.ts';
 
 /**
  * This component is the top navigation bar
@@ -11,6 +11,7 @@ import App from '@/components/app/app';
 @Component
 export default class Navigation extends Vue
 {
+    @Prop({required: true}) app: App;
     @Prop({required: true}) nav: NavController;
     @Prop({required: true}) courses: Course[];
     @Prop({required: true}) user: LoginUser;
@@ -137,7 +138,7 @@ export default class Navigation extends Vue
             }
             case 'switch-dark':
             {
-                App.instance.darkMode = !App.instance.darkMode;
+                this.app.darkMode = !this.app.darkMode;
 
                 if (this.isDark()) this.$cookies.set('dark', true);
                 else this.$cookies.remove('dark');
@@ -149,7 +150,7 @@ export default class Navigation extends Vue
 
     isDark()
     {
-        return App.instance.darkMode;
+        return this.app.darkMode;
     }
 
     get version() {return Constants.VERSION}
