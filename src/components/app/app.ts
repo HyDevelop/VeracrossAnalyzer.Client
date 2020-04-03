@@ -1,6 +1,6 @@
 import {Component, Vue} from 'vue-property-decorator';
-import Login from '@/components/login/login';
-import Navigation from '@/components/navigation/navigation';
+import Login from '@/components/login/login.vue';
+import Navigation from '@/components/navigation/navigation.vue';
 import Overall from '@/pages/overall/overall.vue';
 import Constants from '@/constants';
 import pWaitFor from 'p-wait-for';
