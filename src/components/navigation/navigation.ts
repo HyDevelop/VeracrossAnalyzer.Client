@@ -13,7 +13,6 @@ export default class Navigation extends Vue
 {
     @Prop({required: true}) app: App;
     @Prop({required: true}) nav: NavController;
-    @Prop({required: true}) courses: Course[];
     @Prop({required: true}) user: LoginUser;
 
     private gradingPeriod: string = 'All Year';
@@ -93,10 +92,10 @@ export default class Navigation extends Vue
     findCourse(courseId: string, indexOffset: number)
     {
         // Find current course index
-        let courseIndex = this.courses.findIndex(c => c.id == +courseId);
+        let courseIndex = this.app.gradedCourses.findIndex(c => c.id == +courseId);
 
         // Find next course
-        return this.courses[courseIndex + indexOffset];
+        return this.app.gradedCourses[courseIndex + indexOffset];
     }
 
     /**

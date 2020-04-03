@@ -13,7 +13,7 @@
 
             <el-submenu index="">
                 <template slot="title">Courses</template>
-                <el-menu-item v-for="course in courses"
+                <el-menu-item v-for="course in app.gradedCourses"
                               :index="JSON.stringify(course.urlIndex)"
                               :key="course.id">{{course.name}}</el-menu-item>
             </el-submenu>
