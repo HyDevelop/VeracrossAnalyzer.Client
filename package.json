@@ -12,7 +12,7 @@
     "@types/md5": "^2.1.33",
     "chroma-js": "^2.1.0",
     "core-js": "^2.6.10",
-    "echarts": "^4.5.0",
+    "echarts": "^4.7.0",
     "element-ui": "^2.13.0",
     "md5": "^2.2.1",
     "moment": "^2.24.0",
@@ -21,16 +21,16 @@
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-cookies": "^1.5.13",
-    "vue-property-decorator": "^8.3.0"
+    "vue-property-decorator": "^8.4.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-typescript": "^3.12.1",
-    "@vue/cli-service": "^4.1.1",
+    "@vue/cli-service": "^4.2.3",
     "node-sass": "^4.13.1",
     "sass-loader": "^7.3.1",
-    "typescript": "^3.7.3",
-    "vue-template-compiler": "^2.6.10"
+    "typescript": "^3.8.3",
+    "vue-template-compiler": "^2.6.11"
   },
   "postcss": {
     "plugins": {
