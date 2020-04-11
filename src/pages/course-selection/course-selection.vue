@@ -41,7 +41,7 @@
 <style lang="scss" scoped>
 #info
 {
-    margin: 20px;
+    margin: 20px 20px 10px;
 
     .header
     {
