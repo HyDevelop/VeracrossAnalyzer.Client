@@ -186,4 +186,21 @@ export class GPAUtils
         // Add average to the row
         return +(score * 100).toFixed(2);
     }
+
+    /**
+     * Get grade level from graduation year
+     *
+     * @param graduationYear
+     */
+    public static getGradeLevel(graduationYear: number): number
+    {
+        // Get current year
+        let currentYear = new Date().getFullYear();
+
+        // Convert current year to current school year: +1 if it's after October
+        if (new Date().getMonth() > 7) currentYear ++;
+
+        // Calculate grade level
+        return 12 - (graduationYear - currentYear);
+    }
 }
