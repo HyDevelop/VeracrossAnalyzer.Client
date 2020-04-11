@@ -1,3 +1,5 @@
+import {GPAUtils} from '@/logic/utils/gpa-utils';
+
 const md5 = require('md5');
 
 export default class LoginUser
@@ -18,6 +20,8 @@ export default class LoginUser
     avatarUrl: string;
     token: string;
 
+    gradeLevel: number;
+
     constructor(json: any)
     {
         this.id = json.id;
@@ -35,6 +39,8 @@ export default class LoginUser
         this.birthday = json.birthday;
         this.avatarUrl = json.avatarUrl;
         this.token = json.token;
+
+        this.gradeLevel = GPAUtils.getGradeLevel(this.graduationYear);
 
         // Generate default avatar
         if (this.avatarUrl == null || this.avatarUrl == '')
