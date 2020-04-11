@@ -11,6 +11,19 @@
                 Unfortunately I can't help you with college course selection.
             </div>
         </el-card>
+
+        <el-row>
+            <el-col :span="16" class="overall-span">
+                <el-card class="large left vertical-center">
+
+                </el-card>
+            </el-col>
+            <el-col :span="8" class="overall-span">
+                <el-card class="large right vertical-center">
+
+                </el-card>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
