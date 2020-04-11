@@ -11,12 +11,13 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator'
+    import {Component, Prop, Vue} from 'vue-property-decorator'
+    import App from '@/components/app/app';
 
     @Component
     export default class CourseSelection extends Vue
     {
-
+        @Prop({required: true}) app: App;
     }
 </script>
 
