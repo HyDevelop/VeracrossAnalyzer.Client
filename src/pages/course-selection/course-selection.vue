@@ -57,4 +57,15 @@
         margin-bottom: 15px;
     }
 }
+
+// Cards
+.left
+{
+    margin-left: 20px;
+}
+
+.right
+{
+    margin-right: 20px;
+}
 </style>
