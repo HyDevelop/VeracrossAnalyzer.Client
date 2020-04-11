@@ -2,9 +2,13 @@
     <div id="course-selection">
         <el-card id="info">
             <div class="header">Course Selection</div>
-            <div class="content">
+            <div class="content" v-if="app.user.gradeLevel < 12">
                 This new page is designed to help you with your course selection next year,
                 providing more information such as how many people are currently enrolled in a course.
+            </div>
+            <div class="content" v-if="app.user.gradeLevel >= 12">
+                You are a senior, what are you doing over here lol. <br>
+                Unfortunately I can't help you with college course selection.
             </div>
         </el-card>
     </div>
