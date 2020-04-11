@@ -10,7 +10,7 @@ export default class LoginUser
     firstName: string;
     lastName: string;
     nickname: string;
-    graduationYear: string;
+    graduationYear: number;
     groups: string;
     emails: string[];
     classes: string[];
@@ -28,7 +28,7 @@ export default class LoginUser
         this.firstName = json.firstName;
         this.lastName = json.lastName;
         this.nickname = json.nickname;
-        this.graduationYear = json.graduationYear;
+        this.graduationYear = +json.graduationYear;
         this.groups = json.groups;
         this.emails = json.emails.split('|').map((e: any) => e.toLowerCase().trim());
         this.classes = json.classes.split('|');
