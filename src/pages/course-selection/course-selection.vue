@@ -39,33 +39,33 @@
 </script>
 
 <style lang="scss" scoped>
-#info
-{
-    margin: 20px 20px 10px;
-
-    .header
+    #info
     {
-        margin-top: 15px;
-        margin-bottom: 10px;
+        margin: 20px 20px 10px;
 
-        font-size: 30px;
-        color: #8c85ea;
+        .header
+        {
+            margin-top: 15px;
+            margin-bottom: 10px;
+
+            font-size: 30px;
+            color: #8c85ea;
+        }
+
+        .content
+        {
+            margin-bottom: 15px;
+        }
     }
 
-    .content
+    // Cards
+    .left
     {
-        margin-bottom: 15px;
+        margin-left: 20px;
     }
-}
 
-// Cards
-.left
-{
-    margin-left: 20px;
-}
-
-.right
-{
-    margin-right: 20px;
-}
+    .right
+    {
+        margin-right: 20px;
+    }
 </style>
