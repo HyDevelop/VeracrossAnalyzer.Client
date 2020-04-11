@@ -11,9 +11,10 @@ import Course from '@/logic/course';
 import LoginUser from '@/logic/login-user';
 import NavController from '@/logic/nav-controller';
 import Info from '@/statics/Info.vue';
+import CourseSelection from '@/pages/course-selection/course-selection.vue';
 
 @Component({
-    components: {Login, Navigation, Overall, Loading, CoursePage, Info},
+    components: {Login, Navigation, Overall, Loading, CoursePage, Info, CourseSelection},
 })
 export default class App extends Vue
 {

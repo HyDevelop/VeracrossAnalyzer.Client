@@ -10,6 +10,7 @@
             <div id="app-content" v-if="assignmentsReady && loading === ''">
                 <overall v-if="nav.id === 'overall'" :courses="gradedCourses"></overall>
                 <course-page v-if="nav.id === 'course'" :course="gradedCourses.find(c => +c.id === +nav.info.id)"></course-page>
+                <course-selection v-if="nav.id === 'course-selection'"></course-selection>
             </div>
 
             <loading v-if="loading !== ''" :text="loading" :error="loadingError"/>
