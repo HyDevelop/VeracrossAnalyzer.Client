@@ -18,7 +18,7 @@
                               :key="course.id">{{course.name}}</el-menu-item>
             </el-submenu>
 
-            <el-menu-item index="course-selection">Course Selection</el-menu-item>
+            <el-menu-item v-if="user.gradeLevel < 12" index="course-selection">Course Selection</el-menu-item>
 
             <!-- Grading period selection -->
             <el-dropdown id="nav-grading-period" @command="selectGradingPeriod">
