@@ -32,7 +32,7 @@
                     <!-- Actual course list -->
                     <div class="list padding-fix">
                         <!-- Every course -->
-                        <div v-for="(course, index) in filteredCourses" class="item vertical-center">
+                        <div v-for="(course, index) in uniqueCourses" class="item vertical-center">
                             <span class="name">{{course.name}}</span>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
     import App from '@/components/app/app';
-    import CourseInfo from '@/logic/course-info';
+    import CourseInfo, {UniqueCourse} from '@/logic/course-info';
     import {GPAUtils} from '@/logic/utils/gpa-utils';
 
     @Component
@@ -88,6 +88,32 @@
                 c.name.toLowerCase().includes(this.search) &&
                 c.level !== 'Club' &&
                 c.year == year);
+        }
+
+        /**
+         * Gets unique courses by name, even though many different teachers might teach it.
+         */
+        get uniqueCourses(): UniqueCourse[]
+        {
+            let names: string[] = [];
+            let list: UniqueCourse[] = [];
+
+            this.filteredCourses.forEach(c =>
+            {
+                // Create the course list if doesn't exist
+                if (!names.includes(c.name))
+                {
+                    names.push(c.name);
+                    list.push({name: c.name, courses: []})
+                }
+
+                // Add the course
+                list[names.indexOf(c.name)].courses.push(c);
+            })
+
+            console.log(list);
+
+            return list;
         }
     }
 </script>
