@@ -22,10 +22,12 @@
             <!-- Course list -->
             <el-col :span="8" class="overall-span">
                 <el-card id="course-list" class="large right">
-                    <div class="header">Course List</div>
+                    <div class="header">
+                        <div class="text">Course List</div>
 
-                    <!-- Search -->
-                    <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
+                        <!-- Search -->
+                        <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
+                    </div>
 
                     <!-- Every course -->
                     <div v-for="(course, index) in filteredCourses" class="item vertical-center">
@@ -106,15 +108,18 @@
 
         .header
         {
-            margin-top: 15px;
-            margin-bottom: 10px;
+            .text
+            {
+                margin-top: 15px;
+                margin-bottom: 10px;
 
-            font-size: 24px;
-        }
+                font-size: 24px;
+            }
 
-        .search
-        {
-            margin-bottom: 20px;
+            .search
+            {
+                margin-bottom: 20px;
+            }
         }
 
         .item
