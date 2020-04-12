@@ -35,6 +35,18 @@
     export default class CourseSelection extends Vue
     {
         @Prop({required: true}) app: App;
+
+        courseInfo: any[] = [];
+        loading = true;
+
+        created()
+        {
+            // Get courses
+            App.http.post('/course-info', {}).then(result =>
+            {
+                if (result.success) this.courseInfo = result.data;
+            });
+        }
     }
 </script>
 
