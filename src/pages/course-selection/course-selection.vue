@@ -24,6 +24,13 @@
                 <el-card id="course-list" class="large right">
                     <div class="header">Course List</div>
 
+                    <!-- Search -->
+                    <el-input
+                            placeholder="Search..."
+                            prefix-icon="el-icon-search"
+                            v-model="search">
+                    </el-input>
+
                     <!-- Every course -->
                     <div v-for="(course, index) in courseInfo" class="item">
                         <span class="name">{{course.name}}</span>
@@ -42,11 +49,12 @@
     @Component
     export default class CourseSelection extends Vue
     {
-        @Prop({required: true}) app: App;
+        @Prop({required: true}) app: App
 
-        courseInfo: CourseInfo[] = [];
-        directory: any[] = [];
-        loading = true;
+        search: string
+        courseInfo: CourseInfo[] = []
+        directory: any[] = []
+        loading = true
 
         created()
         {
