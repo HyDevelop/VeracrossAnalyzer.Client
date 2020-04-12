@@ -86,7 +86,7 @@
 
             return this.courseInfo.filter(c =>
                 c.name.toLowerCase().includes(this.search) &&
-                c.level !== 'Club' &&
+                c.level != null && c.level !== 'Club' && c.level !== 'Sport' && c.level !== 'None' &&
                 c.year == year);
         }
 
