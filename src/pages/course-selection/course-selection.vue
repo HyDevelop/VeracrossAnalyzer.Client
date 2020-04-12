@@ -75,16 +75,14 @@
             {
                 if (result.success)
                 {
+                    console.log(result);
+
                     // Parse data
-                    this.courseInfo = result.data.map((json: any) => new CourseInfo(json));
+                    this.courseInfo = result.data.courseInfos.map((json: any) => new CourseInfo(json));
+                    this.directory = result.data.studentInfos;
+
                 }
             });
-
-            // Get directory
-            App.http.post('/directory', {}).then(result =>
-            {
-                if (result.success) this.directory = result.data;
-            })
         }
 
         /**
