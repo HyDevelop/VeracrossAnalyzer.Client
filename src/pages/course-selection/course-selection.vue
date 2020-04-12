@@ -28,7 +28,7 @@
                     <el-input placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
 
                     <!-- Every course -->
-                    <div v-for="(course, index) in courseInfo.filter(c => c.name.toLowerCase().includes(search))"
+                    <div v-for="(course, index) in filteredCourses"
                          class="item vertical-center">
                         <span class="name">{{course.name}}</span>
                     </div>
@@ -70,6 +70,12 @@
             {
                 if (result.success) this.directory = result.data;
             })
+        }
+
+        get filteredCourses()
+        {
+            return this.courseInfo.filter(c => c.name.toLowerCase().includes(this.search))
+                .filter(c => c.level !== 'Club');
         }
     }
 </script>
