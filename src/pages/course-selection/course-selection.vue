@@ -122,6 +122,8 @@
             height: 30px;
             text-align: left;
             margin-bottom: 10px;
+
+            background: #fbfbfb;
         }
     }
 
