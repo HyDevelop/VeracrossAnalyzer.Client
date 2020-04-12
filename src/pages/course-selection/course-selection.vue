@@ -146,7 +146,7 @@
             return this.courseInfo.filter(c =>
                 c.uniqueName.toLowerCase().includes(this.search) &&
                 c.level != null && c.level !== 'Club' && c.level !== 'Sport' && c.level !== 'None' &&
-                c.year == year);
+                c.year == year && c.gradeLevels.includes(this.app.user.gradeLevel + 1));
         }
 
         /**
