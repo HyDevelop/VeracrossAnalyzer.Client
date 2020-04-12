@@ -108,6 +108,8 @@
 
         .header
         {
+            position: fixed;
+            background: white;
             .text
             {
                 margin-top: 15px;
