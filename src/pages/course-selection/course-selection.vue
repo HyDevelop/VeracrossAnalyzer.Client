@@ -102,6 +102,8 @@
                             }
                         })
                     })
+
+                    this.courseInfo.sort((one, two) => one.name.localeCompare(two.name))
                 }
             });
         }
