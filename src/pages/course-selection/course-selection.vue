@@ -14,15 +14,15 @@
 
         <el-row>
             <el-col :span="16" class="overall-span">
-                <el-card class="large left vertical-center">
+                <el-card class="left vertical-center" style="height: 70vh">
 
                 </el-card>
             </el-col>
 
             <!-- Course list card -->
             <el-col :span="8" class="overall-span">
-                <el-card id="course-list" ref="cl" class="large right" body-style="padding: 0">
-                    <div class="header" :style="{width: courseListWidth + 'px'}">
+                <el-card id="course-list" class="right" style="height: 70vh" body-style="padding: 0">
+                    <div class="header padding-fix">
                         <div class="text">Course List</div>
 
                         <!-- Search -->
@@ -30,7 +30,7 @@
                     </div>
 
                     <!-- Actual course list -->
-                    <div class="list">
+                    <div class="list padding-fix">
                         <!-- Every course -->
                         <div v-for="(course, index) in filteredCourses" class="item vertical-center">
                             <span class="name">{{course.name}}</span>
@@ -57,16 +57,11 @@
         directory: any[] = []
         loading = true
 
-        courseListWidth: number = 10;
-
         /**
          * Called before rendering
          */
         created()
         {
-            // Update width dynamically
-            window.addEventListener("resize", this.updateWidth);
-
             // Get courses
             App.http.post('/course-info', {}).then(result =>
             {
@@ -82,32 +77,6 @@
             {
                 if (result.success) this.directory = result.data;
             })
-        }
-
-        /**
-         * Called on destroy
-         */
-        destroyed()
-        {
-            // Remove width updater
-            window.removeEventListener("resize", this.updateWidth);
-        }
-
-        /**
-         * Called on vue update
-         */
-        updated()
-        {
-            this.updateWidth()
-        }
-
-        /**
-         * Update header width. (CSS doesn't work)
-         * https://stackoverflow.com/questions/17011195/positionfixed-and-widthinherit-with-percentage-parent
-         */
-        updateWidth()
-        {
-            this.courseListWidth = (<Vue> this.$refs.cl).$el.clientWidth - 20;
         }
 
         get filteredCourses()
@@ -141,17 +110,18 @@
     #course-list
     {
         margin-right: 20px;
-        overflow-y: scroll;
 
-        .header
+
+        .padding-fix
         {
-            position: fixed;
-            background: white;
-
             // Fix width issue
             padding-left: 20px;
             padding-right: 20px;
             border-radius: 4px;
+        }
+
+        .header
+        {
 
             .text
             {
@@ -167,6 +137,12 @@
             }
         }
 
+        .list
+        {
+            overflow: scroll;
+            overflow-x: hidden;
+            height: 377px;
+        }
         .item
         {
             height: 30px;
