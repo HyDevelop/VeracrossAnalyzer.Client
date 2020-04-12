@@ -56,7 +56,7 @@
 
         search: string = "";
         courseInfo: CourseInfo[] = []
-        directory: any[] = []
+        directory: {gradeLevel: number, classes: string}[] = []
         loading = true
 
         courseListHeight: number = 0;
