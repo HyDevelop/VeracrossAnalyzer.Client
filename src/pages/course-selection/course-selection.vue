@@ -119,6 +119,11 @@
             position: fixed;
             background: white;
 
+            // Fix width issue
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 4px;
+
             .text
             {
                 margin-top: 15px;
