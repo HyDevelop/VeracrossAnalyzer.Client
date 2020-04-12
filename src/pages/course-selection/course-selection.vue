@@ -149,8 +149,6 @@
                 list[names.indexOf(c.uniqueName)].courses.push(c);
             })
 
-            console.log(list);
-
             return list;
         }
 
