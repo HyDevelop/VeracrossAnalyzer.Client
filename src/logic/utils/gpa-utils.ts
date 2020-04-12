@@ -211,4 +211,22 @@ export class GPAUtils
         // Calculate grade level
         return 12 - (graduationYear - this.getSchoolYear());
     }
+
+    /**
+     * Get grade level name from grade level. (Eg. Freshman, Sophomore, etc.)
+     *
+     * @param gradeLevel
+     */
+    public static gradeLevelName(gradeLevel: number): string
+    {
+        switch (gradeLevel)
+        {
+            case 9: return 'Freshman';
+            case 10: return 'Sophomore';
+            case 11: return 'Junior';
+            case 12: return 'Senior';
+
+            default: return 'Grade ' + gradeLevel;
+        }
+    }
 }
