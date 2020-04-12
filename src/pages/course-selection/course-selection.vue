@@ -46,6 +46,7 @@
     import {Component, Prop, Vue} from 'vue-property-decorator'
     import App from '@/components/app/app';
     import CourseInfo from '@/logic/course-info';
+    import {GPAUtils} from '@/logic/utils/gpa-utils';
 
     @Component
     export default class CourseSelection extends Vue
@@ -81,8 +82,12 @@
 
         get filteredCourses()
         {
-            return this.courseInfo.filter(c => c.name.toLowerCase().includes(this.search))
-                .filter(c => c.level !== 'Club');
+            let year = GPAUtils.getSchoolYear();
+
+            return this.courseInfo.filter(c =>
+                c.name.toLowerCase().includes(this.search) &&
+                c.level !== 'Club' &&
+                c.year == year);
         }
     }
 </script>
