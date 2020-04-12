@@ -159,6 +159,14 @@
             background: #fbfbfb;
             border-radius: 4px;
             padding-left: 10px;
+
+            .name
+            {
+                // Text too long
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
         }
     }
 
