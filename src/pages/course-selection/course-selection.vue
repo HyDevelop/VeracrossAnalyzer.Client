@@ -89,6 +89,19 @@
                     });
                     this.directory = result.data.studentInfos;
 
+                    // Use directory data
+                    this.directory.forEach(d =>
+                    {
+                        d.classes.split('|').forEach(classId =>
+                        {
+                            // Add grade level
+                            let info = this.courseInfo[this.courseIdIndex[+classId]];
+                            if (info as any != null && !info.gradeLevels.includes(d.gradeLevel))
+                            {
+                                info.gradeLevels.push(d.gradeLevel);
+                            }
+                        })
+                    })
                 }
             });
         }
