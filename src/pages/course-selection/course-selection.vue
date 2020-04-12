@@ -25,11 +25,10 @@
                     <div class="header">Course List</div>
 
                     <!-- Search -->
-                    <el-input placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
+                    <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
 
                     <!-- Every course -->
-                    <div v-for="(course, index) in filteredCourses"
-                         class="item vertical-center">
+                    <div v-for="(course, index) in filteredCourses" class="item vertical-center">
                         <span class="name">{{course.name}}</span>
                     </div>
                 </el-card>
@@ -111,6 +110,11 @@
             margin-bottom: 10px;
 
             font-size: 24px;
+        }
+
+        .search
+        {
+            margin-bottom: 10px;
         }
 
         .item
