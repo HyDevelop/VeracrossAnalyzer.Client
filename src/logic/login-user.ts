@@ -4,23 +4,24 @@ const md5 = require('md5');
 
 export default class LoginUser
 {
-    id: number;
-    schoolPersonPk: number;
-    username: string;
-    lastLogin: Date;
-    firstLogin: Date;
-    firstName: string;
-    lastName: string;
-    nickname: string;
-    graduationYear: number;
-    groups: string;
-    emails: string[];
-    classes: string[];
-    birthday: string;
-    avatarUrl: string;
-    token: string;
+    id: number
+    schoolPersonPk: number
+    username: string
+    lastLogin: Date
+    firstLogin: Date
+    firstName: string
+    lastName: string
+    nickname: string
+    graduationYear: number
+    groups: string
+    emails: string[]
+    classes: string[]
+    birthday: string
+    avatarUrl: string
+    token: string
 
-    gradeLevel: number;
+    gradeLevel: number
+    gradeLevelName: string
 
     constructor(json: any)
     {
@@ -41,6 +42,7 @@ export default class LoginUser
         this.token = json.token;
 
         this.gradeLevel = GPAUtils.getGradeLevel(this.graduationYear);
+        this.gradeLevelName = GPAUtils.gradeLevelName(this.gradeLevel);
 
         // Generate default avatar
         if (this.avatarUrl == null || this.avatarUrl == '')
