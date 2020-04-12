@@ -19,7 +19,7 @@
                 </el-card>
             </el-col>
 
-            <!-- Course list -->
+            <!-- Course list card -->
             <el-col :span="8" class="overall-span">
                 <el-card id="course-list" ref="cl" class="large right" body-style="padding: 0">
                     <div class="header" :style="{width: courseListWidth + 'px'}">
@@ -29,9 +29,12 @@
                         <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
                     </div>
 
-                    <!-- Every course -->
-                    <div v-for="(course, index) in filteredCourses" class="item vertical-center">
-                        <span class="name">{{course.name}}</span>
+                    <!-- Actual course list -->
+                    <div class="list">
+                        <!-- Every course -->
+                        <div v-for="(course, index) in filteredCourses" class="item vertical-center">
+                            <span class="name">{{course.name}}</span>
+                        </div>
                     </div>
                 </el-card>
             </el-col>
