@@ -25,11 +25,7 @@
                     <div class="header">Course List</div>
 
                     <!-- Search -->
-                    <el-input
-                            placeholder="Search..."
-                            prefix-icon="el-icon-search"
-                            v-model="search">
-                    </el-input>
+                    <el-input placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
 
                     <!-- Every course -->
                     <div v-for="(course, index) in courseInfo" class="item">
