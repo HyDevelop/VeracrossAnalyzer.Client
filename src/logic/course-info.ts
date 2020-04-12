@@ -6,7 +6,7 @@ export default class CourseInfo
     name: string
     teacher: string
     level: string
-    courseIds: string
+    courseIds: number[]
 
     uniqueName: string
     courseCount: number
@@ -24,10 +24,10 @@ export default class CourseInfo
         this.name = json.name.trim()
         this.teacher = json.teacher
         this.level = json.level
-        this.courseIds = json.courseIds
+        this.courseIds = json.courseIds.split('|').map((id: string) => +id);
 
         this.uniqueName = this.name.replace(/( A| CP| H)$/g, '')
-        this.courseCount = this.courseIds.split('|').length;
+        this.courseCount = this.courseIds.length;
         this.gradeLevels = [];
     }
 }
