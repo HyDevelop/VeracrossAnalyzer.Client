@@ -48,7 +48,7 @@
     {
         @Prop({required: true}) app: App
 
-        search: string
+        search: string = "";
         courseInfo: CourseInfo[] = []
         directory: any[] = []
         loading = true
