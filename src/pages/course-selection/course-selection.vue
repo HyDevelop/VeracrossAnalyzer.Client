@@ -37,6 +37,7 @@
         @Prop({required: true}) app: App;
 
         courseInfo: any[] = [];
+        directory: any[] = [];
         loading = true;
 
         created()
@@ -46,6 +47,12 @@
             {
                 if (result.success) this.courseInfo = result.data;
             });
+
+            // Get directory
+            App.http.post('/directory', {}).then(result =>
+            {
+                if (result.success) this.directory = result.data;
+            })
         }
     }
 </script>
