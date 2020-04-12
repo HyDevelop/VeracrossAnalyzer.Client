@@ -28,7 +28,8 @@
                     <el-input placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
 
                     <!-- Every course -->
-                    <div v-for="(course, index) in courseInfo" class="item">
+                    <div v-for="(course, index) in courseInfo.filter(c => c.name.toLowerCase().includes(search))"
+                         class="item vertical-center">
                         <span class="name">{{course.name}}</span>
                     </div>
                 </el-card>
