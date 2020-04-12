@@ -21,8 +21,8 @@
 
             <!-- Course list -->
             <el-col :span="8" class="overall-span">
-                <el-card id="course-list" class="large right">
-                    <div class="header">
+                <el-card id="course-list" ref="cl" class="large right">
+                    <div class="header" :style="{width: courseListWidth + 'px'}">
                         <div class="text">Course List</div>
 
                         <!-- Search -->
@@ -54,6 +54,8 @@
         directory: any[] = []
         loading = true
 
+        courseListWidth: number = 10;
+
         created()
         {
             // Get courses
@@ -71,6 +73,12 @@
             {
                 if (result.success) this.directory = result.data;
             })
+        }
+
+        updated()
+        {
+            console.log(this.$refs);
+            this.courseListWidth = (<Vue> this.$refs.cl).$el.clientWidth - 20;
         }
 
         get filteredCourses()
@@ -110,6 +118,7 @@
         {
             position: fixed;
             background: white;
+
             .text
             {
                 margin-top: 15px;
