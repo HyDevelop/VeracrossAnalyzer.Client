@@ -21,7 +21,7 @@
 
             <!-- Course list card -->
             <el-col :span="8" class="overall-span">
-                <el-card id="course-list" class="right" style="height: 70vh" body-style="padding: 0">
+                <el-card id="course-list" class="right" ref="cl" body-style="padding: 0">
                     <div class="header padding-fix">
                         <div class="text">Course List</div>
 
@@ -30,7 +30,7 @@
                     </div>
 
                     <!-- Actual course list -->
-                    <div class="list padding-fix">
+                    <div class="list padding-fix" :style="{height: courseListHeight + 'px'}">
                         <!-- Every course -->
                         <div v-for="(course, index) in uniqueCourses" class="item vertical-center">
                             <span class="name">{{course.name}}</span>
@@ -58,11 +58,16 @@
         directory: any[] = []
         loading = true
 
+        courseListHeight: number = 0;
+
         /**
          * Called before rendering
          */
         created()
         {
+            // Update width dynamically
+            window.addEventListener("resize", this.updateHeight);
+
             // Get courses
             App.http.post('/course-info', {}).then(result =>
             {
@@ -79,6 +84,34 @@
                 if (result.success) this.directory = result.data;
             })
         }
+
+        /**
+         * Called on destroy
+         */
+        destroyed()
+        {
+            // Remove width updater
+            window.removeEventListener("resize", this.updateHeight);
+        }
+
+        /**
+         * Called on vue update
+         */
+        updated()
+        {
+            this.updateHeight()
+        }
+
+        /**
+         * Update header width. (CSS doesn't work)
+         * https://stackoverflow.com/questions/17011195/positionfixed-and-widthinherit-with-percentage-parent
+         */
+        updateHeight()
+        {
+            if ((<any> this.$refs.cl) == null) return;
+            this.courseListHeight = (<Vue> this.$refs.cl).$el.clientHeight - 15 - 102;
+        }
+
 
         get filteredCourses()
         {
@@ -141,7 +174,7 @@
     #course-list
     {
         margin-right: 20px;
-
+        height: 70vh;
 
         .padding-fix
         {
