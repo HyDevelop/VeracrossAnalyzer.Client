@@ -21,7 +21,7 @@
 
             <!-- Course list -->
             <el-col :span="8" class="overall-span">
-                <el-card id="course-list" ref="cl" class="large right">
+                <el-card id="course-list" ref="cl" class="large right" body-style="padding: 0">
                     <div class="header" :style="{width: courseListWidth + 'px'}">
                         <div class="text">Course List</div>
 
