@@ -26,9 +26,12 @@ export default class CourseInfo
         this.level = json.level
         this.courseIds = json.courseIds.split('|').map((id: string) => +id);
 
-        this.uniqueName = this.name.replace(/( A| CP| H)$/g, '')
         this.courseCount = this.courseIds.length;
         this.gradeLevels = [];
+        this.uniqueName = this.name
+            .replace(/( Semester| Full Year|)/g, '')
+            .replace(/( Accelerated| Honors| College Prep|)/g, '')
+            .replace(/( A| Acc| CP| H| \(.*\))$/g, '')
     }
 }
 
