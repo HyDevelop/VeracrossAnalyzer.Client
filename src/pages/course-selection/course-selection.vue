@@ -124,7 +124,7 @@
             let year = GPAUtils.getSchoolYear();
 
             return this.courseInfo.filter(c =>
-                c.name.toLowerCase().includes(this.search) &&
+                c.uniqueName.toLowerCase().includes(this.search) &&
                 c.level != null && c.level !== 'Club' && c.level !== 'Sport' && c.level !== 'None' &&
                 c.year == year);
         }
@@ -140,14 +140,14 @@
             this.filteredCourses.forEach(c =>
             {
                 // Create the course list if doesn't exist
-                if (!names.includes(c.name))
+                if (!names.includes(c.uniqueName))
                 {
-                    names.push(c.name);
-                    list.push({name: c.name, courses: []})
+                    names.push(c.uniqueName);
+                    list.push({name: c.uniqueName, courses: []})
                 }
 
                 // Add the course
-                list[names.indexOf(c.name)].courses.push(c);
+                list[names.indexOf(c.uniqueName)].courses.push(c);
             })
 
             console.log(list);
