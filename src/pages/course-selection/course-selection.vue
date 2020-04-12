@@ -20,6 +20,7 @@
             </el-col>
             <el-col :span="8" class="overall-span">
                 <el-card id="course-list" class="large right">
+                    <div class="header">Course List</div>
 
                 </el-card>
             </el-col>
