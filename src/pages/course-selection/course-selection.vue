@@ -56,6 +56,7 @@
 
         search: string = "";
         courseInfo: CourseInfo[] = []
+        courseIdIndex: any = {} // Map<CourseID, index in courseInfo>
         directory: {gradeLevel: number, classes: string}[] = []
         loading = true
 
@@ -78,7 +79,14 @@
                     console.log(result);
 
                     // Parse data
-                    this.courseInfo = result.data.courseInfos.map((json: any) => new CourseInfo(json));
+                    this.courseInfo = result.data.courseInfos.map((json: any, index: number) =>
+                    {
+                        let info = new CourseInfo(json);
+
+                        // Index
+                        info.courseIds.forEach(id => this.courseIdIndex[id] = index);
+                        return info;
+                    });
                     this.directory = result.data.studentInfos;
 
                 }
