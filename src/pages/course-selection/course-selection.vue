@@ -124,6 +124,7 @@
             margin-bottom: 10px;
 
             background: #fbfbfb;
+            padding-left: 10px;
         }
     }
 
