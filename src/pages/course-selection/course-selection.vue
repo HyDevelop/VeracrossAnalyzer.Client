@@ -124,6 +124,7 @@
             margin-bottom: 10px;
 
             background: #fbfbfb;
+            border-radius: 4px;
             padding-left: 10px;
         }
     }
