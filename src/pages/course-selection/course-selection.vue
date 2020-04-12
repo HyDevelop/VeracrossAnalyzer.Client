@@ -14,14 +14,14 @@
 
         <el-row>
             <el-col :span="16" class="overall-span">
-                <el-card class="left vertical-center" style="height: 70vh">
+                <el-card class="left vertical-center" :style="{height: cardsHeight + 'px'}">
 
                 </el-card>
             </el-col>
 
             <!-- Course list card -->
             <el-col :span="8" class="overall-span">
-                <el-card id="course-list" class="right" ref="cl" body-style="padding: 0">
+                <el-card id="course-list" class="right" ref="cl" body-style="padding: 0" :style="{height: cardsHeight + 'px'}">
                     <div class="header padding-fix">
                         <div class="text">Course List</div>
 
@@ -59,6 +59,7 @@
         loading = true
 
         courseListHeight: number = 0;
+        cardsHeight: number = 0;
 
         /**
          * Called before rendering
@@ -103,13 +104,18 @@
         }
 
         /**
-         * Update header width. (CSS doesn't work)
-         * https://stackoverflow.com/questions/17011195/positionfixed-and-widthinherit-with-percentage-parent
+         * Update header height. (CSS doesn't work)
          */
         updateHeight()
         {
-            if ((<any> this.$refs.cl) == null) return;
-            this.courseListHeight = (<Vue> this.$refs.cl).$el.clientHeight - 15 - 102;
+            // Get element
+            let cl = this.$refs.cl as Vue;
+            if (cl as any == null) return;
+            let el = cl.$el;
+
+            // Calculate height
+            this.cardsHeight = window.innerHeight - el.getBoundingClientRect().top - 20;
+            this.courseListHeight = this.cardsHeight - 15 - 102;
         }
 
 
