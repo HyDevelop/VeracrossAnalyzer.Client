@@ -120,6 +120,7 @@
         .item
         {
             height: 30px;
+            text-align: left;
         }
     }
 
