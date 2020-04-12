@@ -76,8 +76,6 @@
             {
                 if (result.success)
                 {
-                    console.log(result);
-
                     // Parse data
                     this.courseInfo = result.data.courseInfos.map((json: any, index: number) =>
                     {
