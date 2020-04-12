@@ -19,7 +19,7 @@
                 </el-card>
             </el-col>
             <el-col :span="8" class="overall-span">
-                <el-card class="large right vertical-center">
+                <el-card id="course-list" class="large right">
 
                 </el-card>
             </el-col>
@@ -77,14 +77,15 @@
         }
     }
 
+    #course-list
+    {
+        margin-right: 20px;
+        overflow-y: scroll;
+    }
+
     // Cards
     .left
     {
         margin-left: 20px;
-    }
-
-    .right
-    {
-        margin-right: 20px;
     }
 </style>
