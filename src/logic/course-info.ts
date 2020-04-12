@@ -24,7 +24,8 @@ export default class CourseInfo
         this.teacher = json.teacher
         this.level = json.level
         this.courseIds = json.courseIds
-        
+
+        this.uniqueName = this.name.replace(/( A| CP| H)$/g, '')
         this.courseCount = this.courseIds.split('|').length;
     }
 }
