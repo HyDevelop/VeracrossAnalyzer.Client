@@ -143,6 +143,13 @@
             overflow-x: hidden;
             height: 377px;
         }
+
+        // Remove scrollbar
+        .list::-webkit-scrollbar
+        {
+            width: 0;
+        }
+
         .item
         {
             height: 30px;
