@@ -96,6 +96,11 @@
 
             font-size: 24px;
         }
+
+        .item
+        {
+            height: 30px;
+        }
     }
 
     // Cards
