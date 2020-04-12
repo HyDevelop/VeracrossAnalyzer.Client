@@ -18,6 +18,8 @@
 
                 </el-card>
             </el-col>
+
+            <!-- Course list -->
             <el-col :span="8" class="overall-span">
                 <el-card id="course-list" class="large right">
                     <div class="header">Course List</div>
@@ -82,6 +84,14 @@
     {
         margin-right: 20px;
         overflow-y: scroll;
+
+        .header
+        {
+            margin-top: 15px;
+            margin-bottom: 10px;
+
+            font-size: 24px;
+        }
     }
 
     // Cards
