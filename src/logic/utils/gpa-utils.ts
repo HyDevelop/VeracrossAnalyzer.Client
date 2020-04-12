@@ -197,7 +197,7 @@ export class GPAUtils
         // Get current year
         let currentYear = new Date().getFullYear();
 
-        // Convert current year to current school year: +1 if it's after October
+        // Convert current year to current school year: +1 if it's after August
         if (new Date().getMonth() > 7) currentYear ++;
 
         // Calculate grade level
