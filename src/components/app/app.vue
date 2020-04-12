@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="theme-default">
-        <div id="app-inner" v-if="staticPage === ''" :class="{dark: darkMode}">
+        <div id="app-inner" v-if="staticPage === ''" :class="{dark: darkMode, padding: nav.id !== 'course-selection'}">
             <login v-if="showLogin" v-on:login:user="onLogin"/>
             <navigation v-if="user != null"
                         :app="this" :user="user" :nav="nav"
@@ -22,3 +22,10 @@
 
 <script src="./app.ts" lang="ts"></script>
 <style src="./app.scss" lang="scss"/>
+
+<style lang="scss" scoped>
+    .padding
+    {
+        padding-bottom: 100px;
+    }
+</style>
