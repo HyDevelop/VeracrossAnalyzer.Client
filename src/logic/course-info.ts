@@ -19,7 +19,7 @@ export default class CourseInfo
     {
         this.id_ci = json.id_ci
         this.year = json.year
-        this.name = json.name
+        this.name = json.name.trim()
         this.teacher = json.teacher
         this.level = json.level
         this.courseIds = json.courseIds
