@@ -56,8 +56,14 @@
 
         courseListWidth: number = 10;
 
+        /**
+         * Called before rendering
+         */
         created()
         {
+            // Update width dynamically
+            window.addEventListener("resize", this.updateWidth);
+
             // Get courses
             App.http.post('/course-info', {}).then(result =>
             {
@@ -75,9 +81,29 @@
             })
         }
 
+        /**
+         * Called on destroy
+         */
+        destroyed()
+        {
+            // Remove width updater
+            window.removeEventListener("resize", this.updateWidth);
+        }
+
+        /**
+         * Called on vue update
+         */
         updated()
         {
-            console.log(this.$refs);
+            this.updateWidth()
+        }
+
+        /**
+         * Update header width. (CSS doesn't work)
+         * https://stackoverflow.com/questions/17011195/positionfixed-and-widthinherit-with-percentage-parent
+         */
+        updateWidth()
+        {
             this.courseListWidth = (<Vue> this.$refs.cl).$el.clientWidth - 20;
         }
 
