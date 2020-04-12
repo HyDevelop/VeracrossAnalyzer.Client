@@ -24,6 +24,10 @@
                 <el-card id="course-list" class="large right">
                     <div class="header">Course List</div>
 
+                    <!-- Every course -->
+                    <div v-for="(course, index) in courseInfo" class="item">
+                        <span class="name">{{course.name}}</span>
+                    </div>
                 </el-card>
             </el-col>
         </el-row>
