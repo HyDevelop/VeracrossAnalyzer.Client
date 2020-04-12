@@ -37,13 +37,14 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
     import App from '@/components/app/app';
+    import CourseInfo from '@/logic/course-info';
 
     @Component
     export default class CourseSelection extends Vue
     {
         @Prop({required: true}) app: App;
 
-        courseInfo: any[] = [];
+        courseInfo: CourseInfo[] = [];
         directory: any[] = [];
         loading = true;
 
@@ -52,7 +53,11 @@
             // Get courses
             App.http.post('/course-info', {}).then(result =>
             {
-                if (result.success) this.courseInfo = result.data;
+                if (result.success)
+                {
+                    // Parse data
+                    this.courseInfo = result.data.map((json: any) => new CourseInfo(json));
+                }
             });
 
             // Get directory
