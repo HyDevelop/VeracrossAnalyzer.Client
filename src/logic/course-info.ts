@@ -7,7 +7,8 @@ export default class CourseInfo
     teacher: string
     level: string
     courseIds: string
-    
+
+    uniqueName: string
     courseCount: number
 
     /**
