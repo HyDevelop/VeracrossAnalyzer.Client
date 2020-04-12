@@ -10,6 +10,7 @@ export default class CourseInfo
 
     uniqueName: string
     courseCount: number
+    gradeLevels: number[]
 
     /**
      * Construct with a json object
@@ -27,6 +28,7 @@ export default class CourseInfo
 
         this.uniqueName = this.name.replace(/( A| CP| H)$/g, '')
         this.courseCount = this.courseIds.split('|').length;
+        this.gradeLevels = [];
     }
 }
 
