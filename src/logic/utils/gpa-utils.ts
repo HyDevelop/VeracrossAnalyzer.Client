@@ -188,11 +188,9 @@ export class GPAUtils
     }
 
     /**
-     * Get grade level from graduation year
-     *
-     * @param graduationYear
+     * Get current school year
      */
-    public static getGradeLevel(graduationYear: number): number
+    public static getSchoolYear(): number
     {
         // Get current year
         let currentYear = new Date().getFullYear();
@@ -200,7 +198,17 @@ export class GPAUtils
         // Convert current year to current school year: +1 if it's after August
         if (new Date().getMonth() > 7) currentYear ++;
 
+        return currentYear;
+    }
+
+    /**
+     * Get grade level from graduation year
+     *
+     * @param graduationYear
+     */
+    public static getGradeLevel(graduationYear: number): number
+    {
         // Calculate grade level
-        return 12 - (graduationYear - currentYear);
+        return 12 - (graduationYear - this.getSchoolYear());
     }
 }
