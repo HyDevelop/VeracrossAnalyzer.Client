@@ -27,3 +27,9 @@ export default class CourseInfo
         this.courseCount = this.courseIds.split('|').length;
     }
 }
+
+export interface UniqueCourse
+{
+    name: string
+    courses: CourseInfo[]
+}
