@@ -41,4 +41,5 @@ export interface UniqueCourse
 {
     name: string
     courses: CourseInfo[]
+    enrollments: number
 }
