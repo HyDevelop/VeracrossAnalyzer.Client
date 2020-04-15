@@ -97,6 +97,7 @@
                             if (info as any != null && !info.gradeLevels.includes(d.gradeLevel))
                             {
                                 info.gradeLevels.push(d.gradeLevel);
+                                info.enrollments ++;
                             }
                         })
                     })
