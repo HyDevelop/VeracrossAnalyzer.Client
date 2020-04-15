@@ -164,11 +164,12 @@
                 if (!names.includes(c.uniqueName))
                 {
                     names.push(c.uniqueName);
-                    list.push({name: c.uniqueName, courses: []})
+                    list.push({name: c.uniqueName, courses: [], enrollments: 0})
                 }
 
                 // Add the course
                 list[names.indexOf(c.uniqueName)].courses.push(c);
+                list[names.indexOf(c.uniqueName)].enrollments += c.enrollments;
             })
 
             return list;
