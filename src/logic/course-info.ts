@@ -11,6 +11,7 @@ export default class CourseInfo
     uniqueName: string
     courseCount: number
     gradeLevels: number[]
+    enrollments: number
 
     /**
      * Construct with a json object
@@ -32,6 +33,7 @@ export default class CourseInfo
             .replace(/( Semester| Full Year|)/g, '')
             .replace(/( Accelerated| Honors| College Prep|)/g, '')
             .replace(/( A| Acc| CP| H| \(.*\))$/g, '')
+        this.enrollments = 0;
     }
 }
 
