@@ -44,11 +44,18 @@ export default class CourseInfo
     }
 }
 
-export interface UniqueCourse
+export class UniqueCourse
 {
     name: string
     courses: CourseInfo[]
     enrollments: number
+
+    constructor(name: string, courses: CourseInfo[], enrollments: number)
+    {
+        this.name = name;
+        this.courses = courses;
+        this.enrollments = enrollments;
+    }
 }
 
 export class ClassInfo

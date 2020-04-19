@@ -142,7 +142,7 @@ export default class CourseSelection extends Vue
             if (!names.includes(c.uniqueName))
             {
                 names.push(c.uniqueName);
-                list.push({name: c.uniqueName, courses: [], enrollments: 0})
+                list.push(new UniqueCourse(c.uniqueName, [], 0))
             }
 
             // Add the course
