@@ -36,7 +36,7 @@
                         <div v-for="(course, index) in uniqueCourses" class="item vertical-center">
                             <div class="name">{{course.name}}</div>
                             <div class="descriptions">
-                                {{course.enrollments}}
+                                <i class="el-icon-user-solid"/>{{course.enrollments}}
                             </div>
                         </div>
                     </div>
