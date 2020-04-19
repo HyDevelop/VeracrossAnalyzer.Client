@@ -82,6 +82,12 @@
         {
             text-align: right;
             color: #a5a5a5;
+
+            span
+            {
+                display: inline-block;
+                width: 40px;
+            }
         }
     }
 }
