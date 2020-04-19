@@ -1,5 +1,6 @@
 <template>
     <div id="settings">
+        <div class="header">Settings</div>
     </div>
 </template>
 
