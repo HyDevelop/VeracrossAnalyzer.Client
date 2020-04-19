@@ -15,5 +15,11 @@
 </script>
 
 <style lang="scss" scoped>
+    .header
+    {
+        margin-top: 15px;
+        margin-bottom: 10px;
 
+        font-size: 24px;
+    }
 </style>
