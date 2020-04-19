@@ -32,6 +32,7 @@ export default class CourseInfo
         this.gradeLevels = [];
         this.uniqueName = CourseInfo.toUniqueName(this.name);
         this.enrollments = 0;
+        this.classes = []
     }
 
     static toUniqueName(name: string)
