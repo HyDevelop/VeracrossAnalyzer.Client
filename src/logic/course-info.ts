@@ -12,6 +12,7 @@ export default class CourseInfo
     courseCount: number
     gradeLevels: number[]
     enrollments: number
+    classes: ClassInfo[]
 
     /**
      * Construct with a json object

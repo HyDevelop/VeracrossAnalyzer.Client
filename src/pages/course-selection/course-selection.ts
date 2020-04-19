@@ -38,7 +38,15 @@ export default class CourseSelection extends Vue
                     let info = new CourseInfo(json);
 
                     // Index
-                    info.courseIds.forEach(id => this.courseIdIndex[id] = index);
+                    info.courseIds.forEach(id =>
+                    {
+                        this.courseIdIndex[id] = index;
+
+                        // Add class info into course
+                        let classInfo = this.classes.find(c => c.id == id)
+                        if (classInfo == null) return;
+                        info.classes.push(classInfo);
+                    });
                     return info;
                 });
                 this.directory = result.data.studentInfos;
