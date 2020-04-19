@@ -54,7 +54,7 @@
     {
         @Prop({required: true}) app: App
 
-        search: string = "";
+        search: string = '';
         courseInfo: CourseInfo[] = []
         courseIdIndex: any = {} // Map<CourseID, index in courseInfo>
         directory: {gradeLevel: number, classes: string}[] = []
@@ -69,7 +69,7 @@
         created()
         {
             // Update width dynamically
-            window.addEventListener("resize", this.updateHeight);
+            window.addEventListener('resize', this.updateHeight);
 
             // Get courses
             App.http.post('/course-info', {}).then(result =>
@@ -113,7 +113,7 @@
         destroyed()
         {
             // Remove width updater
-            window.removeEventListener("resize", this.updateHeight);
+            window.removeEventListener('resize', this.updateHeight);
         }
 
         /**
