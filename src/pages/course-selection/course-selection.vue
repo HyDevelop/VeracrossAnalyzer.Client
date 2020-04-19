@@ -27,7 +27,9 @@
                         <div class="text">Course List</div>
 
                         <!-- Search -->
-                        <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search"></el-input>
+                        <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search">
+                            <el-button slot="append" icon="el-icon-s-tools" @click="openSettings"></el-button>
+                        </el-input>
                     </div>
 
                     <!-- Actual course list -->
@@ -149,6 +151,14 @@
             this.courseListHeight = this.cardsHeight - 15 - 102;
         }
 
+        /**
+         * Open the settings page.
+         */
+        openSettings()
+        {
+            // TODO: implement
+            alert('TODO')
+        }
 
         get filteredCourses()
         {
