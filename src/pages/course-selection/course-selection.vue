@@ -95,11 +95,17 @@
                     {
                         d.classes.split('|').forEach(classId =>
                         {
-                            // Add grade level
+                            // Get info by class id
                             let info = this.courseInfo[this.courseIdIndex[+classId]];
-                            if (info as any != null && !info.gradeLevels.includes(d.gradeLevel))
+                            if (info as any != null)
                             {
-                                info.gradeLevels.push(d.gradeLevel);
+                                // Add grade level
+                                if (!info.gradeLevels.includes(d.gradeLevel))
+                                {
+                                    info.gradeLevels.push(d.gradeLevel);
+                                }
+
+                                // Count enrollments
                                 info.enrollments ++;
                             }
                         })
