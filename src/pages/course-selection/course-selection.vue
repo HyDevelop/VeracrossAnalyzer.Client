@@ -34,7 +34,10 @@
                     <div class="list padding-fix" :style="{height: courseListHeight + 'px'}">
                         <!-- Every course -->
                         <div v-for="(course, index) in uniqueCourses" class="item vertical-center">
-                            <span class="name">{{course.name}}</span>
+                            <div class="name">{{course.name}}</div>
+                            <div class="descriptions">
+                                {{course.enrollments}}
+                            </div>
                         </div>
                     </div>
                 </el-card>
