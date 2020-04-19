@@ -1,6 +1,6 @@
 import {Component, Prop, Vue} from 'vue-property-decorator'
 import App from '@/components/app/app';
-import CourseInfo, {UniqueCourse} from '@/logic/course-info';
+import CourseInfo, {ClassInfo, UniqueCourse} from '@/logic/course-info';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
 
 @Component
@@ -8,10 +8,11 @@ export default class CourseSelection extends Vue
 {
     @Prop({required: true}) app: App
 
-    search: string = '';
+    search: string = ''
     courseInfo: CourseInfo[] = []
     courseIdIndex: any = {} // Map<CourseID, index in courseInfo>
     directory: {gradeLevel: number, classes: string}[] = []
+    classes: ClassInfo[] = []
     loading = true
 
     courseListHeight: number = 0;
@@ -31,6 +32,7 @@ export default class CourseSelection extends Vue
             if (result.success)
             {
                 // Parse data
+                this.classes = result.data.classes.map((json: any) => new ClassInfo(json));
                 this.courseInfo = result.data.courseInfos.map((json: any, index: number) =>
                 {
                     let info = new CourseInfo(json);
