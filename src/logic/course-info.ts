@@ -56,6 +56,11 @@ export class UniqueCourse
         this.courses = courses;
         this.enrollments = enrollments;
     }
+
+    get classes()
+    {
+        return this.courses.flatMap(c => c.classes);
+    }
 }
 
 export class ClassInfo
