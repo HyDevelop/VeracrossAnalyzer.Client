@@ -15,8 +15,8 @@
 
         <el-row>
             <el-col :span="16" class="overall-span">
-                <el-card class="left vertical-center" :style="{height: cardsHeight + 'px'}">
-
+                    <el-card class="left" :style="{height: cardsHeight + 'px'}">
+                    <SearchSettings></SearchSettings>
                 </el-card>
             </el-col>
 

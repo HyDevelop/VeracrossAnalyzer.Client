@@ -2,8 +2,9 @@ import {Component, Prop, Vue} from 'vue-property-decorator'
 import App from '@/components/app/app';
 import CourseInfo, {ClassInfo, UniqueCourse} from '@/logic/course-info';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
+import SearchSettings from '@/pages/course-selection/search-settings/search-settings.vue';
 
-@Component
+@Component({components: {SearchSettings}})
 export default class CourseSelection extends Vue
 {
     @Prop({required: true}) app: App
