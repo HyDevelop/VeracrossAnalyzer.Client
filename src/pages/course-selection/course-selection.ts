@@ -2,6 +2,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator'
 import App from '@/components/app/app';
 import CourseInfo, {ClassInfo, UniqueCourse} from '@/logic/course-info';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
+// @ts-ignore
 import SearchSettingsComponent, {SearchSettings} from '@/pages/course-selection/search-settings/search-settings.vue';
 
 @Component({components: {SearchSettings: SearchSettingsComponent}})
@@ -75,8 +76,6 @@ export default class CourseSelection extends Vue
                         }
                     })
                 })
-
-                this.courseInfo.sort((one, two) => one.name.localeCompare(two.name))
             }
         });
     }
@@ -130,7 +129,7 @@ export default class CourseSelection extends Vue
             c.level != null && c.level !== 'Club' && c.level !== 'Sport' && c.level !== 'None' &&
             c.year == year &&
             (this.settings.showAllCourses || c.gradeLevels.includes(this.app.user.gradeLevel + 1))
-        );
+        )
     }
 
     /**
@@ -154,6 +153,21 @@ export default class CourseSelection extends Vue
             list[names.indexOf(c.uniqueName)].courses.push(c);
             list[names.indexOf(c.uniqueName)].enrollments += c.enrollments;
         })
+
+        // Sorting
+        switch (this.settings.sortBy)
+        {
+            case 'Popularity':
+            {
+                list.sort((a, b) => b.enrollments - a.enrollments);
+                break
+            }
+            default:
+            {
+                list.sort((a, b) => a.name.localeCompare(b.name));
+                break
+            }
+        }
 
         return list;
     }
