@@ -3,6 +3,10 @@
         <div class="header">Course: <span style="color: #229fff">{{uniqueCourse.name}}</span></div>
         <el-divider class="divider"><i class="el-icon-reading"></i></el-divider>
 
+        <div class="item" v-for="course in uniqueCourse.courses">
+            <div>{{course.levelFull}} - <i>{{course.teacher}}</i></div>
+            <div class="info">{{course.name}}</div>
+        </div>
     </div>
 </template>
 
