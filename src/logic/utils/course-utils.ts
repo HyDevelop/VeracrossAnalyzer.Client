@@ -94,4 +94,23 @@ export class CourseUtils
 
         return -1;
     }
+
+    /**
+     * Get full name of a level from short name
+     *
+     * @param level Any level name
+     */
+    static getLevelFullName(level: string)
+    {
+        switch (this.getLevelID(level))
+        {
+            case 1: return 'AP';
+            case 2: return 'Honors';
+            case 3: return 'Accelerated';
+            case 4: return 'CP';
+            case 101: return 'Club';
+            case 102: return 'Sport';
+            case 201: return 'None';
+        }
+    }
 }
