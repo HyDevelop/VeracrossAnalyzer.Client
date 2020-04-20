@@ -21,7 +21,7 @@
 
         get sortedCourses(): CourseInfo[]
         {
-            return this.uniqueCourse.courses.sort((a, b) => a.name.localeCompare(b.name));
+            return this.uniqueCourse.courses.sort((a, b) => a.levelID - b.levelID);
         }
     }
 </script>
