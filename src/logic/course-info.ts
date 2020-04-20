@@ -14,6 +14,7 @@ export default class CourseInfo
     gradeLevels: number[]
     enrollments: number
     classes: ClassInfo[]
+    levelID: number;
     levelFull: string
 
     /**
@@ -35,6 +36,7 @@ export default class CourseInfo
         this.uniqueName = CourseInfo.toUniqueName(this.name);
         this.enrollments = 0;
         this.classes = []
+        this.levelID = CourseUtils.getLevelID(this.level);
         this.levelFull = CourseUtils.getLevelFullName(this.level);
     }
 
