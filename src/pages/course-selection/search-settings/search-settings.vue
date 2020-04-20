@@ -26,4 +26,9 @@
 
         font-size: 24px;
     }
+
+    .divider
+    {
+        margin-top: 15px !important;
+    }
 </style>
