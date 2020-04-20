@@ -120,6 +120,11 @@ export default class CourseSelection extends Vue
         this.openedPage = this.openedPage == 'settings' ? '' : 'settings';
     }
 
+    get settings(): SearchSettings
+    {
+        return <SearchSettings> this.$refs['settings'];
+    }
+
     get filteredCourses()
     {
         let year = GPAUtils.getSchoolYear();
