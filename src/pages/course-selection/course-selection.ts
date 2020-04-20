@@ -128,7 +128,9 @@ export default class CourseSelection extends Vue
         return this.courseInfo.filter(c =>
             c.uniqueName.toLowerCase().includes(this.search.toLowerCase()) &&
             c.level != null && c.level !== 'Club' && c.level !== 'Sport' && c.level !== 'None' &&
-            c.year == year && c.gradeLevels.includes(this.app.user.gradeLevel + 1));
+            c.year == year &&
+            (this.settings.showAllCourses || c.gradeLevels.includes(this.app.user.gradeLevel + 1))
+        );
     }
 
     /**
