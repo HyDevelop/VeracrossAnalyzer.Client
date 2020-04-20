@@ -5,7 +5,10 @@
 
         <div class="item" v-for="course in sortedCourses">
             <div>{{course.levelFull}} - <i>{{course.teacher}}</i></div>
-            <div class="info">{{course.name}}</div>
+            <div class="info">
+                <span class="name">{{course.name}} : </span>
+                <span class="enrollments"><i class="el-icon-user"/> {{course.enrollments}}</span>
+            </div>
         </div>
     </div>
 </template>
