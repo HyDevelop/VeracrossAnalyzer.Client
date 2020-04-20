@@ -1,18 +1,5 @@
 <template>
     <div id="course-selection">
-        <el-card id="info">
-            <div class="header">Course Selection</div>
-            <div class="content" v-if="app.user.gradeLevel < 12">
-                This new page is designed to help you with your course selection for your
-                <span style="color:#409EFF">{{nextYearGradeLevel}} year</span>,
-                providing more information such as how many people are currently enrolled in a course.
-            </div>
-            <div class="content" style="color: #ff3d3d" v-if="app.user.gradeLevel >= 12">
-                You are a senior, what are you doing over here lol. <br>
-                Unfortunately I can't help you with college course selection.
-            </div>
-        </el-card>
-
         <el-row>
             <el-col :span="16" class="overall-span">
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
