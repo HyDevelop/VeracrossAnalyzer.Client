@@ -1,5 +1,7 @@
 <template>
     <div id="course-detail">
+        <div class="header">Course: <span style="color: #229fff">{{uniqueCourse.name}}</span></div>
+        <el-divider class="divider"><i class="el-icon-reading"></i></el-divider>
 
     </div>
 </template>
@@ -11,7 +13,7 @@
     @Component
     export default class CourseDetail extends Vue
     {
-        @Prop({required: true}) courseInfo: UniqueCourse;
+        @Prop({required: true}) uniqueCourse: UniqueCourse;
     }
 </script>
 
