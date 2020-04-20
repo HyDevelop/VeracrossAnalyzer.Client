@@ -54,5 +54,9 @@
 
 <style src="./pages.scss" lang="scss" scoped/>
 <style lang="scss" scoped>
-
+    .content
+    {
+        text-align: justify;
+        color: #585858;
+    }
 </style>
