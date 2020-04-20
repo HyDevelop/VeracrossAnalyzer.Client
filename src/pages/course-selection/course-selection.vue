@@ -5,7 +5,7 @@
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
                     <SearchSettings v-if="openedPage === 'settings'" ref="settings" :settings="settings"/>
                     <Welcome v-if="openedPage === ''" :app="app"/>
-                    <CourseDetail v-if="openedPage === 'course'" :course-info="activeCourse"/>
+                    <CourseDetail v-if="openedPage === 'course'" :unique-course="activeCourse"/>
                 </el-card>
             </el-col>
 
@@ -24,7 +24,7 @@
                     <!-- Actual course list -->
                     <div class="list padding-fix" :style="{height: courseListHeight + 'px'}">
                         <!-- Every course -->
-                        <div v-for="(course, index) in uniqueCourses" class="item vertical-center"
+                        <div v-for="(course, index) in uniqueCourses" class="item vertical-center clickable unselectable"
                              @click="openCourse(course)">
 
                             <div class="name">{{course.name}}</div>
