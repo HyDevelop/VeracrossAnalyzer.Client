@@ -20,6 +20,7 @@ export default class CourseSelection extends Vue
     cardsHeight: number = 0;
 
     openedPage: string = '';
+    settings: SearchSettings = new SearchSettings();
 
     /**
      * Called before rendering
@@ -118,11 +119,6 @@ export default class CourseSelection extends Vue
     openSettings()
     {
         this.openedPage = this.openedPage == 'settings' ? '' : 'settings';
-    }
-
-    get settings(): SearchSettings
-    {
-        return <SearchSettings> this.$refs['settings'];
     }
 
     get filteredCourses()
