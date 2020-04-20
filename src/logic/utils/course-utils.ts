@@ -78,6 +78,8 @@ export class CourseUtils
 
     static getLevelID(level: string)
     {
+        if (level == undefined) return -1;
+
         level = level.toLowerCase();
 
         if (level == 'ap' || level == 'advanced placement') return 1;
@@ -111,6 +113,7 @@ export class CourseUtils
             case 101: return 'Club';
             case 102: return 'Sport';
             case 201: return 'None';
+            default: return '--';
         }
     }
 }
