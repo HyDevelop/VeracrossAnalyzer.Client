@@ -55,5 +55,11 @@
     .content
     {
         text-align: left;
+
+        .item
+        {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
     }
 </style>
