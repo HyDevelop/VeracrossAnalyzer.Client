@@ -6,12 +6,12 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
-    import CourseInfo from '@/logic/course-info';
+    import CourseInfo, {UniqueCourse} from '@/logic/course-info';
 
     @Component
     export default class CourseDetail extends Vue
     {
-        @Prop({required: true}) courseInfo: CourseInfo;
+        @Prop({required: true}) courseInfo: UniqueCourse;
     }
 </script>
 

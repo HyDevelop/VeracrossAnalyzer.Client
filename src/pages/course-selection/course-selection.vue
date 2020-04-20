@@ -5,7 +5,7 @@
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
                     <SearchSettings v-if="openedPage === 'settings'" ref="settings" :settings="settings"/>
                     <Welcome v-if="openedPage === ''" :app="app"/>
-                    <CourseDetail v-if="openedPage === 'course'" :course-info="courseInfo[activeCourseIndex]"/>
+                    <CourseDetail v-if="openedPage === 'course'" :course-info="activeCourse"/>
                 </el-card>
             </el-col>
 

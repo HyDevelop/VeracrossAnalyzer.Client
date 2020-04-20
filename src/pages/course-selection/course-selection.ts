@@ -24,7 +24,7 @@ export default class CourseSelection extends Vue
 
     openedPage: string = '';
     settings: SearchSettings = new SearchSettings();
-    activeCourseIndex: number = -1;
+    activeCourse: UniqueCourse = new UniqueCourse('', [], -1);
 
     /**
      * Called before rendering
