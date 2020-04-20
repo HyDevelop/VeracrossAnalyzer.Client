@@ -31,4 +31,9 @@
     {
         margin-top: 15px !important;
     }
+
+    .content
+    {
+        text-align: left;
+    }
 </style>
