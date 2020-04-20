@@ -22,6 +22,16 @@
             For 2020, the new courses are Financial Algebra and Acc Psychology.
             Also, by default, only the courses that current {{nextGrade.toLowerCase()}}s take are displayed,
             and you can enable "show all courses" in settings if you want to see all courses.
+            <br><br>
+            <b>Notations:</b><br>
+            <i class="el-icon-s-home"/>: How many classes (blocks) did the course open this year.<br>
+            <i class="el-icon-user-solid"/>: How many teachers are teaching this course.<br>
+            <i class="el-icon-user"/> How many students are enrolled.<br>
+            <br>
+            <b>Sorting:</b><br>
+            By default the courses are sorted by name,
+            but you can change the settings to sort by popularity, by classes, by level, or by peer rating.
+        </div>
     </div>
 </template>
 
