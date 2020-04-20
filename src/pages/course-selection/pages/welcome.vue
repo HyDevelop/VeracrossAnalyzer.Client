@@ -14,6 +14,7 @@
     }
 </script>
 
+<style src="./pages.scss" lang="scss" scoped/>
 <style lang="scss" scoped>
 
 </style>

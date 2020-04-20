@@ -38,20 +38,8 @@
     }
 </script>
 
+<style src="./pages.scss" lang="scss" scoped/>
 <style lang="scss" scoped>
-    .header
-    {
-        margin-top: 15px;
-        margin-bottom: 10px;
-
-        font-size: 24px;
-    }
-
-    .divider
-    {
-        margin-top: 15px !important;
-    }
-
     .content
     {
         text-align: left;
