@@ -8,7 +8,7 @@
                        active-text="Show all courses (including the ones not listed on your grade level)"/>
 
             <div class="item">
-                <span class="sort-by">Sort by:</span>
+                <span class="item-label">Sort by:</span>
                 <el-radio-group v-model="settings.sortBy">
                     <el-radio label="Name"></el-radio>
                     <el-radio label="Popularity"></el-radio>
@@ -16,6 +16,16 @@
                     <el-radio label="Level"></el-radio>
                     <el-radio disabled label="Peer Rating (Coming soon)"></el-radio>
                 </el-radio-group>
+            </div>
+
+            <div class="item">
+                <span class="item-label">Levels:</span>
+                <el-checkbox-group v-model="settings.levels" style="display: inline-block;">
+                    <el-checkbox label="AP">AP</el-checkbox>
+                    <el-checkbox label="H">Honors</el-checkbox>
+                    <el-checkbox label="A">Accelerated</el-checkbox>
+                    <el-checkbox label="CP">CP</el-checkbox>
+                </el-checkbox-group>
             </div>
         </div>
     </div>
@@ -35,6 +45,7 @@
     {
         showAllCourses: boolean = false
         sortBy: string = 'Name'
+        levels: string[] = ['AP','H','A','CP']
     }
 </script>
 
@@ -49,7 +60,7 @@
             margin-bottom: 20px;
             font-size: 14px;
 
-            .sort-by,.el-radio
+            .item-label,.el-radio
             {
                 margin-right: 15px;
             }
