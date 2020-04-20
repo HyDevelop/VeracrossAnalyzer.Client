@@ -8,13 +8,13 @@
                        active-text="Show all courses (including the ones not listed on your grade level)"/>
 
             <div class="item">
-                <div>Sort by...</div>
+                <span class="sort-by">Sort by:</span>
                 <el-radio-group v-model="settings.sortBy">
-                    <el-radio-button label="Name"></el-radio-button>
-                    <el-radio-button label="Popularity"></el-radio-button>
-                    <el-radio-button label="Classes"></el-radio-button>
-                    <el-radio-button label="Level"></el-radio-button>
-                    <el-radio-button disabled label="Peer Rating (Coming soon)"></el-radio-button>
+                    <el-radio label="Name"></el-radio>
+                    <el-radio label="Popularity"></el-radio>
+                    <el-radio label="Classes"></el-radio>
+                    <el-radio label="Level"></el-radio>
+                    <el-radio disabled label="Peer Rating (Coming soon)"></el-radio>
                 </el-radio-group>
             </div>
         </div>
