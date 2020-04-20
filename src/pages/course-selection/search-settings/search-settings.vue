@@ -1,6 +1,9 @@
 <template>
     <div id="settings">
         <div class="header">Settings</div>
+        <div class="content">
+            <el-switch v-model="showAllCourses" active-text="Show all courses (including the ones you can't take next year)"/>
+        </div>
     </div>
 </template>
 
@@ -10,7 +13,7 @@
     @Component
     export default class SearchSettings extends Vue
     {
-
+        showAllCourses = false;
     }
 </script>
 
