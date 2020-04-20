@@ -23,5 +23,18 @@
 
 <style src="./pages.scss" lang="scss" scoped/>
 <style lang="scss" scoped>
+    .item
+    {
+        text-align: left;
+        margin-bottom: 15px;
+        background: #f8fdff;
+        border-radius: 4px;
+        padding: 5px 10px;
+    }
 
+    .info
+    {
+        font-size: 12px;
+        color: gray;
+    }
 </style>
