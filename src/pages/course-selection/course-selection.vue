@@ -3,8 +3,9 @@
         <el-row>
             <el-col :span="16" class="overall-span">
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
-                    <SearchSettings ref="settings" :settings="settings" v-if="openedPage === 'settings'"></SearchSettings>
-                    <Welcome :app="app" v-if="openedPage === ''"></Welcome>
+                    <SearchSettings v-if="openedPage === 'settings'" ref="settings" :settings="settings"/>
+                    <Welcome v-if="openedPage === ''" :app="app"/>
+                    <CourseDetail v-if="openedPage === 'course'" :course-info="courseInfo[activeCourseIndex]"/>
                 </el-card>
             </el-col>
 
@@ -16,7 +17,7 @@
 
                         <!-- Search -->
                         <el-input class="search" placeholder="Search..." prefix-icon="el-icon-search" v-model="search">
-                            <el-button slot="append" icon="el-icon-s-tools" @click="openSettings"></el-button>
+                            <el-button slot="append" icon="el-icon-s-tools" @click="openSettings"/>
                         </el-input>
                     </div>
 

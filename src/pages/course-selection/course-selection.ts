@@ -5,8 +5,9 @@ import {GPAUtils} from '@/logic/utils/gpa-utils';
 // @ts-ignore
 import SearchSettingsComponent, {SearchSettings} from '@/pages/course-selection/pages/search-settings.vue';
 import Welcome from '@/pages/course-selection/pages/welcome.vue';
+import CourseDetail from '@/pages/course-selection/pages/course-detail.vue';
 
-@Component({components: {SearchSettings: SearchSettingsComponent, Welcome}})
+@Component({components: {SearchSettings: SearchSettingsComponent, Welcome, CourseDetail}})
 export default class CourseSelection extends Vue
 {
     @Prop({required: true}) app: App
@@ -23,6 +24,7 @@ export default class CourseSelection extends Vue
 
     openedPage: string = '';
     settings: SearchSettings = new SearchSettings();
+    activeCourseIndex: number = -1;
 
     /**
      * Called before rendering
