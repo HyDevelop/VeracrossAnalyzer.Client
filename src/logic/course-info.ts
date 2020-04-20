@@ -1,3 +1,4 @@
+import {CourseUtils} from '@/logic/utils/course-utils';
 
 export default class CourseInfo
 {
@@ -13,6 +14,7 @@ export default class CourseInfo
     gradeLevels: number[]
     enrollments: number
     classes: ClassInfo[]
+    levelFull: string
 
     /**
      * Construct with a json object
@@ -33,6 +35,7 @@ export default class CourseInfo
         this.uniqueName = CourseInfo.toUniqueName(this.name);
         this.enrollments = 0;
         this.classes = []
+        this.levelFull = CourseUtils.getLevelFullName(this.level);
     }
 
     static toUniqueName(name: string)
