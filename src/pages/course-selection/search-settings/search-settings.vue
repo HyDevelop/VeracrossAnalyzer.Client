@@ -1,6 +1,7 @@
 <template>
     <div id="settings">
         <div class="header">Settings</div>
+        <el-divider class="divider"><i class="el-icon-s-tools"></i></el-divider>
         <div class="content">
             <el-switch v-model="showAllCourses" active-text="Show all courses (including the ones you can't take next year)"/>
         </div>
