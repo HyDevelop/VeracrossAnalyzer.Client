@@ -12,9 +12,14 @@
     import {Component, Vue} from 'vue-property-decorator'
 
     @Component
-    export default class SearchSettings extends Vue
+    export default class SearchSettingsComponent extends Vue
     {
         showAllCourses = false;
+    }
+
+    export class SearchSettings
+    {
+        showAllCourses: boolean = false
     }
 </script>
 
