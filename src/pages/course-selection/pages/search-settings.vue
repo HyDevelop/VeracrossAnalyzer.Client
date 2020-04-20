@@ -60,7 +60,7 @@
             margin-bottom: 20px;
             font-size: 14px;
 
-            .item-label,.el-radio
+            .item-label,.el-radio,.el-checkbox
             {
                 margin-right: 15px;
             }
