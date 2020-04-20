@@ -24,7 +24,9 @@
                     <!-- Actual course list -->
                     <div class="list padding-fix" :style="{height: courseListHeight + 'px'}">
                         <!-- Every course -->
-                        <div v-for="(course, index) in uniqueCourses" class="item vertical-center">
+                        <div v-for="(course, index) in uniqueCourses" class="item vertical-center"
+                             @click="openCourse(course)">
+
                             <div class="name">{{course.name}}</div>
                             <div class="data">
                                 <span class="classes"><i class="el-icon-s-home"/> {{course.classes.length}}</span>

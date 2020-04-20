@@ -123,6 +123,22 @@ export default class CourseSelection extends Vue
         this.openedPage = this.openedPage == 'settings' ? '' : 'settings';
     }
 
+    /**
+     * Open course page.
+     */
+    openCourse(course: UniqueCourse)
+    {
+        if (this.activeCourse == course)
+        {
+            this.openedPage = '';
+        }
+        else
+        {
+            this.activeCourse = course;
+            this.openedPage = 'course'
+        }
+    }
+
     get filteredCourses()
     {
         let year = GPAUtils.getSchoolYear();
