@@ -1,5 +1,6 @@
 import Navigation from '@/components/navigation/navigation';
 import Constants from '@/constants';
+import {isNumeric} from '@/logic/utils/general-utils';
 
 const LEVEL_AP = {level: 'AP', scaleUp: 1};
 const LEVEL_H = {level: 'H', scaleUp: 0.75};
@@ -73,5 +74,24 @@ export class CourseUtils
         let selected = Navigation.instance.getSelectedTerm();
 
         return selected == -1 ? Constants.TERMS[4] : Constants.TERMS[selected + 1];
+    }
+
+    static getLevelID(level: string)
+    {
+        level = level.toLowerCase();
+
+        if (level == 'ap' || level == 'advanced placement') return 1;
+        if (level == 'h' || level == 'honors') return 2;
+        if (level == 'a' || level == 'acc' || level == 'accelerated') return 3;
+        if (level == 'cp' || level == 'college prep') return 4;
+
+        if (level == 'club') return 101;
+        if (level == 'sport') return 102;
+
+        if (level == 'none') return 201;
+
+        if (isNumeric(level)) return +level;
+
+        return -1;
     }
 }
