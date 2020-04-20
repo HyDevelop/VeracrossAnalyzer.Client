@@ -60,6 +60,11 @@
         {
             margin-bottom: 20px;
             font-size: 14px;
+
+            .sort-by,.el-radio
+            {
+                margin-right: 15px;
+            }
         }
     }
 </style>
