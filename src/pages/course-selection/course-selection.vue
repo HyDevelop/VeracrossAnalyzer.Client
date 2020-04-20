@@ -4,6 +4,7 @@
             <el-col :span="16" class="overall-span">
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
                     <SearchSettings ref="settings" :settings="settings" v-if="openedPage === 'settings'"></SearchSettings>
+                    <Welcome :app="app" v-if="openedPage === ''"></Welcome>
                 </el-card>
             </el-col>
 

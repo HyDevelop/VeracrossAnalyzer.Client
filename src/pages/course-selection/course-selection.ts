@@ -4,8 +4,9 @@ import CourseInfo, {ClassInfo, UniqueCourse} from '@/logic/course-info';
 import {GPAUtils} from '@/logic/utils/gpa-utils';
 // @ts-ignore
 import SearchSettingsComponent, {SearchSettings} from '@/pages/course-selection/pages/search-settings.vue';
+import Welcome from '@/pages/course-selection/pages/welcome.vue';
 
-@Component({components: {SearchSettings: SearchSettingsComponent}})
+@Component({components: {SearchSettings: SearchSettingsComponent, Welcome}})
 export default class CourseSelection extends Vue
 {
     @Prop({required: true}) app: App
