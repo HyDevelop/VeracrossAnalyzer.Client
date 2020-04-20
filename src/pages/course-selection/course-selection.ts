@@ -131,6 +131,7 @@ export default class CourseSelection extends Vue
         if (this.activeCourse == course)
         {
             this.openedPage = '';
+            this.activeCourse = null as any as UniqueCourse;
         }
         else
         {
