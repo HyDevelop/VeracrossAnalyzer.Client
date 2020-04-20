@@ -3,7 +3,7 @@
         <div class="header">Course: <span style="color: #229fff">{{uniqueCourse.name}}</span></div>
         <el-divider class="divider"><i class="el-icon-reading"></i></el-divider>
 
-        <div class="item" v-for="course in uniqueCourse.courses">
+        <div class="item" v-for="course in sortedCourses">
             <div>{{course.levelFull}} - <i>{{course.teacher}}</i></div>
             <div class="info">{{course.name}}</div>
         </div>
@@ -18,6 +18,11 @@
     export default class CourseDetail extends Vue
     {
         @Prop({required: true}) uniqueCourse: UniqueCourse;
+
+        get sortedCourses(): CourseInfo[]
+        {
+            return this.uniqueCourse.courses.sort((a, b) => a.name.localeCompare(b.name));
+        }
     }
 </script>
 
