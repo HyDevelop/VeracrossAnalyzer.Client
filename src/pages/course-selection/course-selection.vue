@@ -15,8 +15,8 @@
 
         <el-row>
             <el-col :span="16" class="overall-span">
-                    <el-card class="left" :style="{height: cardsHeight + 'px'}">
-                    <SearchSettings></SearchSettings>
+                <el-card class="left" :style="{height: cardsHeight + 'px'}">
+                    <SearchSettings ref="settings" v-if="openedPage == 'settings'"></SearchSettings>
                 </el-card>
             </el-col>
 

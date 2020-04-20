@@ -19,6 +19,8 @@ export default class CourseSelection extends Vue
     courseListHeight: number = 0;
     cardsHeight: number = 0;
 
+    openedPage: string = '';
+
     /**
      * Called before rendering
      */
@@ -115,8 +117,7 @@ export default class CourseSelection extends Vue
      */
     openSettings()
     {
-        // TODO: implement
-        alert('TODO')
+        this.openedPage = this.openedPage == 'settings' ? '' : 'settings';
     }
 
     get filteredCourses()
