@@ -16,12 +16,19 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator'
+    import {Component, Prop, Vue} from 'vue-property-decorator'
+    import App from '@/components/app/app';
+    import {GPAUtils} from '@/logic/utils/gpa-utils';
 
     @Component
     export default class Welcome extends Vue
     {
-
+        @Prop({required: true}) app: App
+        
+        get nextYearGradeLevel()
+        {
+            return GPAUtils.gradeLevelName(this.app.user.gradeLevel + 1)
+        }
     }
 </script>
 

@@ -171,9 +171,4 @@ export default class CourseSelection extends Vue
 
         return list;
     }
-
-    get nextYearGradeLevel()
-    {
-        return GPAUtils.gradeLevelName(this.app.user.gradeLevel + 1)
-    }
 }
