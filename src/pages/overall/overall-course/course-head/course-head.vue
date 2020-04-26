@@ -55,7 +55,7 @@
 
             <span slot="footer" class="dialog-footer">
                 <el-button @click="ratingDialog = false">Cancel</el-button>
-                <el-button type="primary" @click="ratingDialog = false">Confirm</el-button>
+                <el-button type="primary" @click="ratingDialog = false">Submit</el-button>
             </span>
         </el-dialog>
     </div>
