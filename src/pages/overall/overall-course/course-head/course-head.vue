@@ -39,7 +39,12 @@
         <!-- Popup -->
         <el-dialog :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog" :show-close="false"
                    width="50%">
-            <span>This is a message</span>
+
+            <div class="item" v-for="(criteria, index) of ratingCriteria">
+                <div class="title">{{criteria.title}}</div>
+                <div class="description">{{criteria.desc}}</div>
+            </div>
+
             <span slot="footer" class="dialog-footer">
                 <el-button @click="ratingDialog = false">Cancel</el-button>
                 <el-button type="primary" @click="ratingDialog = false">Confirm</el-button>
