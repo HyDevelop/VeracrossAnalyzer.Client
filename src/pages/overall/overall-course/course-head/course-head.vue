@@ -29,6 +29,15 @@
             <div id="term-letter">{{course.letterGradeTerm(term)}}</div>
             <div id="term-numeric">{{course.numericGradeTerm(term).toFixed(1)}}%</div>
         </div>
+        <!-- Popup -->
+        <el-dialog :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog" :show-close="false"
+                   width="50%">
+            <span>This is a message</span>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="ratingDialog = false">Cancel</el-button>
+                <el-button type="primary" @click="ratingDialog = false">Confirm</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
@@ -43,10 +52,10 @@
     export default class CourseHead extends Vue
     {
         @Prop({required: true}) unread: number;
-
         @Prop({required: true}) course: Course;
-
         @Prop({required: true}) clickable: boolean;
+
+        ratingDialog = false;
 
         /**
          * Redirect to the course page
