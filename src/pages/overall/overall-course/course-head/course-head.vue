@@ -71,6 +71,7 @@
             {title: 'Eloquence', desc: `Are the teacher's lectures easy to understand?`},
             {title: 'Fairness', desc: `How fair is the teacher's grading? Is credit given in proportion to effort?`}
         ];
+        ratingData = [0,0,0,0,0];
 
         /**
          * Redirect to the course page
