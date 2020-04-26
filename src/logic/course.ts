@@ -157,22 +157,23 @@ export interface Grading
 
 export default class Course
 {
-    id: number;
-    id_ci: number;
-    assignmentsId: number;
-    name: string;
-    teacherName: string;
-    status: string;
-    rawAssignments: Assignment[];
+    id: number
+    id_ci: number
+    assignmentsId: number
+    name: string
+    teacherName: string
+    status: string
+    rawAssignments: Assignment[]
+    rated: boolean
 
-    rawLetterGrade?: string;
-    rawNumericGrade?: number;
+    rawLetterGrade?: string
+    rawNumericGrade?: number
 
-    level: string;
-    scaleUp: number;
+    level: string
+    scaleUp: number
 
-    termGrading: Grading[];
-    termAssignments: Assignment[][];
+    termGrading: Grading[]
+    termAssignments: Assignment[][]
 
     cache: CacheUtils = new CacheUtils();
 
@@ -189,6 +190,7 @@ export default class Course
         this.name = FormatUtils.parseText(courseJson.name).trim();
         this.teacherName = courseJson.teacherName;
         this.status = courseJson.status;
+        this.rated = courseJson.rated;
 
         this.rawLetterGrade = courseJson.letterGrade;
         this.rawNumericGrade = courseJson.numericGrade;
