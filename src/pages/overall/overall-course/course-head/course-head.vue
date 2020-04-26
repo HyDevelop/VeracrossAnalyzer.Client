@@ -29,6 +29,8 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import Course from '@/logic/course';
     import App from '@/components/app/app';
+    import {GPAUtils} from '@/logic/utils/gpa-utils';
+    import Constants from '@/constants';
 
     @Component
     export default class CourseHead extends Vue
@@ -46,6 +48,11 @@
         {
             if (!this.clickable) return;
             App.instance.nav.updateIndex(this.course.urlIndex);
+        }
+
+        get displayRate()
+        {
+            return !this.course.rated && Constants.CURRENT_TERM == 3;
         }
     }
 </script>
