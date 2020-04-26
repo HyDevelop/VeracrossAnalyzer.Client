@@ -112,6 +112,7 @@
         changeStars(index: number, star: number)
         {
             this.ratingData[index] = star + 1;
+            this.$forceUpdate();
         }
     }
 </script>
