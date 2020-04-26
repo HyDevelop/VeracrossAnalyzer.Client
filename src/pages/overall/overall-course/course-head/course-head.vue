@@ -37,15 +37,16 @@
             </div>
         </div>
 
-        <!-- Popup -->
+        <!-- Rating Popup -->
         <el-dialog :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog" :show-close="false"
                    width="50%" :close-on-click-modal="false" :close-on-press-escape="false">
 
             <div class="item" v-for="(criteria, index) of ratingCriteria">
                 <div class="title">{{criteria.title}}</div>
                 <div class="description">{{criteria.desc}}</div>
+
                 <div class="stars">
-                    <span class="star" v-for="star in [0,1,2,3,4]">
+                    <span class="star clickable" v-for="star in [0,1,2,3,4]" @click="changeStars(index, star)">
                         <i v-if="ratingData[index] > star" class="el-icon-star-on"/>
                         <i v-else class="el-icon-star-off"/>
                     </span>
@@ -100,6 +101,17 @@
         get displayRate()
         {
             return this.clickable && !this.course.rated && Constants.CURRENT_TERM == 3;
+        }
+
+        /**
+         * Change star rating data
+         *
+         * @param index Index of the rating
+         * @param star Change to how many stars
+         */
+        changeStars(index: number, star: number)
+        {
+            this.ratingData[index] = star + 1;
         }
     }
 </script>
