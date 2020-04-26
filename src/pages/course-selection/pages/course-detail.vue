@@ -7,6 +7,7 @@
             <div>{{course.levelFull}} - <i>{{course.teacher}}</i></div>
             <div class="info">
                 <span class="name">{{course.name}} : </span>
+                <span class="classes"><i class="el-icon-s-home"/> {{course.classes.length}}</span>
                 <span class="enrollments"><i class="el-icon-user"/> {{course.enrollments}}</span>
             </div>
         </div>
@@ -44,5 +45,11 @@
     {
         font-size: 12px;
         color: gray;
+
+        .classes
+        {
+            display: inline-block;
+            margin-right: 10px;
+        }
     }
 </style>
