@@ -9,7 +9,7 @@
         <!-- Main content -->
         <div id="content" @click="redirect" :class="clickable ? 'clickable' : ''"
              :style="{width: clickable ? 'calc(100% - 75px)' : 'auto'}">
-            
+
             <!-- Left -->
             <div id="block-info">
                 <div id="name">{{course.name}}</div>
@@ -39,7 +39,7 @@
 
         <!-- Popup -->
         <el-dialog :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog" :show-close="false"
-                   width="50%">
+                   width="50%" :close-on-click-modal="false" :close-on-press-escape="false">
 
             <div class="item" v-for="(criteria, index) of ratingCriteria">
                 <div class="title">{{criteria.title}}</div>
