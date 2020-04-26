@@ -38,8 +38,8 @@
         </div>
 
         <!-- Rating Popup -->
-        <el-dialog :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog" :show-close="false"
-                   width="50%" :close-on-click-modal="false" :close-on-press-escape="false">
+        <el-dialog id="rating-popup" :title="`Give a Rating for ${course.name}`" :visible.sync="ratingDialog"
+                   width="50%" :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false">
 
             <div class="item" v-for="(criteria, index) of ratingCriteria">
                 <div class="title">{{criteria.title}}</div>
