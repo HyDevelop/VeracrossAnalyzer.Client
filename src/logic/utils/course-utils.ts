@@ -73,4 +73,24 @@ export class CourseUtils
             default: return '--';
         }
     }
+
+    /**
+     * Get full name of a level from short name
+     *
+     * @param level Any level name
+     */
+    static getLevel(level: string)
+    {
+        switch (this.getLevelID(level))
+        {
+            case 1: return LEVEL_AP;
+            case 2: return LEVEL_H;
+            case 3: return LEVEL_A;
+            case 4: return LEVEL_CP;
+            case 101: return LEVEL_CLUB;
+            case 102: return LEVEL_SPORT;
+            case 201: return LEVEL_NONE;
+            default: return LEVEL_UNKNOWN;
+        }
+    }
 }
