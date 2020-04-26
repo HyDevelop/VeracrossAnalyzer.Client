@@ -1,14 +1,15 @@
 <template>
-    <div id="course-head" class="course-card-content main vertical-center"
-         :class="clickable ? 'clickable' : ''">
+    <div id="course-head" class="course-card-content main vertical-center">
 
         <!-- Rating button -->
-        <div id="block-rate" v-if="displayRate" class="vertical-center" @click="ratingDialog = true">
+        <div id="block-rate" v-if="displayRate" class="vertical-center clickable" @click="ratingDialog = true">
             Give a<br>Rating!
         </div>
 
         <!-- Main content -->
-        <div id="content" @click="redirect" :style="{width: clickable ? 'calc(100% - 75px)' : 'auto'}">
+        <div id="content" @click="redirect" :class="clickable ? 'clickable' : ''"
+             :style="{width: clickable ? 'calc(100% - 75px)' : 'auto'}">
+            
             <!-- Left -->
             <div id="block-info">
                 <div id="name">{{course.name}}</div>
