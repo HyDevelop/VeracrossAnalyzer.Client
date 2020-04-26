@@ -63,6 +63,14 @@
         @Prop({required: true}) clickable: boolean;
 
         ratingDialog = false;
+        ratingCriteria = [
+            {title: 'Enjoyable', desc: 'How enjoyable is the course?'},
+            {title: 'Knowledge', desc: 'How interesting is the content of the course? ' +
+                    'Is it something you feel worth learning?'},
+            {title: 'Interactivity', desc: 'How interesting is the teacher? Is the teacher interactive?'},
+            {title: 'Eloquence', desc: `Are the teacher's lectures easy to understand?`},
+            {title: 'Fairness', desc: `How fair is the teacher's grading? Is credit given in proportion to effort?`}
+        ];
 
         /**
          * Redirect to the course page
