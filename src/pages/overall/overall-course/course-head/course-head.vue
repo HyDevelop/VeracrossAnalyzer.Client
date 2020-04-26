@@ -43,6 +43,12 @@
             <div class="item" v-for="(criteria, index) of ratingCriteria">
                 <div class="title">{{criteria.title}}</div>
                 <div class="description">{{criteria.desc}}</div>
+                <div class="stars">
+                    <span class="star" v-for="star in [0,1,2,3,4]">
+                        <i v-if="ratingData[index] > star" class="el-icon-star-on"/>
+                        <i v-else class="el-icon-star-off"/>
+                    </span>
+                </div>
             </div>
 
             <span slot="footer" class="dialog-footer">
