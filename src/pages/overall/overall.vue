@@ -45,10 +45,7 @@
             </el-card>
         </el-row>
 
-        <overall-course v-for="course in courses"
-                        :course="course"
-                        :key="course.id">
-        </overall-course>
+        <overall-course v-for="course in courses" :course="course" :key="course.id"/>
     </div>
 </template>
 
