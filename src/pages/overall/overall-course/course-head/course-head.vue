@@ -57,9 +57,12 @@
             App.instance.nav.updateIndex(this.course.urlIndex);
         }
 
+        /**
+         * Display rate button or not
+         */
         get displayRate()
         {
-            return !this.course.rated && Constants.CURRENT_TERM == 3;
+            return this.clickable && !this.course.rated && Constants.CURRENT_TERM == 3;
         }
     }
 </script>
