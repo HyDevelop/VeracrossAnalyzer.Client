@@ -8,7 +8,7 @@
         </div>
 
         <!-- Main content -->
-        <div id="content" @click="redirect">
+        <div id="content" @click="redirect" :style="{width: clickable ? 'calc(100% - 75px)' : 'auto'}">
             <!-- Left -->
             <div id="block-info">
                 <div id="name">{{course.name}}</div>
