@@ -158,6 +158,7 @@ export interface Grading
 export default class Course
 {
     id: number;
+    id_ci: number;
     assignmentsId: number;
     name: string;
     teacherName: string;
@@ -183,6 +184,7 @@ export default class Course
     constructor(courseJson: any)
     {
         this.id = courseJson.id;
+        this.id_ci = courseJson.id_ci;
         this.assignmentsId = courseJson.assignmentsId;
         this.name = FormatUtils.parseText(courseJson.name).trim();
         this.teacherName = courseJson.teacherName;
@@ -198,14 +200,10 @@ export default class Course
             this.rawLetterGrade = undefined;
         }
 
-        // Level and scaleUp
-        let level = CourseUtils.detectLevel(this.name);
-        if (level != undefined)
-        {
-            this.level = level.level;
-            this.scaleUp = level.scaleUp;
-        }
-        else this.level = 'Unknown';
+        // Level and scaleUp TODO: Use server course level
+        let level = CourseUtils.getLevel(courseJson.level);
+        this.level = level.level;
+        this.scaleUp = level.scaleUp;
 
         this.termGrading = new Array(4).fill(null);
     }
