@@ -130,6 +130,11 @@
     {
         margin-bottom: 10px;
     }
+
+    .item:first-child
+    {
+        margin-top: -10px;
+    }
 }
 
 #block-term-grades
