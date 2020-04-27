@@ -151,7 +151,7 @@
                     this.course.rated = true;
                     if (App.instance.courses.filter(c => c.rated).length == 1)
                     {
-                        this.$alert('You just submitted your first course rating! You can view other courses\'' +
+                        this.$alert('You can view other courses\'' +
                             ' ratings in the Course Selection tab, or review yours by clicking' +
                             ' the green box that says "Rating Entered." There are also option to turn off the rating buttons ' +
                             ' by clicking on your avatar on the top right corner.',
