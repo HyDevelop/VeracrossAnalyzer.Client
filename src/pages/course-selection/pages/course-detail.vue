@@ -16,12 +16,34 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
-    import CourseInfo, {UniqueCourse} from '@/logic/course-info';
+    import CourseInfo, {AnalyzedRating, CourseInfoRating, UniqueCourse} from '@/logic/course-info';
+    import App from '@/components/app/app';
+    import course from '@/logic/course';
 
     @Component
     export default class CourseDetail extends Vue
     {
         @Prop({required: true}) uniqueCourse: UniqueCourse;
+
+        created()
+        {
+            // Load ratings
+            this.sortedCourses.forEach(c =>
+            {
+                // Already has rating
+                if (c.rating as any != null) return;
+
+                // Get rating
+                App.http.post('/course-info/rating/get', {condition: 'course', value: c.id_ci}).then(result =>
+                {
+                    if (result.success)
+                    {
+                        // Assign rating
+                        c.rating = result.data as AnalyzedRating;
+                    }
+                })
+            })
+        }
 
         get sortedCourses(): CourseInfo[]
         {
