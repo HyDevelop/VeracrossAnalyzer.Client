@@ -118,7 +118,7 @@ export class CourseInfoRating
      */
     public static createNew(id_ci: number)
     {
-        return new CourseInfoRating({id_ci: id_ci, id_user: -1, userFullName: null,
+        return new CourseInfoRating({id_ci: id_ci, id_user: -2, userFullName: null,
             anonymous: false, ratings: [0,0,0,0,0], comment: ''})
     }
 }
