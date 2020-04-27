@@ -41,6 +41,11 @@
                         // Assign rating
                         c.rating = result.data as AnalyzedRating;
                     }
+                    else
+                    {
+                        this.$message.error(`Rating data for ${c.name} / ${c.teacher} failed to load.`)
+                        console.log(result.data);
+                    }
                 })
             })
         }
