@@ -143,11 +143,11 @@
             {
                 if (response.success)
                 {
-                    this.course.rated = true;
                     this.ratingDialog = false;
                     this.$message.success('Rating successfully posted, thank you!');
 
                     // First rating
+                    if (this.course.rated) return;
                     if (App.instance.courses.map(c => c.rated).reduce((a, b) => a + (b?1:0), 0) == 1)
                     {
                         this.$alert('You just submitted your first course rating! You can view other courses\'' +
@@ -157,6 +157,8 @@
                             'Thank you for submitting your fist rating!', {confirmButtonText: 'OK'}
                         );
                     }
+
+                    this.course.rated = true;
                 }
                 else
                 {
