@@ -117,7 +117,7 @@
          */
         get displayRate()
         {
-            return this.clickable && Constants.CURRENT_TERM == 3;
+            return this.clickable && App.instance.showRating;
         }
 
         /**
