@@ -58,6 +58,15 @@
                 </div>
             </div>
 
+            <div class="item">
+                <div class="title">Comments</div>
+                <div class="description">Any additional comments? (this is optional)</div>
+
+                <el-input type="textarea" placeholder="Comments... (Optional)"
+                           v-model="ratingComment" maxlength="4500" show-word-limit :autosize="{minRows: 2, maxRows: 4}">
+                </el-input>
+            </div>
+
             <span slot="footer" class="dialog-footer">
                 <el-button @click="ratingDialog = false">Cancel</el-button>
                 <el-button type="primary" @click="ratingDialog = false">Submit</el-button>
@@ -90,6 +99,7 @@
             {title: 'Fairness', desc: `How fair is the teacher's grading? Is credit given in proportion to effort?`}
         ];
         ratingData = [0,0,0,0,0];
+        ratingComment = '';
 
         /**
          * Redirect to the course page
