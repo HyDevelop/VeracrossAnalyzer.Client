@@ -38,7 +38,7 @@
         </div>
 
         <!-- Rating Popup -->
-        <el-dialog id="rating-popup" :visible.sync="ratingDialog" width="50%"
+        <el-dialog id="rating-popup" :visible.sync="ratingDialog" width="50%" top="10vh"
                    :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false">
 
             <span slot="title" class="header">
