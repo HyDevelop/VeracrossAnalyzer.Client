@@ -179,5 +179,10 @@
                 color: #999999;
             }
         }
+
+        .rating-item
+        {
+            height: 30px;
+        }
     }
 </style>
