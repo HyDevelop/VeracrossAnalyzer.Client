@@ -50,7 +50,7 @@ export default class App extends Vue
     staticPage: string = '';
 
     // Dark mode
-    darkMode: boolean = false;
+    darkMode: boolean = this.$cookies.isKey('dark');
 
     /**
      * This is called when the instance is created.
@@ -69,8 +69,6 @@ export default class App extends Vue
             this.staticPage = 'info';
         }
 
-        // Dark mode
-        this.darkMode = this.$cookies.isKey('dark');
     }
 
     /**
