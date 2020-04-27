@@ -1,7 +1,7 @@
 <template>
     <div id="course-selection">
         <div v-if="loading" class="loading vertical-center" style="height: 100%">
-            <LoadingSpinner/>
+            <LoadingSpinner style="left: 0"/>
         </div>
 
         <el-row v-else>
