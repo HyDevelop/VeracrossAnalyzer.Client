@@ -65,6 +65,7 @@
                 <el-input type="textarea" placeholder="Comments... (Optional)"
                            v-model="ratingComment" maxlength="4500" show-word-limit :autosize="{minRows: 2, maxRows: 4}">
                 </el-input>
+                <el-checkbox v-model="ratingAnonymous">Anonymous</el-checkbox>
             </div>
 
             <span slot="footer" class="dialog-footer">
@@ -100,6 +101,7 @@
         ];
         ratingData = [0,0,0,0,0];
         ratingComment = '';
+        ratingAnonymous = false;
 
         /**
          * Redirect to the course page
