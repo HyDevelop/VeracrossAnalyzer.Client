@@ -127,6 +127,16 @@
     background: #66eaad;
 }
 
+.dark #block-rate > span
+{
+    color: #84c0ff !important;
+}
+
+.dark #block-rate.rated > span
+{
+    color: #66eaad !important;
+}
+
 #rating-popup
 {
     text-align: left;
