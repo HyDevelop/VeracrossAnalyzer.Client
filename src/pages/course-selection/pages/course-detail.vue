@@ -99,4 +99,9 @@
         text-align: right;
         float: right;
     }
+
+    .loading
+    {
+        margin-top: 5px !important;
+    }
 </style>
