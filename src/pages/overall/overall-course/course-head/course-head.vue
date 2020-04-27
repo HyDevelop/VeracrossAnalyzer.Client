@@ -7,8 +7,7 @@
         </div>
 
         <!-- Main content -->
-        <div id="content" @click="redirect" :class="clickable ? 'clickable' : ''"
-             :style="{width: clickable ? 'calc(100% - 75px)' : 'auto'}">
+        <div id="content" @click="redirect" :class="clickable ? 'clickable' : ''">
 
             <!-- Left -->
             <div id="block-info">
