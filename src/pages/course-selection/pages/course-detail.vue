@@ -3,7 +3,8 @@
         <div class="header">Course: <span style="color: #229fff">{{uniqueCourse.name}}</span></div>
         <el-divider class="divider"><i class="el-icon-reading"></i></el-divider>
 
-        <div class="item" v-for="c in sortedCourses">
+        <!-- All course-infos -->
+        <div class="item clickable unselectable" v-for="c in sortedCourses" @click="openDetails(c)">
             <div class="float-left">
                 <div>{{c.levelFull}} - <i>{{c.teacher}}</i></div>
                 <div class="info">
