@@ -44,6 +44,10 @@
                     <StarRating :score="rating.ratingAverages[index]" style="display: inline-block"></StarRating>
                 </div>
             </div>
+
+            <div class="comments">
+                TODO: Comment section still in development... coming soon!
+            </div>
         </el-dialog>
     </div>
 </template>
@@ -194,6 +198,11 @@
         .rating-item:first-child
         {
             margin-top: -15px;
+        }
+
+        .comments
+        {
+            margin-top: 40px;
         }
     }
 </style>
