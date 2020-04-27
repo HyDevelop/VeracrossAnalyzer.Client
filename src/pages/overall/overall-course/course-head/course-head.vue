@@ -146,7 +146,7 @@
                     this.ratingDialog = false;
                     this.$message.success('Rating successfully posted, thank you!');
 
-                    // First rating
+                    // First rating (Updating the first review doesn't count as first review)
                     if (this.course.rated) return;
                     if (App.instance.courses.map(c => c.rated).reduce((a, b) => a + (b?1:0), 0) == 1)
                     {
