@@ -130,10 +130,25 @@ export class AnalyzedRating
     ratingCounts: number[][] // ratingCounts[criteria][stars] = count
     ratingSums: number[] // ratingSums[criteria] = total stars
     totalCount: number
+
+    ratingAverages: number[] = [] // ratingAverages[criteria] = average
+    overallRating: number = 0
+
     constructor(json: any)
     {
         this.ratingCounts = json.ratingCounts;
         this.ratingSums = json.ratingSums;
         this.totalCount = json.totalCount;
+
+        // No ratings
+        if (this.totalCount == 0)
+        {
+            this.overallRating = -1;
+            return;
+        }
+
+        // Calculate overall rating
+        this.ratingSums.forEach((criteriaScore, i) => this.overallRating += this.ratingAverages[i] = criteriaScore / this.totalCount);
+        this.overallRating /= this.ratingAverages.length;
     }
 }
