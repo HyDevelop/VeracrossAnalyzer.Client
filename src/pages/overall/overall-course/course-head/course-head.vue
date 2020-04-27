@@ -85,6 +85,7 @@
     import App from '@/components/app/app';
     import {GPAUtils} from '@/logic/utils/gpa-utils';
     import Constants from '@/constants';
+    import {RATING_CRITERIA} from '@/logic/course-info';
 
     @Component
     export default class CourseHead extends Vue
@@ -95,14 +96,6 @@
 
         ratingDialog = false;
         ratingPosting = false;
-        ratingCriteria = [
-            {title: 'Enjoyable', desc: 'How enjoyable is the course?'},
-            {title: 'Knowledge', desc: 'How interesting is the content of the course? ' +
-                    'Is it something you feel worth learning?'},
-            {title: 'Interactivity', desc: 'How interesting is the teacher? Is the teacher interactive?'},
-            {title: 'Eloquence', desc: `Are the teacher's lectures easy to understand?`},
-            {title: 'Fairness', desc: `How fair is the teacher's grading? Is credit given in proportion to effort?`}
-        ];
         rating = this.course.rating;
 
         /**
@@ -121,6 +114,8 @@
         {
             return this.clickable && App.instance.showRating;
         }
+
+        get ratingCriteria() {return RATING_CRITERIA}
 
         /**
          * Change star rating data
