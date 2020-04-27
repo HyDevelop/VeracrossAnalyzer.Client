@@ -12,7 +12,7 @@
     @Component
     export default class LoadingSpinner extends Vue
     {
-        @Prop({default: "42"}) size: string
+        @Prop({default: '42'}) size: string
         @Prop({default: true}) centered: string
     }
 </script>
