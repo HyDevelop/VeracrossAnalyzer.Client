@@ -6,6 +6,7 @@ import CacheUtils from '@/logic/utils/cache-utils';
 import Constants from '@/constants';
 import {Index} from '@/logic/nav-controller';
 import App from '@/components/app/app';
+import {CourseInfoRating} from '@/logic/course-info';
 
 /**
  * Objects of this interface represent assignment grades.
@@ -164,6 +165,7 @@ export default class Course
     teacherName: string
     status: string
     rawAssignments: Assignment[]
+    rating: CourseInfoRating
     rated: boolean
 
     rawLetterGrade?: string
@@ -190,7 +192,8 @@ export default class Course
         this.name = FormatUtils.parseText(courseJson.name).trim();
         this.teacherName = courseJson.teacherName;
         this.status = courseJson.status;
-        this.rated = courseJson.rated;
+        this.rated = courseJson.rating != null;
+        this.rating = this.rated ? new CourseInfoRating(courseJson.rating) : CourseInfoRating.createNew(this.id_ci);
 
         this.rawLetterGrade = courseJson.letterGrade;
         this.rawNumericGrade = courseJson.numericGrade;
