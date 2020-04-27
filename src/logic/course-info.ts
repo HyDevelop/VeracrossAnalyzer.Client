@@ -111,4 +111,14 @@ export class CourseInfoRating
         this.ratings = json.ratings;
         this.comment = json.comment;
     }
+
+    /**
+     * Create new for posting to the server
+     * @param id_ci
+     */
+    public static createNew(id_ci: number)
+    {
+        return new CourseInfoRating({id_ci: id_ci, id_user: -1, userFullName: null,
+            anonymous: false, ratings: [0,0,0,0,0], comment: ''})
+    }
 }
