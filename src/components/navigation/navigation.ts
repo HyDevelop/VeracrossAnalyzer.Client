@@ -144,8 +144,16 @@ export default class Navigation extends Vue
 
                 break
             }
-        }
+            case 'switch-rating':
+            {
+                this.app.showRating = !this.app.showRating;
 
+                if (this.app.showRating) this.$cookies.set('show-rating', 'set=yes', '30d');
+                else this.$cookies.set('show-rating', 'set=no', '30d');
+
+                break
+            }
+        }
     }
 
     get version() {return Constants.VERSION}
