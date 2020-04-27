@@ -148,7 +148,7 @@
 
                     // First rating (Updating the first review doesn't count as first review)
                     if (this.course.rated) return;
-                    if (App.instance.courses.map(c => c.rated).reduce((a, b) => a + (b?1:0), 0) == 1)
+                    if (App.instance.courses.filter(c => c.rated).length == 1)
                     {
                         this.$alert('You just submitted your first course rating! You can view other courses\'' +
                             ' ratings in the Course Selection tab, or review yours by clicking' +
