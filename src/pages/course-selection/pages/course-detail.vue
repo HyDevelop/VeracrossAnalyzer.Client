@@ -126,11 +126,11 @@
             display: inline-block;
             margin-right: 10px;
         }
+    }
 
-        .numeric-rating
-        {
-            margin-right: 10px;
-        }
+    .numeric-rating
+    {
+        margin-right: 10px;
     }
 
     .float-left
