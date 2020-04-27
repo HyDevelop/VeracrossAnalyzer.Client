@@ -146,6 +146,17 @@
                     this.course.rated = true;
                     this.ratingDialog = false;
                     this.$message.success('Rating successfully posted, thank you!');
+
+                    // First rating
+                    if (App.instance.courses.map(c => c.rated).reduce((a, b) => a + (b?1:0), 0) == 1)
+                    {
+                        this.$alert('You just submitted your first course rating! You can view other courses\'' +
+                            ' ratings in the Course Selection tab, or review yours by clicking' +
+                            ' the green box that says "Rating Entered." There are also option to turn off the rating buttons ' +
+                            ' by clicking on your avatar on the top right corner.',
+                            'Thank you for submitting your fist rating!', {confirmButtonText: 'OK'}
+                        );
+                    }
                 }
                 else
                 {
