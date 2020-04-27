@@ -27,6 +27,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- Detail / Comments Popup -->
+        <el-dialog id="detail-popup" v-if="detailsCourse" :visible.sync="detailsCourse" width="50%" top="10vh">
+            <span slot="title" class="header">
+                <div class="title">Rating detail for {{detailsCourse.name}}</div>
+                <span class="subtitle">And for {{detailsCourse.teacher}}</span>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
@@ -42,6 +50,11 @@
     export default class CourseDetail extends Vue
     {
         @Prop({required: true}) uniqueCourse: UniqueCourse;
+
+        detailsCourse: CourseInfo = null as any as CourseInfo
+
+        get ratingCriteria() {return RATING_CRITERIA}
+        get rating() {return this.detailsCourse.rating}
 
         created()
         {
