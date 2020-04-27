@@ -127,8 +127,8 @@ export class CourseInfoRating
 
 export class AnalyzedRating
 {
-    ratingCounts: number[][]
-    ratingSums: number[]
+    ratingCounts: number[][] // ratingCounts[criteria][stars] = count
+    ratingSums: number[] // ratingSums[criteria] = total stars
     totalCount: number
     constructor(json: any)
     {
