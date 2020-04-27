@@ -79,6 +79,8 @@ export default class CourseSelection extends Vue
                         }
                     })
                 })
+
+                this.loading = false;
             }
         });
     }
