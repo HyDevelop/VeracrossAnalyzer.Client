@@ -35,6 +35,14 @@
                 <div class="title">Rating detail for {{detailsCourse.name}}</div>
                 <span class="subtitle">And for {{detailsCourse.teacher}}</span>
             </span>
+
+            <div class="rating-item" v-for="(criteria, index) of ratingCriteria">
+                <div class="title float-left">{{criteria.title}}</div>
+
+                <div class="stars float-right">
+                    <StarRating :score="rating.ratingAverages[index]"></StarRating>
+                </div>
+            </div>
         </el-dialog>
     </div>
 </template>
