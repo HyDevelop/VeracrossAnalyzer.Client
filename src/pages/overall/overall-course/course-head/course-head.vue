@@ -139,6 +139,12 @@
          */
         submitRating()
         {
+            if (this.rating.ratings.includes(0))
+            {
+                this.$message.error('You didn\'t rate all of the criteria yet!');
+                return;
+            }
+
             this.ratingPosting = true;
 
             App.http.post('/course-info/rating/set', {rating: this.rating}).then(response =>
