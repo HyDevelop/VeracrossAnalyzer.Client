@@ -17,6 +17,8 @@ export default class CourseInfo
     levelID: number;
     levelFull: string
 
+    rating: AnalyzedRating = null as any as AnalyzedRating
+
     /**
      * Construct with a json object
      *
