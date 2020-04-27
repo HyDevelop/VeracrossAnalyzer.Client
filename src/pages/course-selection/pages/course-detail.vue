@@ -14,6 +14,7 @@
             </div>
 
             <div class="float-right">
+                <LoadingSpinner class="loading" size="30" :centered="false"/>
             </div>
         </div>
     </div>
@@ -24,8 +25,8 @@
     import CourseInfo, {AnalyzedRating, CourseInfoRating, UniqueCourse} from '@/logic/course-info';
     import App from '@/components/app/app';
     import course from '@/logic/course';
-
-    @Component
+    import LoadingSpinner from '@/pages/loading-spinner.vue';
+    @Component({components: {LoadingSpinner}})
     export default class CourseDetail extends Vue
     {
         @Prop({required: true}) uniqueCourse: UniqueCourse;
