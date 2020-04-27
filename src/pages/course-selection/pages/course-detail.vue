@@ -40,7 +40,8 @@
                 <div class="title float-left">{{criteria.title}}</div>
 
                 <div class="stars float-right">
-                    <StarRating :score="rating.ratingAverages[index]"></StarRating>
+                    <span class="info numeric-rating">{{rating.ratingAverages[index]}} / 5</span>
+                    <StarRating :score="rating.ratingAverages[index]" style="display: inline-block"></StarRating>
                 </div>
             </div>
         </el-dialog>
