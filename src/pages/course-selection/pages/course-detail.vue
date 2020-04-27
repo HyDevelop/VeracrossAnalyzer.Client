@@ -183,6 +183,11 @@
         .rating-item
         {
             height: 30px;
+
+            .title
+            {
+                font-size: 18px;
+            }
         }
 
         .rating-item:first-child
