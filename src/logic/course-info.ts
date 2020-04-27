@@ -92,3 +92,13 @@ export class ClassInfo
         this.uniqueName = CourseInfo.toUniqueName(this.name);
     }
 }
+
+export class CourseInfoRating
+{
+    id_ci: number
+    id_user: number
+    userFullName: string
+    anonymous: boolean
+    ratings: number[]
+    comment: string
+}
