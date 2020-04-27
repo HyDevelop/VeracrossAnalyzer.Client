@@ -72,6 +72,11 @@ export default class App extends Vue
             this.staticPage = 'info';
         }
 
+        // Default config
+        if (!this.$cookies.isKey('show-rating'))
+        {
+            this.showRating = Constants.CURRENT_TERM == 3;
+        }
     }
 
     /**
