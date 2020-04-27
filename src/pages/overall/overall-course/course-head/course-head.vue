@@ -146,6 +146,7 @@
                 if (response.success)
                 {
                     this.ratingDialog = false;
+                    this.ratingPosting = false;
                     this.$message.success('Rating successfully posted, thank you!');
 
                     // First rating (Updating the first review doesn't count as first review)
