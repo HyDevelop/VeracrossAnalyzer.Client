@@ -19,7 +19,10 @@
                     <span v-if="c.rating.totalCount === 0" class="text">No ratings yet...</span>
                     <span v-else class="stars">
                         <StarRating :score="c.rating.overallRating"></StarRating>
-                        <span class="info">{{c.rating.overallRating}}/5</span>
+                        <span class="info">
+                            <span class="numeric-rating">{{c.rating.overallRating}} / 5</span>
+                            <span>({{c.rating.totalCount}} rating{{c.rating.totalCount > 1?'s':''}})</span>
+                        </span>
                     </span>
                 </div>
             </div>
@@ -114,4 +117,11 @@
         margin-top: 5px !important;
     }
 
+    .rating
+    {
+        .text
+        {
+            font-size: 14px;
+        }
+    }
 </style>
