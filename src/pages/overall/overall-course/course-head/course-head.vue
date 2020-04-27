@@ -148,6 +148,7 @@
 
                     // First rating (Updating the first review doesn't count as first review)
                     if (this.course.rated) return;
+                    this.course.rated = true;
                     if (App.instance.courses.filter(c => c.rated).length == 1)
                     {
                         this.$alert('You just submitted your first course rating! You can view other courses\'' +
@@ -157,8 +158,6 @@
                             'Thank you for submitting your fist rating!', {confirmButtonText: 'OK'}
                         );
                     }
-
-                    this.course.rated = true;
                 }
                 else
                 {
