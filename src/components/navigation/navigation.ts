@@ -139,17 +139,13 @@ export default class Navigation extends Vue
             {
                 this.app.darkMode = !this.app.darkMode;
 
-                if (this.isDark()) this.$cookies.set('dark', true);
+                if (this.app.darkMode) this.$cookies.set('dark', true);
                 else this.$cookies.remove('dark');
 
                 break
             }
         }
-    }
 
-    isDark()
-    {
-        return this.app.darkMode;
     }
 
     get version() {return Constants.VERSION}

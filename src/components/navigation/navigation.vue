@@ -42,7 +42,9 @@
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item style="text-align: center">{{user.nickname}}</el-dropdown-item>
 
-                    <el-dropdown-item icon="el-icon-sunrise" command="switch-dark" divided>{{!isDark() ? 'Dark Mode (Unfinished)' : 'Light Mode'}}</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-sunrise" command="switch-dark" divided>
+                        {{!app.darkMode ? 'Dark Mode (Unfinished)' : 'Light Mode'}}
+                    </el-dropdown-item>
 
                     <el-dropdown-item icon="el-icon-switch-button" command="sign-out" divided>Sign Out</el-dropdown-item>
                 </el-dropdown-menu>
