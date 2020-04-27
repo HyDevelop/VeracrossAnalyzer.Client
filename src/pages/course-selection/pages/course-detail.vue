@@ -3,22 +3,23 @@
         <div class="header">Course: <span style="color: #229fff">{{uniqueCourse.name}}</span></div>
         <el-divider class="divider"><i class="el-icon-reading"></i></el-divider>
 
-        <div class="item" v-for="course in sortedCourses">
+        <div class="item" v-for="c in sortedCourses">
             <div class="float-left">
-                <div>{{course.levelFull}} - <i>{{course.teacher}}</i></div>
+                <div>{{c.levelFull}} - <i>{{c.teacher}}</i></div>
                 <div class="info">
-                    <span class="name">{{course.name}} : </span>
-                    <span class="classes"><i class="el-icon-s-home"/> {{course.classes.length}}</span>
-                    <span class="enrollments"><i class="el-icon-user"/> {{course.enrollments}}</span>
+                    <span class="name">{{c.name}} : </span>
+                    <span class="classes"><i class="el-icon-s-home"/> {{c.classes.length}}</span>
+                    <span class="enrollments"><i class="el-icon-user"/> {{c.enrollments}}</span>
                 </div>
             </div>
 
             <div class="float-right">
-                <LoadingSpinner v-if="course.rating == null" class="loading" size="30" :centered="false"/>
+                <LoadingSpinner v-if="c.rating == null" class="loading" size="30" :centered="false"/>
                 <div v-else class="rating">
-                    <span v-if="course.rating.totalCount === 0" class="text">No ratings yet...</span>
+                    <span v-if="c.rating.totalCount === 0" class="text">No ratings yet...</span>
                     <span v-else class="stars">
-                        <StarRating :score="course.rating.overallRating"></StarRating>
+                        <StarRating :score="c.rating.overallRating"></StarRating>
+                        <span class="info">{{c.rating.overallRating}}/5</span>
                     </span>
                 </div>
             </div>
@@ -112,4 +113,5 @@
     {
         margin-top: 5px !important;
     }
+
 </style>
