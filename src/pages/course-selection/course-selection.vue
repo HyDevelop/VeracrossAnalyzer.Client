@@ -1,6 +1,14 @@
 <template>
     <div id="course-selection">
-        <el-row>
+        <div v-if="loading" class="loading vertical-center" style="height: 100%">
+            <div class="el-loading-spinner">
+                <svg viewBox="25 25 50 50" class="circular">
+                    <circle cx="50" cy="50" r="20" fill="none" class="path"/>
+                </svg>
+            </div>
+        </div>
+
+        <el-row v-else>
             <el-col :span="16" class="overall-span">
                 <el-card class="left" :style="{height: cardsHeight + 'px'}">
                     <SearchSettings v-if="openedPage === 'settings'" ref="settings" :settings="settings"/>
