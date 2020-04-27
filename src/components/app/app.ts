@@ -52,6 +52,9 @@ export default class App extends Vue
     // Dark mode
     darkMode: boolean = this.$cookies.isKey('dark');
 
+    // Show rating
+    showRating: boolean = this.$cookies.get('show-rating') == 'set=yes';
+
     /**
      * This is called when the instance is created.
      */
