@@ -156,4 +156,27 @@
             font-size: 14px;
         }
     }
+
+    #detail-popup
+    {
+        text-align: left;
+
+        .header
+        {
+            .title
+            {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .subtitle
+            {
+                margin-left: 10px;
+                font-size: 12px;
+                font-style: italic;
+                color: #999999;
+            }
+        }
+    }
 </style>
