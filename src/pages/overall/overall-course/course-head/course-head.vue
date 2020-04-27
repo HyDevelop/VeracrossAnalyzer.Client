@@ -70,7 +70,7 @@
 
             <span slot="footer" class="dialog-footer">
                 <el-button @click="ratingDialog = false">Cancel</el-button>
-                <el-button type="primary" @click="ratingDialog = false">Submit</el-button>
+                <el-button type="primary" @click="submitRating()">Submit</el-button>
             </span>
         </el-dialog>
     </div>
@@ -102,6 +102,7 @@
         ratingData = [0,0,0,0,0];
         ratingComment = '';
         ratingAnonymous = false;
+        ratingPosting = false;
 
         /**
          * Redirect to the course page
@@ -130,6 +131,34 @@
         {
             this.ratingData[index] = star + 1;
             this.$forceUpdate();
+        }
+
+        /**
+         * Submit a rating
+         */
+        submitRating()
+        {
+            this.ratingPosting = true;
+
+            App.http.post('/course-info/rating/set', {rating: {
+                    id_ci: this.course.id_ci,
+                    anonymous: this.ratingAnonymous,
+                    ratings: this.ratingData,
+                    comment: this.ratingComment}
+            }).then(response =>
+            {
+                if (response.success)
+                {
+                    this.course.rated = true;
+                    this.ratingDialog = false;
+                    this.$message.success('Rating successfully posted, thank you!');
+                }
+                else
+                {
+                    this.$message.error('Sorry, but rating failed to post, please try again or email me if you continues to have issues. ' +
+                            'But wait! The email system isn\'t created yet... oops!. (Technical error message: ' + response.data + ')');
+                }
+            });
         }
     }
 </script>
