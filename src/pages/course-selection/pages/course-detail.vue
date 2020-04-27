@@ -184,5 +184,10 @@
         {
             height: 30px;
         }
+
+        .rating-item:first-child
+        {
+            margin-top: -15px;
+        }
     }
 </style>
