@@ -2,8 +2,10 @@
     <div id="course-head" class="course-card-content main vertical-center">
 
         <!-- Rating button -->
-        <div id="block-rate" v-if="displayRate" class="vertical-center clickable" @click="ratingDialog = true">
-            Give a<br>Rating!
+        <div id="block-rate" v-if="displayRate" class="vertical-center clickable"
+             @click="ratingDialog = true" :class="{rated: course.rated}">
+            <span v-if="!course.rated">Give a<br>Rating!</span>
+            <span v-else>Rating<br>Entered</span>
         </div>
 
         <!-- Main content -->
@@ -115,7 +117,7 @@
          */
         get displayRate()
         {
-            return this.clickable && !this.course.rated && Constants.CURRENT_TERM == 3;
+            return this.clickable && Constants.CURRENT_TERM == 3;
         }
 
         /**
