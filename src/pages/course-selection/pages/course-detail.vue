@@ -14,7 +14,13 @@
             </div>
 
             <div class="float-right">
-                <LoadingSpinner class="loading" size="30" :centered="false"/>
+                <LoadingSpinner v-if="course.rating == null" class="loading" size="30" :centered="false"/>
+                <div v-else class="rating">
+                    <span v-if="course.rating.totalCount === 0" class="text">No ratings yet...</span>
+                    <span v-else class="stars">
+                        <StarRating :score="course.rating.overallRating"></StarRating>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -26,7 +32,9 @@
     import App from '@/components/app/app';
     import course from '@/logic/course';
     import LoadingSpinner from '@/components/loading-spinner.vue';
-    @Component({components: {LoadingSpinner}})
+    import loading from '@/components/overlays/loading.vue';
+    import StarRating from '@/components/star-rating.vue';
+    @Component({components: {StarRating, LoadingSpinner}})
     export default class CourseDetail extends Vue
     {
         @Prop({required: true}) uniqueCourse: UniqueCourse;
