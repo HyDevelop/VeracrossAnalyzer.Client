@@ -40,7 +40,7 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
-    import CourseInfo, {AnalyzedRating, CourseInfoRating, UniqueCourse} from '@/logic/course-info';
+    import CourseInfo, {AnalyzedRating, CourseInfoRating, RATING_CRITERIA, UniqueCourse} from '@/logic/course-info';
     import App from '@/components/app/app';
     import course from '@/logic/course';
     import LoadingSpinner from '@/components/loading-spinner.vue';
@@ -84,6 +84,11 @@
         get sortedCourses(): CourseInfo[]
         {
             return this.uniqueCourse.courses.sort((a, b) => a.levelID - b.levelID);
+        }
+
+        openDetails(course: CourseInfo)
+        {
+            this.detailsCourse = this.detailsCourse == course ? null as any as CourseInfo : course;
         }
     }
 </script>
