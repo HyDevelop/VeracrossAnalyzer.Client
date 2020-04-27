@@ -70,8 +70,10 @@
             </div>
 
             <span slot="footer" class="dialog-footer">
-                <el-button @click="ratingDialog = false">Cancel</el-button>
-                <el-button type="primary" @click="submitRating()">{{course.rated ? 'Update' : 'Submit'}}</el-button>
+                <el-button @click="ratingDialog = false" :disabled="ratingPosting">Cancel</el-button>
+                <el-button type="primary" @click="submitRating()" :disabled="ratingPosting">
+                    {{course.rated ? 'Update' : 'Submit'}}
+                </el-button>
             </span>
         </el-dialog>
     </div>
