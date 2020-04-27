@@ -45,7 +45,7 @@
                     if (result.success)
                     {
                         // Assign rating
-                        c.rating = result.data as AnalyzedRating;
+                        c.rating = new AnalyzedRating(result.data);
                     }
                     else
                     {

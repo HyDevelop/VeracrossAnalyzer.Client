@@ -125,9 +125,15 @@ export class CourseInfoRating
     }
 }
 
-export interface AnalyzedRating
+export class AnalyzedRating
 {
     ratingCounts: number[][]
     ratingSums: number[]
     totalCount: number
+    constructor(json: any)
+    {
+        this.ratingCounts = json.ratingCounts;
+        this.ratingSums = json.ratingSums;
+        this.totalCount = json.totalCount;
+    }
 }
