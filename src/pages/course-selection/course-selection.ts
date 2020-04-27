@@ -6,7 +6,7 @@ import {GPAUtils} from '@/logic/utils/gpa-utils';
 import SearchSettingsComponent, {SearchSettings} from '@/pages/course-selection/pages/search-settings.vue';
 import Welcome from '@/pages/course-selection/pages/welcome.vue';
 import CourseDetail from '@/pages/course-selection/pages/course-detail.vue';
-import LoadingSpinner from '@/pages/loading-spinner.vue';
+import LoadingSpinner from '@/components/loading-spinner.vue';
 
 @Component({components: {SearchSettings: SearchSettingsComponent, Welcome, CourseDetail, LoadingSpinner}})
 export default class CourseSelection extends Vue

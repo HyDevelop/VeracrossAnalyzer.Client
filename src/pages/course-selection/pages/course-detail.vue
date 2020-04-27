@@ -25,7 +25,7 @@
     import CourseInfo, {AnalyzedRating, CourseInfoRating, UniqueCourse} from '@/logic/course-info';
     import App from '@/components/app/app';
     import course from '@/logic/course';
-    import LoadingSpinner from '@/pages/loading-spinner.vue';
+    import LoadingSpinner from '@/components/loading-spinner.vue';
     @Component({components: {LoadingSpinner}})
     export default class CourseDetail extends Vue
     {
