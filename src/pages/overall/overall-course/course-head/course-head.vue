@@ -141,7 +141,7 @@
         {
             if (this.rating.ratings.includes(0))
             {
-                this.$message.error('You didn\'t rate all of the criteria yet!');
+                this.$message.error('You haven\'t rated all of the criteria yet!');
                 return;
             }
 
