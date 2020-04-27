@@ -122,3 +122,10 @@ export class CourseInfoRating
             anonymous: false, ratings: [0,0,0,0,0], comment: ''})
     }
 }
+
+export interface AnalyzedRating
+{
+    ratingCounts: number[][]
+    ratingSums: number[]
+    totalCount: number
+}
