@@ -51,7 +51,7 @@
 
                 <div class="stars">
                     <span class="star clickable" v-for="star in [0,1,2,3,4]" @click="changeStars(index, star)">
-                        <i v-if="ratingData[index] > star" class="el-icon-star-on"/>
+                        <i v-if="rating.ratings[index] > star" class="el-icon-star-on"/>
                         <i v-else class="el-icon-star-off"/>
                     </span>
                 </div>
@@ -62,9 +62,9 @@
                 <div class="description">Any additional comments? (this is optional)</div>
 
                 <el-input type="textarea" placeholder="Comments... (Optional)"
-                           v-model="ratingComment" maxlength="4500" show-word-limit :autosize="{minRows: 2, maxRows: 4}">
+                           v-model="rating.comment" maxlength="4500" show-word-limit :autosize="{minRows: 2, maxRows: 4}">
                 </el-input>
-                <el-checkbox v-model="ratingAnonymous">Anonymous</el-checkbox>
+                <el-checkbox v-model="rating.anonymous">Anonymous</el-checkbox>
             </div>
 
             <span slot="footer" class="dialog-footer">
@@ -90,6 +90,7 @@
         @Prop({required: true}) clickable: boolean;
 
         ratingDialog = false;
+        ratingPosting = false;
         ratingCriteria = [
             {title: 'Enjoyable', desc: 'How enjoyable is the course?'},
             {title: 'Knowledge', desc: 'How interesting is the content of the course? ' +
@@ -98,10 +99,7 @@
             {title: 'Eloquence', desc: `Are the teacher's lectures easy to understand?`},
             {title: 'Fairness', desc: `How fair is the teacher's grading? Is credit given in proportion to effort?`}
         ];
-        ratingData = [0,0,0,0,0];
-        ratingComment = '';
-        ratingAnonymous = false;
-        ratingPosting = false;
+        rating = this.course.rating;
 
         /**
          * Redirect to the course page
@@ -128,7 +126,7 @@
          */
         changeStars(index: number, star: number)
         {
-            this.ratingData[index] = star + 1;
+            this.rating.ratings[index] = star + 1;
             this.$forceUpdate();
         }
 
@@ -139,12 +137,7 @@
         {
             this.ratingPosting = true;
 
-            App.http.post('/course-info/rating/set', {rating: {
-                    id_ci: this.course.id_ci,
-                    anonymous: this.ratingAnonymous,
-                    ratings: this.ratingData,
-                    comment: this.ratingComment}
-            }).then(response =>
+            App.http.post('/course-info/rating/set', {rating: this.rating}).then(response =>
             {
                 if (response.success)
                 {
