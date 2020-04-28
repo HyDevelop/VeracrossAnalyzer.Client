@@ -162,6 +162,20 @@
                             'Thank you for submitting your fist rating!', {confirmButtonText: 'OK'}
                         );
                     }
+
+                    // Last rating
+                    if (App.instance.courses.filter(c => c.isGraded && !c.rated).length == 0)
+                    {
+                        this.$confirm('You have rated all of your courses! Do you want to turn off the rating buttons?' +
+                            ' (there are option to toggle them on again by clicking your avatar on the top right corner.)',
+                            'Thank you for submitting rating!',
+                            {confirmButtonText: 'Sure!', cancelButtonText: 'Nope.'}).then(() =>
+                        {
+                            // Disable rating buttons
+                            Navigation.instance.onAvatarMenu('switch-rating');
+                            this.$message.success('Rating buttons are disabled');
+                        });
+                    }
                 }
                 else
                 {
