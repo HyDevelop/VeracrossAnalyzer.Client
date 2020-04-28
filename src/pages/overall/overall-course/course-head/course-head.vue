@@ -86,6 +86,7 @@
     import {GPAUtils} from '@/logic/utils/gpa-utils';
     import Constants from '@/constants';
     import {RATING_CRITERIA} from '@/logic/course-info';
+    import Navigation from '@/components/navigation/navigation';
 
     @Component
     export default class CourseHead extends Vue
