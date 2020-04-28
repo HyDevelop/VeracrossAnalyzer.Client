@@ -30,7 +30,8 @@
         </div>
 
         <!-- Detail / Comments Popup -->
-        <el-dialog id="detail-popup" v-if="detailsCourse" :visible.sync="detailsCourse" width="50%" top="10vh">
+        <el-dialog id="detail-popup" v-if="detailsCourse" :visible="detailsCourse != null" width="50%" top="10vh"
+                   :before-close="closeDetails">
             <span slot="title" class="header">
                 <div class="title">Ratings for {{detailsCourse.name}}</div>
                 <span class="subtitle">And for {{detailsCourse.teacher}}</span>
@@ -103,6 +104,11 @@
         openDetails(course: CourseInfo)
         {
             this.detailsCourse = this.detailsCourse == course ? null as any as CourseInfo : course;
+        }
+
+        closeDetails()
+        {
+            this.detailsCourse = null as any as CourseInfo;
         }
     }
 </script>
