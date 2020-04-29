@@ -48,6 +48,9 @@
                     <el-dropdown-item icon="el-icon-edit-outline" command="switch-rating">
                         {{app.showRating ? 'Hide rating buttons' : 'Show rating button'}}
                     </el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-cold-drink" command="updates">
+                        Check out the updates
+                    </el-dropdown-item>
 
                     <el-dropdown-item icon="el-icon-switch-button" command="sign-out" divided>Sign Out</el-dropdown-item>
                 </el-dropdown-menu>
