@@ -71,7 +71,17 @@
         get ratingCriteria() {return RATING_CRITERIA}
         get rating() {return this.detailsCourse.rating}
 
-        created()
+        mounted()
+        {
+            this.checkRatings()
+        }
+
+        updated()
+        {
+            this.checkRatings()
+        }
+
+        checkRatings()
         {
             // Load ratings
             this.sortedCourses.forEach(c =>
