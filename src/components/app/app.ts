@@ -213,6 +213,15 @@ export default class App extends Vue
 
             // Remove loading
             this.logLoading('');
+
+            // Check if rating notification should be displayed
+            if (this.courses.filter(c => c.rated).length == 0 && this.showRating &&
+                !this.$cookies.isKey('rating-notified'))
+            {
+                // Show notification
+                this.$cookies.set('rating-notified', true);
+                this.showUpdates()
+            }
         })
     }
 
