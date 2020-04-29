@@ -5,10 +5,11 @@
 
         <div class="content" style="color: #ff3d3d" v-if="app.user.gradeLevel >= 12">
             You are a senior, what are you doing over here lol. <br>
-            Unfortunately I can't help you with college course selection.
+            Unfortunately I can't help you with college course selection.<br>
+            (But you can still view course ratings)<br><br>
         </div>
 
-        <div class="content" v-if="app.user.gradeLevel < 12">
+        <div class="content">
             <span style="color:#409EFF">
                 This new page is designed to help you with your course selection for your {{nextGrade}} year,
                 providing more information such as how many people are currently enrolled in a course.
