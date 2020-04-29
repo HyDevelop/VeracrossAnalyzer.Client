@@ -153,6 +153,11 @@ export default class Navigation extends Vue
 
                 break
             }
+            case 'updates':
+            {
+                this.app.showUpdates()
+                break
+            }
         }
     }
 
