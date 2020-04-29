@@ -216,6 +216,22 @@ export default class App extends Vue
         })
     }
 
+    showUpdates()
+    {
+        this.$alert(
+            '<b>TL;DR:</b><br/>' +
+            '📅 Added a Course Selection tab to help you schedule for next year!<br/>' +
+            '🤩 You can now give star ratings to your courses!<br/>' +
+            '😮 You can also see others\' ratings in the course selection tab!<br/>' +
+            '<br/>' +
+            'That\'s it, try things out and have fun! 😇<br/>' +
+            '<br/>' +
+            '-- The Veracross Analyzer Team<br/>' +
+            '-- Made with 🧡 in SJP',
+            '🥳 Huge updates!',
+            {dangerouslyUseHTMLString: true, confirmButtonText: 'OK', customClass: 'comic'});
+    }
+
     /**
      * Log a message to loading screen
      *
