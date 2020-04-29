@@ -39,12 +39,13 @@
         </div>
 
         <!-- Rating Popup -->
-        <el-dialog id="rating-popup" :visible.sync="ratingDialog" width="50%" top="10vh"
+        <el-dialog id="rating-popup" :visible.sync="ratingDialog" width="50%" top="5vh"
                    :show-close="false" :close-on-click-modal="false" :close-on-press-escape="false">
 
             <span slot="title" class="header">
                 <div class="title">Give a Rating for {{course.name}}</div>
-                <span class="subtitle">And for {{course.teacherName}}</span>
+                <span class="subtitle">And for {{course.teacherName}}<br></span>
+                <span class="subtitle" style="color: #e67b0d;">(might need to scroll down to find the submit button)</span>
             </span>
 
             <div class="item" v-for="(criteria, index) of ratingCriteria">
