@@ -33,6 +33,7 @@
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator'
+    import App from '@/components/app/app';
 
     @Component
     export default class SearchSettingsComponent extends Vue
@@ -43,7 +44,7 @@
 
     export class SearchSettings
     {
-        showAllCourses: boolean = false
+        showAllCourses: boolean = App.instance.user.gradeLevel == 12;
         sortBy: string = 'Name'
         levels: string[] = ['AP','H','A','CP']
     }
