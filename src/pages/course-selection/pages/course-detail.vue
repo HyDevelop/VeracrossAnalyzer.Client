@@ -21,7 +21,7 @@
                     <span v-else class="stars">
                         <StarRating :score="c.rating.overallRating"></StarRating>
                         <span class="info">
-                            <span class="numeric-rating">{{c.rating.overallRating}} / 5</span>
+                            <span class="numeric-rating">{{c.rating.overallRating.toFixed(2)}} / 5</span>
                             <span>({{c.rating.totalCount}} rating{{c.rating.totalCount > 1?'s':''}})</span>
                         </span>
                     </span>
@@ -41,7 +41,7 @@
                 <div class="title float-left">{{criteria.title}}</div>
 
                 <div class="stars float-right">
-                    <span class="info numeric-rating">{{rating.ratingAverages[index]}} / 5</span>
+                    <span class="info numeric-rating">{{rating.ratingAverages[index].toFixed(2)}} / 5</span>
                     <StarRating :score="rating.ratingAverages[index]" style="display: inline-block"></StarRating>
                 </div>
             </div>
