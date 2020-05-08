@@ -99,7 +99,8 @@ export class CourseInfoRating
 {
     id_ci: number
     id_user: number
-    userFullName: string
+    firstName: string
+    lastName: string
     anonymous: boolean
     ratings: number[]
     comment: string
@@ -108,10 +109,16 @@ export class CourseInfoRating
     {
         this.id_ci = json.id_ci;
         this.id_user = json.id_user;
-        this.userFullName = json.userFullName;
         this.anonymous = this.id_user == -1;
         this.ratings = json.ratings;
         this.comment = json.comment;
+
+        if (json.userFullName != null)
+        {
+            let nameSplit = json.userFullName.split(']=[');
+            this.firstName = nameSplit[0];
+            this.lastName = nameSplit[1];
+        }
     }
 
     /**
