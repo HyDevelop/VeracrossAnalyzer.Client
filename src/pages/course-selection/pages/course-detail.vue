@@ -52,6 +52,9 @@
                     <div class="user">
                         {{comment.firstName}} {{comment.lastName}}:
                     </div>
+                    <div class="text">
+                        <blockquote>{{comment.comment}}</blockquote>
+                    </div>
                 </div>
             </div>
         </el-dialog>
