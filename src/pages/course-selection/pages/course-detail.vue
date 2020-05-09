@@ -47,6 +47,10 @@
             </div>
 
             <div class="comments">
+                <div class="header">
+                    Comments
+                </div>
+
                 <LoadingSpinner v-if="detailsComments == null"/>
                 <div class="comment" v-else v-for="comment of detailsComments">
                     <div class="user">
