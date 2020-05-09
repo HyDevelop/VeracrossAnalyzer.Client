@@ -114,7 +114,23 @@
 
         openDetails(course: CourseInfo)
         {
-            this.detailsCourse = this.detailsCourse == course ? null as any as CourseInfo : course;
+            let c = this.detailsCourse = this.detailsCourse == course ? null as any as CourseInfo : course;
+
+            // Load comments
+            App.http.post('/course-info/rating/get', {condition: 'course-comments', value: c.id_ci}).then(result =>
+            {
+                if (result.success)
+                {
+                    this.detailsComments = result.data.map((r:any) => new CourseInfoRating(r));
+                }
+                else
+                {
+                    this.$message.error(`Rating data for ${c.name} / ${c.teacher} failed to load.`)
+                    console.log(result.data);
+                }
+            })
+
+            // TODO: Finish comment section
         }
 
         closeDetails()
