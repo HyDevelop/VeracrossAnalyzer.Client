@@ -47,7 +47,12 @@
             </div>
 
             <div class="comments">
-                TODO: Comment section still in development... coming soon!
+                <LoadingSpinner v-if="detailsComments == null"/>
+                <div class="comment" v-else v-for="comment of detailsComments">
+                    <div class="user">
+                        {{comment.firstName}} {{comment.lastName}}:
+                    </div>
+                </div>
             </div>
         </el-dialog>
     </div>
