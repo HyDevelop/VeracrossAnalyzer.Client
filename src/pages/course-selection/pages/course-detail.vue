@@ -56,6 +56,7 @@
                     <div class="user">
                         <i class="el-icon-user-solid"/>
                         {{comment.firstName}} {{comment.lastName}}:
+                        <span class="info numeric-rating" style="margin-left: 5px">{{comment.averageRating.toFixed(2)}} / 5</span>
                     </div>
                     <div class="text">
                         <blockquote>{{comment.comment}}</blockquote>
