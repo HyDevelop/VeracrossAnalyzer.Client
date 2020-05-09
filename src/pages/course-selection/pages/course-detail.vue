@@ -252,6 +252,11 @@
         {
             margin-top: 40px;
 
+            .comment
+            {
+                margin-bottom: 20px;
+            }
+
             blockquote
             {
                 padding: 0 1em;
