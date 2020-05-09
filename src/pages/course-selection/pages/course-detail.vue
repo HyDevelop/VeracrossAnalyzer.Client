@@ -50,6 +50,7 @@
                 <LoadingSpinner v-if="detailsComments == null"/>
                 <div class="comment" v-else v-for="comment of detailsComments">
                     <div class="user">
+                        <i class="el-icon-user-solid"/>
                         {{comment.firstName}} {{comment.lastName}}:
                     </div>
                     <div class="text">
