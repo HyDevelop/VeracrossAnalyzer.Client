@@ -105,6 +105,8 @@ export class CourseInfoRating
     ratings: number[]
     comment: string
 
+    averageRating: number = 0
+
     constructor(json: any)
     {
         this.id_ci = json.id_ci;
@@ -119,6 +121,9 @@ export class CourseInfoRating
             this.firstName = nameSplit[0];
             this.lastName = nameSplit[1];
         }
+
+        this.ratings.forEach(r => this.averageRating += r);
+        this.averageRating /= 5;
     }
 
     /**
