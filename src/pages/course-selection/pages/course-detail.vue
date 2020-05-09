@@ -67,6 +67,7 @@
         @Prop({required: true}) uniqueCourse: UniqueCourse;
 
         detailsCourse: CourseInfo = null as any as CourseInfo
+        detailsComments: CourseInfoRating[] = null as any as []
 
         get ratingCriteria() {return RATING_CRITERIA}
         get rating() {return this.detailsCourse.rating}
@@ -119,6 +120,7 @@
         closeDetails()
         {
             this.detailsCourse = null as any as CourseInfo;
+            this.detailsComments = null as any as []
         }
     }
 </script>
