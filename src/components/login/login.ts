@@ -26,6 +26,8 @@ export default class Login extends Vue
      */
     created()
     {
+        // TODO: Check maintenance
+
         // Check login cookies
         if (this.$cookies.isKey('va.token'))
         {
@@ -83,12 +85,6 @@ export default class Login extends Vue
             // Check success
             if (response.success)
             {
-                // Maintenance
-                if (response.data.maintenance)
-                {
-                    this.maintenance = response.data.maintenance;
-                    return;
-                }
 
                 // Save token to cookies
                 this.$cookies.set('va.token', response.data.user.token, '27d');
