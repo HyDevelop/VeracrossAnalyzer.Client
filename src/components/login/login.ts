@@ -35,9 +35,6 @@ export default class Login extends Vue
             if (this.needToUpdateCookies()) this.clearCookies();
             else
             {
-                // Show loading
-                this.disableInput = this.loading = true;
-
                 // Login with token
                 this.login('/login/token', {token: this.$cookies.get('va.token')});
             }
@@ -64,8 +61,6 @@ export default class Login extends Vue
      */
     loginClick()
     {
-        // Make login button loading
-        this.loading = true;
 
         // Format it
         this.username = this.username.toLowerCase().replace(/ /g, '').replace(/@.*/g, '');
@@ -79,6 +74,9 @@ export default class Login extends Vue
      */
     login(url: string, data: any)
     {
+        // Show loading
+        this.disableInput = this.loading = true;
+
         // Fetch request
         App.http.post(url, data).then(response =>
         {
