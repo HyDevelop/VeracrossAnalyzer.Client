@@ -10,7 +10,7 @@
                               placeholder="SJP Username (Eg. flast21)"
                               :class="{'input-error': error !== ''}"
                               v-if="!disableInput"
-                              @keyup.enter.native="onEnter">
+                              @keyup.enter.native="loginClick">
                     </el-input>
 
                     <el-input v-model="password"
@@ -18,12 +18,12 @@
                               show-password=""
                               :class="{'input-error': error !== ''}"
                               v-if="!disableInput"
-                              @keyup.enter.native="onEnter">
+                              @keyup.enter.native="loginClick">
                     </el-input>
 
                     <div class="el-form-item__error custom">{{error}}</div>
 
-                    <el-button plain type="primary" @click="onLoginClick" :loading="loading">Login</el-button>
+                    <el-button plain type="primary" @click="loginClick" :loading="loading">Login</el-button>
                 </form>
             </div>
         </div>
