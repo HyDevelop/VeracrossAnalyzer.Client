@@ -197,7 +197,7 @@ export default class App extends Vue
                         // This is because only percent_type can update over time
                         if (course.termGrading[i].method == 'TOTAL_MEAN')
                         {
-                            this.$cookies.set(cookieIndex, 'TOTAL_MEAN', 'd');
+                            this.$cookies.set(cookieIndex, 'TOTAL_MEAN', '3d');
                         }
                     }
                     else throw new Error(resp.data);
