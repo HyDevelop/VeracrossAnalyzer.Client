@@ -58,8 +58,18 @@ export default class Login extends Vue
 
     /**
      * When the user clicks, send the username and password to the server.
+     * This is also called when the user hits enter on the input boxes.
      */
     onLoginClick()
+    {
+        this.login()
+    }
+
+
+    /**
+     * Actually post the login request and process the response
+     */
+    login()
     {
         // Make login button loading
         this.loading = true;
@@ -67,21 +77,8 @@ export default class Login extends Vue
         // Format it
         this.username = this.username.toLowerCase().replace(/ /g, '').replace(/@.*/g, '');
 
-        // Login
-        this.login('/login', {username: this.username, password: this.password});
-    }
-
-    /**
-     * Actually post the login request and process the response
-     *
-     * @param url Posting url
-     * @param data Data to be posted
-     */
-    login(url: string, data: any)
-    {
         // Fetch request
-        App.http.post(url, data)
-        .then(response =>
+        App.http.post('/login', {username: this.username, password: this.password}).then(response =>
         {
             // Check success
             if (response.success)
