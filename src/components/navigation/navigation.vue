@@ -40,7 +40,7 @@
                 <el-avatar :src="user.avatarUrl"/>
 
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item style="text-align: center">{{user.nickname}}</el-dropdown-item>
+                    <el-dropdown-item style="text-align: center">{{user.firstName}}</el-dropdown-item>
 
                     <el-dropdown-item icon="el-icon-sunrise" command="switch-dark" divided>
                         {{!app.darkMode ? 'Dark Mode (Unfinished)' : 'Light Mode'}}
