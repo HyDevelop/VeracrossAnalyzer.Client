@@ -74,7 +74,6 @@ export default class Login extends Vue
         this.login('/login', {username: this.username, password: this.password})
     }
 
-
     /**
      * Actually post the request and process the response
      */
@@ -86,13 +85,12 @@ export default class Login extends Vue
             // Check success
             if (response.success)
             {
-
                 // Save token to cookies
-                this.$cookies.set('va.token', response.data.user.token, '27d');
+                this.$cookies.set('va.token', response.data.token, '27d');
                 this.$cookies.set('va.version', Constants.VERSION, '27d');
 
                 // Call a custom event with the token
-                this.$emit('login:user', new LoginUser(response.data.user));
+                this.$emit('login:user', new LoginUser(response.data));
             }
             else
             {
@@ -103,6 +101,7 @@ export default class Login extends Vue
                 }
 
                 // Show error message & allow user to retry
+                // TODO: Automatic report error
                 this.error = response.data;
                 this.disableInput = this.loading = false;
             }
