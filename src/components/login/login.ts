@@ -61,6 +61,11 @@ export default class Login extends Vue
      */
     loginClick()
     {
+        // Simple checks
+        if (this.username == '')
+        {
+            this.error = 'Username cannot be blank 🤔';
+        }
 
         // Format it
         this.username = this.username.toLowerCase().replace(/ /g, '').replace(/@.*/g, '');
