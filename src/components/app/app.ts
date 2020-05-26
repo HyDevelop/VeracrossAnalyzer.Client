@@ -94,37 +94,13 @@ export default class App extends Vue
 
         // Store user
         this.user = user;
+        this.courses = user.courses
 
         // Assign user to http client
         App.http.user = user;
 
-        // Load data
-        this.loadCoursesAfterLogin();
-    }
-
-    /**
-     * Load courses data after logging in.
-     */
-    loadCoursesAfterLogin()
-    {
-        // Show loading message
-        this.logLoading('2. Loading courses...');
-
-        // Post request
-        App.http.post('/courses', {}).then(response =>
-        {
-            // Check success
-            if (response.success)
-            {
-                // Save courses
-                this.courses = response.data.map((courseJson: any) => new Course(courseJson));
-
-                // Load assignments
-                this.loadAssignments();
-            }
-            else throw new Error(response.data);
-        })
-        .catch(e => this.showError(`Error: Course data failed to load.\n(${e})`));
+        // Load assignments
+        this.loadAssignments();
     }
 
     /**
@@ -133,7 +109,7 @@ export default class App extends Vue
     loadAssignments()
     {
         // Show loading message
-        this.logLoading('3. Loading assignments...');
+        this.logLoading('1. Loading assignments...');
 
         // Get assignments for all the courses
         this.courses.forEach(course =>
@@ -168,7 +144,7 @@ export default class App extends Vue
     checkGradingAlgorithms()
     {
         // Show loading message
-        this.logLoading('4. Checking grading algorithms...');
+        this.logLoading('2. Checking grading algorithms...');
 
         // Loop through all the courses
         for (const course of this.gradedCourses)
