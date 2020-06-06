@@ -55,7 +55,9 @@ export class Assignment
         this.scoreMax =  json.maximum_score;
         this.score =  +json.raw_score;
 
-        this.gradingPeriod =  +json.grading_period.replace('Quarter ', '') - 1;
+        // 0, 1, 2, 3 contains quarter assignments, 4 contains final assignments
+        if (json.grading_period.toLowerCase() == 'all') this.gradingPeriod = 4;
+        else this.gradingPeriod =  +json.grading_period.replace('Quarter ', '') - 1;
     }
 
     /**
@@ -228,7 +230,7 @@ export default class Course
         this.rawAssignments.sort((a, b) => b.time - a.time);
 
         // Filter assignments into terms
-        this.termAssignments = [[], [], [], []];
+        this.termAssignments = [[], [], [], [], []];
 
         // Loop through it by time order
         this.rawAssignments.forEach(a => this.termAssignments[a.gradingPeriod].push(a));
