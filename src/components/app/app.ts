@@ -58,6 +58,11 @@ export default class App extends Vue
     // Is the login panel shown
     showLogin: boolean = !this.demoMode
 
+    get gradedCourses()
+    {
+        return this.courses.filter(course => course.isGraded);
+    }
+
     /**
      * This is called when the instance is created.
      */
@@ -131,14 +136,7 @@ export default class App extends Vue
         });
 
         // Wait for assignments to be ready.
-        pWaitFor(() => this.courses.every(c => c.rawAssignments != null)).then(() =>
-        {
-            // Filter courses
-            this.gradedCourses = this.courses.filter(c => c.isGraded);
-
-            // Check grading algorithms
-            this.checkGradingAlgorithms();
-        });
+        pWaitFor(() => this.courses.every(c => c.rawAssignments != null)).then(this.checkGradingAlgorithms);
     }
 
     /**
