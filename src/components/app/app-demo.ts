@@ -27,6 +27,7 @@ export default class AppDemo
                 app.gradedCourses.forEach(c => [0, 1, 2, 3].forEach(i => c.termGrading[i] = {method: 'TOTAL_MEAN', weightingMap: {}}))
                 app.logLoading('');
                 app.assignmentsReady = true
+                app.showRating = true
             })
         })
     }
