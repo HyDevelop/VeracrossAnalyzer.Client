@@ -21,13 +21,13 @@ export default class AppDemo
                 })
             })
 
-            pWaitFor(() => app.courses.every(c => c.rawAssignments != null)).then(() =>
+            pWaitFor(() => app.courses.every(c => c.rawAssignments)).then(() =>
             {
+                app.gradedCourses = app.courses.filter(c => c.isGraded)
                 app.gradedCourses.forEach(c => [0, 1, 2, 3].forEach(i => c.termGrading[i] = {method: 'TOTAL_MEAN', weightingMap: {}}))
                 app.logLoading('');
                 app.assignmentsReady = true
             })
-            console.log(app.user)
         })
     }
 }
