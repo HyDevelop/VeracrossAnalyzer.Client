@@ -31,7 +31,7 @@
             <br>
             <b>Sorting:</b><br>
             By default the courses are sorted by name,
-            but you can change the settings to sort by popularity, by classes, by level, or by peer rating.
+            but you can change the settings to sort by popularity, by classes, or by level.
         </div>
     </div>
 </template>
