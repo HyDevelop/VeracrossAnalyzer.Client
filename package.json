@@ -9,27 +9,27 @@
   },
   "dependencies": {
     "@types/chroma-js": "^2.0.0",
-    "@types/md5": "^2.1.33",
+    "@types/md5": "^2.2.0",
     "chroma-js": "^2.1.0",
     "core-js": "^2.6.10",
-    "echarts": "^4.7.0",
-    "element-ui": "^2.13.0",
+    "echarts": "^4.8.0",
+    "element-ui": "^2.13.2",
     "md5": "^2.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.27.0",
     "p-wait-for": "^3.1.0",
     "v-charts": "^1.19.0",
     "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-cookies": "^1.7.0",
-    "vue-property-decorator": "^8.4.1"
+    "vue-class-component": "^7.2.5",
+    "vue-cookies": "^1.7.3",
+    "vue-property-decorator": "^8.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-typescript": "^3.12.1",
-    "@vue/cli-service": "^4.2.3",
-    "node-sass": "^4.13.1",
+    "@vue/cli-service": "^4.4.6",
+    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.7",
     "vue-template-compiler": "^2.6.11"
   },
   "postcss": {
