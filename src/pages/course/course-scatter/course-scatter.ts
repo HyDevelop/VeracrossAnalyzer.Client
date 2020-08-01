@@ -5,6 +5,7 @@ import moment, {min, Moment} from 'moment';
 import Course, {Assignment} from '@/logic/course';
 import GraphUtils from '@/logic/utils/graph-utils';
 import chroma from 'chroma-js';
+import Navigation from '@/components/navigation/navigation';
 
 @Component
 export default class CourseScatter extends Vue
@@ -41,7 +42,9 @@ export default class CourseScatter extends Vue
                     formatter: (name: any) => moment(name).format('MMM DD')
                 },
                 min: Constants.TERMS[0].getTime(),
-                max: moment.min(moment(), moment(Constants.TERMS[4])).toDate().getTime()
+                max: Navigation.instance.getSelectedTerm() == -1 ?
+                    moment.min(moment(), moment(Constants.TERMS[4])).toDate().getTime() :
+                    Constants.TERMS[Navigation.instance.getSelectedTerm() + 1].getTime()
             },
 
             // Y axis represents GPAs and MaxGPAs
