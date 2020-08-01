@@ -27,6 +27,8 @@ export default class CourseScatter extends Vue
      */
     get chartSettings()
     {
+        let term = Navigation.instance.getSelectedTerm()
+
         // Create settings
         let settings =
         {
@@ -41,10 +43,10 @@ export default class CourseScatter extends Vue
                 {
                     formatter: (name: any) => moment(name).format('MMM DD')
                 },
-                min: Constants.TERMS[0].getTime(),
-                max: Navigation.instance.getSelectedTerm() == -1 ?
+                min: Constants.TERMS[term == -1 ? 0 : term].getTime(),
+                max: term == -1 ?
                     moment.min(moment(), moment(Constants.TERMS[4])).toDate().getTime() :
-                    Constants.TERMS[Navigation.instance.getSelectedTerm() + 1].getTime()
+                    Constants.TERMS[term + 1].getTime()
             },
 
             // Y axis represents GPAs and MaxGPAs
