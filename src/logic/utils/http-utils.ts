@@ -28,4 +28,25 @@ export class HttpUtils
             .catch(reject)
         });
     }
+
+    public get(url: string): Promise<any>
+    {
+        // Create promise
+        return new Promise<any>((resolve, reject) =>
+        {
+            // Fetch request
+            fetch(url, {method: 'GET'}).then(res =>
+            {
+                // Get response body text
+                res.text().then(text =>
+                {
+                    // Parse response
+                    let response = JSON.parse(text);
+                    resolve(response);
+                })
+                .catch(reject)
+            })
+            .catch(reject)
+        });
+    }
 }
