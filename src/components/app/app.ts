@@ -18,9 +18,6 @@ import CourseSelection from '@/pages/course-selection/course-selection.vue';
 })
 export default class App extends Vue
 {
-    // Is the login panel shown
-    showLogin: boolean = true;
-
     // List of course that the student takes
     courses: Course[] = [];
     gradedCourses: Course[] = [];
@@ -57,6 +54,9 @@ export default class App extends Vue
 
     // Demo mode
     demoMode: boolean = window.location.hostname == 'demo.vera.hydev.org'
+
+    // Is the login panel shown
+    showLogin: boolean = !this.demoMode
 
     /**
      * This is called when the instance is created.
