@@ -40,6 +40,7 @@ export default class CourseScatter extends Vue
                 {
                     formatter: (name: any) => moment(name).format('MMM DD')
                 },
+                min: Constants.TERMS[0].getTime(),
                 max: moment.min(moment(), moment(Constants.TERMS[4])).toDate().getTime()
             },
 
