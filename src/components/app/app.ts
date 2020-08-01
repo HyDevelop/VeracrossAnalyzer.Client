@@ -55,6 +55,9 @@ export default class App extends Vue
     // Show rating
     showRating: boolean = this.$cookies.get('show-rating') == 'set=yes';
 
+    // Demo mode
+    demoMode: boolean = window.location.hostname == 'demo.vera.hydev.org'
+
     /**
      * This is called when the instance is created.
      */
