@@ -12,6 +12,7 @@ import LoginUser from '@/logic/login-user';
 import NavController from '@/logic/nav-controller';
 import Info from '@/statics/Info.vue';
 import CourseSelection from '@/pages/course-selection/course-selection.vue';
+import AppDemo from '@/components/app/app-demo';
 
 @Component({
     components: {Login, Navigation, Overall, Loading, CoursePage, Info, CourseSelection},
@@ -84,6 +85,12 @@ export default class App extends Vue
         if (!this.$cookies.isKey('show-rating'))
         {
             this.showRating = Constants.CURRENT_TERM == 3;
+        }
+
+        // Demo
+        if (this.demoMode)
+        {
+            AppDemo.loadDemo(this);
         }
     }
 
