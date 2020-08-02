@@ -72,7 +72,7 @@
 
             <span slot="footer" class="dialog-footer">
                 <el-button @click="ratingDialog = false" :disabled="ratingPosting">Cancel</el-button>
-                <el-button type="primary" @click="submitRating()" :disabled="ratingPosting">
+                <el-button type="primary" @click="submitRating()" :disabled="canSubmit">
                     {{course.rated ? 'Update' : 'Submit'}}
                 </el-button>
             </span>
@@ -99,6 +99,11 @@
         ratingDialog = false;
         ratingPosting = false;
         rating = this.course.rating;
+
+        get canSubmit()
+        {
+            return this.ratingPosting || App.instance.demoMode
+        }
 
         /**
          * Redirect to the course page
