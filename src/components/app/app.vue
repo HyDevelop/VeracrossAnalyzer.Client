@@ -10,7 +10,10 @@
             <div id="app-content" v-if="assignmentsReady && loading === ''">
                 <overall v-if="nav.id === 'overall'" :courses="gradedCourses"></overall>
                 <course-page v-if="nav.id === 'course'" :course="gradedCourses.find(c => +c.id === +nav.info.id)"></course-page>
-                <course-selection v-if="nav.id === 'course-selection'" :app="this"></course-selection>
+                <course-selection v-if="nav.id === 'course-selection' && !demoMode" :app="this"></course-selection>
+                <div id="demo-not-available" class="unselectable" v-if="nav.id === 'course-selection' && demoMode">
+                    Course selection page is not available in demo mode.
+                </div>
             </div>
 
             <loading v-if="loading !== ''" :text="loading" :error="loadingError"/>
