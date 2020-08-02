@@ -183,6 +183,7 @@
                 {
                     this.$message.error('Sorry, but rating failed to post, please try again or email me if you continues to have issues. ' +
                             'But wait! The email system isn\'t created yet... oops!. (Technical error message: ' + response.data + ')');
+                    this.ratingPosting = false;
                 }
             });
         }
