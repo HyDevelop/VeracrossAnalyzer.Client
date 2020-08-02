@@ -30,16 +30,15 @@ export default class AppDemo
                 app.showRating = true
 
                 app.$alert(
-                    'This demo analyzes an offline snapshot of my data from Jun 6, 2020,<br/>' +
+                    'This demo analyzes an offline snapshot of my data from Jun 6, 2020, ' +
                     'which displays my academic results from Junior year.<br/>' +
                     '<br/>' +
-                    'Online features like submitting reviews obviously won\'t work,<br/>' +
-                    'Besides from that, feel free to click around! 😇<br/>' +
+                    'Feel free to click around! 😇<br/>' +
                     '<br/>' +
                     '-- The Veracross Analyzer Team (YGui)<br/>' +
                     '-- Made with 🧡 in SJP',
                     '🥳 Welcome to VeracrossAnalyzer Demo!',
-                    {dangerouslyUseHTMLString: true, confirmButtonText: 'OK', customClass: 'comic'});
+                    {dangerouslyUseHTMLString: true, confirmButtonText: 'OK'});
             })
         })
     }
