@@ -54,7 +54,7 @@ export default class App extends Vue
     showRating: boolean = this.$cookies.get('show-rating') == 'set=yes';
 
     // Demo mode
-    demoMode: boolean = window.location.hostname == 'demo.vera.hydev.org'
+    demoMode: boolean = window.location.hostname == 'demo.vera.hydev.org' || this.$cookies.isKey('demo-mode')
 
     // Is the login panel shown
     showLogin: boolean = !this.demoMode
