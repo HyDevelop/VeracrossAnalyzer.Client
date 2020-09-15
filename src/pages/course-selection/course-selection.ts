@@ -150,7 +150,7 @@ export default class CourseSelection extends Vue
         return this.courseInfo.filter(c =>
             c.uniqueName.toLowerCase().includes(this.search.toLowerCase()) &&
             c.level != null && this.settings.levels.includes(c.level) &&
-            c.year == year &&
+            // c.year == year &&
             (this.settings.showAllCourses || c.gradeLevels.includes(this.app.user.gradeLevel + 1))
         )
     }
