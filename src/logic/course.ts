@@ -342,6 +342,7 @@ export default class Course
     {
         return this.cache.get('NumericGrade', () =>
         {
+            if (this.assignments.length == 0) return NaN;
             return this.gradingPeriods.map(term => this.numericGradeTerm(term))
                     .reduce((p, v) => p + v) / this.gradingPeriods.length
         })
