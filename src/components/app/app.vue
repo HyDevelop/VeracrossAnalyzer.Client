@@ -8,7 +8,7 @@
             </navigation>
 
             <div id="app-content" v-if="assignmentsReady && loading === ''">
-                <overall v-if="nav.id === 'overall'" :courses="gradedCourses"></overall>
+                <overall v-if="nav.id === 'overall'" :courses="courses.filter(c => c.isDisplayed)"></overall>
                 <course-page v-if="nav.id === 'course'" :course="gradedCourses.find(c => +c.id === +nav.info.id)"></course-page>
                 <course-selection v-if="nav.id === 'course-selection' && !demoMode" :app="this"></course-selection>
                 <div id="demo-not-available" class="unselectable" v-if="nav.id === 'course-selection' && demoMode">
