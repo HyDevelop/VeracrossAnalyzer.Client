@@ -244,8 +244,8 @@ export default class Course
         // Skip future or past courses
         if (this.status != 'active') return false;
 
-        // Skip courses without levels TODO: Ask for user input
-        if (this.level == 'None' || this.level == 'Unknown' || this.scaleUp == -1) return false;
+        // Skip courses without levels
+        if (!this.isDisplayed) return false;
 
         // Skip courses without graded assignments
         if (this.assignments.length == 0) return false;
@@ -255,6 +255,15 @@ export default class Course
 
         // Is graded
         return true;
+    }
+
+    /**
+     * Is displayed or not
+     */
+    get isDisplayed(): boolean
+    {
+        // Skip courses without levels TODO: Use the new api
+        return !(this.level == 'None' || this.level == 'Unknown' || this.scaleUp == -1);
     }
 
     /**
