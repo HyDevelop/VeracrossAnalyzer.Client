@@ -18,7 +18,7 @@
             </div>
 
             <!-- Right -->
-            <div id="block-grade">
+            <div id="block-grade" v-if="!isNaN(course.numericGrade)">
                 <div id="grade">
                     <span id="letter">{{course.letterGrade}} </span>
                     <span id="numeric">{{course.numericGrade === undefined ? '--' : course.numericGrade.toFixed(2)}}</span>
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div id="block-term-grades" v-if="course.rawSelectedTerm === -1"
+            <div id="block-term-grades" v-if="!isNaN(course.numericGrade) && course.rawSelectedTerm === -1"
                  v-for="term in course.allGradingPeriods.slice().reverse()">
                 <div id="term">Term {{term + 1}}</div>
                 <div id="term-letter">{{course.letterGradeTerm(term)}}</div>
