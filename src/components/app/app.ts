@@ -176,6 +176,10 @@ export default class App extends Vue
                     // Check success
                     if (resp.success)
                     {
+                        // Try to make sense of something that the backend couldn't parse
+                        // TODO: Fix it in a better way
+                        if (resp.data.method == 'NOT_GRADED') resp.data.method = 'TOTAL_MEAN'
+
                         // Add it to course
                         course.termGrading[i] = resp.data;
 
