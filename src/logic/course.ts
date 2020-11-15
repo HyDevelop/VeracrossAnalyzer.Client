@@ -56,8 +56,8 @@ export class Assignment
         this.score =  +json.raw_score;
 
         // Patch: When raw score is "", the status is complete but no scores would be provided.
-        if (json.raw_score == '' && this.complete == 'Complete')
-            this.complete = 'Complete+NS'
+        // if (json.raw_score == '' && this.complete == 'Complete')
+        //     this.complete = 'Complete+NS'
 
         // 0, 1, 2, 3 contains quarter assignments, 4 contains final assignments
         if (json.grading_period.toLowerCase() == 'all') this.gradingPeriod = 4;
@@ -90,7 +90,7 @@ export class Assignment
             case 'Complete': return ''; // ID: 3
             case 'NREQ': return 'Dropped'; // ID: 4
             case 'Late': return 'Late';
-            case 'Complete+NS': return 'Complete (No Score)';
+            //case 'Complete+NS': return 'Complete (No Score)';
             default: return this.complete;
         }
     }
@@ -103,7 +103,7 @@ export class Assignment
         switch (this.complete)
         {
             case 'Pending': return '#b1b1b1';
-            case 'Complete+NS': return '#b1b1b1';
+            //case 'Complete+NS': return '#b1b1b1';
             case 'Not Turned In': return '#ff0036';
             case 'Incomplete': return '#ff7a2f';
             case 'NREQ': return '#41b141';
