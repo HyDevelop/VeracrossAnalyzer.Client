@@ -58,14 +58,15 @@ export default class Constants
         ]
     };
 
-    // Terms (TODO: Actually get the terms dynamically
+    // Terms IMPORTANT: Update them every year! https://www.stjohnsprep.org/page.cfm?p=8267
+    // TODO: Update terms automatically
     static TERMS =
     [
-        new Date('Sep 14 2020'), // Sep 04 2019
-        new Date('Nov 14 2020'), // Nov 01 2019
-        new Date('Jan 30 2021'), // Jan 19 2020
-        new Date('Apr 02 2021'), // Mar 22 2020
-        new Date('Jun 04 2021'), // Jun 05 2020
+        new Date('Sep 09 2021'), // Sep 14 2020, Sep 04 2019
+        new Date('Nov 06 2021'), // Nov 14 2020, Nov 01 2019
+        new Date('Jan 22 2022'), // Jan 30 2021, Jan 19 2020
+        new Date('Mar 26 2022'), // Apr 02 2021, Mar 22 2020
+        new Date('Jun 06 2022'), // Jun 04 2021, Jun 05 2020
     ];
     static CURRENT_TERM = Constants.getTerm(new Date());
 
