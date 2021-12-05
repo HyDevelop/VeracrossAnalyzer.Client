@@ -20,6 +20,8 @@ Introduction:
 
 This is a website that generates visual representation of students' grade data on Veracross. Currently there is only one graph and one numerical data representing the GPA. But also it just released yesterday! (Yay!) What do you expect this soon lol?
 
+Online Demo: https://demo.vera.hydev.org/
+
 **Here's how it looks like right now:** *(Now all of you know my grades ;-;)*
 
 <img width="1451" alt="Screen Shot 2021-12-04" src="https://user-images.githubusercontent.com/22280294/144729362-75226bff-4170-440c-bad7-d4c748b3de72.png">
