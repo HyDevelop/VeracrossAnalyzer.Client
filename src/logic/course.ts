@@ -388,41 +388,61 @@ export default class Course
     /**
      * Get assignment types
      */
-    get assignmentTypes(): AssignmentType[]
+    assignmentTypes(term?: number): AssignmentType[]
     {
-        return this.cache.get('AssignmentTypes', () =>
+        return this.cache.get('AssignmentTypes' + term, () =>
         {
-            // Get all types
-            let types = this.assignments.map(a => a.type);
-
-            // Remove duplicates
-            types = types.filter((type, i, a) => a.indexOf(type) == i);
-
-            // Get total possible score for weight calculation
-            let totalScoreMax = this.assignments.reduce((sum, a) => sum + a.scoreMax, 0);
-
-            // For every type...
-            return types.map(type =>
+            if (term == null)
             {
-                // Get assignments of the type
-                let typeAssignments = this.assignments.filter(a => a.type == type);
+                return this.rawAssignmentTypes(this.assignments, this.termGrading[0]);
+            }
+            else
+            {
+                return this.rawAssignmentTypes(this.termAssignments[term], this.termGrading[term]);
+            }
+        })
+    }
 
-                // Get graded assignments
-                let gradedAssignments = typeAssignments.filter(a => a.graded);
+    /**
+     * Get assignment types
+     *
+     * @param assignments
+     * @param grading
+     */
+    private rawAssignmentTypes(assignments: Assignment[], grading: Grading): AssignmentType[]
+    {
+        // Get all types
+        let types = assignments.map(a => a.type);
 
-                // Count scores and max scores
-                let score = gradedAssignments.reduce((sum, a) => sum + a.score, 0);
-                let scoreMax = gradedAssignments.reduce((sum, a) => sum + a.scoreMax, 0);
+        // Remove duplicates
+        types = types.filter((type, i, a) => a.indexOf(type) == i);
 
-                // Calculate weight
-                let weight = this.termGrading[0].method == 'PERCENT_TYPE'
-                    ? this.termGrading[0].weightingMap[type] : scoreMax / totalScoreMax;
+        console.log(types)
 
-                // Return
-                return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
-                    scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2),
-                    assignmentCount: typeAssignments.length, graded: gradedAssignments.length > 0}
-            })
+        // Remove types that doens't have valid grades
+        types = types.filter(type => assignments.filter(a => a.graded && a.type == type).length > 0);
+
+        // Get total possible score for weight calculation
+        let totalScoreMax = assignments.reduce((sum, a) => sum + a.scoreMax, 0);
+
+        // For every type...
+        return types.map(type =>
+        {
+            // Get assignments of the type
+            let typeAssignments = assignments.filter(a => a.graded && a.type == type);
+
+            // Count scores and max scores
+            let score = typeAssignments.reduce((sum, a) => sum + a.score, 0);
+            let scoreMax = typeAssignments.reduce((sum, a) => sum + a.scoreMax, 0);
+
+            // Calculate weight
+            let weight = grading.method == 'PERCENT_TYPE'
+                ? grading.weightingMap[type] : scoreMax / totalScoreMax;
+
+            // Return
+            return {name: type, id: typeAssignments[0].typeId, weight: +(weight * 100).toFixed(2),
+                scoreMax: scoreMax, score: score, percent: +(score / scoreMax * 100).toFixed(2),
+                assignmentCount: typeAssignments.length}
         })
     }
 

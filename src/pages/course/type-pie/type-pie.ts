@@ -37,7 +37,7 @@ export default class TypePie extends Vue
                 radius: ['40%', '60%'],
                 center: ['50%', '55%'],
                 label: GraphUtils.pieTextStyle(),
-                data: this.course.assignmentTypes.filter(t => t.graded).map((t, i) => {return {
+                data: this.course.assignmentTypes().map((t, i) => {return {
                     value: t.weight,
                     name: `${t.name}\n${t.weight}%`,
                     itemStyle:

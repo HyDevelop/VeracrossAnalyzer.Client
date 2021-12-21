@@ -23,7 +23,7 @@ export default class TypeRadar extends Vue
      */
     get chartSettings()
     {
-        let min = this.course.assignmentTypes.filter(t => t.graded).reduce((min, t) => Math.min(min, t.percent), 100);
+        let min = this.course.assignmentTypes().reduce((min, t) => Math.min(min, t.percent), 100);
 
         // Create settings
         let settings =
@@ -54,7 +54,7 @@ export default class TypeRadar extends Vue
                         opacity: 0.4
                     }
                 },
-                indicator: this.course.assignmentTypes.filter(t => t.graded).map((t, i) => {return {
+                indicator: this.course.assignmentTypes().map((t, i) => {return {
                     name: `${t.name}\n${t.percent}%`,
                     max: 100,
                     min: min - 30,
@@ -89,7 +89,7 @@ export default class TypeRadar extends Vue
                             },
                             opacity: 0.2
                         },
-                        value: this.course.assignmentTypes.filter(t => t.graded).map(t => t.percent)
+                        value: this.course.assignmentTypes().map(t => t.percent)
                     }
                 ]
             },
