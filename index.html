@@ -1,18 +1,72 @@
 <!doctype html>
 <title>Site Maintenance</title>
 <style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
+  html {
+    height: 100%;
+  }
+  body {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 10vw;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  body {
+    font: 20px -apple-system, Nunito Sans, Avenir, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    color: #2F4053;
+  }
+
+  article {
+    display: block;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #dc8100;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+
+  #logo {
+    text-align: center;
+    width: 100%;
+  }
+
+  img {
+    width: 250px;
+  }
+
+  .detail {
+    font-size: 0.8em;
+    color: #2f4053c0;
+  }
+
+  #content {
+    text-align: justify;
+  }
 </style>
 
 <article>
+  <div id="logo">
+    <img src="img/logo.fcec1862.png">
     <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience but we're performing some updates at the moment. We'll be back online shortly! (For technical details: The school updated their SSO login interface, so we need to update our login code as well)</p>
-        <p>&mdash; Veracross Analyzer Team</p>
-    </div>
+  </div>
+  <div id="content">
+    <p>Sorry for the inconvenience but we're performing some updates at the moment. </p>
+    <p class="detail">Since SJP's login interface have been updated, we need to update our code to adapt to the change. 
+      However, all of our members already graduated from SJP in 2021, and we cannot update without having an account. 
+      We've emailed Dr. McManmon to provide us with a new student account for testing, and we're currently waiting for reply.</p>
+    <p>&mdash; Veracross Analyzer Team</p>
+  </div>
 </article>
